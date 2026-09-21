@@ -1,0 +1,368 @@
+import { readFile, writeFile } from "node:fs/promises";
+
+const GUILDS_FILE       = "guilds.json";
+const HISTORY_FILE      = "snapshots.json";
+const MEMBERS_STATE_FILE = "members_state.json";
+const EVENTS_FILE       = "events.json";
+const MEMBER_RAIDS_FILE  = "member_raids.json";
+const PRESENCE_FILE      = "presence.json";
+
+const RETAIN_DAYS       = 14;   // hard floor: kept even across a season change
+// On top of that floor every snapshot of the current season is kept, thinned by age so the
+// file stays small enough to ship to every page load.
+const SNAPSHOT_TIERS = [
+  { olderThanDays: 14, bucketMinutes: 120 },
+  { olderThanDays: 3,  bucketMinutes: 30 },
+];
+const EVENTS_RETAIN_DAYS = 60;
+const PRESENCE_RETAIN_DAYS = 21;
+// A session spans consecutive polls in which the member was seen online on the same server.
+// Polling is irregular (5 min … 2 h), so a session means "online at every observation in
+// this window", not "provably online the whole time". Beyond this gap the poller was down
+// rather than sampling, so the run is cut instead of painting over the blackout.
+const PRESENCE_MAX_GAP_MS = 3 * 3600_000;
+const RANK_ORDER = ["owner", "chief", "strategist", "captain", "recruiter", "recruit"];
+const RAID_LBS = {
+  grootslang: "grootslangSrGuilds",
+  nameless:   "namelessSrGuilds",
+  colossus:   "colossusSrGuilds",
+  orphion:    "orphionSrGuilds",
+  fruma:      "frumaSrGuilds",
+};
+const TIMEOUT_MS = 25_000;
+const UA = "race-tracker/2.0";
+
+// ──────────────────────────────────────────────────────────────
+// Fetch helpers
+// ──────────────────────────────────────────────────────────────
+async function fetchJson(url) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  try {
+    const r = await fetch(url, { headers: { "User-Agent": UA }, signal: ctrl.signal });
+    if (!r.ok) throw new Error(`${url} -> HTTP ${r.status}`);
+    return await r.json();
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+async function fetchGuild(name) {
+  return await fetchJson(`https://api.wynncraft.com/v3/guild/${encodeURIComponent(name)}`);
+}
+
+async function fetchRaidLeaderboards() {
+  const out = {};
+  await Promise.all(Object.entries(RAID_LBS).map(async ([raid, lb]) => {
+    out[raid] = await fetchJson(`https://api.wynncraft.com/v3/leaderboards/${lb}?resultLimit=100`);
+  }));
+  return out;
+}
+
+// ──────────────────────────────────────────────────────────────
+// Parsers
+// ──────────────────────────────────────────────────────────────
+function latestSeason(seasonRanks) {
+  if (!seasonRanks) return null;
+  let max = null;
+  for (const k of Object.keys(seasonRanks)) {
+    const n = Number(k);
+    if (Number.isFinite(n) && (max === null || n > max)) max = n;
+  }
+  return max;
+}
+
+function findInLb(lbEntries, uuid) {
+  for (const [rankStr, e] of Object.entries(lbEntries)) {
+    if (e.uuid === uuid) {
+      const meta = e.metadata || {};
+      return {
+        rank: Number(rankStr),
+        sr: Number(e.score || 0),
+        completions: Number(meta.completions || 0),
+        gambits: Number(meta.gambits || 0),
+      };
+    }
+  }
+  return null;
+}
+
+function extractMembers(memData) {
+  const out = [];
+  let online = 0;
+  const agg = {
+    damageDealt: 0, damageTaken: 0, deaths: 0,
+    gambitsUsed: 0, healthHealed: 0, buffsTaken: 0,
+  };
+  for (const rank of RANK_ORDER) {
+    const group = memData?.[rank] || {};
+    for (const [username, m] of Object.entries(group)) {
+      const isOnline = !!m.online;
+      if (isOnline) online++;
+      out.push({
+        username,
+        uuid: m.uuid,
+        rank,
+        joined: m.joined ?? null,
+        online: isOnline,
+        server: m.server ?? null,
+        contributed: Number(m.contributed || 0),
+        contributionRank: m.contributionRank ?? null,
+        guildRaidsTotal: Number(m.globalData?.guildRaids?.total ?? 0),
+      });
+      const rs = m.globalData?.raidStats;
+      if (rs) {
+        agg.damageDealt  += Number(rs.damageDealt  || 0);
+        agg.damageTaken  += Number(rs.damageTaken  || 0);
+        agg.deaths       += Number(rs.deaths       || 0);
+        agg.gambitsUsed  += Number(rs.gambitsUsed  || 0);
+        agg.healthHealed += Number(rs.healthHealed || 0);
+        agg.buffsTaken   += Number(rs.buffsTaken   || 0);
+      }
+    }
+  }
+  return { members: out, online, total: out.length, agg };
+}
+
+function summarize(name, data, raidLbs) {
+  const season = latestSeason(data.seasonRanks);
+  const sr = season != null ? data.seasonRanks[String(season)] : null;
+  const perRaid = {};
+  for (const key of Object.keys(RAID_LBS)) {
+    perRaid[key] = findInLb(raidLbs[key] || {}, data.uuid);
+  }
+  const memInfo = extractMembers(data.members);
+  return {
+    snapshot: {
+      name: data.name ?? name,
+      prefix: data.prefix ?? "",
+      uuid: data.uuid,
+      level: data.level ?? null,
+      xpPercent: data.xpPercent ?? null,
+      territories: data.territories ?? 0,
+      wars: data.wars ?? 0,
+      raids: data.raids ?? 0,
+      seasonNumber: season,
+      seasonSr: Number(sr?.rating ?? 0),
+      online: memInfo.online,
+      memberCount: memInfo.total,
+      perRaid,
+      aggDamageDealt: memInfo.agg.damageDealt,
+      aggDamageTaken: memInfo.agg.damageTaken,
+      aggDeaths:      memInfo.agg.deaths,
+      aggGambits:     memInfo.agg.gambitsUsed,
+      aggHealed:      memInfo.agg.healthHealed,
+    },
+    members: {
+      name: data.name ?? name,
+      prefix: data.prefix ?? "",
+      online: memInfo.online,
+      total: memInfo.total,
+      members: memInfo.members,
+    },
+  };
+}
+
+// ──────────────────────────────────────────────────────────────
+// Snapshot retention
+// ──────────────────────────────────────────────────────────────
+function bucketMsForAge(ageMs) {
+  for (const t of SNAPSHOT_TIERS) {
+    if (ageMs >= t.olderThanDays * 86400_000) return t.bucketMinutes * 60_000;
+  }
+  return 0;
+}
+
+// Keeps the whole current season plus a RETAIN_DAYS floor, downsampling older entries to
+// the first one per bucket. Buckets are epoch-aligned, so re-running this is stable: an
+// entry only ever drops out when it ages into a coarser tier.
+function pruneSnapshots(list, nowMs) {
+  const season = list.length ? list[list.length - 1].season : null;
+  const floor = nowMs - RETAIN_DAYS * 86400_000;
+  const out = [];
+  let lastKey = null;
+  for (const s of list) {
+    const t = new Date(s.ts).getTime();
+    if (!Number.isFinite(t)) continue;
+    if (t < floor && !(season != null && s.season === season)) continue;
+    const bucketMs = bucketMsForAge(nowMs - t);
+    if (bucketMs === 0) { out.push(s); lastKey = null; continue; }
+    const key = bucketMs + ":" + Math.floor(t / bucketMs);
+    if (key === lastKey) continue;
+    out.push(s);
+    lastKey = key;
+  }
+  return out;
+}
+
+// ──────────────────────────────────────────────────────────────
+// Event detection
+// ──────────────────────────────────────────────────────────────
+function rankIdx(r) { return RANK_ORDER.indexOf(r); }
+
+function detectEvents(prevGuild, newGuild, guildName, ts) {
+  const events = [];
+  const prevMap = new Map((prevGuild?.members || []).map(m => [m.uuid, m]));
+  const newMap  = new Map(newGuild.members.map(m => [m.uuid, m]));
+
+  for (const [uuid, m] of newMap) {
+    const prev = prevMap.get(uuid);
+    if (!prev) {
+      events.push({
+        ts, guild: guildName, uuid, username: m.username,
+        type: "joined", rank: m.rank, joinedAt: m.joined,
+        raidsTotal: m.guildRaidsTotal,
+      });
+    } else if (prev.rank !== m.rank) {
+      const up = rankIdx(m.rank) < rankIdx(prev.rank);
+      events.push({
+        ts, guild: guildName, uuid, username: m.username,
+        type: up ? "promoted" : "demoted",
+        from: prev.rank, to: m.rank,
+      });
+    }
+  }
+  for (const [uuid, m] of prevMap) {
+    if (!newMap.has(uuid)) {
+      events.push({
+        ts, guild: guildName, uuid, username: m.username,
+        type: "left", from: m.rank,
+      });
+    }
+  }
+  return events;
+}
+
+// ──────────────────────────────────────────────────────────────
+// Presence history
+// ──────────────────────────────────────────────────────────────
+// The guild API reports each member's online flag and server, but only for right now, so
+// "who is usually online at 16:30" needs its own log. Per member we keep online sessions
+// as [startSec, endSec, server] with second-resolution epoch timestamps — far smaller than
+// one row per member per poll, and directly answerable for a time-of-day question.
+//
+// A session is extended while the member stays online on the same server at consecutive
+// polls. A server switch, a poll in which they were offline, or a poller outage longer
+// than PRESENCE_MAX_GAP_MS starts a new session.
+function updatePresence(prev, guilds, nowMs) {
+  const nowSec = Math.floor(nowMs / 1000);
+  const lastPollMs = prev?.lastPoll ? new Date(prev.lastPoll).getTime() : null;
+  const contiguous = lastPollMs != null && nowMs - lastPollMs <= PRESENCE_MAX_GAP_MS;
+  const cutoffSec = Math.floor((nowMs - PRESENCE_RETAIN_DAYS * 86400_000) / 1000);
+
+  const out = { updated: new Date(nowMs).toISOString(), lastPoll: new Date(nowMs).toISOString(), guilds: {} };
+  for (const g of guilds) {
+    const prevG = prev?.guilds?.[g.name] || {};
+    const cur = {};
+    for (const m of g.members) {
+      const old = prevG[m.uuid];
+      const sessions = (old?.sessions || []).filter(s => s[1] >= cutoffSec);
+      if (m.online) {
+        const last = sessions[sessions.length - 1];
+        const sameRun = last && contiguous && last[1] >= Math.floor(lastPollMs / 1000) - 60 && last[2] === (m.server ?? null);
+        if (sameRun) last[1] = nowSec;
+        else sessions.push([nowSec, nowSec, m.server ?? null]);
+      }
+      cur[m.uuid] = { username: m.username, rank: m.rank, sessions };
+    }
+    // members who left the guild keep their history until it ages out
+    for (const [uuid, old] of Object.entries(prevG)) {
+      if (cur[uuid]) continue;
+      const sessions = (old.sessions || []).filter(s => s[1] >= cutoffSec);
+      if (sessions.length) cur[uuid] = { ...old, sessions, left: true };
+    }
+    out.guilds[g.name] = cur;
+  }
+  return out;
+}
+
+// ──────────────────────────────────────────────────────────────
+// File IO
+// ──────────────────────────────────────────────────────────────
+async function loadJson(path, fallback) {
+  try { return JSON.parse(await readFile(path, "utf8")); }
+  catch { return fallback; }
+}
+
+// ──────────────────────────────────────────────────────────────
+// Main
+// ──────────────────────────────────────────────────────────────
+async function main() {
+  const guildsCfg = JSON.parse(await readFile(GUILDS_FILE, "utf8"));
+  const sides = ["left", "right"];
+
+  const raidLbs = await fetchRaidLeaderboards();
+  const summaries = {};
+  for (const side of sides) {
+    const name = guildsCfg[side].name;
+    const data = await fetchGuild(name);
+    summaries[side] = summarize(name, data, raidLbs);
+  }
+
+  const ts = new Date().toISOString();
+
+  // 1) snapshot history
+  const snapshot = {
+    ts,
+    season: summaries.left.snapshot.seasonNumber ?? summaries.right.snapshot.seasonNumber,
+    left: summaries.left.snapshot,
+    right: summaries.right.snapshot,
+  };
+  const history = await loadJson(HISTORY_FILE, { snapshots: [] });
+  if (!Array.isArray(history.snapshots)) history.snapshots = [];
+  history.snapshots.push(snapshot);
+  history.snapshots = pruneSnapshots(history.snapshots, Date.now());
+  history.updated = ts;
+  history.config = { left: guildsCfg.left, right: guildsCfg.right };
+  await writeFile(HISTORY_FILE, JSON.stringify(history, null, 2) + "\n");
+
+  // 2) members state + 3) events
+  const prevState = await loadJson(MEMBERS_STATE_FILE, null);
+  const newState = {
+    updated: ts,
+    left: summaries.left.members,
+    right: summaries.right.members,
+  };
+  const eventLog = await loadJson(EVENTS_FILE, { events: [] });
+  if (!Array.isArray(eventLog.events)) eventLog.events = [];
+
+  if (prevState?.left && prevState?.right) {
+    eventLog.events.push(...detectEvents(prevState.left, newState.left, guildsCfg.left.name, ts));
+    eventLog.events.push(...detectEvents(prevState.right, newState.right, guildsCfg.right.name, ts));
+  }
+  const eventsCutoff = Date.now() - EVENTS_RETAIN_DAYS * 86400_000;
+  eventLog.events = eventLog.events.filter(e => new Date(e.ts).getTime() >= eventsCutoff);
+  eventLog.updated = ts;
+
+  // 4) per-member daily raids tracking (for "recent most active raiders")
+  const prevMr = await loadJson(MEMBER_RAIDS_FILE, null);
+  const dayKey = ts.slice(0, 10);
+  const cutoffKey = new Date(Date.now() - 14*86400_000).toISOString().slice(0, 10);
+  const newMr = { updated: ts, guilds: {} };
+  for (const side of ["left", "right"]) {
+    const g = newState[side];
+    newMr.guilds[g.name] = {};
+    const prevG = prevMr?.guilds?.[g.name] || {};
+    for (const m of g.members) {
+      const prevByDay = prevG[m.uuid]?.byDay || {};
+      const byDay = {};
+      for (const [d, v] of Object.entries(prevByDay)) if (d >= cutoffKey) byDay[d] = v;
+      byDay[dayKey] = m.guildRaidsTotal;
+      newMr.guilds[g.name][m.uuid] = { username: m.username, byDay };
+    }
+  }
+
+  // 5) per-member online sessions (for "who is online at what time of day")
+  const prevPresence = await loadJson(PRESENCE_FILE, null);
+  const presence = updatePresence(prevPresence, [newState.left, newState.right], Date.now());
+
+  await writeFile(MEMBERS_STATE_FILE, JSON.stringify(newState, null, 2) + "\n");
+  await writeFile(EVENTS_FILE, JSON.stringify(eventLog, null, 2) + "\n");
+  await writeFile(MEMBER_RAIDS_FILE, JSON.stringify(newMr, null, 2) + "\n");
+  await writeFile(PRESENCE_FILE, JSON.stringify(presence) + "\n");
+
+  const gap = snapshot.left.seasonSr - snapshot.right.seasonSr;
+  console.log(`OK season=${snapshot.season} L=${snapshot.left.seasonSr} R=${snapshot.right.seasonSr} gap=${gap} | online L=${snapshot.left.online}/${snapshot.left.memberCount} R=${snapshot.right.online}/${snapshot.right.memberCount} | snaps=${history.snapshots.length} events=${eventLog.events.length} presence=${Object.values(presence.guilds).reduce((n, g) => n + Object.values(g).reduce((k, m) => k + m.sessions.length, 0), 0)}`);
+}
+
+main().catch((e) => { console.error(e); process.exit(1); });
