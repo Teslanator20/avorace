@@ -362,7 +362,7 @@
       <div class="s" id="s-pace-sub">SR per day</div>
     </div>
     <div class="stat">
-      <div class="k">Pace needed</div>
+      <div class="k">Base pace needed</div>
       <div class="v" id="s-need">—</div>
       <div class="s" id="s-need-sub">SR per day to the record</div>
     </div>
@@ -404,19 +404,31 @@
       points during the season — typically stepping <b>1.5 → 2.0 → 3.0 → 5.0 → 10.0</b>.
     </p>
     <p>
-      That scalar is why a straight-line projection is the <b>pessimistic</b> case. Every past bump
-      has made the back half of a season worth far more than the front half, and the table below
-      shows what each step would mean at the territory count Sequoia holds right now.
+      Nothing else feeds season rating. Guild raids, gambits and raid damage drive guild XP and
+      aspects, not SR — so they stay out of the projection, however busy the guild is.
+    </p>
+    <p>
+      The scalar can be read straight out of the poll data. Over intervals with no war and no
+      territory change, holding is the only source, so <b>ΔSR ÷ (base × Σr × hours)</b> is the
+      scalar. That measure sat near <b>3.7</b> from 10–18 Sep and jumped to <b>5.9</b> on
+      <b>19 Sep</b> — a 1.6× step, matching <b>3.0 → 5.0</b>. It reads about 15% high in absolute
+      terms, but the ratio is what counts, and every SR source scales with s, so a move to
+      <b>10.0</b> simply doubles the rate.
+    </p>
+    <p>
+      The table runs each recent pace window out to the season close under three schedules: no
+      bump at all, the assumed <b>final 24 h at 10×</b>, and a longer 48 h bump. The 48-hour row
+      is the one the headline numbers use.
     </p>
   </div>
 
   <table class="scalars">
     <thead>
       <tr>
-        <th>Scalar s</th>
-        <th>Holding yield</th>
-        <th>Rating at season end</th>
-        <th>vs record</th>
+        <th>Pace window</th>
+        <th>No bump</th>
+        <th>10× final 24 h</th>
+        <th>10× final 48 h</th>
       </tr>
     </thead>
     <tbody id="scalar-rows">
@@ -429,11 +441,12 @@
     <a href="https://wynncraft.wiki.gg/wiki/Guild_Seasons">Guild Seasons wiki page</a>; the
     20,270,919 figure is also confirmed live by the
     <code>leaderboards/guildSeason1</code> API endpoint. Season end is fixed at
-    <b>27 Sep 2026, 06:00 Europe/Berlin</b> — the API exposes no season end date, so it is set by
-    hand here. Sequoia's rating comes from the same 5-minute poll that drives the
-    <a href="../">other trackers</a>: this page reads that <code>snapshots.json</code> directly,
-    so it costs no extra Wynncraft API calls. Holding-yield figures ignore capture rating, so the
-    implied scalar reads a little high.
+    <b>27 Sep 2026, 06:00 Europe/Berlin</b> — the wiki gives the date, the API exposes no season
+    timing at all, so the time of day is set by hand here. The closing <b>10×</b> stretch is an
+    assumption as well: the wiki says only that the scalar is raised manually at unspecified
+    points, so nothing confirms its timing. Sequoia's rating comes from the 5-minute poll behind
+    the <a href="../">other trackers</a> — this page reads their <code>snapshots.json</code>
+    directly, so it costs no extra Wynncraft API calls.
   </div>
 
 </div>
@@ -454,7 +467,18 @@ const HOLD_BASE = 120;
 const REGRESSION = [3.00, 2.00, 1.00, 0.90, 0.80, 0.75, 0.75, 0.70, 0.70, 0.65, 0.65,
                     0.60, 0.60, 0.55, 0.55, 0.50, 0.45, 0.40, 0.35, 0.30, 0.25];
 const REGRESSION_TAIL = 0.20;
-const SCALAR_STEPS = [1.5, 2.0, 3.0, 5.0, 10.0];
+
+// The scalar currently in force, and the step expected for the closing stretch. Reconstructed
+// from the poll data itself: over intervals with no war and no territory change, holding is the
+// only SR source, so dSR / (base * regressionSum * hours) reads the scalar directly. That
+// measure jumped from ~3.7 to ~5.9 on 19 Sep — a 1.6x step, i.e. 3.0 -> 5.0. It runs about 15%
+// high in absolute terms (the real base sits a little above 120), but the RATIO is what matters
+// here, and both holding and capture rating scale linearly with s — so a doubling of s doubles
+// the rating rate whatever the mix of holding and capping.
+const SCALAR_NOW = 5.0;
+const SCALAR_BOOST = 10.0;
+const BOOST_HOURS = 24;          // assumed final stretch at the boosted scalar
+const BOOST_FACTOR = SCALAR_BOOST / SCALAR_NOW;
 
 // ─── Theme ─────────────────────────────────────────────
 (function () {
@@ -533,6 +557,22 @@ function pacePerDay(series, days) {
   return (win[win.length - 1].sr - win[0].sr) / spanDays;
 }
 
+// Rating at season end, given a base pace measured under SCALAR_NOW. The closing BOOST_HOURS
+// are worth BOOST_FACTOR times as much per hour, since every SR source scales with the scalar.
+function projectEnd(cur, pace, boostHours) {
+  const daysLeft = Math.max((SEASON_END - Date.now()) / 86400000, 0);
+  const boostDays = Math.min((boostHours ?? BOOST_HOURS) / 24, daysLeft);
+  return cur + pace * (daysLeft - boostDays) + pace * BOOST_FACTOR * boostDays;
+}
+
+// Base pace that would land exactly on the record, given the boosted closing stretch.
+function requiredPace(cur, boostHours) {
+  const daysLeft = Math.max((SEASON_END - Date.now()) / 86400000, 0);
+  const boostDays = Math.min((boostHours ?? BOOST_HOURS) / 24, daysLeft);
+  const weighted = (daysLeft - boostDays) + BOOST_FACTOR * boostDays;
+  return weighted > 0 ? (RECORD - cur) / weighted : null;
+}
+
 // ─── Countdown ─────────────────────────────────────────
 function tickCountdown() {
   const ms = SEASON_END - Date.now();
@@ -575,8 +615,8 @@ function render(series) {
   const pace = p7 ?? p24;
   const paceLabel = p7 != null ? "7-day average" : "24-hour average";
 
-  const needPace = daysLeft > 0 ? gap / daysLeft : null;
-  const projected = pace != null ? cur + pace * daysLeft : null;
+  const needPace = requiredPace(cur);
+  const projected = pace != null ? projectEnd(cur, pace) : null;
 
   // Dashed overlay on the bar showing where the current pace lands by season end.
   if (projected != null && !beaten) {
@@ -594,9 +634,11 @@ function render(series) {
   $("s-pace-sub").textContent = pace != null ? "SR per day · " + paceLabel : "not enough history yet";
   $("s-need").textContent = needPace != null && !beaten ? fmt(needPace) : "—";
   $("s-need-sub").textContent = beaten ? "record already broken"
-    : "SR per day over the remaining " + daysLeft.toFixed(1) + " days";
+    : "SR per day for the remaining " + daysLeft.toFixed(1) + " days, with the final "
+      + BOOST_HOURS + " h at " + SCALAR_BOOST.toFixed(1) + "x";
   $("s-proj").textContent = projected != null ? fmt(projected) : "—";
-  $("s-proj-sub").textContent = "at the current pace, by season end";
+  $("s-proj-sub").textContent = "current pace + " + BOOST_HOURS + " h at "
+    + SCALAR_BOOST.toFixed(1) + "x";
 
   // Verdict
   const v = $("verdict");
@@ -613,16 +655,20 @@ function render(series) {
     v.classList.add("yes");
     $("verdict-head").textContent = "On track — by " + fmt(projected - RECORD) + " SR";
     $("verdict-body").innerHTML = "Holding the current <b>" + fmt(pace)
-      + " SR a day</b> for the remaining <b>" + daysLeft.toFixed(1)
-      + " days</b> puts Sequoia at <b>" + fmt(projected) + "</b> — over the record. It needs <b>"
-      + fmt(needPace) + " a day</b> to stay there.";
+      + " SR a day</b> through the remaining <b>" + daysLeft.toFixed(1)
+      + " days</b>, with the closing <b>" + BOOST_HOURS + " h at " + SCALAR_BOOST.toFixed(1)
+      + "x</b>, puts Sequoia at <b>" + fmt(projected) + "</b> — over the record. The base pace may "
+      + "not drop below <b>" + fmt(needPace) + " a day</b>, so the margin is <b>"
+      + ((pace / needPace - 1) * 100).toFixed(1) + "%</b>. Without the scalar bump it misses by <b>"
+      + fmt(RECORD - projectEnd(cur, pace, 0)) + "</b>.";
   } else {
     v.classList.add("no");
     $("verdict-head").textContent = "Short by " + fmt(RECORD - projected) + " SR";
-    $("verdict-body").innerHTML = "At <b>" + fmt(pace) + " SR a day</b> Sequoia lands on <b>"
-      + fmt(projected) + "</b> when the season closes — <b>" + fmt(RECORD - projected)
-      + "</b> under the record. Closing it needs <b>" + fmt(needPace) + " a day</b>, about <b>"
-      + ((needPace / pace - 1) * 100).toFixed(0) + "% more</b> than the current rate. A scalar bump would cover that on its own.";
+    $("verdict-body").innerHTML = "At <b>" + fmt(pace) + " SR a day</b>, even with the closing <b>"
+      + BOOST_HOURS + " h at " + SCALAR_BOOST.toFixed(1) + "x</b>, Sequoia lands on <b>"
+      + fmt(projected) + "</b> — <b>" + fmt(RECORD - projected)
+      + "</b> under the record. It needs a base pace of <b>" + fmt(needPace) + " a day</b>, about <b>"
+      + ((needPace / pace - 1) * 100).toFixed(0) + "% more</b> than right now.";
   }
 
   const moving = pace != null && pace > 0
@@ -635,43 +681,41 @@ function render(series) {
       + "</b> short of the all-time high set by <b>[Shy] ShadowFall</b> in Season 1. That is <b>"
       + (pct * 100).toFixed(1) + "%</b> of the way there" + moving + ".";
 
-  renderScalars(cur, territories, pace, daysLeft);
+  renderScenarios(cur, series);
   renderChart(series, c, pace, daysLeft);
 }
 
-// What each scalar step would be worth at the territory count the guild holds right now.
-function renderScalars(cur, territories, pace, daysLeft) {
-  const perDayAt1 = holdingPerDay(territories, 1);
-  const impliedS = pace != null ? pace / perDayAt1 : null;
-  const rows = [];
+// Each pace window, run out to season end under three scalar schedules. Every SR source scales
+// with s, so a schedule is just a multiplier on the closing hours — no need to model holding and
+// capping separately.
+function renderScenarios(cur, series) {
+  const windows = [
+    { label: "Last 24 h", pace: pacePerDay(series, 1) },
+    { label: "Last 48 h", pace: pacePerDay(series, 2) },
+    { label: "Last 7 d",  pace: pacePerDay(series, 7) },
+  ].filter(w => w.pace != null);
 
-  for (const s of SCALAR_STEPS) {
-    const perDay = holdingPerDay(territories, s);
-    const end = cur + perDay * daysLeft;
-    const diff = end - RECORD;
-    const isNow = impliedS != null &&
-      s === SCALAR_STEPS.reduce((a, b) => Math.abs(b - impliedS) < Math.abs(a - impliedS) ? b : a);
-    rows.push(
-      "<tr" + (isNow ? ' class="now"' : "") + ">" +
-        "<td>" + s.toFixed(1) + (isNow ? " · closest to now" : "") + "</td>" +
-        "<td>" + fmt(perDay) + " / day</td>" +
-        "<td>" + fmt(end) + "</td>" +
-        '<td class="' + (diff >= 0 ? "hit" : "miss") + '">' +
-          (diff >= 0 ? "+" : "−") + fmt(Math.abs(diff)) +
-        "</td>" +
-      "</tr>"
-    );
+  if (!windows.length) {
+    $("scalar-rows").innerHTML = '<tr><td colspan="4" style="text-align:left;color:var(--muted)">'
+      + "Not enough history yet.</td></tr>";
+    return;
   }
 
-  if (impliedS != null) {
-    rows.push(
-      '<tr><td colspan="4" style="text-align:left;color:var(--muted);font-size:12px">' +
-      "Observed pace implies <b style=\"color:var(--ink)\">s ≈ " + impliedS.toFixed(1) +
-      "</b> at " + territories + " territories (holding only — capture rating is folded in, " +
-      "so the true scalar sits a step lower)." +
-      "</td></tr>"
-    );
-  }
+  const schedules = [0, BOOST_HOURS, BOOST_HOURS * 2];
+  const rows = windows.map(w => {
+    const cells = schedules.map(h => {
+      const end = projectEnd(cur, w.pace, h);
+      const diff = end - RECORD;
+      return '<td class="' + (diff >= 0 ? "hit" : "miss") + '">' + fmt(end)
+        + '<span style="display:block;font-size:11px;font-weight:400">'
+        + (diff >= 0 ? "+" : "−") + fmt(Math.abs(diff)) + "</span></td>";
+    }).join("");
+    const isBase = w.label === "Last 48 h";
+    return "<tr" + (isBase ? ' class="now"' : "") + "><td>" + w.label
+      + '<span style="display:block;font-size:11px;font-weight:400;color:var(--muted)">'
+      + fmt(w.pace) + " SR/day</span></td>" + cells + "</tr>";
+  });
+
   $("scalar-rows").innerHTML = rows.join("");
 }
 
@@ -685,12 +729,16 @@ function renderChart(series, c, pace, daysLeft) {
   if (pace != null && daysLeft > 0) {
     projection[projection.length - 1] = actual[actual.length - 1];
     const last = plot[plot.length - 1];
-    const steps = 12;
+    const boostStart = SEASON_END - BOOST_HOURS * 3600000;
+    const steps = 24;
     for (let i = 1; i <= steps; i++) {
       const t = last.t + (SEASON_END - last.t) * (i / steps);
+      // Hours before the boost are worth the base rate, hours inside it BOOST_FACTOR times more.
+      const baseDays = (Math.min(t, boostStart) - last.t) / 86400000;
+      const boostDays = Math.max(t - Math.max(boostStart, last.t), 0) / 86400000;
       labels.push(timeLabel(t));
       actual.push(null);
-      projection.push(last.sr + pace * ((t - last.t) / 86400000));
+      projection.push(last.sr + pace * Math.max(baseDays, 0) + pace * BOOST_FACTOR * boostDays);
     }
   }
   const recordLine = labels.map(() => RECORD);
@@ -712,7 +760,7 @@ function renderChart(series, c, pace, daysLeft) {
           fill: false,
         },
         {
-          label: "Projection at current pace",
+          label: "Projection · current pace + 10x final 24 h",
           data: projection,
           borderColor: c.muted,
           borderWidth: 1.5,
@@ -780,9 +828,26 @@ function renderChart(series, c, pace, daysLeft) {
 }
 
 // ─── Load ──────────────────────────────────────────────
+// The sibling tracker at /race/ has polled Sequoia since the season opened, so it carries far
+// more history than this repo does. Same origin, so it is just a fetch. Falls back to the local
+// file if it is ever unavailable.
+const SOURCES = ["https://teslanator20.github.io/race/snapshots.json", "../snapshots.json"];
+
+async function loadSnapshots() {
+  for (const url of SOURCES) {
+    try {
+      const res = await fetch(url + "?_=" + Date.now(), { cache: "no-store" });
+      if (!res.ok) continue;
+      const data = await res.json();
+      if (data.snapshots?.length) return data;
+    } catch (e) { /* try the next source */ }
+  }
+  return null;
+}
+
 async function load() {
-  const res = await fetch("../snapshots.json?_=" + Date.now(), { cache: "no-store" });
-  const data = await res.json();
+  const data = await loadSnapshots();
+  if (!data) { $("hero-sub").textContent = "Could not load snapshot data."; return; }
   const snaps = data.snapshots || [];
   if (!snaps.length) { $("hero-sub").textContent = "No snapshots yet."; return; }
 
