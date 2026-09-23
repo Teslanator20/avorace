@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-23T21:30:40.306Z",
+  "updated": "2026-09-23T21:35:25.854Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 7,
+    "online": 9,
     "total": 150,
     "members": [
       {
@@ -154,8 +154,8 @@
         "uuid": "2f3a3d99-94d2-4f3f-9d8b-ea7e7998669b",
         "rank": "chief",
         "joined": "2026-05-18T21:28:21.778000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA22",
         "contributed": 5795218096668,
         "contributionRank": 15,
         "guildRaidsTotal": 9395
@@ -1078,8 +1078,8 @@
         "uuid": "6fc1d412-7658-4666-8508-1969f1a12316",
         "rank": "recruiter",
         "joined": "2026-07-16T02:46:08.937000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA12",
         "contributed": 391460735318,
         "contributionRank": 76,
         "guildRaidsTotal": 166
@@ -1800,7 +1800,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45.000000Z",
+        "joined": "2025-07-02T19:02:45Z",
         "online": true,
         "server": "NA19",
         "contributed": 1713430239966,
@@ -1921,7 +1921,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22.000000Z",
+        "joined": "2024-04-16T02:21:22Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
@@ -2110,7 +2110,7 @@
         "rank": "strategist",
         "joined": "2026-03-05T22:41:53.353000Z",
         "online": true,
-        "server": "NA27",
+        "server": "NA2",
         "contributed": 2378735739343,
         "contributionRank": 17,
         "guildRaidsTotal": 986
@@ -3222,7 +3222,7 @@
         "joined": "2026-09-23T18:51:32.810000Z",
         "online": true,
         "server": "EU5",
-        "contributed": 1908286,
+        "contributed": 1920286,
         "contributionRank": 135,
         "guildRaidsTotal": 0
       },
