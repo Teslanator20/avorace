@@ -178,6 +178,17 @@
     font-size: clamp(34px, 5.5vw, 56px); line-height: .96;
     letter-spacing: -.01em; font-variation-settings: 'opsz' 144, 'wght' 520;
   }
+  .predicted {
+    margin-top: 14px; font-size: 13px; color: var(--muted);
+  }
+  .predicted b {
+    font-family: 'Fraunces', Georgia, serif; font-size: 19px;
+    font-variation-settings: 'opsz' 96, 'wght' 520; color: var(--ink);
+  }
+  .predicted .delta { font-weight: 600; }
+  .predicted .delta.hit { color: var(--up); }
+  .predicted .delta.miss { color: var(--down); }
+
   .countdown small {
     font-family: 'Inter', sans-serif; font-size: .34em; font-weight: 600;
     letter-spacing: .1em; color: var(--muted); margin: 0 10px 0 2px;
@@ -348,6 +359,7 @@
       <div class="hero-col">
         <div class="hero-label" id="hero-label">Still to go</div>
         <div class="hero-gap"><span id="gap-value">—</span><span class="unit">SR</span></div>
+        <div class="predicted" id="predicted">—</div>
       </div>
       <div class="hero-col">
         <div class="hero-label">Season ends in</div>
@@ -566,15 +578,22 @@ function split(r) {
 }
 
 const daysLeft = () => Math.max((SEASON_END - Date.now()) / 86400000, 0);
-const boostDays = h => Math.min((h ?? BOOST_HOURS) / 24, daysLeft());
 
-// Rating at season end. Holding and capturing double across the bump; raid rating does not.
-function projectEnd(cur, r, boostHours) {
-  const bd = boostDays(boostHours);
+// Everything is projected forward from the newest reading, so the headline number, the chart
+// line and the table can never disagree about where the line starts.
+let anchor = null;
+
+// Predicted rating at time t. Holding and capturing double inside the boost window; raid rating
+// does not, so the boosted rate is less than twice the base rate.
+function predictAt(r, t, boostHours) {
+  const boostStart = SEASON_END - (boostHours ?? BOOST_HOURS) * 3600000;
   const raidPart = Math.min(r.raids * RAID_SR, r.pace);
   const boosted = (r.pace - raidPart) * BOOST_FACTOR + raidPart;
-  return cur + r.pace * (daysLeft() - bd) + boosted * bd;
+  const baseD = Math.max((Math.min(t, boostStart) - anchor.t) / 86400000, 0);
+  const boostD = Math.max(t - Math.max(boostStart, anchor.t), 0) / 86400000;
+  return anchor.sr + r.pace * baseD + boosted * boostD;
 }
+const projectEnd = (r, boostHours) => predictAt(r, SEASON_END, boostHours);
 
 // How much the total rate actually climbs in the boosted window, in percent. Holding and
 // capturing double; raid rating does not, so this lands below 100%.
@@ -584,12 +603,13 @@ function boostShare(r) {
   return (boosted / r.pace - 1) * 100;
 }
 
-// Base pace that lands exactly on the record.
-function requiredPace(cur, r, boostHours) {
-  const bd = boostDays(boostHours);
-  const weighted = (daysLeft() - bd) + BOOST_FACTOR * bd;
+// Base pace that lands exactly on the record, measured from the same anchor.
+function requiredPace(r, boostHours) {
+  const total = (SEASON_END - anchor.t) / 86400000;
+  const bd = Math.min((boostHours ?? BOOST_HOURS) / 24, total);
+  const weighted = (total - bd) + BOOST_FACTOR * bd;
   if (weighted <= 0) return null;
-  return (RECORD - cur - r.raids * RAID_SR * bd * (1 - BOOST_FACTOR)) / weighted;
+  return (RECORD - anchor.sr - r.raids * RAID_SR * bd * (1 - BOOST_FACTOR)) / weighted;
 }
 
 // ─── Countdown ─────────────────────────────────────────
@@ -625,7 +645,8 @@ syncWindowButtons();
 function render(series) {
   lastSeries = series;
   const c = colors();
-  const cur = series[series.length - 1].sr;
+  anchor = series[series.length - 1];
+  const cur = anchor.sr;
   const gap = RECORD - cur;
   const pct = Math.min(cur / RECORD, 1);
   const beaten = gap <= 0;
@@ -652,8 +673,8 @@ function render(series) {
   const wl = windowLabel(r.hours);
   $("mix-hint").textContent = "per day, measured over the last " + wl;
 
-  const projected = projectEnd(cur, r);
-  const needPace = requiredPace(cur, r);
+  const projected = projectEnd(r);
+  const needPace = requiredPace(r);
 
   if (!beaten) {
     const projPct = Math.min(projected / RECORD, 1);
@@ -668,6 +689,9 @@ function render(series) {
   $("s-need").textContent = beaten ? "—" : fmt(needPace);
   $("s-need-sub").textContent = beaten ? "record already broken"
     : "SR per day across " + fmt1(daysLeft()) + " days left";
+  const pd = projected - RECORD;
+  $("predicted").innerHTML = "Predicted final <b>" + fmt(projected) + '</b> <span class="delta '
+    + (pd >= 0 ? "hit" : "miss") + '">' + (pd >= 0 ? "+" : "−") + fmt(Math.abs(pd)) + "</span>";
   $("s-proj").textContent = fmt(projected);
   $("s-proj-sub").textContent = "final 24 h at 10× · raids stay flat";
 
@@ -736,7 +760,7 @@ function renderScenarios(cur, series) {
     .map(h => rates(series, h))
     .filter(Boolean)
     .map(r => {
-      const end = projectEnd(cur, r);
+      const end = projectEnd(r);
       const diff = end - RECORD;
       return "<tr" + (r.hours === windowHours ? ' class="now"' : "") + ">"
         + "<td>Last " + windowLabel(r.hours) + "</td>"
@@ -795,7 +819,12 @@ function rateOnGrid(series, grid, hours, pick) {
   });
 }
 
-function baseOpts(c, legend) {
+const isMidnight = t => new Date(t).getHours() === 0;
+const dayTick = t => new Date(t).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+
+// Ticks sit on local midnight only, so each day occupies exactly the same width and the labels
+// never drift with the refresh.
+function baseOpts(c, legend, grid) {
   return {
     responsive: true, maintainAspectRatio: false,
     interaction: { mode: "index", intersect: false },
@@ -812,9 +841,17 @@ function baseOpts(c, legend) {
       },
     },
     scales: {
-      x: { grid: { color: c.grid, drawTicks: false },
-           ticks: { color: c.muted, font: { family: "Inter", size: 10 },
-                    maxRotation: 0, autoSkip: true, maxTicksLimit: 7, padding: 6 } },
+      x: {
+        grid: {
+          drawTicks: false,
+          color: ctx => grid && isMidnight(grid[ctx.index]) ? c.grid : "transparent",
+        },
+        ticks: {
+          color: c.muted, font: { family: "Inter", size: 10 },
+          maxRotation: 0, autoSkip: false, padding: 6,
+          callback: (v, i) => grid && isMidnight(grid[i]) ? dayTick(grid[i]) : "",
+        },
+      },
       y: { grid: { color: c.grid, drawTicks: false },
            ticks: { color: c.muted, font: { family: "Inter", size: 10 },
                     callback: v => Number(v).toLocaleString("en-US"), padding: 6 } },
@@ -835,27 +872,17 @@ function gridChart(key, grid, values, c, label, color, opts) {
         borderWidth: 2, pointRadius: 0, tension: opts?.stepped ? 0 : .2,
         stepped: !!opts?.stepped, fill: true, spanGaps: false },
     ] },
-    options: baseOpts(c, false),
+    options: baseOpts(c, false, grid),
   });
 }
 
 function renderMainChart(series, grid, c, r) {
   const actual = onGrid(series, grid, p => p.sr);
-  const last = series[series.length - 1];
-  const boostStart = SEASON_END - BOOST_HOURS * 3600000;
-  const raidPart = Math.min(r.raids * RAID_SR, r.pace);
-  const boostedRate = (r.pace - raidPart) * BOOST_FACTOR + raidPart;
-
   // Projection picks up where the readings stop and runs to the close.
-  const projection = grid.map(t => {
-    if (t < last.t) return null;
-    const baseD = Math.max((Math.min(t, boostStart) - last.t) / 86400000, 0);
-    const boostD = Math.max(t - Math.max(boostStart, last.t), 0) / 86400000;
-    return last.sr + r.pace * baseD + boostedRate * boostD;
-  });
+  const projection = grid.map(t => t < anchor.t ? null : predictAt(r, t));
 
   const seen = actual.filter(v => v != null);
-  const opts = baseOpts(c);
+  const opts = baseOpts(c, true, grid);
   opts.scales.y.min = Math.floor(Math.min.apply(null, seen) * 0.99);
   opts.scales.y.max = Math.ceil(RECORD * 1.015);
   draw("chart-main", {
@@ -863,7 +890,7 @@ function renderMainChart(series, grid, c, r) {
     data: { labels: grid.map(timeLabel), datasets: [
       { label: "All-time record", data: grid.map(() => RECORD), borderColor: c.record,
         borderWidth: 1.5, borderDash: [7, 5], pointRadius: 0, fill: false },
-      { label: "Projection", data: projection, borderColor: c.muted,
+      { label: "Predicted " + fmt(projection[projection.length - 1]), data: projection, borderColor: c.muted,
         borderWidth: 1.5, borderDash: [3, 4], pointRadius: 0, fill: false, spanGaps: true },
       { label: "Sequoia", data: actual, borderColor: c.left, backgroundColor: c.left + "22",
         borderWidth: 2, pointRadius: 0, pointHoverRadius: 4, tension: .25, fill: true },
