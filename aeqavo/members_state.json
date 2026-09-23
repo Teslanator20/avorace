@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T17:15:30.206Z",
+  "updated": "2026-09-23T17:20:31.114Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -199,10 +199,10 @@
         "rank": "chief",
         "joined": "2026-08-11T20:39:59.283000Z",
         "online": true,
-        "server": "EU30",
-        "contributed": 4063909649184,
+        "server": "EU2",
+        "contributed": 4066501428297,
         "contributionRank": 24,
-        "guildRaidsTotal": 9477
+        "guildRaidsTotal": 9479
       },
       {
         "username": "Gin_Tonic123",
@@ -1057,10 +1057,10 @@
         "rank": "recruiter",
         "joined": "2026-08-01T18:07:53.399000Z",
         "online": true,
-        "server": "EU30",
-        "contributed": 663498985918,
+        "server": "EU2",
+        "contributed": 666090765031,
         "contributionRank": 65,
-        "guildRaidsTotal": 2228
+        "guildRaidsTotal": 2230
       },
       {
         "username": "CatgirlMikuTGM",
@@ -1410,7 +1410,7 @@
         "joined": "2026-09-11T06:25:55.990000Z",
         "online": true,
         "server": "NA15",
-        "contributed": 15557480821,
+        "contributed": 15557488046,
         "contributionRank": 119,
         "guildRaidsTotal": 6
       },
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 14,
+    "online": 13,
     "total": 147,
     "members": [
       {
@@ -3176,8 +3176,8 @@
         "uuid": "50fe23ac-fda1-4d9f-8e14-203083937664",
         "rank": "recruit",
         "joined": "2026-09-23T00:33:22.923000Z",
-        "online": true,
-        "server": "EU15",
+        "online": false,
+        "server": null,
         "contributed": 12958895565,
         "contributionRank": 118,
         "guildRaidsTotal": 7
@@ -3210,8 +3210,8 @@
         "rank": "recruit",
         "joined": "2026-09-17T20:31:00.919000Z",
         "online": true,
-        "server": "EU1",
-        "contributed": 1858786,
+        "server": "EU21",
+        "contributed": 1880016,
         "contributionRank": 134,
         "guildRaidsTotal": 0
       },
