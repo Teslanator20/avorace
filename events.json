@@ -139,7 +139,26 @@
       "rank": "recruit",
       "joinedAt": "2026-09-23T00:33:22.923000Z",
       "raidsTotal": 7
+    },
+    {
+      "ts": "2026-09-23T18:55:25.555Z",
+      "guild": "Avicia",
+      "uuid": "236a3dac-c18b-4331-a0e0-34a7226d055e",
+      "username": "Zenorton",
+      "type": "promoted",
+      "from": "recruiter",
+      "to": "captain"
+    },
+    {
+      "ts": "2026-09-23T18:55:25.555Z",
+      "guild": "Avicia",
+      "uuid": "4d5c51b2-f06b-489f-91b6-9180419b4e48",
+      "username": "Elldar",
+      "type": "joined",
+      "rank": "recruit",
+      "joinedAt": "2026-09-23T18:51:32.810000Z",
+      "raidsTotal": 0
     }
   ],
-  "updated": "2026-09-23T18:50:30.206Z"
+  "updated": "2026-09-23T18:55:25.555Z"
 }
