@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Sequoia vs the All-Time Record — Wynncraft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --paper:        #f4efe1;
+    --paper-shade:  #ece6d2;
+    --card:         #fffaec;
+    --ink:          #1c1814;
+    --ink-soft:     #3d3a33;
+    --muted:        #8d8472;
+    --rule:         #d6cdb5;
+    --rule-strong:  #1c1814;
+    --left:         #3a8b3a;
+    --record:       #b8892c;
+    --pulse:        #5a8a4a;
+    --grid:         rgba(28,24,20,0.08);
+    --vignette:     rgba(0,0,0,0.035);
+  }
+  html[data-theme="dark"] {
+    --paper:        #16140f;
+    --paper-shade:  #1f1c15;
+    --card:         #1d1a14;
+    --ink:          #ece6d2;
+    --ink-soft:     #c8c1ac;
+    --muted:        #8a8270;
+    --rule:         #3a342a;
+    --rule-strong:  #ece6d2;
+    --left:         #5fbf5f;
+    --record:       #e0a951;
+    --pulse:        #7eb56a;
+    --grid:         rgba(236,230,210,0.08);
+    --vignette:     rgba(255,245,220,0.04);
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--paper); transition: background-color .3s; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: 'tnum' 1, 'cv11' 1;
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(ellipse at 50% -10%, var(--vignette), transparent 55%);
+    transition: background-color .3s, color .3s;
+  }
+  ::selection { background: var(--ink); color: var(--paper); }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 56px 36px 80px; position: relative; }
+
+  .theme-toggle {
+    position: absolute; top: 32px; right: 36px;
+    background: transparent; border: 1px solid var(--rule);
+    border-radius: 999px; padding: 7px 14px 7px 12px;
+    font: 500 11px/1 'Inter', sans-serif; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted); cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: color .2s, border-color .2s;
+  }
+  .theme-toggle:hover { color: var(--ink); border-color: var(--ink); }
+  .theme-toggle .glyph {
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--ink); box-shadow: inset -3px -3px 0 0 var(--paper);
+    transition: background .2s, box-shadow .2s;
+  }
+  html[data-theme="dark"] .theme-toggle .glyph {
+    background: var(--paper); box-shadow: inset -3px -3px 0 0 var(--paper-shade);
+  }
+
+  .masthead { margin-bottom: 26px; }
+  .eyebrow {
+    font: 600 11px/1 'Inter', sans-serif; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--muted); margin: 0 0 11px;
+  }
+  h1 {
+    margin: 0; font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(34px, 5.5vw, 52px); line-height: 1.02;
+    letter-spacing: -.015em;
+    font-variation-settings: 'opsz' 96, 'wght' 500;
+  }
+  h1 em { font-style: italic; font-variation-settings: 'opsz' 96, 'wght' 420; }
+
+  .meta {
+    margin-top: 14px; padding: 11px 0;
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule);
+    display: flex; flex-wrap: wrap; gap: 14px 26px;
+    font: 500 11px/1 'Inter', sans-serif;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+  }
+  .meta strong { color: var(--ink); font-weight: 600; letter-spacing: .04em; }
+  .meta .pulse {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--pulse); border-radius: 50%;
+    margin-right: 7px; transform: translateY(-1px);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+
+  .races {
+    margin-top: 12px;
+    display: flex; flex-wrap: wrap; gap: 8px;
+    font: 600 10.5px/1 'Inter', sans-serif;
+    letter-spacing: .14em; text-transform: uppercase;
+  }
+  .races a, .races .here {
+    padding: 7px 11px; border: 1px solid var(--rule);
+    color: var(--muted); text-decoration: none;
+    transition: color .15s, border-color .15s, background-color .15s;
+  }
+  .races a:hover { color: var(--ink); border-color: var(--rule-strong); }
+  .races .here {
+    color: var(--ink); border-color: var(--rule-strong);
+    background: var(--paper-shade);
+  }
+
+  h2 {
+    margin: 48px 0 16px;
+    font: 600 11.5px/1 'Inter', sans-serif; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--muted);
+    padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+  }
+
+  .hero {
+    margin-top: 30px; padding: 30px 32px;
+    background: var(--card); border: 1px solid var(--rule);
+    box-shadow: 0 1px 0 var(--rule);
+  }
+  .hero-label {
+    font: 600 11px/1 'Inter', sans-serif; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+  }
+  .hero-gap {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(46px, 9vw, 96px); line-height: .94;
+    letter-spacing: -.02em; font-variation-settings: 'opsz' 144, 'wght' 540;
+    color: var(--record);
+  }
+  .hero-gap .unit {
+    font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted); margin-left: 14px; vertical-align: middle;
+  }
+  .hero-sub {
+    margin-top: 16px; font-size: 13.5px; line-height: 1.6; color: var(--ink-soft);
+    max-width: 62ch;
+  }
+  .hero-sub b { color: var(--ink); font-weight: 600; }
+
+  .bar-outer {
+    margin-top: 26px; height: 10px; background: var(--paper-shade);
+    border: 1px solid var(--rule); position: relative; overflow: hidden;
+  }
+  .bar-inner {
+    height: 100%; background: var(--left); width: 0;
+    transition: width .8s cubic-bezier(.22,.61,.36,1);
+  }
+  .bar-legend {
+    margin-top: 9px; display: flex; justify-content: space-between; gap: 12px;
+    font: 500 10.5px/1 'Inter', sans-serif; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted);
+  }
+
+  .stats {
+    margin-top: 22px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--rule); border: 1px solid var(--rule);
+  }
+  .stat { background: var(--card); padding: 18px 18px 16px; }
+  .stat .k {
+    font: 600 10px/1.3 'Inter', sans-serif; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 9px;
+  }
+  .stat .v {
+    font-family: 'Fraunces', Georgia, serif; font-size: 25px; line-height: 1.05;
+    font-variation-settings: 'opsz' 96, 'wght' 520;
+  }
+  .stat .s { margin-top: 6px; font-size: 11.5px; color: var(--muted); line-height: 1.45; }
+
+  .holder {
+    margin-top: 22px; padding: 20px 22px;
+    background: var(--card); border: 1px solid var(--rule);
+    border-left: 3px solid var(--record);
+    display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline;
+  }
+  .holder .who {
+    font-family: 'Fraunces', Georgia, serif; font-size: 21px;
+    font-variation-settings: 'opsz' 96, 'wght' 520;
+  }
+  .holder .season { font-size: 13px; color: var(--muted); }
+  .holder .num {
+    font-family: 'Fraunces', Georgia, serif; font-size: 21px;
+    color: var(--record); font-variation-settings: 'opsz' 96, 'wght' 540;
+  }
+  .holder .note {
+    font-size: 12.5px; color: var(--muted); line-height: 1.6; flex-basis: 100%;
+    max-width: 70ch;
+  }
+
+  .chart-card {
+    background: var(--card); border: 1px solid var(--rule);
+    padding: 20px 20px 14px; box-shadow: 0 1px 0 var(--rule);
+  }
+  .chart-box { height: 380px; }
+
+  .foot {
+    margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--rule);
+    font-size: 11.5px; color: var(--muted); line-height: 1.7;
+  }
+  .foot a { color: var(--ink-soft); }
+  .foot code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px; color: var(--ink-soft);
+  }
+
+  @media (max-width: 880px) {
+    .wrap { padding: 40px 18px 60px; }
+    .theme-toggle { top: 20px; right: 18px; }
+    .hero { padding: 22px 20px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .chart-box { height: 300px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+    <span class="glyph"></span><span id="theme-label">Dark</span>
+  </button>
+
+  <header class="masthead">
+    <div class="eyebrow">Wynncraft &nbsp;·&nbsp; <span id="season-eyebrow">Season —</span> &nbsp;·&nbsp; All-time record chase</div>
+    <h1>Sequoia <em>vs</em> the Record</h1>
+    <div class="meta">
+      <span><span class="pulse"></span>Live</span>
+      <span><strong id="cur-name">—</strong> chasing <strong>20,270,919</strong></span>
+      <span>Updated <strong id="updated">…</strong></span>
+      <span>Refreshes every 5 minutes</span>
+    </div>
+    <nav class="races">
+      <a href="../">Sequoia vs Avicia</a>
+      <a href="../aeqavo/">Aequitas vs Avicia</a>
+      <span class="here">Sequoia vs the Record</span>
+      <a href="https://teslanator20.github.io/race/">Sequoia vs Aequitas</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-label" id="hero-label">Still to go</div>
+    <div class="hero-gap"><span id="gap-value">—</span><span class="unit">SR</span></div>
+    <div class="hero-sub" id="hero-sub">Loading…</div>
+
+    <div class="bar-outer"><div class="bar-inner" id="bar"></div></div>
+    <div class="bar-legend">
+      <span id="bar-left">—</span>
+      <span>Record 20,270,919</span>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="k">Current rating</div>
+      <div class="v" id="s-current">—</div>
+      <div class="s" id="s-current-sub">—</div>
+    </div>
+    <div class="stat">
+      <div class="k">Pace · last 24 h</div>
+      <div class="v" id="s-pace24">—</div>
+      <div class="s">SR per day</div>
+    </div>
+    <div class="stat">
+      <div class="k">Pace · last 7 d</div>
+      <div class="v" id="s-pace7">—</div>
+      <div class="s">SR per day</div>
+    </div>
+    <div class="stat">
+      <div class="k">Projected break</div>
+      <div class="v" id="s-eta">—</div>
+      <div class="s" id="s-eta-sub">at 7-day pace</div>
+    </div>
+  </div>
+
+  <div class="holder">
+    <span class="who">[Shy] ShadowFall</span>
+    <span class="num">20,270,919</span>
+    <span class="season">Season 1</span>
+    <span class="note">
+      The highest season rating ever recorded on Wynncraft, set when seasons ran far longer
+      than they do now. No guild has come close in the five years since.
+    </span>
+  </div>
+
+  <h2>Rating this season vs the record</h2>
+  <div class="chart-card">
+    <div class="chart-box"><canvas id="chart"></canvas></div>
+  </div>
+
+  <div class="foot">
+    The record is a fixed historical figure, not polled. Sequoia's rating comes from the same
+    5-minute poll that drives the <a href="../">other trackers</a> — this page reads that
+    <code>snapshots.json</code> directly, so it costs no extra Wynncraft API calls.
+  </div>
+
+</div>
+
+<script>
+// ─── The record being chased ───────────────────────────
+// Fixed historical value: [Shy] ShadowFall, Season 1. Not fetchable from the API — seasons
+// that old are not in any leaderboard endpoint, so it lives here as a constant.
+const RECORD = 20270919;
+
+// ─── Theme ─────────────────────────────────────────────
+(function () {
+  const stored = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.setAttribute("data-theme", stored || (prefersDark ? "dark" : "light"));
+})();
+function syncTheme() {
+  const cur = document.documentElement.getAttribute("data-theme");
+  document.getElementById("theme-label").textContent = cur === "dark" ? "Light" : "Dark";
+}
+syncTheme();
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  const cur = document.documentElement.getAttribute("data-theme");
+  const next = cur === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+  syncTheme();
+  if (lastSeries) render(lastSeries);
+});
+
+// ─── Helpers ───────────────────────────────────────────
+const fmt = n => Math.round(n ?? 0).toLocaleString("en-US");
+const $ = id => document.getElementById(id);
+
+function colors() {
+  const cs = getComputedStyle(document.documentElement);
+  const get = k => cs.getPropertyValue(k).trim();
+  return {
+    left: get("--left"), record: get("--record"), muted: get("--muted"),
+    grid: get("--grid"), card: get("--card"), ink: get("--ink"), rule: get("--rule"),
+  };
+}
+
+function timeAgo(iso) {
+  const s = (Date.now() - new Date(iso).getTime()) / 1000;
+  if (s < 90) return "just now";
+  if (s < 5400) return Math.round(s / 60) + " min ago";
+  if (s < 172800) return Math.round(s / 3600) + " h ago";
+  return Math.round(s / 86400) + " d ago";
+}
+
+const dayMonth = d => d.toLocaleString("en-US", { month: "short", day: "numeric" });
+const timeLabel = t => new Date(t).toLocaleString("en-US",
+  { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false });
+
+// A full season is thousands of points; the chart only needs enough to draw the shape.
+function downsample(arr, max) {
+  if (arr.length <= max) return arr;
+  const step = arr.length / max;
+  const out = [];
+  for (let i = 0; i < max; i++) out.push(arr[Math.floor(i * step)]);
+  out[out.length - 1] = arr[arr.length - 1];
+  return out;
+}
+
+// Rate over the last `days`, measured between the oldest and newest point inside the window.
+// Returns null when the window holds fewer than two points, or spans so little time that the
+// slope would be noise rather than a trend.
+function pacePerDay(series, days) {
+  const cutoff = Date.now() - days * 86400000;
+  const win = series.filter(p => p.t >= cutoff);
+  if (win.length < 2) return null;
+  const spanDays = (win[win.length - 1].t - win[0].t) / 86400000;
+  if (spanDays < days / 8) return null;
+  return (win[win.length - 1].sr - win[0].sr) / spanDays;
+}
+
+// ─── Render ────────────────────────────────────────────
+let chart = null;
+let lastSeries = null;
+
+function render(series) {
+  lastSeries = series;
+  const c = colors();
+  const cur = series[series.length - 1].sr;
+  const gap = RECORD - cur;
+  const pct = Math.min(cur / RECORD, 1);
+  const beaten = gap <= 0;
+
+  $("hero-label").textContent = beaten ? "Record beaten by" : "Still to go";
+  $("gap-value").textContent = fmt(Math.abs(gap));
+  $("bar").style.width = (pct * 100).toFixed(2) + "%";
+  $("bar").style.background = beaten ? c.record : c.left;
+  $("bar-left").textContent = fmt(cur) + " · " + (pct * 100).toFixed(1) + "%";
+
+  const p24 = pacePerDay(series, 1);
+  const p7  = pacePerDay(series, 7);
+  const pace = p7 ?? p24;
+  const paceLabel = p7 != null ? "at 7-day pace" : "at 24-hour pace";
+
+  let etaText = "—", etaSub = paceLabel;
+  if (beaten) {
+    etaText = "Done";
+    etaSub = "all-time record broken";
+  } else if (pace != null && pace > 0) {
+    const days = gap / pace;
+    etaText = dayMonth(new Date(Date.now() + days * 86400000));
+    etaSub = (days < 1 ? "in under a day" : "in " + days.toFixed(1) + " days") + " · " + paceLabel;
+  } else if (pace != null) {
+    etaSub = "rating not climbing";
+  } else {
+    etaSub = "not enough history yet";
+  }
+
+  $("s-current").textContent = fmt(cur);
+  $("s-current-sub").textContent = (pct * 100).toFixed(2) + "% of the record";
+  $("s-pace24").textContent = p24 != null ? fmt(p24) : "—";
+  $("s-pace7").textContent  = p7  != null ? fmt(p7)  : "—";
+  $("s-eta").textContent = etaText;
+  $("s-eta-sub").textContent = etaSub;
+
+  const moving = pace != null && pace > 0
+    ? ", moving at roughly <b>" + fmt(pace) + " SR a day</b>"
+    : "";
+  $("hero-sub").innerHTML = beaten
+    ? "Sequoia sits at <b>" + fmt(cur) + "</b> — past <b>[Shy] ShadowFall</b>&rsquo;s Season 1 mark of <b>"
+      + fmt(RECORD) + "</b>, the highest season rating Wynncraft has ever seen."
+    : "Sequoia sits at <b>" + fmt(cur) + "</b>, <b>" + fmt(gap)
+      + "</b> short of the all-time high set by <b>[Shy] ShadowFall</b> in Season 1. That is <b>"
+      + (pct * 100).toFixed(1) + "%</b> of the way there" + moving + ".";
+
+  const plot = downsample(series, 400);
+  const labels = plot.map(p => timeLabel(p.t));
+  const pts = plot.map(p => p.sr);
+  const recordLine = plot.map(() => RECORD);
+  const lo = Math.min.apply(null, pts);
+
+  if (chart) chart.destroy();
+  chart = new Chart($("chart"), {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "All-time record",
+          data: recordLine,
+          borderColor: c.record,
+          borderWidth: 1.5,
+          borderDash: [7, 5],
+          pointRadius: 0,
+          fill: false,
+        },
+        {
+          label: "Sequoia",
+          data: pts,
+          borderColor: c.left,
+          backgroundColor: c.left + "22",
+          borderWidth: 2,
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          tension: .25,
+          fill: true,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: {
+          labels: {
+            color: c.muted, boxWidth: 10, boxHeight: 10, usePointStyle: true,
+            font: { family: "Inter", size: 11 },
+          },
+        },
+        tooltip: {
+          backgroundColor: c.card,
+          titleColor: c.ink,
+          bodyColor: c.ink,
+          borderColor: c.rule,
+          borderWidth: 1,
+          padding: 10,
+          callbacks: { label: ctx => ctx.dataset.label + ": " + fmt(ctx.parsed.y) },
+        },
+      },
+      scales: {
+        x: {
+          grid: { color: c.grid, drawTicks: false },
+          ticks: {
+            color: c.muted, font: { family: "Inter", size: 10 },
+            maxRotation: 0, autoSkip: true, maxTicksLimit: 8, padding: 6,
+          },
+        },
+        y: {
+          min: Math.floor(lo * 0.985),
+          max: Math.ceil(RECORD * 1.015),
+          grid: { color: c.grid },
+          ticks: {
+            color: c.muted, font: { family: "Inter", size: 10 },
+            callback: v => Number(v).toLocaleString("en-US"), padding: 6,
+          },
+        },
+      },
+    },
+  });
+}
+
+// ─── Load ──────────────────────────────────────────────
+async function load() {
+  const res = await fetch("../snapshots.json?_=" + Date.now(), { cache: "no-store" });
+  const data = await res.json();
+  const snaps = data.snapshots || [];
+  if (!snaps.length) { $("hero-sub").textContent = "No snapshots yet."; return; }
+
+  const season = snaps[snaps.length - 1].season;
+  const series = snaps
+    .filter(s => s.season === season && s.left && Number.isFinite(s.left.seasonSr))
+    .map(s => ({ t: new Date(s.ts).getTime(), sr: s.left.seasonSr }))
+    .sort((a, b) => a.t - b.t);
+  if (!series.length) { $("hero-sub").textContent = "No rating data for this season yet."; return; }
+
+  $("cur-name").textContent = data.config?.left?.name ?? snaps[snaps.length - 1].left.name ?? "Sequoia";
+  $("season-eyebrow").textContent = "Season " + season;
+  $("updated").textContent = timeAgo(data.updated ?? snaps[snaps.length - 1].ts);
+
+  render(series);
+}
+
+load();
+setInterval(load, 5 * 60000);
+</script>
+</body>
+</html>
