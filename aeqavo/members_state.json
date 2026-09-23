@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T19:40:32.341Z",
+  "updated": "2026-09-23T19:45:30.570Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 14,
+    "online": 15,
     "total": 148,
     "members": [
       {
@@ -1757,8 +1757,8 @@
         "uuid": "b71f6857-9e06-473b-be58-3e50289db447",
         "rank": "chief",
         "joined": "2025-06-17T07:11:31.184000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU23",
         "contributed": 3453125683938,
         "contributionRank": 13,
         "guildRaidsTotal": 1602
@@ -2035,7 +2035,7 @@
         "online": false,
         "server": null,
         "contributed": 0,
-        "contributionRank": 147,
+        "contributionRank": 148,
         "guildRaidsTotal": 394
       },
       {
@@ -2109,8 +2109,8 @@
         "uuid": "8813f4e0-65ce-45fa-a7ee-95445fd0701e",
         "rank": "strategist",
         "joined": "2026-03-05T22:41:53.353000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA23",
         "contributed": 2378735739343,
         "contributionRank": 17,
         "guildRaidsTotal": 986
@@ -2230,8 +2230,8 @@
         "uuid": "8456510a-ab25-49d9-bcd4-747b06e408d0",
         "rank": "strategist",
         "joined": "2026-09-18T23:21:06.839000Z",
-        "online": true,
-        "server": "EU9",
+        "online": false,
+        "server": null,
         "contributed": 25917920243,
         "contributionRank": 108,
         "guildRaidsTotal": 184
@@ -2805,7 +2805,7 @@
         "online": false,
         "server": null,
         "contributed": 0,
-        "contributionRank": 139,
+        "contributionRank": 140,
         "guildRaidsTotal": 100
       },
       {
@@ -3113,7 +3113,7 @@
         "online": false,
         "server": null,
         "contributed": 0,
-        "contributionRank": 138,
+        "contributionRank": 139,
         "guildRaidsTotal": 0
       },
       {
@@ -3124,7 +3124,7 @@
         "online": false,
         "server": null,
         "contributed": 0,
-        "contributionRank": 140,
+        "contributionRank": 141,
         "guildRaidsTotal": 0
       },
       {
@@ -3135,7 +3135,7 @@
         "online": false,
         "server": null,
         "contributed": 0,
-        "contributionRank": 141,
+        "contributionRank": 142,
         "guildRaidsTotal": 65
       },
       {
@@ -3146,7 +3146,7 @@
         "online": false,
         "server": null,
         "contributed": 0,
-        "contributionRank": 142,
+        "contributionRank": 143,
         "guildRaidsTotal": 5
       },
       {
@@ -3157,7 +3157,7 @@
         "online": false,
         "server": null,
         "contributed": 0,
-        "contributionRank": 143,
+        "contributionRank": 144,
         "guildRaidsTotal": 182
       },
       {
@@ -3238,6 +3238,17 @@
         "guildRaidsTotal": 0
       },
       {
+        "username": "Elldar",
+        "uuid": "4d5c51b2-f06b-489f-91b6-9180419b4e48",
+        "rank": "recruit",
+        "joined": "2026-09-23T18:51:32.810000Z",
+        "online": true,
+        "server": "EU8",
+        "contributed": 15077,
+        "contributionRank": 137,
+        "guildRaidsTotal": 0
+      },
+      {
         "username": "NoHairlineAtAll",
         "uuid": "271b9e5c-6cdc-4d97-a3d9-5d5abd4047d3",
         "rank": "recruit",
@@ -3245,7 +3256,7 @@
         "online": false,
         "server": null,
         "contributed": 8369,
-        "contributionRank": 137,
+        "contributionRank": 138,
         "guildRaidsTotal": 0
       },
       {
@@ -3256,7 +3267,7 @@
         "online": false,
         "server": null,
         "contributed": 0,
-        "contributionRank": 144,
+        "contributionRank": 145,
         "guildRaidsTotal": 0
       },
       {
@@ -3267,7 +3278,7 @@
         "online": false,
         "server": null,
         "contributed": 0,
-        "contributionRank": 145,
+        "contributionRank": 146,
         "guildRaidsTotal": 4
       },
       {
@@ -3278,19 +3289,8 @@
         "online": false,
         "server": null,
         "contributed": 0,
-        "contributionRank": 146,
+        "contributionRank": 147,
         "guildRaidsTotal": 28
-      },
-      {
-        "username": "Elldar",
-        "uuid": "4d5c51b2-f06b-489f-91b6-9180419b4e48",
-        "rank": "recruit",
-        "joined": "2026-09-23T18:51:32.810000Z",
-        "online": true,
-        "server": "EU8",
-        "contributed": 0,
-        "contributionRank": 148,
-        "guildRaidsTotal": 0
       }
     ]
   }
