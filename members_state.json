@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T19:29:16.030Z",
+  "updated": "2026-09-23T19:30:42.551Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
@@ -1671,7 +1671,7 @@
         "joined": "2023-01-03T00:08:33.716000Z",
         "online": false,
         "server": null,
-        "contributed": 2922636282915,
+        "contributed": 2925228062028,
         "contributionRank": 15,
         "guildRaidsTotal": 1475
       },
@@ -1748,7 +1748,7 @@
         "joined": "2026-02-12T01:31:35.069000Z",
         "online": true,
         "server": "EU8",
-        "contributed": 3960632989199,
+        "contributed": 3963224768312,
         "contributionRank": 10,
         "guildRaidsTotal": 5059
       },
@@ -2232,8 +2232,8 @@
         "joined": "2026-09-18T23:21:06.839000Z",
         "online": true,
         "server": "EU8",
-        "contributed": 20734362017,
-        "contributionRank": 112,
+        "contributed": 23326141130,
+        "contributionRank": 109,
         "guildRaidsTotal": 183
       },
       {
@@ -2286,7 +2286,7 @@
         "rank": "captain",
         "joined": "2026-08-05T02:15:20.499000Z",
         "online": true,
-        "server": "NA1",
+        "server": "EU1",
         "contributed": 1163773988710,
         "contributionRank": 28,
         "guildRaidsTotal": 714
@@ -2342,7 +2342,7 @@
         "joined": "2026-09-10T13:02:52.277000Z",
         "online": true,
         "server": "EU8",
-        "contributed": 673862569380,
+        "contributed": 676454348493,
         "contributionRank": 41,
         "guildRaidsTotal": 5938
       },
@@ -2739,7 +2739,7 @@
         "online": false,
         "server": null,
         "contributed": 21226987053,
-        "contributionRank": 110,
+        "contributionRank": 111,
         "guildRaidsTotal": 61
       },
       {
@@ -2959,7 +2959,7 @@
         "online": false,
         "server": null,
         "contributed": 22153118361,
-        "contributionRank": 109,
+        "contributionRank": 110,
         "guildRaidsTotal": 34
       },
       {
@@ -2970,7 +2970,7 @@
         "online": false,
         "server": null,
         "contributed": 20764096975,
-        "contributionRank": 111,
+        "contributionRank": 112,
         "guildRaidsTotal": 159
       },
       {
