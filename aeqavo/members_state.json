@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-23T20:15:30.247Z",
+  "updated": "2026-09-23T20:20:31.021Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 7,
+    "online": 10,
     "total": 150,
     "members": [
       {
@@ -34,10 +34,10 @@
         "rank": "chief",
         "joined": "2024-02-20T14:52:55.148000Z",
         "online": true,
-        "server": "EU33",
+        "server": "EU32",
         "contributed": 22045286844784,
         "contributionRank": 2,
-        "guildRaidsTotal": 9598
+        "guildRaidsTotal": 9599
       },
       {
         "username": "LegitNube",
@@ -199,10 +199,10 @@
         "rank": "chief",
         "joined": "2026-08-11T20:39:59.283000Z",
         "online": true,
-        "server": "EU17",
-        "contributed": 4102786335879,
+        "server": "EU30",
+        "contributed": 4105378114992,
         "contributionRank": 24,
-        "guildRaidsTotal": 9492
+        "guildRaidsTotal": 9493
       },
       {
         "username": "Gin_Tonic123",
@@ -818,7 +818,7 @@
         "server": null,
         "contributed": 1117056849471,
         "contributionRank": 56,
-        "guildRaidsTotal": 918
+        "guildRaidsTotal": 919
       },
       {
         "username": "_paxq",
@@ -1045,8 +1045,8 @@
         "uuid": "b058162c-4a9d-43e6-902b-16df4ce10da5",
         "rank": "recruiter",
         "joined": "2026-03-01T18:49:55.639000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU34",
         "contributed": 1360900197902,
         "contributionRank": 50,
         "guildRaidsTotal": 759
@@ -1056,11 +1056,11 @@
         "uuid": "1dca485f-47a8-4b15-817e-84d7fe0140c5",
         "rank": "recruiter",
         "joined": "2026-08-01T18:07:53.399000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU8",
         "contributed": 689416777048,
         "contributionRank": 65,
-        "guildRaidsTotal": 2238
+        "guildRaidsTotal": 2239
       },
       {
         "username": "CatgirlMikuTGM",
@@ -1276,11 +1276,11 @@
         "uuid": "6f4b0cb6-865e-4d95-895e-0b38a3f746a0",
         "rank": "recruit",
         "joined": "2026-08-24T14:36:57.797000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU8",
         "contributed": 54438251699,
         "contributionRank": 102,
-        "guildRaidsTotal": 22
+        "guildRaidsTotal": 23
       },
       {
         "username": "Astrike",
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 18,
+    "online": 17,
     "total": 148,
     "members": [
       {
@@ -1673,7 +1673,7 @@
         "server": null,
         "contributed": 2933003399367,
         "contributionRank": 15,
-        "guildRaidsTotal": 1478
+        "guildRaidsTotal": 1479
       },
       {
         "username": "sum00",
@@ -1750,7 +1750,7 @@
         "server": "EU11",
         "contributed": 3971000105651,
         "contributionRank": 10,
-        "guildRaidsTotal": 5062
+        "guildRaidsTotal": 5063
       },
       {
         "username": "noonicrib",
@@ -1761,7 +1761,7 @@
         "server": "EU11",
         "contributed": 3458309242164,
         "contributionRank": 13,
-        "guildRaidsTotal": 1603
+        "guildRaidsTotal": 1604
       },
       {
         "username": "seekeyace",
@@ -2098,8 +2098,8 @@
         "uuid": "510dea31-0c28-49e9-abd0-e9c55f2749a5",
         "rank": "strategist",
         "joined": "2025-02-14T12:05:24.203000Z",
-        "online": true,
-        "server": "EU3",
+        "online": false,
+        "server": null,
         "contributed": 2528330135452,
         "contributionRank": 16,
         "guildRaidsTotal": 1259
@@ -2344,7 +2344,7 @@
         "server": "EU11",
         "contributed": 684229685832,
         "contributionRank": 40,
-        "guildRaidsTotal": 5941
+        "guildRaidsTotal": 5942
       },
       {
         "username": "Samiqt",
