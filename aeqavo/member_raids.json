@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T16:30:42.080Z",
+  "updated": "2026-09-23T16:35:27.301Z",
   "guilds": {
     "Aequitas": {
       "4391c615-aecd-4864-b59c-892dda94df01": {
@@ -1144,16 +1144,16 @@
           "2026-09-23": 1259
         }
       },
-      "d3998dbd-4707-4486-a2a5-1af0c3287cfb": {
-        "username": "alopekis",
-        "byDay": {
-          "2026-09-23": 954
-        }
-      },
       "8813f4e0-65ce-45fa-a7ee-95445fd0701e": {
         "username": "_DoomDragon_",
         "byDay": {
           "2026-09-23": 984
+        }
+      },
+      "d3998dbd-4707-4486-a2a5-1af0c3287cfb": {
+        "username": "alopekis",
+        "byDay": {
+          "2026-09-23": 954
         }
       },
       "e6c674b7-6656-42e8-9c02-feb5ea97e94e": {
