@@ -10,6 +10,9 @@ via GitHub Pages.
   age — full 5-min resolution for 3 days, 30 min up to 14 days, 2 h beyond — so a full season
   stays a few MB instead of tens.
 - `index.html` — comparison dashboard
+- `aeqavo/` — a second pairing (Aequitas vs Avicia) as its own page, same files one level
+  down. `poll.js <dir>` reads that directory's `guilds.json` and writes its data there; the
+  action runs the poller once per pairing.
 
 Workflow: `.github/workflows/poll.yml` runs every 5 min on cron + workflow_dispatch.
 Reliable trigger via cron-job.org → `POST /actions/workflows/poll.yml/dispatches`.

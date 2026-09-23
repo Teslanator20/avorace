@@ -1,11 +1,17 @@
 import { readFile, writeFile } from "node:fs/promises";
 
-const GUILDS_FILE       = "guilds.json";
-const HISTORY_FILE      = "snapshots.json";
-const MEMBERS_STATE_FILE = "members_state.json";
-const EVENTS_FILE       = "events.json";
-const MEMBER_RAIDS_FILE  = "member_raids.json";
-const PRESENCE_FILE      = "presence.json";
+// Optional argv[2] names a sub-race directory, so one poll run can serve several pairings:
+// `node poll.js` drives the root page, `node poll.js aeqavo` the one in aeqavo/. Each
+// directory holds its own guilds.json and its own data files; index.html fetches with
+// relative paths, so a page just reads whatever sits next to it.
+const DIR = process.argv[2] ? process.argv[2].replace(/\/+$/, "") + "/" : "";
+
+const GUILDS_FILE       = DIR + "guilds.json";
+const HISTORY_FILE      = DIR + "snapshots.json";
+const MEMBERS_STATE_FILE = DIR + "members_state.json";
+const EVENTS_FILE       = DIR + "events.json";
+const MEMBER_RAIDS_FILE  = DIR + "member_raids.json";
+const PRESENCE_FILE      = DIR + "presence.json";
 
 const RETAIN_DAYS       = 14;   // hard floor: kept even across a season change
 // On top of that floor every snapshot of the current season is kept, thinned by age so the
