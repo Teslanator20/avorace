@@ -404,16 +404,26 @@
       points during the season — typically stepping <b>1.5 → 2.0 → 3.0 → 5.0 → 10.0</b>.
     </p>
     <p>
-      Nothing else feeds season rating. Guild raids, gambits and raid damage drive guild XP and
-      aspects, not SR — so they stay out of the projection, however busy the guild is.
+      <b>Guild raids pay rating as well</b>, built up per player: <b>50</b> base, plus
+      <b>10 / 20 / 30</b> for that player's first, second and third gambit. One player is worth
+      50–110, so a full party of four tops out at <b>440</b> per raid. Measured against the poll
+      data the average lands near <b>240</b>, which is a four-player party running few gambits.
+    </p>
+    <p>
+      The decisive detail: <b>raid rating does not move with the scalar.</b> Calibrating holding on
+      raid-free blocks and dividing the leftover by raids completed gives <b>251</b> SR/raid while
+      s was 3.0 and <b>230</b> once s was 5.0 — a ratio of <b>0.92</b>, flat, where scaling would
+      have shown 1.67. So a bump doubles holding and capturing but leaves the raid share alone, and
+      the effective multiplier on the total rate is about <b>1.88</b>, not 2.00. The projection
+      splits the rate accordingly.
     </p>
     <p>
       The scalar can be read straight out of the poll data. Over intervals with no war and no
       territory change, holding is the only source, so <b>ΔSR ÷ (base × Σr × hours)</b> is the
-      scalar. That measure sat near <b>3.7</b> from 10–18 Sep and jumped to <b>5.9</b> on
-      <b>19 Sep</b> — a 1.6× step, matching <b>3.0 → 5.0</b>. It reads about 15% high in absolute
-      terms, but the ratio is what counts, and every SR source scales with s, so a move to
-      <b>10.0</b> simply doubles the rate.
+      scalar. Aggregated into 30-minute blocks with no raid in them, it reads <b>s = 2.89</b> for
+      10–18 Sep and <b>s = 5.00</b> from 19 Sep on, with an implied base of <b>120.0</b> — exactly
+      the wiki figure. So the season stepped <b>3.0 → 5.0</b> on <b>19 Sep</b>, and the current
+      scalar is <b>5.0</b>.
     </p>
     <p>
       The table runs each recent pace window out to the season close under three schedules: no
@@ -479,6 +489,20 @@ const SCALAR_NOW = 5.0;
 const SCALAR_BOOST = 10.0;
 const BOOST_HOURS = 24;          // assumed final stretch at the boosted scalar
 const BOOST_FACTOR = SCALAR_BOOST / SCALAR_NOW;
+
+// Guild raids pay season rating too, and — unlike holding and capturing — the payout does NOT
+// move with the scalar. Measured the same way: calibrate holding on raid-free blocks, then divide
+// the leftover rating by the raids completed. That gives 251 SR/raid while s was 3.0 and 230 once
+// s was 5.0 — a ratio of 0.92, i.e. flat, where scaling would have shown 1.67.
+//
+// Per raid the payout is built per player: 50 base, plus 10 / 20 / 30 for the first, second and
+// third gambit. So one player runs 50–110 and a full party of four caps at 440. The measured
+// average of ~240 is what a four-player party with light gambit use comes to, and it is the
+// average that matters here, not the cap.
+const RAID_SR_PER_PLAYER = 50;
+const RAID_GAMBIT_BONUS = [10, 20, 30];
+const RAID_SR_MAX = 4 * (RAID_SR_PER_PLAYER + RAID_GAMBIT_BONUS.reduce((a, b) => a + b, 0));
+const RAID_SR = 240;
 
 // ─── Theme ─────────────────────────────────────────────
 (function () {
@@ -559,18 +583,35 @@ function pacePerDay(series, days) {
 
 // Rating at season end, given a base pace measured under SCALAR_NOW. The closing BOOST_HOURS
 // are worth BOOST_FACTOR times as much per hour, since every SR source scales with the scalar.
-function projectEnd(cur, pace, boostHours) {
+function projectEnd(cur, pace, raidRate, boostHours) {
   const daysLeft = Math.max((SEASON_END - Date.now()) / 86400000, 0);
   const boostDays = Math.min((boostHours ?? BOOST_HOURS) / 24, daysLeft);
-  return cur + pace * (daysLeft - boostDays) + pace * BOOST_FACTOR * boostDays;
+  const raidPart = Math.min((raidRate ?? 0) * RAID_SR, pace);   // flat across the bump
+  const scalingPart = pace - raidPart;                          // holding + capturing
+  const boosted = scalingPart * BOOST_FACTOR + raidPart;
+  return cur + pace * (daysLeft - boostDays) + boosted * boostDays;
 }
 
-// Base pace that would land exactly on the record, given the boosted closing stretch.
-function requiredPace(cur, boostHours) {
+// Base pace that would land exactly on the record, given the boosted closing stretch. The raid
+// share rides along unchanged, so it is subtracted before scaling and added back after.
+function requiredPace(cur, raidRate, boostHours) {
   const daysLeft = Math.max((SEASON_END - Date.now()) / 86400000, 0);
   const boostDays = Math.min((boostHours ?? BOOST_HOURS) / 24, daysLeft);
+  const raidPart = (raidRate ?? 0) * RAID_SR;
   const weighted = (daysLeft - boostDays) + BOOST_FACTOR * boostDays;
-  return weighted > 0 ? (RECORD - cur) / weighted : null;
+  if (weighted <= 0) return null;
+  const flatBonus = raidPart * boostDays * (1 - BOOST_FACTOR);
+  return (RECORD - cur - flatBonus) / weighted;
+}
+
+// Raids completed per day over the same window, so the flat part of the rate can be split off.
+function raidsPerDay(series, days) {
+  const cutoff = Date.now() - days * 86400000;
+  const win = series.filter(p => p.t >= cutoff);
+  if (win.length < 2) return 0;
+  const spanDays = (win[win.length - 1].t - win[0].t) / 86400000;
+  if (spanDays <= 0) return 0;
+  return Math.max((win[win.length - 1].raids - win[0].raids) / spanDays, 0);
 }
 
 // ─── Countdown ─────────────────────────────────────────
@@ -615,8 +656,9 @@ function render(series) {
   const pace = p7 ?? p24;
   const paceLabel = p7 != null ? "7-day average" : "24-hour average";
 
-  const needPace = requiredPace(cur);
-  const projected = pace != null ? projectEnd(cur, pace) : null;
+  const raidRate = raidsPerDay(series, p7 != null ? 7 : 1);
+  const needPace = requiredPace(cur, raidRate);
+  const projected = pace != null ? projectEnd(cur, pace, raidRate) : null;
 
   // Dashed overlay on the bar showing where the current pace lands by season end.
   if (projected != null && !beaten) {
@@ -660,7 +702,7 @@ function render(series) {
       + "x</b>, puts Sequoia at <b>" + fmt(projected) + "</b> — over the record. The base pace may "
       + "not drop below <b>" + fmt(needPace) + " a day</b>, so the margin is <b>"
       + ((pace / needPace - 1) * 100).toFixed(1) + "%</b>. Without the scalar bump it misses by <b>"
-      + fmt(RECORD - projectEnd(cur, pace, 0)) + "</b>.";
+      + fmt(RECORD - projectEnd(cur, pace, raidRate, 0)) + "</b>.";
   } else {
     v.classList.add("no");
     $("verdict-head").textContent = "Short by " + fmt(RECORD - projected) + " SR";
@@ -682,7 +724,7 @@ function render(series) {
       + (pct * 100).toFixed(1) + "%</b> of the way there" + moving + ".";
 
   renderScenarios(cur, series);
-  renderChart(series, c, pace, daysLeft);
+  renderChart(series, c, pace, daysLeft, raidRate);
 }
 
 // Each pace window, run out to season end under three scalar schedules. Every SR source scales
@@ -690,10 +732,11 @@ function render(series) {
 // capping separately.
 function renderScenarios(cur, series) {
   const windows = [
-    { label: "Last 24 h", pace: pacePerDay(series, 1) },
-    { label: "Last 48 h", pace: pacePerDay(series, 2) },
-    { label: "Last 7 d",  pace: pacePerDay(series, 7) },
-  ].filter(w => w.pace != null);
+    { label: "Last 24 h", days: 1 },
+    { label: "Last 48 h", days: 2 },
+    { label: "Last 7 d",  days: 7 },
+  ].map(w => ({ ...w, pace: pacePerDay(series, w.days), raidRate: raidsPerDay(series, w.days) }))
+   .filter(w => w.pace != null);
 
   if (!windows.length) {
     $("scalar-rows").innerHTML = '<tr><td colspan="4" style="text-align:left;color:var(--muted)">'
@@ -704,7 +747,7 @@ function renderScenarios(cur, series) {
   const schedules = [0, BOOST_HOURS, BOOST_HOURS * 2];
   const rows = windows.map(w => {
     const cells = schedules.map(h => {
-      const end = projectEnd(cur, w.pace, h);
+      const end = projectEnd(cur, w.pace, w.raidRate, h);
       const diff = end - RECORD;
       return '<td class="' + (diff >= 0 ? "hit" : "miss") + '">' + fmt(end)
         + '<span style="display:block;font-size:11px;font-weight:400">'
@@ -719,7 +762,7 @@ function renderScenarios(cur, series) {
   $("scalar-rows").innerHTML = rows.join("");
 }
 
-function renderChart(series, c, pace, daysLeft) {
+function renderChart(series, c, pace, daysLeft, raidRate) {
   const plot = downsample(series, 400);
   const labels = plot.map(p => timeLabel(p.t));
   const actual = plot.map(p => p.sr);
@@ -738,7 +781,9 @@ function renderChart(series, c, pace, daysLeft) {
       const boostDays = Math.max(t - Math.max(boostStart, last.t), 0) / 86400000;
       labels.push(timeLabel(t));
       actual.push(null);
-      projection.push(last.sr + pace * Math.max(baseDays, 0) + pace * BOOST_FACTOR * boostDays);
+      const raidPart = Math.min((raidRate ?? 0) * RAID_SR, pace);
+      const boostedRate = (pace - raidPart) * BOOST_FACTOR + raidPart;
+      projection.push(last.sr + pace * Math.max(baseDays, 0) + boostedRate * boostDays);
     }
   }
   const recordLine = labels.map(() => RECORD);
@@ -854,7 +899,8 @@ async function load() {
   const season = snaps[snaps.length - 1].season;
   const series = snaps
     .filter(s => s.season === season && s.left && Number.isFinite(s.left.seasonSr))
-    .map(s => ({ t: new Date(s.ts).getTime(), sr: s.left.seasonSr, terr: s.left.territories ?? 0 }))
+    .map(s => ({ t: new Date(s.ts).getTime(), sr: s.left.seasonSr,
+                 terr: s.left.territories ?? 0, raids: s.left.raids ?? 0 }))
     .sort((a, b) => a.t - b.t);
   if (!series.length) { $("hero-sub").textContent = "No rating data for this season yet."; return; }
 
