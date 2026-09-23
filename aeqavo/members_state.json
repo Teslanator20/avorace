@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-23T17:05:30.195Z",
+  "updated": "2026-09-23T17:10:33.311Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 7,
+    "online": 9,
     "total": 150,
     "members": [
       {
@@ -199,10 +199,10 @@
         "rank": "chief",
         "joined": "2026-08-11T20:39:59.283000Z",
         "online": true,
-        "server": "EU3",
+        "server": "EU5",
         "contributed": 4061317870071,
         "contributionRank": 24,
-        "guildRaidsTotal": 9476
+        "guildRaidsTotal": 9477
       },
       {
         "username": "Gin_Tonic123",
@@ -1057,10 +1057,10 @@
         "rank": "recruiter",
         "joined": "2026-08-01T18:07:53.399000Z",
         "online": true,
-        "server": "EU3",
+        "server": "EU5",
         "contributed": 660907206805,
         "contributionRank": 65,
-        "guildRaidsTotal": 2227
+        "guildRaidsTotal": 2228
       },
       {
         "username": "CatgirlMikuTGM",
@@ -1210,8 +1210,8 @@
         "uuid": "860feac2-6899-403a-a525-6596a9e0ba17",
         "rank": "recruiter",
         "joined": "2026-09-11T06:25:37.201000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU10",
         "contributed": 18162091806,
         "contributionRank": 115,
         "guildRaidsTotal": 8
@@ -1221,8 +1221,8 @@
         "uuid": "c04c912a-bb0f-4a97-8eb2-5b862f4b76a8",
         "rank": "recruiter",
         "joined": "2026-08-29T19:24:56.590000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA21",
         "contributed": 16134682,
         "contributionRank": 134,
         "guildRaidsTotal": 0
@@ -2047,7 +2047,7 @@
         "server": "AS17",
         "contributed": 4774057126146,
         "contributionRank": 5,
-        "guildRaidsTotal": 3182
+        "guildRaidsTotal": 3183
       },
       {
         "username": "StayLocked",
@@ -2080,7 +2080,7 @@
         "server": "AS17",
         "contributed": 3848894550863,
         "contributionRank": 11,
-        "guildRaidsTotal": 3972
+        "guildRaidsTotal": 3973
       },
       {
         "username": "YzRyx",
@@ -2110,7 +2110,7 @@
         "rank": "strategist",
         "joined": "2026-03-05T22:41:53.353000Z",
         "online": true,
-        "server": "AS6",
+        "server": "NA8",
         "contributed": 2378735739343,
         "contributionRank": 17,
         "guildRaidsTotal": 986
@@ -3001,7 +3001,7 @@
         "rank": "recruiter",
         "joined": "2026-08-27T16:46:13.046000Z",
         "online": true,
-        "server": "NA21",
+        "server": "NA17",
         "contributed": 18142453791,
         "contributionRank": 114,
         "guildRaidsTotal": 7
@@ -3169,7 +3169,7 @@
         "server": "AS17",
         "contributed": 62204479474,
         "contributionRank": 96,
-        "guildRaidsTotal": 482
+        "guildRaidsTotal": 483
       },
       {
         "username": "Zenferns55",
