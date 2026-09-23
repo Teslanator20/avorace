@@ -449,14 +449,14 @@
     <div class="chart-box short"><canvas id="chart-activity"></canvas></div>
   </div>
 
-  <h2><span>Finish under each scenario</span><span class="hint">every pace window × how long the 10× runs</span></h2>
+  <h2><span>Finish from each pace window</span><span class="hint">final 24 h at 10×</span></h2>
   <table class="scen">
     <thead>
       <tr>
         <th>Pace window</th>
-        <th>No bump</th>
-        <th>10× final 24 h</th>
-        <th>10× final 48 h</th>
+        <th>Rate</th>
+        <th>Projected finish</th>
+        <th>vs record</th>
       </tr>
     </thead>
     <tbody id="scen-rows">
@@ -672,7 +672,6 @@ function render(series) {
 
   const projected = projectEnd(cur, r);
   const needPace = requiredPace(cur, r);
-  const noBump = projectEnd(cur, r, 0);
 
   if (!beaten) {
     const projPct = Math.min(projected / RECORD, 1);
@@ -690,7 +689,7 @@ function render(series) {
   $("s-proj").textContent = fmt(projected);
   $("s-proj-sub").textContent = "with the final 24 h at 10×";
 
-  renderVerdict(cur, r, projected, needPace, noBump, beaten, wl);
+  renderVerdict(cur, r, projected, needPace, beaten, wl);
   renderLevers(r, projected, beaten);
   renderMix(split(r), r, c);
   renderScenarios(cur, series);
@@ -700,7 +699,7 @@ function render(series) {
   renderActivityChart(series, c);
 }
 
-function renderVerdict(cur, r, projected, needPace, noBump, beaten, wl) {
+function renderVerdict(cur, r, projected, needPace, beaten, wl) {
   const v = $("verdict");
   v.classList.remove("yes", "no");
   if (beaten) {
@@ -717,8 +716,7 @@ function renderVerdict(cur, r, projected, needPace, noBump, beaten, wl) {
     $("verdict-body").innerHTML = "At the last " + wl + " rate of <b>" + fmt(r.pace)
       + " SR/day</b>, with the closing 24 h doubled, Sequoia finishes on <b>" + fmt(projected)
       + "</b>. The pace may not fall below <b>" + fmt(needPace) + "/day</b> — <b>"
-      + ((r.pace / needPace - 1) * 100).toFixed(1) + "%</b> of headroom. Without the bump it misses by <b>"
-      + fmt(RECORD - noBump) + "</b>.";
+      + ((r.pace / needPace - 1) * 100).toFixed(1) + "%</b> of headroom.";
   } else {
     v.classList.add("no");
     $("verdict-head").textContent = "Short by " + fmt(-over) + " SR";
@@ -802,17 +800,14 @@ function renderScenarios(cur, series) {
     .map(h => rates(series, h))
     .filter(Boolean)
     .map(r => {
-      const cells = [0, BOOST_HOURS, BOOST_HOURS * 2].map(h => {
-        const end = projectEnd(cur, r, h);
-        const diff = end - RECORD;
-        return '<td class="' + (diff >= 0 ? "hit" : "miss") + '">' + fmt(end)
-          + '<span style="display:block;font-size:11px;font-weight:400">'
-          + (diff >= 0 ? "+" : "−") + fmt(Math.abs(diff)) + "</span></td>";
-      }).join("");
-      return "<tr" + (r.hours === windowHours ? ' class="now"' : "") + "><td>Last "
-        + windowLabel(r.hours)
-        + '<span style="display:block;font-size:11px;font-weight:400;color:var(--muted)">'
-        + fmt(r.pace) + " SR/day</span></td>" + cells + "</tr>";
+      const end = projectEnd(cur, r);
+      const diff = end - RECORD;
+      return "<tr" + (r.hours === windowHours ? ' class="now"' : "") + ">"
+        + "<td>Last " + windowLabel(r.hours) + "</td>"
+        + "<td>" + fmt(r.pace) + " SR/day</td>"
+        + "<td>" + fmt(end) + "</td>"
+        + '<td class="' + (diff >= 0 ? "hit" : "miss") + '">'
+        + (diff >= 0 ? "+" : "−") + fmt(Math.abs(diff)) + "</td></tr>";
     });
   if (rows.length) $("scen-rows").innerHTML = rows.join("");
 }
