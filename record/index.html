@@ -22,6 +22,9 @@
     --record:       #b8892c;
     --up:           #3a8b3a;
     --down:         #b94a4a;
+    --hold:         #3a8b3a;
+    --raid:         #4a7fb5;
+    --cap:          #b8892c;
     --pulse:        #5a8a4a;
     --grid:         rgba(28,24,20,0.08);
     --vignette:     rgba(0,0,0,0.035);
@@ -39,6 +42,9 @@
     --record:       #e0a951;
     --up:           #5fbf5f;
     --down:         #e07878;
+    --hold:         #5fbf5f;
+    --raid:         #6aa7e6;
+    --cap:          #e0a951;
     --pulse:        #7eb56a;
     --grid:         rgba(236,230,210,0.08);
     --vignette:     rgba(255,245,220,0.04);
@@ -127,14 +133,43 @@
   }
 
   h2 {
-    margin: 48px 0 16px;
+    margin: 46px 0 16px;
     font: 600 11.5px/1 'Inter', sans-serif; letter-spacing: .18em;
     text-transform: uppercase; color: var(--muted);
     padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  }
+  h2 .hint {
+    font-weight: 400; letter-spacing: .03em; text-transform: none;
+    font-size: 12px; text-align: right;
+  }
+
+  .windowbar {
+    position: sticky; top: 0; z-index: 20;
+    margin: 26px 0 0; padding: 11px 0;
+    background: var(--paper);
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  }
+  .windowbar .lbl {
+    font: 600 10px/1 'Inter', sans-serif; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--muted); margin-right: 6px;
+  }
+  .windowbar button {
+    background: transparent; border: 1px solid var(--rule);
+    padding: 7px 13px; cursor: pointer;
+    font: 600 10.5px/1 'Inter', sans-serif; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted);
+    transition: color .15s, border-color .15s, background-color .15s;
+  }
+  .windowbar button:hover { color: var(--ink); border-color: var(--rule-strong); }
+  .windowbar button.active {
+    color: var(--ink); border-color: var(--rule-strong); background: var(--paper-shade);
   }
 
   .hero {
-    margin-top: 30px; padding: 30px 32px;
+    margin-top: 22px; padding: 30px 32px;
     background: var(--card); border: 1px solid var(--rule);
     box-shadow: 0 1px 0 var(--rule);
   }
@@ -164,14 +199,9 @@
     font-family: 'Inter', sans-serif; font-size: .34em; font-weight: 600;
     letter-spacing: .1em; color: var(--muted); margin: 0 10px 0 2px;
   }
-  .hero-sub {
-    margin-top: 22px; font-size: 13.5px; line-height: 1.65; color: var(--ink-soft);
-    max-width: 70ch;
-  }
-  .hero-sub b { color: var(--ink); font-weight: 600; }
 
   .bar-outer {
-    margin-top: 24px; height: 10px; background: var(--paper-shade);
+    margin-top: 26px; height: 10px; background: var(--paper-shade);
     border: 1px solid var(--rule); position: relative; overflow: hidden;
   }
   .bar-inner {
@@ -180,8 +210,7 @@
   }
   .bar-proj {
     position: absolute; top: 0; height: 100%;
-    background: repeating-linear-gradient(135deg,
-      var(--muted) 0 2px, transparent 2px 6px);
+    background: repeating-linear-gradient(135deg, var(--muted) 0 2px, transparent 2px 6px);
     opacity: .5; transition: left .8s, width .8s;
   }
   .bar-legend {
@@ -203,7 +232,7 @@
   }
   .verdict.yes .head { color: var(--up); }
   .verdict.no  .head { color: var(--down); }
-  .verdict .body { font-size: 13px; line-height: 1.65; color: var(--ink-soft); max-width: 72ch; }
+  .verdict .body { font-size: 13px; line-height: 1.65; color: var(--ink-soft); max-width: 74ch; }
   .verdict .body b { color: var(--ink); font-weight: 600; }
 
   .stats {
@@ -222,8 +251,76 @@
   }
   .stat .s { margin-top: 6px; font-size: 11.5px; color: var(--muted); line-height: 1.45; }
 
+  .levers {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--rule); border: 1px solid var(--rule);
+  }
+  .lever { background: var(--card); padding: 20px 18px 18px; }
+  .lever .k {
+    font: 600 10px/1.3 'Inter', sans-serif; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+  }
+  .lever .v {
+    font-family: 'Fraunces', Georgia, serif; font-size: 34px; line-height: 1;
+    font-variation-settings: 'opsz' 96, 'wght' 540;
+  }
+  .lever.need .v { color: var(--down); }
+  .lever.spare .v { color: var(--up); }
+  .lever .s { margin-top: 9px; font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .lever .now {
+    margin-top: 11px; padding-top: 10px; border-top: 1px solid var(--rule);
+    font-size: 11.5px; color: var(--muted); line-height: 1.5;
+  }
+  .lever .now b { color: var(--ink); font-weight: 600; }
+
+  .chart-card {
+    background: var(--card); border: 1px solid var(--rule);
+    padding: 20px 20px 14px; box-shadow: 0 1px 0 var(--rule);
+  }
+  .chart-box { height: 360px; }
+  .chart-box.short { height: 250px; }
+  .charts2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .charts2 h2 { margin-top: 30px; }
+
+  .mix {
+    display: flex; height: 36px; border: 1px solid var(--rule);
+    background: var(--paper-shade); overflow: hidden;
+  }
+  .mix span {
+    display: flex; align-items: center; justify-content: center;
+    font: 600 10.5px/1 'Inter', sans-serif; letter-spacing: .08em;
+    color: #fff; white-space: nowrap; overflow: hidden;
+    transition: width .6s cubic-bezier(.22,.61,.36,1);
+  }
+  .mix-legend {
+    margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px 24px;
+    font-size: 12.5px; color: var(--muted);
+  }
+  .mix-legend i {
+    display: inline-block; width: 9px; height: 9px; margin-right: 7px;
+    transform: translateY(1px);
+  }
+  .mix-legend b { color: var(--ink); font-weight: 600; }
+
+  .scen {
+    width: 100%; border-collapse: collapse;
+    font-size: 13px; background: var(--card); border: 1px solid var(--rule);
+  }
+  .scen th, .scen td {
+    padding: 10px 14px; text-align: right; border-bottom: 1px solid var(--rule);
+  }
+  .scen th {
+    font: 600 10px/1.3 'Inter', sans-serif; letter-spacing: .13em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .scen th:first-child, .scen td:first-child { text-align: left; }
+  .scen tr:last-child td { border-bottom: 0; }
+  .scen tr.now td { background: var(--paper-shade); font-weight: 600; }
+  .scen td.hit { color: var(--up); font-weight: 600; }
+  .scen td.miss { color: var(--down); }
+
   .holder {
-    margin-top: 22px; padding: 20px 22px;
+    margin-top: 24px; padding: 20px 22px;
     background: var(--card); border: 1px solid var(--rule);
     border-left: 3px solid var(--record);
     display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline;
@@ -237,63 +334,23 @@
     font-family: 'Fraunces', Georgia, serif; font-size: 21px;
     color: var(--record); font-variation-settings: 'opsz' 96, 'wght' 540;
   }
-  .holder .note {
-    font-size: 12.5px; color: var(--muted); line-height: 1.6; flex-basis: 100%;
-    max-width: 74ch;
-  }
-
-  .chart-card {
-    background: var(--card); border: 1px solid var(--rule);
-    padding: 20px 20px 14px; box-shadow: 0 1px 0 var(--rule);
-  }
-  .chart-box { height: 380px; }
-
-  .prose { font-size: 13.5px; line-height: 1.72; color: var(--ink-soft); max-width: 78ch; }
-  .prose p { margin: 0 0 14px; }
-  .prose b { color: var(--ink); font-weight: 600; }
-  .formula {
-    display: block; margin: 16px 0; padding: 14px 16px;
-    background: var(--card); border: 1px solid var(--rule);
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 12.5px; color: var(--ink); overflow-x: auto; white-space: nowrap;
-  }
-
-  .scalars {
-    margin-top: 18px; width: 100%; border-collapse: collapse;
-    font-size: 13px; background: var(--card);
-    border: 1px solid var(--rule);
-  }
-  .scalars th, .scalars td {
-    padding: 9px 14px; text-align: right; border-bottom: 1px solid var(--rule);
-  }
-  .scalars th {
-    font: 600 10px/1.3 'Inter', sans-serif; letter-spacing: .13em;
-    text-transform: uppercase; color: var(--muted); text-align: right;
-  }
-  .scalars th:first-child, .scalars td:first-child { text-align: left; }
-  .scalars tr:last-child td { border-bottom: 0; }
-  .scalars tr.now td { background: var(--paper-shade); font-weight: 600; }
-  .scalars td.verdict-cell { color: var(--muted); }
-  .scalars td.hit { color: var(--up); font-weight: 600; }
-  .scalars td.miss { color: var(--down); }
 
   .foot {
     margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--rule);
     font-size: 11.5px; color: var(--muted); line-height: 1.7;
   }
   .foot a { color: var(--ink-soft); }
-  .foot code {
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 11px; color: var(--ink-soft);
-  }
 
+  @media (max-width: 980px) { .charts2 { grid-template-columns: 1fr; } }
   @media (max-width: 880px) {
     .wrap { padding: 40px 18px 60px; }
     .theme-toggle { top: 20px; right: 18px; }
     .hero { padding: 22px 20px; }
-    .stats { grid-template-columns: repeat(2, 1fr); }
-    .chart-box { height: 300px; }
-    .formula { font-size: 11px; }
+    .stats, .levers { grid-template-columns: repeat(2, 1fr); }
+    .chart-box { height: 280px; }
+    .chart-box.short { height: 220px; }
+    h2 { flex-direction: column; gap: 4px; }
+    h2 .hint { text-align: left; }
   }
 </style>
 </head>
@@ -321,6 +378,16 @@
     </nav>
   </header>
 
+  <div class="windowbar" id="windowbar">
+    <span class="lbl">Rates from</span>
+    <button data-h="6">6 h</button>
+    <button data-h="12">12 h</button>
+    <button data-h="24">24 h</button>
+    <button data-h="48">2 d</button>
+    <button data-h="72">3 d</button>
+    <button data-h="168">7 d</button>
+  </div>
+
   <section class="hero">
     <div class="hero-top">
       <div class="hero-col">
@@ -332,8 +399,6 @@
         <div class="countdown" id="countdown">—</div>
       </div>
     </div>
-
-    <div class="hero-sub" id="hero-sub">Loading…</div>
 
     <div class="bar-outer">
       <div class="bar-inner" id="bar"></div>
@@ -347,7 +412,7 @@
 
   <div class="verdict" id="verdict">
     <div class="head" id="verdict-head">—</div>
-    <div class="body" id="verdict-body">—</div>
+    <div class="body" id="verdict-body">Loading…</div>
   </div>
 
   <div class="stats">
@@ -357,82 +422,58 @@
       <div class="s" id="s-current-sub">—</div>
     </div>
     <div class="stat">
-      <div class="k">Pace now</div>
+      <div class="k">Pace</div>
       <div class="v" id="s-pace">—</div>
-      <div class="s" id="s-pace-sub">SR per day</div>
+      <div class="s" id="s-pace-sub">—</div>
     </div>
     <div class="stat">
-      <div class="k">Base pace needed</div>
+      <div class="k">Pace needed</div>
       <div class="v" id="s-need">—</div>
-      <div class="s" id="s-need-sub">SR per day to the record</div>
+      <div class="s" id="s-need-sub">—</div>
     </div>
     <div class="stat">
       <div class="k">Projected finish</div>
       <div class="v" id="s-proj">—</div>
-      <div class="s" id="s-proj-sub">at the current pace</div>
+      <div class="s" id="s-proj-sub">—</div>
     </div>
   </div>
 
-  <div class="holder">
-    <span class="who">[Shy] ShadowFall</span>
-    <span class="num">20,270,919</span>
-    <span class="season">Season 1 · 9 Jul – 20 Sep 2021</span>
-    <span class="note">
-      The highest season rating ever recorded. Season 1 ran <b>73 days</b> — no season since has
-      come close to that length, which is the main reason the number still stands. Sequoia's
-      current run is already the second-highest rating of all time.
-    </span>
-  </div>
+  <h2><span id="levers-title">What it takes</span><span class="hint" id="levers-hint">—</span></h2>
+  <div class="levers" id="levers"></div>
 
-  <h2>Rating this season vs the record</h2>
+  <h2><span>Rating vs the record</span><span class="hint">projection bends up for the final 24 h at 10×</span></h2>
   <div class="chart-card">
-    <div class="chart-box"><canvas id="chart"></canvas></div>
+    <div class="chart-box"><canvas id="chart-main"></canvas></div>
   </div>
 
-  <h2>How season rating is earned</h2>
-  <div class="prose">
-    <p>
-      Rating comes from two places: <b>holding</b> territories and <b>capturing</b> them. Holding
-      pays out every 5 seconds, on an hourly rate that depends on how many territories the guild
-      owns:
-    </p>
-    <code class="formula">yield<sub></sub> = Σ<sub>i=0..t</sub>  base × s × r[min(i, len(r) − 1)]     base = 120/h,  capture = 40 × s</code>
-    <p>
-      <b>r</b> is a regression table that punishes hoarding: territory 1 counts triple, territory 5
-      counts 80%, and everything from the 22nd onward counts only 20%. So the 99th territory is
-      worth a fifteenth of the first. <b>s</b> is a global scalar that Wynncraft raises by hand at
-      points during the season — typically stepping <b>1.5 → 2.0 → 3.0 → 5.0 → 10.0</b>.
-    </p>
-    <p>
-      <b>Guild raids pay rating as well</b>, built up per player: <b>50</b> base, plus
-      <b>10 / 20 / 30</b> for that player's first, second and third gambit. One player is worth
-      50–110, so a full party of four tops out at <b>440</b> per raid. Measured against the poll
-      data the average lands near <b>240</b>, which is a four-player party running few gambits.
-    </p>
-    <p>
-      The decisive detail: <b>raid rating does not move with the scalar.</b> Calibrating holding on
-      raid-free blocks and dividing the leftover by raids completed gives <b>251</b> SR/raid while
-      s was 3.0 and <b>230</b> once s was 5.0 — a ratio of <b>0.92</b>, flat, where scaling would
-      have shown 1.67. So a bump doubles holding and capturing but leaves the raid share alone, and
-      the effective multiplier on the total rate is about <b>1.88</b>, not 2.00. The projection
-      splits the rate accordingly.
-    </p>
-    <p>
-      The scalar can be read straight out of the poll data. Over intervals with no war and no
-      territory change, holding is the only source, so <b>ΔSR ÷ (base × Σr × hours)</b> is the
-      scalar. Aggregated into 30-minute blocks with no raid in them, it reads <b>s = 2.89</b> for
-      10–18 Sep and <b>s = 5.00</b> from 19 Sep on, with an implied base of <b>120.0</b> — exactly
-      the wiki figure. So the season stepped <b>3.0 → 5.0</b> on <b>19 Sep</b>, and the current
-      scalar is <b>5.0</b>.
-    </p>
-    <p>
-      The table runs each recent pace window out to the season close under three schedules: no
-      bump at all, the assumed <b>final 24 h at 10×</b>, and a longer 48 h bump. The 48-hour row
-      is the one the headline numbers use.
-    </p>
+  <h2><span>Where the rating comes from</span><span class="hint" id="mix-hint">—</span></h2>
+  <div class="chart-card">
+    <div class="mix" id="mix"></div>
+    <div class="mix-legend" id="mix-legend"></div>
   </div>
 
-  <table class="scalars">
+  <div class="charts2">
+    <div>
+      <h2><span>Daily pace</span><span class="hint">12 h rolling</span></h2>
+      <div class="chart-card">
+        <div class="chart-box short"><canvas id="chart-pace"></canvas></div>
+      </div>
+    </div>
+    <div>
+      <h2><span>Territories held</span></h2>
+      <div class="chart-card">
+        <div class="chart-box short"><canvas id="chart-terr"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <h2><span>Wars and raids</span><span class="hint">24 h rolling</span></h2>
+  <div class="chart-card">
+    <div class="chart-box short"><canvas id="chart-activity"></canvas></div>
+  </div>
+
+  <h2><span>Finish under each scenario</span><span class="hint">every pace window × how long the 10× runs</span></h2>
+  <table class="scen">
     <thead>
       <tr>
         <th>Pace window</th>
@@ -441,68 +482,45 @@
         <th>10× final 48 h</th>
       </tr>
     </thead>
-    <tbody id="scalar-rows">
+    <tbody id="scen-rows">
       <tr><td colspan="4" style="text-align:left;color:var(--muted)">Loading…</td></tr>
     </tbody>
   </table>
 
+  <div class="holder">
+    <span class="who">[Shy] ShadowFall</span>
+    <span class="num">20,270,919</span>
+    <span class="season">Season 1 · 9 Jul – 20 Sep 2021 · 73 days</span>
+  </div>
+
   <div class="foot">
-    Record and season history from the
-    <a href="https://wynncraft.wiki.gg/wiki/Guild_Seasons">Guild Seasons wiki page</a>; the
-    20,270,919 figure is also confirmed live by the
-    <code>leaderboards/guildSeason1</code> API endpoint. Season end is fixed at
-    <b>27 Sep 2026, 06:00 Europe/Berlin</b> — the wiki gives the date, the API exposes no season
-    timing at all, so the time of day is set by hand here. The closing <b>10×</b> stretch is an
-    assumption as well: the wiki says only that the scalar is raised manually at unspecified
-    points, so nothing confirms its timing. Sequoia's rating comes from the 5-minute poll behind
-    the <a href="../">other trackers</a> — this page reads their <code>snapshots.json</code>
-    directly, so it costs no extra Wynncraft API calls.
+    Season closes <b>27 Sep 2026, 06:00 Europe/Berlin</b>. Scalar is <b>5.0</b>, assumed to double
+    for the final 24 h. Rating polled every 5 minutes by the <a href="../">other trackers</a>.
   </div>
 
 </div>
 
 <script>
 // ─── Fixed facts ───────────────────────────────────────
-// [Shy] ShadowFall, Season 1. Confirmed against leaderboards/guildSeason1, but kept as a
-// constant because the page must render even when that endpoint is rate-limited.
 const RECORD = 20270919;
+const SEASON_END = Date.parse("2026-09-27T04:00:00Z");   // 06:00 Europe/Berlin
 
-// 27 Sep 2026, 06:00 Europe/Berlin — CEST, so UTC+2. The API exposes nothing about season
-// timing, so this is the one number that has to be maintained by hand.
-const SEASON_END = Date.parse("2026-09-27T04:00:00Z");
+const SCALAR_NOW = 5.0;
+const SCALAR_BOOST = 10.0;
+const BOOST_HOURS = 24;
+const BOOST_FACTOR = SCALAR_BOOST / SCALAR_NOW;
 
-// Holding yield, per the Guild Seasons wiki. base is the hourly rate of one territory slot
-// before regression; r is the per-slot penalty, flattening to 0.20 from the 22nd territory on.
-const HOLD_BASE = 120;
+const HOLD_BASE = 120;        // hourly holding base per territory slot
+const CAPTURE_BASE = 40;      // per successful capture, before the scalar
 const REGRESSION = [3.00, 2.00, 1.00, 0.90, 0.80, 0.75, 0.75, 0.70, 0.70, 0.65, 0.65,
                     0.60, 0.60, 0.55, 0.55, 0.50, 0.45, 0.40, 0.35, 0.30, 0.25];
 const REGRESSION_TAIL = 0.20;
+const RAID_SR = 240;          // measured average; a full party with 3 gambits each caps at 440
 
-// The scalar currently in force, and the step expected for the closing stretch. Reconstructed
-// from the poll data itself: over intervals with no war and no territory change, holding is the
-// only SR source, so dSR / (base * regressionSum * hours) reads the scalar directly. That
-// measure jumped from ~3.7 to ~5.9 on 19 Sep — a 1.6x step, i.e. 3.0 -> 5.0. It runs about 15%
-// high in absolute terms (the real base sits a little above 120), but the RATIO is what matters
-// here, and both holding and capture rating scale linearly with s — so a doubling of s doubles
-// the rating rate whatever the mix of holding and capping.
-const SCALAR_NOW = 5.0;
-const SCALAR_BOOST = 10.0;
-const BOOST_HOURS = 24;          // assumed final stretch at the boosted scalar
-const BOOST_FACTOR = SCALAR_BOOST / SCALAR_NOW;
-
-// Guild raids pay season rating too, and — unlike holding and capturing — the payout does NOT
-// move with the scalar. Measured the same way: calibrate holding on raid-free blocks, then divide
-// the leftover rating by the raids completed. That gives 251 SR/raid while s was 3.0 and 230 once
-// s was 5.0 — a ratio of 0.92, i.e. flat, where scaling would have shown 1.67.
-//
-// Per raid the payout is built per player: 50 base, plus 10 / 20 / 30 for the first, second and
-// third gambit. So one player runs 50–110 and a full party of four caps at 440. The measured
-// average of ~240 is what a four-player party with light gambit use comes to, and it is the
-// average that matters here, not the cap.
-const RAID_SR_PER_PLAYER = 50;
-const RAID_GAMBIT_BONUS = [10, 20, 30];
-const RAID_SR_MAX = 4 * (RAID_SR_PER_PLAYER + RAID_GAMBIT_BONUS.reduce((a, b) => a + b, 0));
-const RAID_SR = 240;
+// ─── State ─────────────────────────────────────────────
+let windowHours = Number(localStorage.getItem("recordWindowH")) || 24;
+let lastSeries = null;
+const charts = {};
 
 // ─── Theme ─────────────────────────────────────────────
 (function () {
@@ -526,6 +544,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 
 // ─── Helpers ───────────────────────────────────────────
 const fmt = n => Math.round(n ?? 0).toLocaleString("en-US");
+const fmt1 = n => (n ?? 0).toFixed(1);
 const $ = id => document.getElementById(id);
 
 function colors() {
@@ -534,6 +553,7 @@ function colors() {
   return {
     left: get("--left"), record: get("--record"), muted: get("--muted"),
     grid: get("--grid"), card: get("--card"), ink: get("--ink"), rule: get("--rule"),
+    hold: get("--hold"), raid: get("--raid"), cap: get("--cap"),
   };
 }
 
@@ -548,7 +568,8 @@ function timeAgo(iso) {
 const timeLabel = t => new Date(t).toLocaleString("en-US",
   { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false });
 
-// A full season is thousands of points; the chart only needs enough to draw the shape.
+const windowLabel = h => h < 24 ? h + " h" : (h / 24) + " d";
+
 function downsample(arr, max) {
   if (arr.length <= max) return arr;
   const step = arr.length / max;
@@ -558,92 +579,102 @@ function downsample(arr, max) {
   return out;
 }
 
-// Sum of the regression table for a guild holding `t` territories.
 function regressionSum(t) {
   let sum = 0;
   for (let i = 0; i < Math.min(t, REGRESSION.length); i++) sum += REGRESSION[i];
   if (t > REGRESSION.length) sum += REGRESSION_TAIL * (t - REGRESSION.length);
   return sum;
 }
-
-// Rating per day from holding alone, at scalar s.
 const holdingPerDay = (territories, s) => HOLD_BASE * s * regressionSum(territories) * 24;
 
-// Rate over the last `days`, measured between the oldest and newest point inside the window.
-// Returns null when the window holds fewer than two points, or spans so little time that the
-// slope would be noise rather than a trend.
-function pacePerDay(series, days) {
-  const cutoff = Date.now() - days * 86400000;
+// Everything measured over one window: rating, raids and wars per day.
+function rates(series, hours) {
+  const cutoff = Date.now() - hours * 3600000;
   const win = series.filter(p => p.t >= cutoff);
   if (win.length < 2) return null;
-  const spanDays = (win[win.length - 1].t - win[0].t) / 86400000;
-  if (spanDays < days / 8) return null;
-  return (win[win.length - 1].sr - win[0].sr) / spanDays;
+  const a = win[0], b = win[win.length - 1];
+  const days = (b.t - a.t) / 86400000;
+  if (days < hours / 24 / 8) return null;
+  return {
+    hours, days,
+    pace:  (b.sr - a.sr) / days,
+    raids: Math.max((b.raids - a.raids) / days, 0),
+    wars:  Math.max((b.wars - a.wars) / days, 0),
+    terr:  b.terr,
+  };
 }
 
-// Rating at season end, given a base pace measured under SCALAR_NOW. The closing BOOST_HOURS
-// are worth BOOST_FACTOR times as much per hour, since every SR source scales with the scalar.
-function projectEnd(cur, pace, raidRate, boostHours) {
-  const daysLeft = Math.max((SEASON_END - Date.now()) / 86400000, 0);
-  const boostDays = Math.min((boostHours ?? BOOST_HOURS) / 24, daysLeft);
-  const raidPart = Math.min((raidRate ?? 0) * RAID_SR, pace);   // flat across the bump
-  const scalingPart = pace - raidPart;                          // holding + capturing
-  const boosted = scalingPart * BOOST_FACTOR + raidPart;
-  return cur + pace * (daysLeft - boostDays) + boosted * boostDays;
+// Split a measured rate into its three sources: holding from the territory count, raids from the
+// observed raid rate, capturing takes the remainder.
+function split(r) {
+  const holding = holdingPerDay(r.terr, SCALAR_NOW);
+  const raids = r.raids * RAID_SR;
+  return { holding, raids, caps: r.pace - holding - raids };
 }
 
-// Base pace that would land exactly on the record, given the boosted closing stretch. The raid
-// share rides along unchanged, so it is subtracted before scaling and added back after.
-function requiredPace(cur, raidRate, boostHours) {
-  const daysLeft = Math.max((SEASON_END - Date.now()) / 86400000, 0);
-  const boostDays = Math.min((boostHours ?? BOOST_HOURS) / 24, daysLeft);
-  const raidPart = (raidRate ?? 0) * RAID_SR;
-  const weighted = (daysLeft - boostDays) + BOOST_FACTOR * boostDays;
+const daysLeft = () => Math.max((SEASON_END - Date.now()) / 86400000, 0);
+const boostDays = h => Math.min((h ?? BOOST_HOURS) / 24, daysLeft());
+
+// Rating at season end. Holding and capturing double across the bump; raid rating does not.
+function projectEnd(cur, r, boostHours) {
+  const bd = boostDays(boostHours);
+  const raidPart = Math.min(r.raids * RAID_SR, r.pace);
+  const boosted = (r.pace - raidPart) * BOOST_FACTOR + raidPart;
+  return cur + r.pace * (daysLeft() - bd) + boosted * bd;
+}
+
+// Base pace that lands exactly on the record.
+function requiredPace(cur, r, boostHours) {
+  const bd = boostDays(boostHours);
+  const weighted = (daysLeft() - bd) + BOOST_FACTOR * bd;
   if (weighted <= 0) return null;
-  const flatBonus = raidPart * boostDays * (1 - BOOST_FACTOR);
-  return (RECORD - cur - flatBonus) / weighted;
-}
-
-// Raids completed per day over the same window, so the flat part of the rate can be split off.
-function raidsPerDay(series, days) {
-  const cutoff = Date.now() - days * 86400000;
-  const win = series.filter(p => p.t >= cutoff);
-  if (win.length < 2) return 0;
-  const spanDays = (win[win.length - 1].t - win[0].t) / 86400000;
-  if (spanDays <= 0) return 0;
-  return Math.max((win[win.length - 1].raids - win[0].raids) / spanDays, 0);
+  return (RECORD - cur - r.raids * RAID_SR * bd * (1 - BOOST_FACTOR)) / weighted;
 }
 
 // ─── Countdown ─────────────────────────────────────────
 function tickCountdown() {
   const ms = SEASON_END - Date.now();
   if (ms <= 0) { $("countdown").textContent = "Season over"; return; }
-  const d = Math.floor(ms / 86400000);
-  const h = Math.floor(ms / 3600000) % 24;
-  const m = Math.floor(ms / 60000) % 60;
-  const s = Math.floor(ms / 1000) % 60;
   const pad = n => String(n).padStart(2, "0");
   $("countdown").innerHTML =
-    d + "<small>d</small>" + pad(h) + "<small>h</small>" +
-    pad(m) + "<small>m</small>" + pad(s) + "<small>s</small>";
+    Math.floor(ms / 86400000) + "<small>d</small>" +
+    pad(Math.floor(ms / 3600000) % 24) + "<small>h</small>" +
+    pad(Math.floor(ms / 60000) % 60) + "<small>m</small>" +
+    pad(Math.floor(ms / 1000) % 60) + "<small>s</small>";
 }
 tickCountdown();
 setInterval(tickCountdown, 1000);
 
-// ─── Render ────────────────────────────────────────────
-let chart = null;
-let lastSeries = null;
+// ─── Window selector ───────────────────────────────────
+function syncWindowButtons() {
+  [...$("windowbar").querySelectorAll("button")]
+    .forEach(x => x.classList.toggle("active", Number(x.dataset.h) === windowHours));
+}
+$("windowbar").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  windowHours = Number(b.dataset.h);
+  localStorage.setItem("recordWindowH", windowHours);
+  syncWindowButtons();
+  if (lastSeries) render(lastSeries);
+});
+syncWindowButtons();
 
+// ─── Render ────────────────────────────────────────────
 function render(series) {
   lastSeries = series;
   const c = colors();
-  const last = series[series.length - 1];
-  const cur = last.sr;
-  const territories = last.terr;
+  const cur = series[series.length - 1].sr;
   const gap = RECORD - cur;
   const pct = Math.min(cur / RECORD, 1);
   const beaten = gap <= 0;
-  const daysLeft = Math.max((SEASON_END - Date.now()) / 86400000, 0);
+
+  // Fall back to progressively wider windows when the chosen one holds too few points.
+  let r = null;
+  for (const h of [windowHours, 24, 48, 168]) {
+    r = rates(series, h);
+    if (r) break;
+  }
 
   $("hero-label").textContent = beaten ? "Record beaten by" : "Still to go";
   $("gap-value").textContent = fmt(Math.abs(gap));
@@ -651,231 +682,289 @@ function render(series) {
   $("bar").style.background = beaten ? c.record : c.left;
   $("bar-left").textContent = fmt(cur) + " · " + (pct * 100).toFixed(1) + "%";
 
-  const p24 = pacePerDay(series, 1);
-  const p7  = pacePerDay(series, 7);
-  const pace = p7 ?? p24;
-  const paceLabel = p7 != null ? "7-day average" : "24-hour average";
+  if (!r) {
+    $("verdict-head").textContent = "Not enough data yet";
+    $("verdict-body").textContent = "The tracker needs more polling history before it can project.";
+    return;
+  }
 
-  const raidRate = raidsPerDay(series, p7 != null ? 7 : 1);
-  const needPace = requiredPace(cur, raidRate);
-  const projected = pace != null ? projectEnd(cur, pace, raidRate) : null;
+  const wl = windowLabel(r.hours);
+  $("levers-hint").textContent = "rates from the last " + wl
+    + " · " + fmt1(daysLeft()) + " days of season left";
+  $("mix-hint").textContent = "per day, measured over the last " + wl;
 
-  // Dashed overlay on the bar showing where the current pace lands by season end.
-  if (projected != null && !beaten) {
+  const projected = projectEnd(cur, r);
+  const needPace = requiredPace(cur, r);
+  const noBump = projectEnd(cur, r, 0);
+
+  if (!beaten) {
     const projPct = Math.min(projected / RECORD, 1);
     $("bar-proj").style.left = (pct * 100).toFixed(2) + "%";
     $("bar-proj").style.width = Math.max(projPct - pct, 0) * 100 + "%";
-  } else {
-    $("bar-proj").style.width = "0";
-  }
+  } else $("bar-proj").style.width = "0";
 
   $("s-current").textContent = fmt(cur);
-  $("s-current-sub").textContent = (pct * 100).toFixed(2) + "% of the record · "
-    + territories + " territories";
-  $("s-pace").textContent = pace != null ? fmt(pace) : "—";
-  $("s-pace-sub").textContent = pace != null ? "SR per day · " + paceLabel : "not enough history yet";
-  $("s-need").textContent = needPace != null && !beaten ? fmt(needPace) : "—";
+  $("s-current-sub").textContent = (pct * 100).toFixed(2) + "% of the record · " + r.terr + " territories";
+  $("s-pace").textContent = fmt(r.pace);
+  $("s-pace-sub").textContent = "SR per day · last " + wl;
+  $("s-need").textContent = beaten ? "—" : fmt(needPace);
   $("s-need-sub").textContent = beaten ? "record already broken"
-    : "SR per day for the remaining " + daysLeft.toFixed(1) + " days, with the final "
-      + BOOST_HOURS + " h at " + SCALAR_BOOST.toFixed(1) + "x";
-  $("s-proj").textContent = projected != null ? fmt(projected) : "—";
-  $("s-proj-sub").textContent = "current pace + " + BOOST_HOURS + " h at "
-    + SCALAR_BOOST.toFixed(1) + "x";
+    : "SR per day across " + fmt1(daysLeft()) + " days left";
+  $("s-proj").textContent = fmt(projected);
+  $("s-proj-sub").textContent = "with the final 24 h at 10×";
 
-  // Verdict
+  renderVerdict(cur, r, projected, needPace, noBump, beaten, wl);
+  renderLevers(r, projected, beaten);
+  renderMix(split(r), r, c);
+  renderScenarios(cur, series);
+  renderMainChart(series, c, r);
+  renderPaceChart(series, c);
+  renderTerrChart(series, c);
+  renderActivityChart(series, c);
+}
+
+function renderVerdict(cur, r, projected, needPace, noBump, beaten, wl) {
   const v = $("verdict");
   v.classList.remove("yes", "no");
   if (beaten) {
     v.classList.add("yes");
     $("verdict-head").textContent = "Record broken";
-    $("verdict-body").innerHTML = "Sequoia is at <b>" + fmt(cur)
-      + "</b>, past ShadowFall's <b>" + fmt(RECORD) + "</b>. Highest season rating in Wynncraft history.";
-  } else if (pace == null) {
-    $("verdict-head").textContent = "Not enough data yet";
-    $("verdict-body").textContent = "The tracker needs a few more hours of polling before it can project a finish.";
-  } else if (projected >= RECORD) {
-    v.classList.add("yes");
-    $("verdict-head").textContent = "On track — by " + fmt(projected - RECORD) + " SR";
-    $("verdict-body").innerHTML = "Holding the current <b>" + fmt(pace)
-      + " SR a day</b> through the remaining <b>" + daysLeft.toFixed(1)
-      + " days</b>, with the closing <b>" + BOOST_HOURS + " h at " + SCALAR_BOOST.toFixed(1)
-      + "x</b>, puts Sequoia at <b>" + fmt(projected) + "</b> — over the record. The base pace may "
-      + "not drop below <b>" + fmt(needPace) + " a day</b>, so the margin is <b>"
-      + ((pace / needPace - 1) * 100).toFixed(1) + "%</b>. Without the scalar bump it misses by <b>"
-      + fmt(RECORD - projectEnd(cur, pace, raidRate, 0)) + "</b>.";
-  } else {
-    v.classList.add("no");
-    $("verdict-head").textContent = "Short by " + fmt(RECORD - projected) + " SR";
-    $("verdict-body").innerHTML = "At <b>" + fmt(pace) + " SR a day</b>, even with the closing <b>"
-      + BOOST_HOURS + " h at " + SCALAR_BOOST.toFixed(1) + "x</b>, Sequoia lands on <b>"
-      + fmt(projected) + "</b> — <b>" + fmt(RECORD - projected)
-      + "</b> under the record. It needs a base pace of <b>" + fmt(needPace) + " a day</b>, about <b>"
-      + ((needPace / pace - 1) * 100).toFixed(0) + "% more</b> than right now.";
-  }
-
-  const moving = pace != null && pace > 0
-    ? ", moving at roughly <b>" + fmt(pace) + " SR a day</b>"
-    : "";
-  $("hero-sub").innerHTML = beaten
-    ? "Sequoia sits at <b>" + fmt(cur) + "</b> — past <b>[Shy] ShadowFall</b>&rsquo;s Season 1 mark of <b>"
-      + fmt(RECORD) + "</b>, the highest season rating Wynncraft has ever seen."
-    : "Sequoia sits at <b>" + fmt(cur) + "</b>, <b>" + fmt(gap)
-      + "</b> short of the all-time high set by <b>[Shy] ShadowFall</b> in Season 1. That is <b>"
-      + (pct * 100).toFixed(1) + "%</b> of the way there" + moving + ".";
-
-  renderScenarios(cur, series);
-  renderChart(series, c, pace, daysLeft, raidRate);
-}
-
-// Each pace window, run out to season end under three scalar schedules. Every SR source scales
-// with s, so a schedule is just a multiplier on the closing hours — no need to model holding and
-// capping separately.
-function renderScenarios(cur, series) {
-  const windows = [
-    { label: "Last 24 h", days: 1 },
-    { label: "Last 48 h", days: 2 },
-    { label: "Last 7 d",  days: 7 },
-  ].map(w => ({ ...w, pace: pacePerDay(series, w.days), raidRate: raidsPerDay(series, w.days) }))
-   .filter(w => w.pace != null);
-
-  if (!windows.length) {
-    $("scalar-rows").innerHTML = '<tr><td colspan="4" style="text-align:left;color:var(--muted)">'
-      + "Not enough history yet.</td></tr>";
+    $("verdict-body").innerHTML = "Sequoia is at <b>" + fmt(cur) + "</b>, past ShadowFall's <b>"
+      + fmt(RECORD) + "</b>. Highest season rating in Wynncraft history.";
     return;
   }
-
-  const schedules = [0, BOOST_HOURS, BOOST_HOURS * 2];
-  const rows = windows.map(w => {
-    const cells = schedules.map(h => {
-      const end = projectEnd(cur, w.pace, w.raidRate, h);
-      const diff = end - RECORD;
-      return '<td class="' + (diff >= 0 ? "hit" : "miss") + '">' + fmt(end)
-        + '<span style="display:block;font-size:11px;font-weight:400">'
-        + (diff >= 0 ? "+" : "−") + fmt(Math.abs(diff)) + "</span></td>";
-    }).join("");
-    const isBase = w.label === "Last 48 h";
-    return "<tr" + (isBase ? ' class="now"' : "") + "><td>" + w.label
-      + '<span style="display:block;font-size:11px;font-weight:400;color:var(--muted)">'
-      + fmt(w.pace) + " SR/day</span></td>" + cells + "</tr>";
-  });
-
-  $("scalar-rows").innerHTML = rows.join("");
+  const over = projected - RECORD;
+  if (over >= 0) {
+    v.classList.add("yes");
+    $("verdict-head").textContent = "On track — by " + fmt(over) + " SR";
+    $("verdict-body").innerHTML = "At the last " + wl + " rate of <b>" + fmt(r.pace)
+      + " SR/day</b>, with the closing 24 h doubled, Sequoia finishes on <b>" + fmt(projected)
+      + "</b>. The pace may not fall below <b>" + fmt(needPace) + "/day</b> — <b>"
+      + ((r.pace / needPace - 1) * 100).toFixed(1) + "%</b> of headroom. Without the bump it misses by <b>"
+      + fmt(RECORD - noBump) + "</b>.";
+  } else {
+    v.classList.add("no");
+    $("verdict-head").textContent = "Short by " + fmt(-over) + " SR";
+    $("verdict-body").innerHTML = "At the last " + wl + " rate of <b>" + fmt(r.pace)
+      + " SR/day</b>, even with the closing 24 h doubled, Sequoia lands on <b>" + fmt(projected)
+      + "</b>. It needs <b>" + fmt(needPace) + "/day</b> — <b>"
+      + ((needPace / r.pace - 1) * 100).toFixed(0) + "% more</b> than now.";
+  }
 }
 
-function renderChart(series, c, pace, daysLeft, raidRate) {
+// The gap expressed in things the guild can actually go and do.
+function renderLevers(r, projected, beaten) {
+  const shortfall = RECORD - projected;
+  const bd = boostDays();
+  const restDays = Math.max(daysLeft() - bd, 0);
+
+  // What one extra unit per day is worth over all remaining time.
+  const capPerDay   = CAPTURE_BASE * (SCALAR_NOW * restDays + SCALAR_BOOST * bd);
+  const capFinalDay = CAPTURE_BASE * SCALAR_BOOST;
+  const raidPerDay  = RAID_SR * (restDays + bd);
+  const terrPerDay  = HOLD_BASE * REGRESSION_TAIL * 24 * (SCALAR_NOW * restDays + SCALAR_BOOST * bd);
+
+  const need = shortfall > 0;
+  const mag = Math.abs(shortfall);
+  const cls = beaten ? "spare" : (need ? "need" : "spare");
+  const sign = need ? "+" : "−";
+  const tail = need ? "still needed" : "of slack";
+
+  $("levers-title").textContent = beaten ? "Margin in hand"
+    : (need ? "What it takes" : "How much slack there is");
+
+  const cards = [
+    { k: "Captures / day",
+      v: sign + fmt1(mag / capPerDay),
+      s: "extra caps every remaining day " + tail,
+      now: "now <b>" + fmt1(r.wars) + "/day</b> · a cap is worth "
+         + fmt(CAPTURE_BASE * SCALAR_NOW) + " SR, " + fmt(capFinalDay) + " SR once boosted" },
+    { k: "Captures on the final day",
+      v: sign + fmt(mag / capFinalDay),
+      s: "extra caps inside the 10× window alone " + tail,
+      now: "every cap in that window counts <b>double</b>" },
+    { k: "Guild raids / day",
+      v: sign + fmt1(mag / raidPerDay),
+      s: "extra raids every remaining day " + tail,
+      now: "now <b>" + fmt1(r.raids) + "/day</b> · a raid is <b>" + RAID_SR
+         + " SR</b> flat, up to 440 with a full party on 3 gambits" },
+    { k: "Territories held",
+      v: sign + fmt1(mag / terrPerDay),
+      s: "more territories held throughout " + tail,
+      now: "now <b>" + r.terr + "</b> · each one past the 21st adds "
+         + fmt(HOLD_BASE * REGRESSION_TAIL * 24 * SCALAR_NOW) + " SR/day" },
+  ];
+
+  $("levers").innerHTML = cards.map(x =>
+    '<div class="lever ' + cls + '"><div class="k">' + x.k + "</div>" +
+    '<div class="v">' + x.v + "</div>" +
+    '<div class="s">' + x.s + "</div>" +
+    '<div class="now">' + x.now + "</div></div>"
+  ).join("");
+}
+
+function renderMix(parts, r, c) {
+  const items = [
+    { label: "Holding", value: Math.max(parts.holding, 0), color: c.hold },
+    { label: "Captures", value: Math.max(parts.caps, 0), color: c.cap },
+    { label: "Raids", value: Math.max(parts.raids, 0), color: c.raid },
+  ];
+  const total = items.reduce((a, b) => a + b.value, 0) || 1;
+  $("mix").innerHTML = items.map(i => {
+    const share = i.value / total;
+    return '<span style="width:' + (share * 100).toFixed(2) + "%;background:" + i.color + '">'
+      + (share > 0.08 ? (share * 100).toFixed(0) + "%" : "") + "</span>";
+  }).join("");
+  $("mix-legend").innerHTML = items.map(i =>
+    '<span><i style="background:' + i.color + '"></i>' + i.label + " <b>" + fmt(i.value) + "</b> SR/day</span>"
+  ).join("") + '<span style="margin-left:auto">measured total <b>' + fmt(r.pace) + "</b> SR/day</span>";
+}
+
+function renderScenarios(cur, series) {
+  const rows = [6, 12, 24, 48, 72, 168]
+    .map(h => rates(series, h))
+    .filter(Boolean)
+    .map(r => {
+      const cells = [0, BOOST_HOURS, BOOST_HOURS * 2].map(h => {
+        const end = projectEnd(cur, r, h);
+        const diff = end - RECORD;
+        return '<td class="' + (diff >= 0 ? "hit" : "miss") + '">' + fmt(end)
+          + '<span style="display:block;font-size:11px;font-weight:400">'
+          + (diff >= 0 ? "+" : "−") + fmt(Math.abs(diff)) + "</span></td>";
+      }).join("");
+      return "<tr" + (r.hours === windowHours ? ' class="now"' : "") + "><td>Last "
+        + windowLabel(r.hours)
+        + '<span style="display:block;font-size:11px;font-weight:400;color:var(--muted)">'
+        + fmt(r.pace) + " SR/day</span></td>" + cells + "</tr>";
+    });
+  if (rows.length) $("scen-rows").innerHTML = rows.join("");
+}
+
+// ─── Charts ────────────────────────────────────────────
+function baseOpts(c, legend) {
+  return {
+    responsive: true, maintainAspectRatio: false,
+    interaction: { mode: "index", intersect: false },
+    plugins: {
+      legend: legend === false ? { display: false } : {
+        labels: { color: c.muted, boxWidth: 10, boxHeight: 10, usePointStyle: true,
+                  font: { family: "Inter", size: 11 } },
+      },
+      tooltip: {
+        backgroundColor: c.card, titleColor: c.ink, bodyColor: c.ink,
+        borderColor: c.rule, borderWidth: 1, padding: 10,
+        callbacks: { label: ctx => ctx.parsed.y == null ? null
+          : ctx.dataset.label + ": " + fmt(ctx.parsed.y) },
+      },
+    },
+    scales: {
+      x: { grid: { color: c.grid, drawTicks: false },
+           ticks: { color: c.muted, font: { family: "Inter", size: 10 },
+                    maxRotation: 0, autoSkip: true, maxTicksLimit: 7, padding: 6 } },
+      y: { grid: { color: c.grid, drawTicks: false },
+           ticks: { color: c.muted, font: { family: "Inter", size: 10 },
+                    callback: v => Number(v).toLocaleString("en-US"), padding: 6 } },
+    },
+  };
+}
+function draw(key, cfg) {
+  if (charts[key]) charts[key].destroy();
+  charts[key] = new Chart($(key), cfg);
+}
+
+function renderMainChart(series, c, r) {
   const plot = downsample(series, 400);
   const labels = plot.map(p => timeLabel(p.t));
   const actual = plot.map(p => p.sr);
-
-  // Straight-line projection from the last reading to season end, appended as future points.
   const projection = actual.map(() => null);
-  if (pace != null && daysLeft > 0) {
-    projection[projection.length - 1] = actual[actual.length - 1];
-    const last = plot[plot.length - 1];
-    const boostStart = SEASON_END - BOOST_HOURS * 3600000;
-    const steps = 24;
-    for (let i = 1; i <= steps; i++) {
-      const t = last.t + (SEASON_END - last.t) * (i / steps);
-      // Hours before the boost are worth the base rate, hours inside it BOOST_FACTOR times more.
-      const baseDays = (Math.min(t, boostStart) - last.t) / 86400000;
-      const boostDays = Math.max(t - Math.max(boostStart, last.t), 0) / 86400000;
-      labels.push(timeLabel(t));
-      actual.push(null);
-      const raidPart = Math.min((raidRate ?? 0) * RAID_SR, pace);
-      const boostedRate = (pace - raidPart) * BOOST_FACTOR + raidPart;
-      projection.push(last.sr + pace * Math.max(baseDays, 0) + boostedRate * boostDays);
-    }
-  }
-  const recordLine = labels.map(() => RECORD);
-  const lo = Math.min.apply(null, plot.map(p => p.sr));
 
-  if (chart) chart.destroy();
-  chart = new Chart($("chart"), {
+  projection[projection.length - 1] = actual[actual.length - 1];
+  const last = plot[plot.length - 1];
+  const boostStart = SEASON_END - BOOST_HOURS * 3600000;
+  const raidPart = Math.min(r.raids * RAID_SR, r.pace);
+  const boostedRate = (r.pace - raidPart) * BOOST_FACTOR + raidPart;
+  for (let i = 1; i <= 24; i++) {
+    const t = last.t + (SEASON_END - last.t) * (i / 24);
+    const baseD = Math.max((Math.min(t, boostStart) - last.t) / 86400000, 0);
+    const boostD = Math.max(t - Math.max(boostStart, last.t), 0) / 86400000;
+    labels.push(timeLabel(t));
+    actual.push(null);
+    projection.push(last.sr + r.pace * baseD + boostedRate * boostD);
+  }
+
+  const opts = baseOpts(c);
+  opts.scales.y.min = Math.floor(Math.min.apply(null, plot.map(p => p.sr)) * 0.985);
+  opts.scales.y.max = Math.ceil(RECORD * 1.015);
+  draw("chart-main", {
     type: "line",
-    data: {
-      labels,
-      datasets: [
-        {
-          label: "All-time record",
-          data: recordLine,
-          borderColor: c.record,
-          borderWidth: 1.5,
-          borderDash: [7, 5],
-          pointRadius: 0,
-          fill: false,
-        },
-        {
-          label: "Projection · current pace + 10x final 24 h",
-          data: projection,
-          borderColor: c.muted,
-          borderWidth: 1.5,
-          borderDash: [3, 4],
-          pointRadius: 0,
-          fill: false,
-          spanGaps: true,
-        },
-        {
-          label: "Sequoia",
-          data: actual,
-          borderColor: c.left,
-          backgroundColor: c.left + "22",
-          borderWidth: 2,
-          pointRadius: 0,
-          pointHoverRadius: 4,
-          tension: .25,
-          fill: true,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: { mode: "index", intersect: false },
-      plugins: {
-        legend: {
-          labels: {
-            color: c.muted, boxWidth: 10, boxHeight: 10, usePointStyle: true,
-            font: { family: "Inter", size: 11 },
-          },
-        },
-        tooltip: {
-          backgroundColor: c.card,
-          titleColor: c.ink,
-          bodyColor: c.ink,
-          borderColor: c.rule,
-          borderWidth: 1,
-          padding: 10,
-          callbacks: {
-            label: ctx => ctx.parsed.y == null ? null : ctx.dataset.label + ": " + fmt(ctx.parsed.y),
-          },
-        },
-      },
-      scales: {
-        x: {
-          grid: { color: c.grid, drawTicks: false },
-          ticks: {
-            color: c.muted, font: { family: "Inter", size: 10 },
-            maxRotation: 0, autoSkip: true, maxTicksLimit: 8, padding: 6,
-          },
-        },
-        y: {
-          min: Math.floor(lo * 0.985),
-          max: Math.ceil(RECORD * 1.015),
-          grid: { color: c.grid, drawTicks: false },
-          ticks: {
-            color: c.muted, font: { family: "Inter", size: 10 },
-            callback: v => Number(v).toLocaleString("en-US"), padding: 6,
-          },
-        },
-      },
-    },
+    data: { labels, datasets: [
+      { label: "All-time record", data: labels.map(() => RECORD), borderColor: c.record,
+        borderWidth: 1.5, borderDash: [7, 5], pointRadius: 0, fill: false },
+      { label: "Projection", data: projection, borderColor: c.muted,
+        borderWidth: 1.5, borderDash: [3, 4], pointRadius: 0, fill: false, spanGaps: true },
+      { label: "Sequoia", data: actual, borderColor: c.left, backgroundColor: c.left + "22",
+        borderWidth: 2, pointRadius: 0, pointHoverRadius: 4, tension: .25, fill: true },
+    ] },
+    options: opts,
+  });
+}
+
+// Rolling rate over `hours`, so scalar steps show up as plateaus.
+function rolling(series, hours, pick) {
+  const out = [];
+  let j = 0;
+  for (let i = 1; i < series.length; i++) {
+    while (series[i].t - series[j].t > hours * 3600000) j++;
+    if (j === i) continue;
+    const days = (series[i].t - series[j].t) / 86400000;
+    if (days <= 0) continue;
+    out.push({ t: series[i].t, v: (pick(series[i]) - pick(series[j])) / days });
+  }
+  return out;
+}
+
+function renderPaceChart(series, c) {
+  const pts = downsample(rolling(series, 12, p => p.sr), 300);
+  draw("chart-pace", {
+    type: "line",
+    data: { labels: pts.map(p => timeLabel(p.t)), datasets: [
+      { label: "SR / day", data: pts.map(p => p.v), borderColor: c.left,
+        backgroundColor: c.left + "1e", borderWidth: 2, pointRadius: 0, tension: .2, fill: true },
+    ] },
+    options: baseOpts(c, false),
+  });
+}
+
+function renderTerrChart(series, c) {
+  const pts = downsample(series, 300);
+  draw("chart-terr", {
+    type: "line",
+    data: { labels: pts.map(p => timeLabel(p.t)), datasets: [
+      { label: "Territories", data: pts.map(p => p.terr), borderColor: c.cap,
+        backgroundColor: c.cap + "1e", borderWidth: 2, pointRadius: 0, stepped: true, fill: true },
+    ] },
+    options: baseOpts(c, false),
+  });
+}
+
+function renderActivityChart(series, c) {
+  const wars = downsample(rolling(series, 24, p => p.wars), 300);
+  const raids = downsample(rolling(series, 24, p => p.raids), 300);
+  draw("chart-activity", {
+    type: "line",
+    data: { labels: wars.map(p => timeLabel(p.t)), datasets: [
+      { label: "Wars / day", data: wars.map(p => p.v), borderColor: c.cap,
+        borderWidth: 2, pointRadius: 0, tension: .2, fill: false },
+      { label: "Guild raids / day", data: raids.map(p => p.v), borderColor: c.raid,
+        borderWidth: 2, pointRadius: 0, tension: .2, fill: false },
+    ] },
+    options: baseOpts(c),
   });
 }
 
 // ─── Load ──────────────────────────────────────────────
-// The sibling tracker at /race/ has polled Sequoia since the season opened, so it carries far
-// more history than this repo does. Same origin, so it is just a fetch. Falls back to the local
-// file if it is ever unavailable.
+// The sibling tracker at /race/ has polled Sequoia since the season opened, so it carries the
+// full history. Same origin, so it is just a fetch; falls back to this repo's own file.
 const SOURCES = ["https://teslanator20.github.io/race/snapshots.json", "../snapshots.json"];
 
 async function loadSnapshots() {
@@ -892,22 +981,19 @@ async function loadSnapshots() {
 
 async function load() {
   const data = await loadSnapshots();
-  if (!data) { $("hero-sub").textContent = "Could not load snapshot data."; return; }
-  const snaps = data.snapshots || [];
-  if (!snaps.length) { $("hero-sub").textContent = "No snapshots yet."; return; }
-
+  if (!data) { $("verdict-body").textContent = "Could not load snapshot data."; return; }
+  const snaps = data.snapshots;
   const season = snaps[snaps.length - 1].season;
   const series = snaps
     .filter(s => s.season === season && s.left && Number.isFinite(s.left.seasonSr))
     .map(s => ({ t: new Date(s.ts).getTime(), sr: s.left.seasonSr,
-                 terr: s.left.territories ?? 0, raids: s.left.raids ?? 0 }))
+                 terr: s.left.territories ?? 0, raids: s.left.raids ?? 0, wars: s.left.wars ?? 0 }))
     .sort((a, b) => a.t - b.t);
-  if (!series.length) { $("hero-sub").textContent = "No rating data for this season yet."; return; }
+  if (!series.length) { $("verdict-body").textContent = "No rating data for this season yet."; return; }
 
-  $("cur-name").textContent = data.config?.left?.name ?? snaps[snaps.length - 1].left.name ?? "Sequoia";
+  $("cur-name").textContent = data.config?.left?.name ?? "Sequoia";
   $("season-eyebrow").textContent = "Season " + season;
   $("updated").textContent = timeAgo(data.updated ?? snaps[snaps.length - 1].ts);
-
   render(series);
 }
 
