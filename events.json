@@ -185,7 +185,16 @@
       "type": "promoted",
       "from": "recruit",
       "to": "recruiter"
+    },
+    {
+      "ts": "2026-09-23T22:20:31.208Z",
+      "guild": "Sequoia",
+      "uuid": "b640a1ac-b0df-4397-99ec-ecb9d0a6dba8",
+      "username": "OaksofLife",
+      "type": "demoted",
+      "from": "recruiter",
+      "to": "recruit"
     }
   ],
-  "updated": "2026-09-23T22:15:30.196Z"
+  "updated": "2026-09-23T22:20:31.208Z"
 }
