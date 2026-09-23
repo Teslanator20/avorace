@@ -234,28 +234,6 @@
   }
   .stat .s { margin-top: 6px; font-size: 11.5px; color: var(--muted); line-height: 1.45; }
 
-  .levers {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
-    background: var(--rule); border: 1px solid var(--rule);
-  }
-  .lever { background: var(--card); padding: 20px 18px 18px; }
-  .lever .k {
-    font: 600 10px/1.3 'Inter', sans-serif; letter-spacing: .14em;
-    text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
-  }
-  .lever .v {
-    font-family: 'Fraunces', Georgia, serif; font-size: 34px; line-height: 1;
-    font-variation-settings: 'opsz' 96, 'wght' 540;
-  }
-  .lever.need .v { color: var(--down); }
-  .lever.spare .v { color: var(--up); }
-  .lever .s { margin-top: 9px; font-size: 12px; color: var(--muted); line-height: 1.5; }
-  .lever .now {
-    margin-top: 11px; padding-top: 10px; border-top: 1px solid var(--rule);
-    font-size: 11.5px; color: var(--muted); line-height: 1.5;
-  }
-  .lever .now b { color: var(--ink); font-weight: 600; }
-
   .chart-card {
     background: var(--card); border: 1px solid var(--rule);
     padding: 20px 20px 14px; box-shadow: 0 1px 0 var(--rule);
@@ -329,7 +307,7 @@
     .wrap { padding: 40px 18px 60px; }
     .theme-toggle { top: 20px; right: 18px; }
     .hero { padding: 22px 20px; }
-    .stats, .levers { grid-template-columns: repeat(2, 1fr); }
+    .stats { grid-template-columns: repeat(2, 1fr); }
     .chart-box { height: 280px; }
     .chart-box.short { height: 220px; }
     h2 { flex-direction: column; gap: 4px; }
@@ -415,10 +393,7 @@
     </div>
   </div>
 
-  <h2><span id="levers-title">What it takes</span><span class="hint" id="levers-hint">—</span></h2>
-  <div class="levers" id="levers"></div>
-
-  <h2><span>Rating vs the record</span><span class="hint">projection bends up for the final 24 h at 10×</span></h2>
+  <h2><span>Rating vs the record</span><span class="hint" id="main-hint">last 7 days · projection to season close</span></h2>
   <div class="chart-card">
     <div class="chart-box"><canvas id="chart-main"></canvas></div>
   </div>
@@ -431,13 +406,13 @@
 
   <div class="charts2">
     <div>
-      <h2><span>Daily pace</span><span class="hint">12 h rolling</span></h2>
+      <h2><span>Daily pace</span><span class="hint">12 h rolling · last 7 days</span></h2>
       <div class="chart-card">
         <div class="chart-box short"><canvas id="chart-pace"></canvas></div>
       </div>
     </div>
     <div>
-      <h2><span>Territories held</span></h2>
+      <h2><span>Territories held</span><span class="hint">last 7 days</span></h2>
       <div class="chart-card">
         <div class="chart-box short"><canvas id="chart-terr"></canvas></div>
       </div>
@@ -446,13 +421,13 @@
 
   <div class="charts2">
     <div>
-      <h2><span>Wars per day</span><span class="hint">24 h rolling</span></h2>
+      <h2><span>Wars per day</span><span class="hint">24 h rolling · last 7 days</span></h2>
       <div class="chart-card">
         <div class="chart-box short"><canvas id="chart-wars"></canvas></div>
       </div>
     </div>
     <div>
-      <h2><span>Guild raids per day</span><span class="hint">24 h rolling</span></h2>
+      <h2><span>Guild raids per day</span><span class="hint">24 h rolling · last 7 days</span></h2>
       <div class="chart-card">
         <div class="chart-box short"><canvas id="chart-raids"></canvas></div>
       </div>
@@ -481,8 +456,8 @@
   </div>
 
   <div class="foot">
-    Season closes <b>27 Sep 2026, 06:00 Europe/Berlin</b>. Scalar is <b>5.0</b>, doubling for the
-    final 24 h. Rating polled every 5 minutes.
+    Season closes <b>27 Sep 2026, 06:00 Europe/Berlin</b>. Scalar is <b>5.0</b> and doubles for the
+    final 24 h, which lifts holding and capture rating but not guild raids. Polled every 5 minutes.
   </div>
 
 </div>
@@ -503,6 +478,7 @@ const REGRESSION = [3.00, 2.00, 1.00, 0.90, 0.80, 0.75, 0.75, 0.70, 0.70, 0.65, 
                     0.60, 0.60, 0.55, 0.55, 0.50, 0.45, 0.40, 0.35, 0.30, 0.25];
 const REGRESSION_TAIL = 0.20;
 const RAID_SR = 240;          // measured average; a full party with 3 gambits each caps at 440
+const CHART_DAYS = 7;         // how much history the charts draw
 
 // ─── State ─────────────────────────────────────────────
 let windowHours = Number(localStorage.getItem("recordWindowH")) || 48;   // default: last 2 days
@@ -556,6 +532,13 @@ const timeLabel = t => new Date(t).toLocaleString("en-US",
 
 const windowLabel = h => h < 24 ? h + " h" : (h / 24) + " d";
 
+// Charts only draw the recent stretch — the whole season squeezes the interesting part flat.
+function recent(series, days) {
+  const cutoff = Date.now() - (days ?? CHART_DAYS) * 86400000;
+  const win = series.filter(p => p.t >= cutoff);
+  return win.length > 1 ? win : series;
+}
+
 function downsample(arr, max) {
   if (arr.length <= max) return arr;
   const step = arr.length / max;
@@ -607,6 +590,14 @@ function projectEnd(cur, r, boostHours) {
   const raidPart = Math.min(r.raids * RAID_SR, r.pace);
   const boosted = (r.pace - raidPart) * BOOST_FACTOR + raidPart;
   return cur + r.pace * (daysLeft() - bd) + boosted * bd;
+}
+
+// How much the total rate actually climbs in the boosted window, in percent. Holding and
+// capturing double; raid rating does not, so this lands below 100%.
+function boostShare(r) {
+  const raidPart = Math.min(r.raids * RAID_SR, r.pace);
+  const boosted = (r.pace - raidPart) * BOOST_FACTOR + raidPart;
+  return (boosted / r.pace - 1) * 100;
 }
 
 // Base pace that lands exactly on the record.
@@ -675,8 +666,6 @@ function render(series) {
   }
 
   const wl = windowLabel(r.hours);
-  $("levers-hint").textContent = "rates from the last " + wl
-    + " · " + fmt1(daysLeft()) + " days of season left";
   $("mix-hint").textContent = "per day, measured over the last " + wl;
 
   const projected = projectEnd(cur, r);
@@ -696,10 +685,9 @@ function render(series) {
   $("s-need-sub").textContent = beaten ? "record already broken"
     : "SR per day across " + fmt1(daysLeft()) + " days left";
   $("s-proj").textContent = fmt(projected);
-  $("s-proj-sub").textContent = "with the final 24 h at 10×";
+  $("s-proj-sub").textContent = "final 24 h at 10× · raids stay flat";
 
   renderVerdict(cur, r, projected, needPace, beaten, wl);
-  renderLevers(r, projected, beaten);
   renderMix(split(r), r, c);
   renderScenarios(cur, series);
   renderMainChart(series, c, r);
@@ -724,71 +712,21 @@ function renderVerdict(cur, r, projected, needPace, beaten, wl) {
     v.classList.add("yes");
     $("verdict-head").textContent = "On track — by " + fmt(over) + " SR";
     $("verdict-body").innerHTML = "At the last " + wl + " rate of <b>" + fmt(r.pace)
-      + " SR/day</b>, with the closing 24 h doubled, Sequoia finishes on <b>" + fmt(projected)
-      + "</b>. The pace may not fall below <b>" + fmt(needPace) + "/day</b> — <b>"
+      + " SR/day</b>, Sequoia finishes on <b>" + fmt(projected)
+      + "</b>. In the closing 24 h the scalar doubles <b>holding and captures</b> — raid rating "
+      + "stays flat, so the rate rises by about <b>" + boostShare(r).toFixed(0)
+      + "%</b>, not 100%. The pace may not fall below <b>" + fmt(needPace) + "/day</b> — <b>"
       + ((r.pace / needPace - 1) * 100).toFixed(1) + "%</b> of headroom.";
   } else {
     v.classList.add("no");
     $("verdict-head").textContent = "Short by " + fmt(-over) + " SR";
     $("verdict-body").innerHTML = "At the last " + wl + " rate of <b>" + fmt(r.pace)
-      + " SR/day</b>, even with the closing 24 h doubled, Sequoia lands on <b>" + fmt(projected)
-      + "</b>. It needs <b>" + fmt(needPace) + "/day</b> — <b>"
+      + " SR/day</b>, Sequoia lands on <b>" + fmt(projected)
+      + "</b>. The closing 24 h double <b>holding and captures</b> — raid rating stays flat, so the "
+      + "rate rises by about <b>" + boostShare(r).toFixed(0) + "%</b> there, not 100%. It needs <b>"
+      + fmt(needPace) + "/day</b> — <b>"
       + ((needPace / r.pace - 1) * 100).toFixed(0) + "% more</b> than now.";
   }
-}
-
-// The gap expressed in things the guild can actually go and do.
-function renderLevers(r, projected, beaten) {
-  const shortfall = RECORD - projected;
-  const bd = boostDays();
-  const restDays = Math.max(daysLeft() - bd, 0);
-
-  // What one extra unit per day is worth over all remaining time.
-  const capPerDay   = CAPTURE_BASE * (SCALAR_NOW * restDays + SCALAR_BOOST * bd);
-  const capFinalDay = CAPTURE_BASE * SCALAR_BOOST;
-  const raidPerDay  = RAID_SR * (restDays + bd);
-  const terrPerDay  = HOLD_BASE * REGRESSION_TAIL * 24 * (SCALAR_NOW * restDays + SCALAR_BOOST * bd);
-
-  const need = shortfall > 0;
-  const mag = Math.abs(shortfall);
-  const cls = need ? "need" : "spare";
-
-  $("levers-title").textContent = need ? "What it still takes" : "How much room there is";
-
-  // One sentence per card, phrased for whichever side of the record the projection lands on.
-  const more = w => need ? "more " + w + " a day gets it to the record"
-                         : "fewer " + w + " a day and it still gets there";
-
-  const cards = [
-    { k: "Territory captures",
-      v: fmt1(mag / capPerDay),
-      s: more("captures"),
-      now: "running <b>" + fmt1(r.wars) + " a day</b> right now · each cap pays "
-         + fmt(CAPTURE_BASE * SCALAR_NOW) + " SR, or " + fmt(capFinalDay) + " SR in the 10× window" },
-    { k: "Captures, final day only",
-      v: fmt(mag / capFinalDay),
-      s: need ? "extra captures packed into the 10× window would cover the whole gap"
-              : "captures could be skipped in the 10× window and it still gets there",
-      now: "caps in that window are worth <b>double</b> — the cheapest place to make up ground" },
-    { k: "Guild raids",
-      v: fmt1(mag / raidPerDay),
-      s: more("raids"),
-      now: "running <b>" + fmt1(r.raids) + " a day</b> right now · <b>" + RAID_SR
-         + " SR</b> each, up to 440 with four players on three gambits" },
-    { k: "Territories held",
-      v: fmt1(mag / terrPerDay),
-      s: need ? "more territories held from now on gets it to the record"
-              : "territories could be lost and it still gets there",
-      now: "holding <b>" + r.terr + "</b> · every one past the 21st is worth "
-         + fmt(HOLD_BASE * REGRESSION_TAIL * 24 * SCALAR_NOW) + " SR/day" },
-  ];
-
-  $("levers").innerHTML = cards.map(x =>
-    '<div class="lever ' + cls + '"><div class="k">' + x.k + "</div>" +
-    '<div class="v">' + x.v + "</div>" +
-    '<div class="s">' + x.s + "</div>" +
-    '<div class="now">' + x.now + "</div></div>"
-  ).join("");
 }
 
 function renderMix(parts, r, c) {
@@ -858,7 +796,7 @@ function draw(key, cfg) {
 }
 
 function renderMainChart(series, c, r) {
-  const plot = downsample(series, 400);
+  const plot = downsample(recent(series), 400);
   const labels = plot.map(p => timeLabel(p.t));
   const actual = plot.map(p => p.sr);
   const projection = actual.map(() => null);
@@ -909,7 +847,7 @@ function rolling(series, hours, pick) {
 }
 
 function renderPaceChart(series, c) {
-  const pts = downsample(rolling(series, 12, p => p.sr), 300);
+  const pts = downsample(recent(rolling(series, 12, p => p.sr)), 300);
   draw("chart-pace", {
     type: "line",
     data: { labels: pts.map(p => timeLabel(p.t)), datasets: [
@@ -921,7 +859,7 @@ function renderPaceChart(series, c) {
 }
 
 function renderTerrChart(series, c) {
-  const pts = downsample(series, 300);
+  const pts = downsample(recent(series), 300);
   draw("chart-terr", {
     type: "line",
     data: { labels: pts.map(p => timeLabel(p.t)), datasets: [
@@ -934,7 +872,7 @@ function renderTerrChart(series, c) {
 
 // Wars and raids sit on very different scales, so they get a chart each.
 function renderRateChart(key, series, c, pick, label, color) {
-  const pts = downsample(rolling(series, 24, pick), 300);
+  const pts = downsample(recent(rolling(series, 24, pick)), 300);
   draw(key, {
     type: "line",
     data: { labels: pts.map(p => timeLabel(p.t)), datasets: [
