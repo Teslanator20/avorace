@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T23:25:26.147Z",
+  "updated": "2026-09-23T23:30:39.264Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
@@ -573,10 +573,10 @@
         "rank": "strategist",
         "joined": "2026-09-06T02:19:08.081000Z",
         "online": true,
-        "server": "NA26",
+        "server": "NA3",
         "contributed": 3581863331718,
         "contributionRank": 43,
-        "guildRaidsTotal": 9241
+        "guildRaidsTotal": 9242
       },
       {
         "username": "sparkerer",
@@ -958,7 +958,7 @@
         "rank": "captain",
         "joined": "2026-06-21T14:52:13.476000Z",
         "online": true,
-        "server": "NA27",
+        "server": "NA19",
         "contributed": 1780552250631,
         "contributionRank": 64,
         "guildRaidsTotal": 729
@@ -1673,7 +1673,7 @@
         "server": null,
         "contributed": 2969288306949,
         "contributionRank": 15,
-        "guildRaidsTotal": 1492
+        "guildRaidsTotal": 1493
       },
       {
         "username": "sum00",
@@ -1750,7 +1750,7 @@
         "server": "EU6",
         "contributed": 4007285013233,
         "contributionRank": 10,
-        "guildRaidsTotal": 5076
+        "guildRaidsTotal": 5077
       },
       {
         "username": "noonicrib",
@@ -1783,7 +1783,7 @@
         "server": null,
         "contributed": 2393956976912,
         "contributionRank": 17,
-        "guildRaidsTotal": 2358
+        "guildRaidsTotal": 2359
       },
       {
         "username": "space008",
@@ -1827,7 +1827,7 @@
         "server": null,
         "contributed": 1455615445879,
         "contributionRank": 25,
-        "guildRaidsTotal": 850
+        "guildRaidsTotal": 851
       },
       {
         "username": "YJMinecraft",
