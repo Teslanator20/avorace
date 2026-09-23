@@ -115,23 +115,6 @@
   }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
 
-  .races {
-    margin-top: 12px;
-    display: flex; flex-wrap: wrap; gap: 8px;
-    font: 600 10.5px/1 'Inter', sans-serif;
-    letter-spacing: .14em; text-transform: uppercase;
-  }
-  .races a, .races .here {
-    padding: 7px 11px; border: 1px solid var(--rule);
-    color: var(--muted); text-decoration: none;
-    transition: color .15s, border-color .15s, background-color .15s;
-  }
-  .races a:hover { color: var(--ink); border-color: var(--rule-strong); }
-  .races .here {
-    color: var(--ink); border-color: var(--rule-strong);
-    background: var(--paper-shade);
-  }
-
   h2 {
     margin: 46px 0 16px;
     font: 600 11.5px/1 'Inter', sans-serif; letter-spacing: .18em;
@@ -370,12 +353,6 @@
       <span>Updated <strong id="updated">…</strong></span>
       <span>Refreshes every 5 minutes</span>
     </div>
-    <nav class="races">
-      <a href="../">Sequoia vs Avicia</a>
-      <a href="../aeqavo/">Aequitas vs Avicia</a>
-      <span class="here">Sequoia vs the Record</span>
-      <a href="https://teslanator20.github.io/race/">Sequoia vs Aequitas</a>
-    </nav>
   </header>
 
   <div class="windowbar" id="windowbar">
@@ -518,7 +495,7 @@ const REGRESSION_TAIL = 0.20;
 const RAID_SR = 240;          // measured average; a full party with 3 gambits each caps at 440
 
 // ─── State ─────────────────────────────────────────────
-let windowHours = Number(localStorage.getItem("recordWindowH")) || 24;
+let windowHours = Number(localStorage.getItem("recordWindowH")) || 48;   // default: last 2 days
 let lastSeries = null;
 const charts = {};
 
