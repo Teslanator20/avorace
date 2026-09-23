@@ -444,9 +444,19 @@
     </div>
   </div>
 
-  <h2><span>Wars and raids</span><span class="hint">24 h rolling</span></h2>
-  <div class="chart-card">
-    <div class="chart-box short"><canvas id="chart-activity"></canvas></div>
+  <div class="charts2">
+    <div>
+      <h2><span>Wars per day</span><span class="hint">24 h rolling</span></h2>
+      <div class="chart-card">
+        <div class="chart-box short"><canvas id="chart-wars"></canvas></div>
+      </div>
+    </div>
+    <div>
+      <h2><span>Guild raids per day</span><span class="hint">24 h rolling</span></h2>
+      <div class="chart-card">
+        <div class="chart-box short"><canvas id="chart-raids"></canvas></div>
+      </div>
+    </div>
   </div>
 
   <h2><span>Finish from each pace window</span><span class="hint">final 24 h at 10×</span></h2>
@@ -471,8 +481,8 @@
   </div>
 
   <div class="foot">
-    Season closes <b>27 Sep 2026, 06:00 Europe/Berlin</b>. Scalar is <b>5.0</b>, assumed to double
-    for the final 24 h. Rating polled every 5 minutes by the <a href="../">other trackers</a>.
+    Season closes <b>27 Sep 2026, 06:00 Europe/Berlin</b>. Scalar is <b>5.0</b>, doubling for the
+    final 24 h. Rating polled every 5 minutes.
   </div>
 
 </div>
@@ -501,9 +511,8 @@ const charts = {};
 
 // ─── Theme ─────────────────────────────────────────────
 (function () {
-  const stored = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  document.documentElement.setAttribute("data-theme", stored || (prefersDark ? "dark" : "light"));
+  // Dark unless the visitor has picked otherwise before.
+  document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
 })();
 function syncTheme() {
   const cur = document.documentElement.getAttribute("data-theme");
@@ -696,7 +705,8 @@ function render(series) {
   renderMainChart(series, c, r);
   renderPaceChart(series, c);
   renderTerrChart(series, c);
-  renderActivityChart(series, c);
+  renderRateChart("chart-wars", series, c, p => p.wars, "Wars / day", c.cap);
+  renderRateChart("chart-raids", series, c, p => p.raids, "Guild raids / day", c.raid);
 }
 
 function renderVerdict(cur, r, projected, needPace, beaten, wl) {
@@ -741,32 +751,35 @@ function renderLevers(r, projected, beaten) {
 
   const need = shortfall > 0;
   const mag = Math.abs(shortfall);
-  const cls = beaten ? "spare" : (need ? "need" : "spare");
-  const sign = need ? "+" : "−";
-  const tail = need ? "still needed" : "of slack";
+  const cls = need ? "need" : "spare";
 
-  $("levers-title").textContent = beaten ? "Margin in hand"
-    : (need ? "What it takes" : "How much slack there is");
+  $("levers-title").textContent = need ? "What it still takes" : "How much room there is";
+
+  // One sentence per card, phrased for whichever side of the record the projection lands on.
+  const more = w => need ? "more " + w + " a day gets it to the record"
+                         : "fewer " + w + " a day and it still gets there";
 
   const cards = [
-    { k: "Captures / day",
-      v: sign + fmt1(mag / capPerDay),
-      s: "extra caps every remaining day " + tail,
-      now: "now <b>" + fmt1(r.wars) + "/day</b> · a cap is worth "
-         + fmt(CAPTURE_BASE * SCALAR_NOW) + " SR, " + fmt(capFinalDay) + " SR once boosted" },
-    { k: "Captures on the final day",
-      v: sign + fmt(mag / capFinalDay),
-      s: "extra caps inside the 10× window alone " + tail,
-      now: "every cap in that window counts <b>double</b>" },
-    { k: "Guild raids / day",
-      v: sign + fmt1(mag / raidPerDay),
-      s: "extra raids every remaining day " + tail,
-      now: "now <b>" + fmt1(r.raids) + "/day</b> · a raid is <b>" + RAID_SR
-         + " SR</b> flat, up to 440 with a full party on 3 gambits" },
+    { k: "Territory captures",
+      v: fmt1(mag / capPerDay),
+      s: more("captures"),
+      now: "running <b>" + fmt1(r.wars) + " a day</b> right now · each cap pays "
+         + fmt(CAPTURE_BASE * SCALAR_NOW) + " SR, or " + fmt(capFinalDay) + " SR in the 10× window" },
+    { k: "Captures, final day only",
+      v: fmt(mag / capFinalDay),
+      s: need ? "extra captures packed into the 10× window would cover the whole gap"
+              : "captures could be skipped in the 10× window and it still gets there",
+      now: "caps in that window are worth <b>double</b> — the cheapest place to make up ground" },
+    { k: "Guild raids",
+      v: fmt1(mag / raidPerDay),
+      s: more("raids"),
+      now: "running <b>" + fmt1(r.raids) + " a day</b> right now · <b>" + RAID_SR
+         + " SR</b> each, up to 440 with four players on three gambits" },
     { k: "Territories held",
-      v: sign + fmt1(mag / terrPerDay),
-      s: "more territories held throughout " + tail,
-      now: "now <b>" + r.terr + "</b> · each one past the 21st adds "
+      v: fmt1(mag / terrPerDay),
+      s: need ? "more territories held from now on gets it to the record"
+              : "territories could be lost and it still gets there",
+      now: "holding <b>" + r.terr + "</b> · every one past the 21st is worth "
          + fmt(HOLD_BASE * REGRESSION_TAIL * 24 * SCALAR_NOW) + " SR/day" },
   ];
 
@@ -919,18 +932,16 @@ function renderTerrChart(series, c) {
   });
 }
 
-function renderActivityChart(series, c) {
-  const wars = downsample(rolling(series, 24, p => p.wars), 300);
-  const raids = downsample(rolling(series, 24, p => p.raids), 300);
-  draw("chart-activity", {
+// Wars and raids sit on very different scales, so they get a chart each.
+function renderRateChart(key, series, c, pick, label, color) {
+  const pts = downsample(rolling(series, 24, pick), 300);
+  draw(key, {
     type: "line",
-    data: { labels: wars.map(p => timeLabel(p.t)), datasets: [
-      { label: "Wars / day", data: wars.map(p => p.v), borderColor: c.cap,
-        borderWidth: 2, pointRadius: 0, tension: .2, fill: false },
-      { label: "Guild raids / day", data: raids.map(p => p.v), borderColor: c.raid,
-        borderWidth: 2, pointRadius: 0, tension: .2, fill: false },
+    data: { labels: pts.map(p => timeLabel(p.t)), datasets: [
+      { label, data: pts.map(p => p.v), borderColor: color,
+        backgroundColor: color + "1e", borderWidth: 2, pointRadius: 0, tension: .2, fill: true },
     ] },
-    options: baseOpts(c),
+    options: baseOpts(c, false),
   });
 }
 
