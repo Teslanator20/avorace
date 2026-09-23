@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T22:25:27.559Z",
+  "updated": "2026-09-23T22:30:42.089Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -1212,7 +1212,7 @@
         "joined": "2026-09-11T06:25:37.201000Z",
         "online": true,
         "server": "EU27",
-        "contributed": 20754141782,
+        "contributed": 20754192404,
         "contributionRank": 113,
         "guildRaidsTotal": 9
       },
@@ -1673,7 +1673,7 @@
         "server": null,
         "contributed": 2956329411384,
         "contributionRank": 15,
-        "guildRaidsTotal": 1487
+        "guildRaidsTotal": 1488
       },
       {
         "username": "sum00",
@@ -1750,7 +1750,7 @@
         "server": "EU7",
         "contributed": 3994326117668,
         "contributionRank": 10,
-        "guildRaidsTotal": 5071
+        "guildRaidsTotal": 5072
       },
       {
         "username": "noonicrib",
@@ -1783,7 +1783,7 @@
         "server": null,
         "contributed": 2380998081347,
         "contributionRank": 17,
-        "guildRaidsTotal": 2353
+        "guildRaidsTotal": 2354
       },
       {
         "username": "space008",
@@ -1802,7 +1802,7 @@
         "rank": "chief",
         "joined": "2025-07-02T19:02:45Z",
         "online": true,
-        "server": "NA7",
+        "server": "NA13",
         "contributed": 1713430239966,
         "contributionRank": 22,
         "guildRaidsTotal": 949
@@ -1827,7 +1827,7 @@
         "server": null,
         "contributed": 1442656550314,
         "contributionRank": 25,
-        "guildRaidsTotal": 845
+        "guildRaidsTotal": 846
       },
       {
         "username": "YJMinecraft",
@@ -1868,7 +1868,7 @@
         "rank": "chief",
         "joined": "2026-08-14T22:22:45.029000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA13",
         "contributed": 927882370267,
         "contributionRank": 32,
         "guildRaidsTotal": 1407
