@@ -393,7 +393,7 @@
     </div>
   </div>
 
-  <h2><span>Rating vs the record</span><span class="hint" id="main-hint">last 7 days · projection to season close</span></h2>
+  <h2><span>Rating vs the record</span><span class="hint" id="main-hint">7 days back · projection to the close</span></h2>
   <div class="chart-card">
     <div class="chart-box"><canvas id="chart-main"></canvas></div>
   </div>
@@ -406,13 +406,13 @@
 
   <div class="charts2">
     <div>
-      <h2><span>Daily pace</span><span class="hint">12 h rolling · last 7 days</span></h2>
+      <h2><span>Daily pace</span><span class="hint">12 h rolling</span></h2>
       <div class="chart-card">
         <div class="chart-box short"><canvas id="chart-pace"></canvas></div>
       </div>
     </div>
     <div>
-      <h2><span>Territories held</span><span class="hint">last 7 days</span></h2>
+      <h2><span>Territories held</span></h2>
       <div class="chart-card">
         <div class="chart-box short"><canvas id="chart-terr"></canvas></div>
       </div>
@@ -421,13 +421,13 @@
 
   <div class="charts2">
     <div>
-      <h2><span>Wars per day</span><span class="hint">24 h rolling · last 7 days</span></h2>
+      <h2><span>Wars per day</span><span class="hint">24 h rolling</span></h2>
       <div class="chart-card">
         <div class="chart-box short"><canvas id="chart-wars"></canvas></div>
       </div>
     </div>
     <div>
-      <h2><span>Guild raids per day</span><span class="hint">24 h rolling · last 7 days</span></h2>
+      <h2><span>Guild raids per day</span><span class="hint">24 h rolling</span></h2>
       <div class="chart-card">
         <div class="chart-box short"><canvas id="chart-raids"></canvas></div>
       </div>
@@ -531,22 +531,6 @@ const timeLabel = t => new Date(t).toLocaleString("en-US",
   { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false });
 
 const windowLabel = h => h < 24 ? h + " h" : (h / 24) + " d";
-
-// Charts only draw the recent stretch — the whole season squeezes the interesting part flat.
-function recent(series, days) {
-  const cutoff = Date.now() - (days ?? CHART_DAYS) * 86400000;
-  const win = series.filter(p => p.t >= cutoff);
-  return win.length > 1 ? win : series;
-}
-
-function downsample(arr, max) {
-  if (arr.length <= max) return arr;
-  const step = arr.length / max;
-  const out = [];
-  for (let i = 0; i < max; i++) out.push(arr[Math.floor(i * step)]);
-  out[out.length - 1] = arr[arr.length - 1];
-  return out;
-}
 
 function regressionSum(t) {
   let sum = 0;
@@ -690,11 +674,12 @@ function render(series) {
   renderVerdict(cur, r, projected, needPace, beaten, wl);
   renderMix(split(r), r, c);
   renderScenarios(cur, series);
-  renderMainChart(series, c, r);
-  renderPaceChart(series, c);
-  renderTerrChart(series, c);
-  renderRateChart("chart-wars", series, c, p => p.wars, "Wars / day", c.cap);
-  renderRateChart("chart-raids", series, c, p => p.raids, "Guild raids / day", c.raid);
+  const grid = buildGrid();
+  renderMainChart(series, grid, c, r);
+  gridChart("chart-pace",  grid, rateOnGrid(series, grid, 12, p => p.sr),   c, "SR / day", c.left);
+  gridChart("chart-terr",  grid, onGrid(series, grid, p => p.terr),         c, "Territories", c.cap, { stepped: true });
+  gridChart("chart-wars",  grid, rateOnGrid(series, grid, 24, p => p.wars), c, "Wars / day", c.cap);
+  gridChart("chart-raids", grid, rateOnGrid(series, grid, 24, p => p.raids), c, "Guild raids / day", c.raid);
 }
 
 function renderVerdict(cur, r, projected, needPace, beaten, wl) {
@@ -764,6 +749,52 @@ function renderScenarios(cur, series) {
 }
 
 // ─── Charts ────────────────────────────────────────────
+// Every chart draws on one shared time grid running from CHART_DAYS ago to the season close, so
+// the x axes line up across all of them and do not shift on a refresh. The grid start snaps to a
+// whole step, so a poll five minutes later reuses the same ticks.
+const GRID_STEP_MS = 2 * 3600000;
+
+function buildGrid() {
+  const start = Math.floor((Date.now() - CHART_DAYS * 86400000) / GRID_STEP_MS) * GRID_STEP_MS;
+  const out = [];
+  for (let t = start; t < SEASON_END; t += GRID_STEP_MS) out.push(t);
+  out.push(SEASON_END);
+  return out;
+}
+
+// Last observation at or before t. Series is sorted, so binary search it.
+function obsAt(series, t) {
+  let lo = 0, hi = series.length - 1, best = null;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    if (series[mid].t <= t) { best = series[mid]; lo = mid + 1; } else hi = mid - 1;
+  }
+  return best;
+}
+
+// A field sampled onto the grid, null once the grid runs past the newest poll.
+function onGrid(series, grid, pick) {
+  const lastT = series[series.length - 1].t;
+  return grid.map(t => {
+    if (t > lastT) return null;
+    const o = obsAt(series, t);
+    return o ? pick(o) : null;
+  });
+}
+
+// A rolling per-day rate sampled onto the grid, measured over `hours` of lookback.
+function rateOnGrid(series, grid, hours, pick) {
+  const firstT = series[0].t, lastT = series[series.length - 1].t;
+  const back = hours * 3600000;
+  return grid.map(t => {
+    if (t > lastT || t - back < firstT) return null;
+    const a = obsAt(series, t - back), b = obsAt(series, t);
+    if (!a || !b) return null;
+    const days = (b.t - a.t) / 86400000;
+    return days > 0 ? (pick(b) - pick(a)) / days : null;
+  });
+}
+
 function baseOpts(c, legend) {
   return {
     responsive: true, maintainAspectRatio: false,
@@ -795,33 +826,42 @@ function draw(key, cfg) {
   charts[key] = new Chart($(key), cfg);
 }
 
-function renderMainChart(series, c, r) {
-  const plot = downsample(recent(series), 400);
-  const labels = plot.map(p => timeLabel(p.t));
-  const actual = plot.map(p => p.sr);
-  const projection = actual.map(() => null);
+// A plain line on the shared grid.
+function gridChart(key, grid, values, c, label, color, opts) {
+  draw(key, {
+    type: "line",
+    data: { labels: grid.map(timeLabel), datasets: [
+      { label, data: values, borderColor: color, backgroundColor: color + "1e",
+        borderWidth: 2, pointRadius: 0, tension: opts?.stepped ? 0 : .2,
+        stepped: !!opts?.stepped, fill: true, spanGaps: false },
+    ] },
+    options: baseOpts(c, false),
+  });
+}
 
-  projection[projection.length - 1] = actual[actual.length - 1];
-  const last = plot[plot.length - 1];
+function renderMainChart(series, grid, c, r) {
+  const actual = onGrid(series, grid, p => p.sr);
+  const last = series[series.length - 1];
   const boostStart = SEASON_END - BOOST_HOURS * 3600000;
   const raidPart = Math.min(r.raids * RAID_SR, r.pace);
   const boostedRate = (r.pace - raidPart) * BOOST_FACTOR + raidPart;
-  for (let i = 1; i <= 24; i++) {
-    const t = last.t + (SEASON_END - last.t) * (i / 24);
+
+  // Projection picks up where the readings stop and runs to the close.
+  const projection = grid.map(t => {
+    if (t < last.t) return null;
     const baseD = Math.max((Math.min(t, boostStart) - last.t) / 86400000, 0);
     const boostD = Math.max(t - Math.max(boostStart, last.t), 0) / 86400000;
-    labels.push(timeLabel(t));
-    actual.push(null);
-    projection.push(last.sr + r.pace * baseD + boostedRate * boostD);
-  }
+    return last.sr + r.pace * baseD + boostedRate * boostD;
+  });
 
+  const seen = actual.filter(v => v != null);
   const opts = baseOpts(c);
-  opts.scales.y.min = Math.floor(Math.min.apply(null, plot.map(p => p.sr)) * 0.985);
+  opts.scales.y.min = Math.floor(Math.min.apply(null, seen) * 0.99);
   opts.scales.y.max = Math.ceil(RECORD * 1.015);
   draw("chart-main", {
     type: "line",
-    data: { labels, datasets: [
-      { label: "All-time record", data: labels.map(() => RECORD), borderColor: c.record,
+    data: { labels: grid.map(timeLabel), datasets: [
+      { label: "All-time record", data: grid.map(() => RECORD), borderColor: c.record,
         borderWidth: 1.5, borderDash: [7, 5], pointRadius: 0, fill: false },
       { label: "Projection", data: projection, borderColor: c.muted,
         borderWidth: 1.5, borderDash: [3, 4], pointRadius: 0, fill: false, spanGaps: true },
@@ -829,57 +869,6 @@ function renderMainChart(series, c, r) {
         borderWidth: 2, pointRadius: 0, pointHoverRadius: 4, tension: .25, fill: true },
     ] },
     options: opts,
-  });
-}
-
-// Rolling rate over `hours`, so scalar steps show up as plateaus.
-function rolling(series, hours, pick) {
-  const out = [];
-  let j = 0;
-  for (let i = 1; i < series.length; i++) {
-    while (series[i].t - series[j].t > hours * 3600000) j++;
-    if (j === i) continue;
-    const days = (series[i].t - series[j].t) / 86400000;
-    if (days <= 0) continue;
-    out.push({ t: series[i].t, v: (pick(series[i]) - pick(series[j])) / days });
-  }
-  return out;
-}
-
-function renderPaceChart(series, c) {
-  const pts = downsample(recent(rolling(series, 12, p => p.sr)), 300);
-  draw("chart-pace", {
-    type: "line",
-    data: { labels: pts.map(p => timeLabel(p.t)), datasets: [
-      { label: "SR / day", data: pts.map(p => p.v), borderColor: c.left,
-        backgroundColor: c.left + "1e", borderWidth: 2, pointRadius: 0, tension: .2, fill: true },
-    ] },
-    options: baseOpts(c, false),
-  });
-}
-
-function renderTerrChart(series, c) {
-  const pts = downsample(recent(series), 300);
-  draw("chart-terr", {
-    type: "line",
-    data: { labels: pts.map(p => timeLabel(p.t)), datasets: [
-      { label: "Territories", data: pts.map(p => p.terr), borderColor: c.cap,
-        backgroundColor: c.cap + "1e", borderWidth: 2, pointRadius: 0, stepped: true, fill: true },
-    ] },
-    options: baseOpts(c, false),
-  });
-}
-
-// Wars and raids sit on very different scales, so they get a chart each.
-function renderRateChart(key, series, c, pick, label, color) {
-  const pts = downsample(recent(rolling(series, 24, pick)), 300);
-  draw(key, {
-    type: "line",
-    data: { labels: pts.map(p => timeLabel(p.t)), datasets: [
-      { label, data: pts.map(p => p.v), borderColor: color,
-        backgroundColor: color + "1e", borderWidth: 2, pointRadius: 0, tension: .2, fill: true },
-    ] },
-    options: baseOpts(c, false),
   });
 }
 
