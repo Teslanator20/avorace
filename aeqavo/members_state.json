@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T22:35:25.535Z",
+  "updated": "2026-09-24T22:40:30.210Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -343,7 +343,7 @@
         "joined": "2026-06-24T22:40:23.293000Z",
         "online": true,
         "server": "NA28",
-        "contributed": 7174253272112,
+        "contributed": 7176845051225,
         "contributionRank": 12,
         "guildRaidsTotal": 4369
       },
@@ -519,7 +519,7 @@
         "joined": "2026-06-09T20:09:44.275000Z",
         "online": true,
         "server": "NA28",
-        "contributed": 1930921777864,
+        "contributed": 1933513556977,
         "contributionRank": 42,
         "guildRaidsTotal": 746
       },
@@ -861,7 +861,7 @@
         "online": false,
         "server": null,
         "contributed": 645353044890,
-        "contributionRank": 67,
+        "contributionRank": 68,
         "guildRaidsTotal": 256
       },
       {
@@ -948,7 +948,7 @@
         "joined": "2026-09-14T19:50:24.279000Z",
         "online": true,
         "server": "NA28",
-        "contributed": 155507370879,
+        "contributed": 158099149992,
         "contributionRank": 87,
         "guildRaidsTotal": 135
       },
@@ -1068,7 +1068,7 @@
         "rank": "recruiter",
         "joined": "2026-08-01T18:07:53.399000Z",
         "online": true,
-        "server": "EU5",
+        "server": "EU31",
         "contributed": 694600335274,
         "contributionRank": 65,
         "guildRaidsTotal": 2241
@@ -1080,8 +1080,8 @@
         "joined": "2026-08-24T03:29:46.400000Z",
         "online": true,
         "server": "NA28",
-        "contributed": 642775719299,
-        "contributionRank": 68,
+        "contributed": 645367498412,
+        "contributionRank": 67,
         "guildRaidsTotal": 249
       },
       {
@@ -1671,9 +1671,9 @@
         "joined": "2023-01-03T00:08:33.716000Z",
         "online": false,
         "server": null,
-        "contributed": 3002981435418,
+        "contributed": 3005573214531,
         "contributionRank": 15,
-        "guildRaidsTotal": 1505
+        "guildRaidsTotal": 1506
       },
       {
         "username": "sum00",
@@ -1713,8 +1713,8 @@
         "uuid": "f317b162-c7ec-49ba-a789-98ae3067d07a",
         "rank": "chief",
         "joined": "2024-08-17T16:01:40.405000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU3",
         "contributed": 5033406430270,
         "contributionRank": 4,
         "guildRaidsTotal": 2968
@@ -1735,11 +1735,11 @@
         "uuid": "e73495e8-dfba-4b8b-8cb4-16ca471f2967",
         "rank": "chief",
         "joined": "2025-03-16T22:12:13.579000Z",
-        "online": true,
-        "server": "EU3",
-        "contributed": 4327697673901,
+        "online": false,
+        "server": null,
+        "contributed": 4330289453014,
         "contributionRank": 8,
-        "guildRaidsTotal": 2549
+        "guildRaidsTotal": 2550
       },
       {
         "username": "The_PixelChicken",
@@ -1846,7 +1846,7 @@
         "rank": "chief",
         "joined": "2026-06-13T01:12:44.616000Z",
         "online": true,
-        "server": "NA25",
+        "server": "NA17",
         "contributed": 1015049948857,
         "contributionRank": 30,
         "guildRaidsTotal": 395
@@ -1868,7 +1868,7 @@
         "rank": "chief",
         "joined": "2026-08-14T22:22:45.029000Z",
         "online": true,
-        "server": "NA27",
+        "server": "NA2",
         "contributed": 940841265832,
         "contributionRank": 32,
         "guildRaidsTotal": 1412
@@ -1879,7 +1879,7 @@
         "rank": "chief",
         "joined": "2025-02-08T16:17:14.308000Z",
         "online": true,
-        "server": "EU33",
+        "server": "NA2",
         "contributed": 925741131272,
         "contributionRank": 33,
         "guildRaidsTotal": 570
@@ -2220,7 +2220,7 @@
         "rank": "strategist",
         "joined": "2026-09-18T23:21:06.839000Z",
         "online": true,
-        "server": "NA27",
+        "server": "NA17",
         "contributed": 57019269788,
         "contributionRank": 98,
         "guildRaidsTotal": 196
@@ -2750,7 +2750,7 @@
         "online": false,
         "server": null,
         "contributed": 17804395641,
-        "contributionRank": 117,
+        "contributionRank": 118,
         "guildRaidsTotal": 8
       },
       {
@@ -3025,7 +3025,7 @@
         "online": false,
         "server": null,
         "contributed": 15769423876,
-        "contributionRank": 118,
+        "contributionRank": 119,
         "guildRaidsTotal": 6
       },
       {
@@ -3178,9 +3178,9 @@
         "joined": "2026-09-23T18:51:32.810000Z",
         "online": true,
         "server": "EU3",
-        "contributed": 15593030089,
-        "contributionRank": 119,
-        "guildRaidsTotal": 5
+        "contributed": 18184809202,
+        "contributionRank": 117,
+        "guildRaidsTotal": 6
       },
       {
         "username": "Zenferns55",
