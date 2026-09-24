@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T07:10:29.717Z",
+  "updated": "2026-09-24T07:15:31.919Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
@@ -34,7 +34,7 @@
         "rank": "chief",
         "joined": "2024-10-28T19:08:55.996000Z",
         "online": true,
-        "server": "NA6",
+        "server": "NA2",
         "contributed": 41547554622271,
         "contributionRank": 2,
         "guildRaidsTotal": 20412
@@ -331,7 +331,7 @@
         "rank": "strategist",
         "joined": "2025-03-10T04:22:52.496000Z",
         "online": true,
-        "server": "NA8",
+        "server": "NA22",
         "contributed": 25977826061954,
         "contributionRank": 8,
         "guildRaidsTotal": 10915
@@ -684,7 +684,7 @@
         "joined": "2026-07-19T12:50:30.818000Z",
         "online": true,
         "server": "NA8",
-        "contributed": 1819770998809,
+        "contributed": 1819771001674,
         "contributionRank": 60,
         "guildRaidsTotal": 726
       },
@@ -848,8 +848,8 @@
         "rank": "strategist",
         "joined": "2026-09-23T06:02:54.548000Z",
         "online": true,
-        "server": "AS1",
-        "contributed": 98487606294,
+        "server": "AS14",
+        "contributed": 101079385407,
         "contributionRank": 121,
         "guildRaidsTotal": 6414
       },
@@ -904,7 +904,7 @@
         "joined": "2026-08-18T04:01:35.935000Z",
         "online": true,
         "server": "NA8",
-        "contributed": 3641489274583,
+        "contributed": 3641489275004,
         "contributionRank": 42,
         "guildRaidsTotal": 1936
       },
@@ -1244,7 +1244,7 @@
         "rank": "recruiter",
         "joined": "2026-09-11T18:23:54.504000Z",
         "online": true,
-        "server": "NA11",
+        "server": "NA12",
         "contributed": 1402152500133,
         "contributionRank": 73,
         "guildRaidsTotal": 1589
@@ -2088,8 +2088,8 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS1",
-        "contributed": 3846200203692,
+        "server": "AS14",
+        "contributed": 3848791982805,
         "contributionRank": 12,
         "guildRaidsTotal": 3076
       },
