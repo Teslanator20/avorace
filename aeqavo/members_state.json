@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T23:15:33.406Z",
+  "updated": "2026-09-24T23:20:33.336Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -199,7 +199,7 @@
         "rank": "chief",
         "joined": "2026-08-11T20:39:59.283000Z",
         "online": true,
-        "server": "EU21",
+        "server": "EU15",
         "contributed": 4196090383947,
         "contributionRank": 24,
         "guildRaidsTotal": 9529
@@ -345,7 +345,7 @@
         "server": "NA5",
         "contributed": 7179436830338,
         "contributionRank": 12,
-        "guildRaidsTotal": 4370
+        "guildRaidsTotal": 4371
       },
       {
         "username": "Dern_",
@@ -521,7 +521,7 @@
         "server": "NA5",
         "contributed": 1936105336090,
         "contributionRank": 42,
-        "guildRaidsTotal": 747
+        "guildRaidsTotal": 748
       },
       {
         "username": "YourExLover",
@@ -950,7 +950,7 @@
         "server": "NA5",
         "contributed": 160690929105,
         "contributionRank": 87,
-        "guildRaidsTotal": 136
+        "guildRaidsTotal": 137
       },
       {
         "username": "Magicmakerman",
@@ -1082,7 +1082,7 @@
         "server": "NA5",
         "contributed": 647959277525,
         "contributionRank": 67,
-        "guildRaidsTotal": 250
+        "guildRaidsTotal": 251
       },
       {
         "username": "nz1234",
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 7,
+    "online": 6,
     "total": 148,
     "members": [
       {
@@ -1671,9 +1671,9 @@
         "joined": "2023-01-03T00:08:33.716000Z",
         "online": false,
         "server": null,
-        "contributed": 3013348551870,
+        "contributed": 3015940330983,
         "contributionRank": 15,
-        "guildRaidsTotal": 1509
+        "guildRaidsTotal": 1510
       },
       {
         "username": "sum00",
@@ -1715,9 +1715,9 @@
         "joined": "2024-08-17T16:01:40.405000Z",
         "online": true,
         "server": "EU15",
-        "contributed": 5041181767609,
+        "contributed": 5043773546722,
         "contributionRank": 4,
-        "guildRaidsTotal": 2970
+        "guildRaidsTotal": 2971
       },
       {
         "username": "CupBoi",
@@ -1868,7 +1868,7 @@
         "rank": "chief",
         "joined": "2026-08-14T22:22:45.029000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA6",
         "contributed": 940841265832,
         "contributionRank": 32,
         "guildRaidsTotal": 1412
@@ -2221,9 +2221,9 @@
         "joined": "2026-09-18T23:21:06.839000Z",
         "online": true,
         "server": "EU15",
-        "contributed": 62202828014,
-        "contributionRank": 97,
-        "guildRaidsTotal": 197
+        "contributed": 64794607127,
+        "contributionRank": 96,
+        "guildRaidsTotal": 198
       },
       {
         "username": "orenGr",
@@ -2882,7 +2882,7 @@
         "online": false,
         "server": null,
         "contributed": 62414011440,
-        "contributionRank": 96,
+        "contributionRank": 97,
         "guildRaidsTotal": 42
       },
       {
@@ -3176,8 +3176,8 @@
         "uuid": "4d5c51b2-f06b-489f-91b6-9180419b4e48",
         "rank": "recruit",
         "joined": "2026-09-23T18:51:32.810000Z",
-        "online": true,
-        "server": "EU6",
+        "online": false,
+        "server": null,
         "contributed": 20776588315,
         "contributionRank": 114,
         "guildRaidsTotal": 8
