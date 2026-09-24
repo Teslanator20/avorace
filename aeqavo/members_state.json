@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T12:45:30.742Z",
+  "updated": "2026-09-24T12:50:34.048Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 3,
+    "online": 0,
     "total": 150,
     "members": [
       {
@@ -737,8 +737,8 @@
         "uuid": "ff24d9e0-4e8e-44a9-ad90-f33810556532",
         "rank": "captain",
         "joined": "2026-01-26T17:01:49.808000Z",
-        "online": true,
-        "server": "EU21",
+        "online": false,
+        "server": null,
         "contributed": 2016410497680,
         "contributionRank": 41,
         "guildRaidsTotal": 862
@@ -1177,8 +1177,8 @@
         "uuid": "d1c4e5c5-3ed5-443f-a3ea-b80b224981bc",
         "rank": "recruiter",
         "joined": "2026-09-11T20:22:42.142000Z",
-        "online": true,
-        "server": "AS1",
+        "online": false,
+        "server": null,
         "contributed": 75234547761,
         "contributionRank": 97,
         "guildRaidsTotal": 516
@@ -1353,8 +1353,8 @@
         "uuid": "78515ec0-ac06-4931-b154-6600316b8f5b",
         "rank": "recruit",
         "joined": "2026-09-11T07:23:48.524000Z",
-        "online": true,
-        "server": "EU8",
+        "online": false,
+        "server": null,
         "contributed": 20737361521,
         "contributionRank": 114,
         "guildRaidsTotal": 8
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 13,
+    "online": 15,
     "total": 148,
     "members": [
       {
@@ -2047,7 +2047,7 @@
         "server": "AS18",
         "contributed": 4802566696389,
         "contributionRank": 5,
-        "guildRaidsTotal": 3193
+        "guildRaidsTotal": 3194
       },
       {
         "username": "StayLocked",
@@ -2091,7 +2091,7 @@
         "server": "AS18",
         "contributed": 3854078110463,
         "contributionRank": 12,
-        "guildRaidsTotal": 3974
+        "guildRaidsTotal": 3975
       },
       {
         "username": "Mqria_",
@@ -2124,7 +2124,7 @@
         "server": "AS18",
         "contributed": 2376688402804,
         "contributionRank": 19,
-        "guildRaidsTotal": 954
+        "guildRaidsTotal": 955
       },
       {
         "username": "skywwn",
@@ -2307,8 +2307,8 @@
         "uuid": "d4d3059b-3e53-4f65-859e-64699083f5a9",
         "rank": "captain",
         "joined": "2026-06-26T17:45:22.728000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU5",
         "contributed": 811268493007,
         "contributionRank": 35,
         "guildRaidsTotal": 313
@@ -2355,7 +2355,7 @@
         "server": "AS18",
         "contributed": 679389154584,
         "contributionRank": 42,
-        "guildRaidsTotal": 266
+        "guildRaidsTotal": 267
       },
       {
         "username": "Liss1404",
@@ -2875,6 +2875,17 @@
         "guildRaidsTotal": 46
       },
       {
+        "username": "Melu_ko",
+        "uuid": "933d2bba-3125-4040-adee-acee43510810",
+        "rank": "recruiter",
+        "joined": "2026-09-22T16:05:38.223000Z",
+        "online": true,
+        "server": "NA4",
+        "contributed": 64797037620,
+        "contributionRank": 95,
+        "guildRaidsTotal": 484
+      },
+      {
         "username": "Konradensator",
         "uuid": "2f8ccb2f-a5d6-46a0-9239-984956e161ce",
         "rank": "recruiter",
@@ -3172,17 +3183,6 @@
         "guildRaidsTotal": 182
       },
       {
-        "username": "Melu_ko",
-        "uuid": "933d2bba-3125-4040-adee-acee43510810",
-        "rank": "recruit",
-        "joined": "2026-09-22T16:05:38.223000Z",
-        "online": false,
-        "server": null,
-        "contributed": 64797037620,
-        "contributionRank": 95,
-        "guildRaidsTotal": 484
-      },
-      {
         "username": "Ficoo",
         "uuid": "d9a18995-281a-4118-a16b-fbeacbdf5227",
         "rank": "recruit",
@@ -3211,7 +3211,7 @@
         "joined": "2026-09-17T20:31:00.919000Z",
         "online": true,
         "server": "EU9",
-        "contributed": 3830570,
+        "contributed": 3830656,
         "contributionRank": 134,
         "guildRaidsTotal": 0
       },
