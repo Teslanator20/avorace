@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T21:25:23.865Z",
+  "updated": "2026-09-24T21:30:44.945Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 21,
+    "online": 22,
     "total": 150,
     "members": [
       {
@@ -254,10 +254,10 @@
         "rank": "chief",
         "joined": "2026-08-21T20:08:44.176000Z",
         "online": true,
-        "server": "EU15",
-        "contributed": 1705390656354,
+        "server": "EU21",
+        "contributed": 1707982435467,
         "contributionRank": 68,
-        "guildRaidsTotal": 5214
+        "guildRaidsTotal": 5215
       },
       {
         "username": "EpicPuppy613",
@@ -386,7 +386,7 @@
         "rank": "strategist",
         "joined": "2025-09-04T09:57:46.258000Z",
         "online": true,
-        "server": "EU12",
+        "server": "EU21",
         "contributed": 11606876954539,
         "contributionRank": 15,
         "guildRaidsTotal": 4739
@@ -486,7 +486,7 @@
         "joined": "2026-08-24T20:47:46.514000Z",
         "online": false,
         "server": null,
-        "contributed": 6191760300957,
+        "contributed": 6194352080070,
         "contributionRank": 31,
         "guildRaidsTotal": 0
       },
@@ -726,8 +726,8 @@
         "uuid": "5d6afe01-c52c-47ac-bb0f-9af43379672c",
         "rank": "strategist",
         "joined": "2026-08-29T13:00:30.440000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA28",
         "contributed": 1249237532466,
         "contributionRank": 74,
         "guildRaidsTotal": 920
@@ -804,7 +804,7 @@
         "rank": "strategist",
         "joined": "2026-09-13T11:08:25.317000Z",
         "online": true,
-        "server": "NA10",
+        "server": "NA13",
         "contributed": 336931284690,
         "contributionRank": 105,
         "guildRaidsTotal": 200
@@ -1156,7 +1156,7 @@
         "rank": "captain",
         "joined": "2026-09-05T12:50:42.078000Z",
         "online": true,
-        "server": "EU1",
+        "server": "NA5",
         "contributed": 443194228323,
         "contributionRank": 99,
         "guildRaidsTotal": 267
@@ -1442,10 +1442,10 @@
         "rank": "recruiter",
         "joined": "2026-09-24T20:52:17.655000Z",
         "online": true,
-        "server": "EU15",
-        "contributed": 12958895565,
+        "server": "EU21",
+        "contributed": 15550674678,
         "contributionRank": 137,
-        "guildRaidsTotal": 4339
+        "guildRaidsTotal": 4340
       },
       {
         "username": "BeamedBySpamFam",
@@ -1618,7 +1618,7 @@
         "rank": "recruit",
         "joined": "2026-09-20T19:07:50.981000Z",
         "online": true,
-        "server": "NA4",
+        "server": "NA25",
         "contributed": 0,
         "contributionRank": 145,
         "guildRaidsTotal": 0
@@ -2066,7 +2066,7 @@
         "rank": "strategist",
         "joined": "2026-03-18T12:34:42.380000Z",
         "online": true,
-        "server": "EU5",
+        "server": "EU33",
         "contributed": 4041428554934,
         "contributionRank": 10,
         "guildRaidsTotal": 1654
