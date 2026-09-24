@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T01:15:32.512Z",
+  "updated": "2026-09-24T01:20:39.167Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 11,
+    "online": 13,
     "total": 150,
     "members": [
       {
@@ -200,9 +200,9 @@
         "joined": "2026-08-11T20:39:59.283000Z",
         "online": true,
         "server": "EU9",
-        "contributed": 4133887685235,
+        "contributed": 4136479464348,
         "contributionRank": 24,
-        "guildRaidsTotal": 9505
+        "guildRaidsTotal": 9506
       },
       {
         "username": "Gin_Tonic123",
@@ -990,8 +990,8 @@
         "uuid": "3121508c-128c-4c24-a348-322ec87fa2fb",
         "rank": "captain",
         "joined": "2026-09-09T14:11:19.116000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA12",
         "contributed": 72569815164,
         "contributionRank": 98,
         "guildRaidsTotal": 28
@@ -1057,7 +1057,7 @@
         "rank": "recruiter",
         "joined": "2026-08-01T18:07:53.399000Z",
         "online": true,
-        "server": "NA22",
+        "server": "NA19",
         "contributed": 694600335274,
         "contributionRank": 65,
         "guildRaidsTotal": 2241
@@ -1562,8 +1562,8 @@
         "uuid": "b14bf3ba-592b-4fa6-9d99-a76ee433f652",
         "rank": "recruit",
         "joined": "2026-09-21T13:28:10.611000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS16",
         "contributed": 339,
         "contributionRank": 139,
         "guildRaidsTotal": 1023
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 11,
+    "online": 10,
     "total": 148,
     "members": [
       {
@@ -1715,9 +1715,9 @@
         "joined": "2024-08-17T16:01:40.405000Z",
         "online": true,
         "server": "EU9",
-        "contributed": 5007488639140,
+        "contributed": 5010080418253,
         "contributionRank": 4,
-        "guildRaidsTotal": 2958
+        "guildRaidsTotal": 2959
       },
       {
         "username": "CupBoi",
@@ -1748,9 +1748,9 @@
         "joined": "2026-02-12T01:31:35.069000Z",
         "online": true,
         "server": "EU9",
-        "contributed": 4025427467024,
+        "contributed": 4028019246137,
         "contributionRank": 9,
-        "guildRaidsTotal": 5084
+        "guildRaidsTotal": 5085
       },
       {
         "username": "noonicrib",
@@ -1770,9 +1770,9 @@
         "joined": "2026-07-01T14:53:03.097000Z",
         "online": true,
         "server": "EU9",
-        "contributed": 3154282235274,
+        "contributed": 3156874014387,
         "contributionRank": 14,
-        "guildRaidsTotal": 5900
+        "guildRaidsTotal": 5901
       },
       {
         "username": "Antragos",
@@ -1845,8 +1845,8 @@
         "uuid": "0426da9b-60fd-4e24-9deb-edf45ff8b8cf",
         "rank": "chief",
         "joined": "2026-06-13T01:12:44.616000Z",
-        "online": true,
-        "server": "NA19",
+        "online": false,
+        "server": null,
         "contributed": 1015049948857,
         "contributionRank": 30,
         "guildRaidsTotal": 395
@@ -1868,7 +1868,7 @@
         "rank": "chief",
         "joined": "2026-08-14T22:22:45.029000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA31",
         "contributed": 927882370267,
         "contributionRank": 32,
         "guildRaidsTotal": 1407
@@ -2231,7 +2231,7 @@
         "rank": "strategist",
         "joined": "2026-09-18T23:21:06.839000Z",
         "online": true,
-        "server": "NA29",
+        "server": "NA31",
         "contributed": 25917920243,
         "contributionRank": 108,
         "guildRaidsTotal": 185
