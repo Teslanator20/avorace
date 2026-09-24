@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T08:25:26.142Z",
+  "updated": "2026-09-24T08:30:40.685Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 12,
+    "online": 11,
     "total": 150,
     "members": [
       {
@@ -33,8 +33,8 @@
         "uuid": "f129b394-0e59-4681-b051-b2c102f12dd6",
         "rank": "chief",
         "joined": "2024-10-28T19:08:55.996000Z",
-        "online": true,
-        "server": "NA2",
+        "online": false,
+        "server": null,
         "contributed": 41547554622271,
         "contributionRank": 2,
         "guildRaidsTotal": 20412
@@ -848,10 +848,10 @@
         "rank": "strategist",
         "joined": "2026-09-23T06:02:54.548000Z",
         "online": true,
-        "server": "AS13",
-        "contributed": 137364292989,
+        "server": "AS16",
+        "contributed": 139956072102,
         "contributionRank": 118,
-        "guildRaidsTotal": 6427
+        "guildRaidsTotal": 6429
       },
       {
         "username": "FerroSporco",
@@ -1244,10 +1244,10 @@
         "rank": "recruiter",
         "joined": "2026-09-11T18:23:54.504000Z",
         "online": true,
-        "server": "NA3",
-        "contributed": 1417703174811,
+        "server": "NA10",
+        "contributed": 1420294953924,
         "contributionRank": 73,
-        "guildRaidsTotal": 1594
+        "guildRaidsTotal": 1595
       },
       {
         "username": "puppygjrl",
@@ -2077,10 +2077,10 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS13",
-        "contributed": 3885076890387,
+        "server": "AS16",
+        "contributed": 3887668669500,
         "contributionRank": 11,
-        "guildRaidsTotal": 3089
+        "guildRaidsTotal": 3091
       },
       {
         "username": "ArcuCresyn",

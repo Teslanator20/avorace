@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T08:25:27.342Z",
+  "updated": "2026-09-24T08:30:41.114Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 8,
+    "online": 6,
     "total": 150,
     "members": [
       {
@@ -34,10 +34,10 @@
         "rank": "chief",
         "joined": "2024-02-20T14:52:55.148000Z",
         "online": true,
-        "server": "AS6",
+        "server": "AS15",
         "contributed": 22053062182123,
         "contributionRank": 2,
-        "guildRaidsTotal": 9601
+        "guildRaidsTotal": 9602
       },
       {
         "username": "LegitNube",
@@ -264,8 +264,8 @@
         "uuid": "f9f2afb9-d4c2-4b5a-b220-d44e6b67c656",
         "rank": "chief",
         "joined": "2026-08-03T01:32:01.618000Z",
-        "online": true,
-        "server": "NA5",
+        "online": false,
+        "server": null,
         "contributed": 1044486982539,
         "contributionRank": 60,
         "guildRaidsTotal": 3294
@@ -473,8 +473,8 @@
         "uuid": "2716135a-c373-4a5f-8cdc-96af91f90828",
         "rank": "strategist",
         "joined": "2026-03-15T18:49:27.291000Z",
-        "online": true,
-        "server": "NA9",
+        "online": false,
+        "server": null,
         "contributed": 2736975845144,
         "contributionRank": 33,
         "guildRaidsTotal": 3198
@@ -1178,10 +1178,10 @@
         "rank": "recruiter",
         "joined": "2026-09-11T20:22:42.142000Z",
         "online": true,
-        "server": "AS6",
+        "server": "AS15",
         "contributed": 64848894596,
         "contributionRank": 100,
-        "guildRaidsTotal": 511
+        "guildRaidsTotal": 512
       },
       {
         "username": "EpicBoi9898",
@@ -1212,7 +1212,7 @@
         "joined": "2026-09-11T06:25:37.201000Z",
         "online": true,
         "server": "EU17",
-        "contributed": 20754254885,
+        "contributed": 20754255889,
         "contributionRank": 113,
         "guildRaidsTotal": 9
       },
@@ -2077,10 +2077,10 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS13",
-        "contributed": 3885076890387,
+        "server": "AS16",
+        "contributed": 3887668669500,
         "contributionRank": 11,
-        "guildRaidsTotal": 3089
+        "guildRaidsTotal": 3091
       },
       {
         "username": "ArcuCresyn",
