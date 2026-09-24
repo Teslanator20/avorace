@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T09:15:33.425Z",
+  "updated": "2026-09-24T09:20:30.275Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 13,
+    "online": 11,
     "total": 150,
     "members": [
       {
@@ -320,7 +320,7 @@
         "rank": "strategist",
         "joined": "2025-04-13T18:52:48.857000Z",
         "online": true,
-        "server": "NA10",
+        "server": "NA16",
         "contributed": 32596916067459,
         "contributionRank": 5,
         "guildRaidsTotal": 12924
@@ -1166,8 +1166,8 @@
         "uuid": "21d5b676-5126-4f34-ae7c-77e320b3c14d",
         "rank": "captain",
         "joined": "2026-09-01T22:12:08.311000Z",
-        "online": true,
-        "server": "AS20",
+        "online": false,
+        "server": null,
         "contributed": 393950425176,
         "contributionRank": 102,
         "guildRaidsTotal": 313
@@ -1247,7 +1247,7 @@
         "server": "NA19",
         "contributed": 1433253849489,
         "contributionRank": 73,
-        "guildRaidsTotal": 1599
+        "guildRaidsTotal": 1601
       },
       {
         "username": "puppygjrl",
@@ -1309,8 +1309,8 @@
         "uuid": "1d8fc596-67b8-4406-b0dc-15152b720c12",
         "rank": "recruiter",
         "joined": "2026-08-03T11:18:55.262000Z",
-        "online": true,
-        "server": "EU12",
+        "online": false,
+        "server": null,
         "contributed": 391358646063,
         "contributionRank": 103,
         "guildRaidsTotal": 152
