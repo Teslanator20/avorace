@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T18:55:28.918Z",
+  "updated": "2026-09-24T19:00:54.267Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -715,8 +715,8 @@
         "uuid": "47cda357-a3d3-4534-a0c7-3b1651baeb68",
         "rank": "captain",
         "joined": "2025-09-30T05:55:24.186000Z",
-        "online": true,
-        "server": "NA9",
+        "online": false,
+        "server": null,
         "contributed": 2283555662231,
         "contributionRank": 39,
         "guildRaidsTotal": 1237
@@ -1014,7 +1014,7 @@
         "joined": "2026-09-11T06:25:37.201000Z",
         "online": true,
         "server": "NA6",
-        "contributed": 20754864764,
+        "contributed": 20754864843,
         "contributionRank": 114,
         "guildRaidsTotal": 9
       },
@@ -1463,9 +1463,9 @@
         "uuid": "6aaa211c-6930-4c14-b331-9cd8d3007017",
         "rank": "recruit",
         "joined": "2026-09-11T07:10:18.561000Z",
-        "online": false,
-        "server": null,
-        "contributed": 7776222665,
+        "online": true,
+        "server": "EU7",
+        "contributed": 7776223631,
         "contributionRank": 127,
         "guildRaidsTotal": 3
       },
@@ -2109,8 +2109,8 @@
         "uuid": "d3998dbd-4707-4486-a2a5-1af0c3287cfb",
         "rank": "strategist",
         "joined": "2026-07-15T12:03:40.096000Z",
-        "online": true,
-        "server": "NA12",
+        "online": false,
+        "server": null,
         "contributed": 2420748647725,
         "contributionRank": 17,
         "guildRaidsTotal": 972
@@ -2307,8 +2307,8 @@
         "uuid": "d4d3059b-3e53-4f65-859e-64699083f5a9",
         "rank": "captain",
         "joined": "2026-06-26T17:45:22.728000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU8",
         "contributed": 811268493007,
         "contributionRank": 35,
         "guildRaidsTotal": 313
