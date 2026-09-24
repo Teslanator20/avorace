@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T05:20:30.918Z",
+  "updated": "2026-09-24T05:25:26.777Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 7,
+    "online": 8,
     "total": 150,
     "members": [
       {
@@ -178,7 +178,7 @@
         "joined": "2026-07-21T04:34:03.034000Z",
         "online": true,
         "server": "NA13",
-        "contributed": 4582265471784,
+        "contributed": 4584857250897,
         "contributionRank": 18,
         "guildRaidsTotal": 5586
       },
@@ -343,7 +343,7 @@
         "joined": "2026-06-24T22:40:23.293000Z",
         "online": true,
         "server": "NA13",
-        "contributed": 7156110818321,
+        "contributed": 7158702597434,
         "contributionRank": 12,
         "guildRaidsTotal": 4362
       },
@@ -638,11 +638,11 @@
         "uuid": "983436ff-635a-49cc-9405-af1126ac89ac",
         "rank": "strategist",
         "joined": "2026-08-25T02:24:48.563000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS7",
         "contributed": 54427361373,
         "contributionRank": 104,
-        "guildRaidsTotal": 0
+        "guildRaidsTotal": 3538
       },
       {
         "username": "Affenschmidt2",
@@ -1080,7 +1080,7 @@
         "joined": "2026-07-16T02:46:08.937000Z",
         "online": true,
         "server": "NA13",
-        "contributed": 399236072667,
+        "contributed": 401827851780,
         "contributionRank": 76,
         "guildRaidsTotal": 169
       },
@@ -1124,7 +1124,7 @@
         "joined": "2026-09-11T01:29:46.010000Z",
         "online": true,
         "server": "NA13",
-        "contributed": 254014318072,
+        "contributed": 256606097185,
         "contributionRank": 83,
         "guildRaidsTotal": 1774
       },
@@ -1726,7 +1726,7 @@
         "joined": "2024-08-25T18:20:54.118000Z",
         "online": true,
         "server": "NA2",
-        "contributed": 4757043024196,
+        "contributed": 4759634803309,
         "contributionRank": 6,
         "guildRaidsTotal": 3457
       },
@@ -2155,7 +2155,7 @@
         "joined": "2025-09-09T03:25:37.101000Z",
         "online": true,
         "server": "NA2",
-        "contributed": 505217938156,
+        "contributed": 507809717269,
         "contributionRank": 48,
         "guildRaidsTotal": 581
       },
@@ -2606,7 +2606,7 @@
         "joined": "2026-09-05T15:30:30.886000Z",
         "online": true,
         "server": "NA2",
-        "contributed": 160691042366,
+        "contributed": 163282821479,
         "contributionRank": 79,
         "guildRaidsTotal": 955
       },
@@ -2974,6 +2974,17 @@
         "guildRaidsTotal": 159
       },
       {
+        "username": "NullifyC",
+        "uuid": "ceb34e86-eac5-4c46-a00b-56beafa15730",
+        "rank": "recruiter",
+        "joined": "2026-09-15T01:39:00.344000Z",
+        "online": true,
+        "server": "NA2",
+        "contributed": 20746558342,
+        "contributionRank": 113,
+        "guildRaidsTotal": 7
+      },
+      {
         "username": "Mapleric",
         "uuid": "13a5b8fe-04e3-4f85-b0de-2c7a5d3fec1a",
         "rank": "recruiter",
@@ -2981,7 +2992,7 @@
         "online": false,
         "server": null,
         "contributed": 20734232904,
-        "contributionRank": 113,
+        "contributionRank": 114,
         "guildRaidsTotal": 10
       },
       {
@@ -2992,7 +3003,7 @@
         "online": false,
         "server": null,
         "contributed": 20734232904,
-        "contributionRank": 114,
+        "contributionRank": 115,
         "guildRaidsTotal": 17
       },
       {
@@ -3003,19 +3014,8 @@
         "online": false,
         "server": null,
         "contributed": 20734232904,
-        "contributionRank": 115,
-        "guildRaidsTotal": 8
-      },
-      {
-        "username": "NullifyC",
-        "uuid": "ceb34e86-eac5-4c46-a00b-56beafa15730",
-        "rank": "recruiter",
-        "joined": "2026-09-15T01:39:00.344000Z",
-        "online": true,
-        "server": "NA2",
-        "contributed": 18154779229,
         "contributionRank": 116,
-        "guildRaidsTotal": 7
+        "guildRaidsTotal": 8
       },
       {
         "username": "bbisim",
