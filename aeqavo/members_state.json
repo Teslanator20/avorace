@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T05:25:26.777Z",
+  "updated": "2026-09-24T05:30:40.536Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 8,
+    "online": 10,
     "total": 150,
     "members": [
       {
@@ -180,7 +180,7 @@
         "server": "NA13",
         "contributed": 4584857250897,
         "contributionRank": 18,
-        "guildRaidsTotal": 5586
+        "guildRaidsTotal": 5587
       },
       {
         "username": "Cybersoap62",
@@ -345,7 +345,7 @@
         "server": "NA13",
         "contributed": 7158702597434,
         "contributionRank": 12,
-        "guildRaidsTotal": 4362
+        "guildRaidsTotal": 4363
       },
       {
         "username": "Dern_",
@@ -836,8 +836,8 @@
         "uuid": "abe5d4e2-96b1-40f3-9714-c67ff1023708",
         "rank": "captain",
         "joined": "2026-08-06T02:16:59.575000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA4",
         "contributed": 834552889974,
         "contributionRank": 62,
         "guildRaidsTotal": 1967
@@ -847,8 +847,8 @@
         "uuid": "611a1523-fd40-49d8-94e8-d5f9a8ef85b2",
         "rank": "captain",
         "joined": "2026-08-07T23:19:31.288000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA4",
         "contributed": 813818641482,
         "contributionRank": 63,
         "guildRaidsTotal": 2501
@@ -1082,7 +1082,7 @@
         "server": "NA13",
         "contributed": 401827851780,
         "contributionRank": 76,
-        "guildRaidsTotal": 169
+        "guildRaidsTotal": 170
       },
       {
         "username": "Miridoo",
@@ -1126,7 +1126,7 @@
         "server": "NA13",
         "contributed": 256606097185,
         "contributionRank": 83,
-        "guildRaidsTotal": 1774
+        "guildRaidsTotal": 1775
       },
       {
         "username": "Gardangle",
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 12,
+    "online": 11,
     "total": 148,
     "members": [
       {
@@ -1725,10 +1725,10 @@
         "rank": "chief",
         "joined": "2024-08-25T18:20:54.118000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA1",
         "contributed": 4759634803309,
         "contributionRank": 6,
-        "guildRaidsTotal": 3457
+        "guildRaidsTotal": 3458
       },
       {
         "username": "DarkofFire",
@@ -2154,10 +2154,10 @@
         "rank": "strategist",
         "joined": "2025-09-09T03:25:37.101000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA1",
         "contributed": 507809717269,
         "contributionRank": 48,
-        "guildRaidsTotal": 581
+        "guildRaidsTotal": 582
       },
       {
         "username": "Poplots",
@@ -2583,7 +2583,7 @@
         "rank": "captain",
         "joined": "2026-09-10T03:33:31.040000Z",
         "online": true,
-        "server": "NA21",
+        "server": "AS1",
         "contributed": 168466169956,
         "contributionRank": 77,
         "guildRaidsTotal": 64
@@ -2605,10 +2605,10 @@
         "rank": "captain",
         "joined": "2026-09-05T15:30:30.886000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA1",
         "contributed": 163282821479,
         "contributionRank": 79,
-        "guildRaidsTotal": 955
+        "guildRaidsTotal": 956
       },
       {
         "username": "SupportsWRLD",
@@ -2979,10 +2979,10 @@
         "rank": "recruiter",
         "joined": "2026-09-15T01:39:00.344000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA1",
         "contributed": 20746558342,
         "contributionRank": 113,
-        "guildRaidsTotal": 7
+        "guildRaidsTotal": 8
       },
       {
         "username": "Mapleric",
@@ -3132,8 +3132,8 @@
         "uuid": "efc593ef-d857-4cac-8576-4bf32cdff03f",
         "rank": "recruiter",
         "joined": "2026-07-20T01:08:46.462000Z",
-        "online": true,
-        "server": "NA6",
+        "online": false,
+        "server": null,
         "contributed": 0,
         "contributionRank": 140,
         "guildRaidsTotal": 0
