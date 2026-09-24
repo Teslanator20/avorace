@@ -27,7 +27,16 @@
       "type": "promoted",
       "from": "captain",
       "to": "strategist"
+    },
+    {
+      "ts": "2026-09-24T00:40:30.137Z",
+      "guild": "Avicia",
+      "uuid": "50fe23ac-fda1-4d9f-8e14-203083937664",
+      "username": "Zenferns55",
+      "type": "promoted",
+      "from": "recruit",
+      "to": "recruiter"
     }
   ],
-  "updated": "2026-09-24T00:35:29.815Z"
+  "updated": "2026-09-24T00:40:30.137Z"
 }

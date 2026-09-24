@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T00:35:29.815Z",
+  "updated": "2026-09-24T00:40:30.137Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 11,
+    "online": 10,
     "total": 150,
     "members": [
       {
@@ -202,7 +202,7 @@
         "server": "EU8",
         "contributed": 4128704127009,
         "contributionRank": 24,
-        "guildRaidsTotal": 9502
+        "guildRaidsTotal": 9503
       },
       {
         "username": "Gin_Tonic123",
@@ -396,11 +396,11 @@
         "uuid": "9f249a6c-3b31-4ce3-abe5-f969ed27d273",
         "rank": "strategist",
         "joined": "2026-03-26T23:20:35.977000Z",
-        "online": true,
-        "server": "NA33",
+        "online": false,
+        "server": null,
         "contributed": 4235124934556,
         "contributionRank": 23,
-        "guildRaidsTotal": 1833
+        "guildRaidsTotal": 1835
       },
       {
         "username": "NerdyGamer2012",
@@ -848,10 +848,10 @@
         "rank": "captain",
         "joined": "2026-08-07T23:19:31.288000Z",
         "online": true,
-        "server": "NA33",
+        "server": "NA19",
         "contributed": 813818641482,
         "contributionRank": 63,
-        "guildRaidsTotal": 2499
+        "guildRaidsTotal": 2501
       },
       {
         "username": "Xo4y_KyHi",
@@ -950,7 +950,7 @@
         "server": "NA33",
         "contributed": 150323812653,
         "contributionRank": 87,
-        "guildRaidsTotal": 131
+        "guildRaidsTotal": 133
       },
       {
         "username": "Magicmakerman",
@@ -1057,7 +1057,7 @@
         "rank": "recruiter",
         "joined": "2026-08-01T18:07:53.399000Z",
         "online": true,
-        "server": "NA25",
+        "server": "NA29",
         "contributed": 694600335274,
         "contributionRank": 65,
         "guildRaidsTotal": 2241
@@ -1717,7 +1717,7 @@
         "server": "EU8",
         "contributed": 5002305080914,
         "contributionRank": 4,
-        "guildRaidsTotal": 2955
+        "guildRaidsTotal": 2956
       },
       {
         "username": "CupBoi",
@@ -1750,7 +1750,7 @@
         "server": "EU8",
         "contributed": 4020243908798,
         "contributionRank": 10,
-        "guildRaidsTotal": 5081
+        "guildRaidsTotal": 5082
       },
       {
         "username": "noonicrib",
@@ -1800,7 +1800,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45.000000Z",
+        "joined": "2025-07-02T19:02:45Z",
         "online": false,
         "server": null,
         "contributed": 1713430239966,
@@ -1904,7 +1904,7 @@
         "server": "EU8",
         "contributed": 702955167375,
         "contributionRank": 39,
-        "guildRaidsTotal": 545
+        "guildRaidsTotal": 546
       },
       {
         "username": "Darkii_x",
@@ -1921,7 +1921,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22.000000Z",
+        "joined": "2024-04-16T02:21:22Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
@@ -3018,6 +3018,17 @@
         "guildRaidsTotal": 6
       },
       {
+        "username": "Zenferns55",
+        "uuid": "50fe23ac-fda1-4d9f-8e14-203083937664",
+        "rank": "recruiter",
+        "joined": "2026-09-23T00:33:22.923000Z",
+        "online": true,
+        "server": "NA12",
+        "contributed": 12958895565,
+        "contributionRank": 119,
+        "guildRaidsTotal": 7
+      },
+      {
         "username": "165p",
         "uuid": "6acd5315-b14d-4ebe-b7a9-d8833ab55ef1",
         "rank": "recruiter",
@@ -3170,17 +3181,6 @@
         "contributed": 64796945842,
         "contributionRank": 95,
         "guildRaidsTotal": 484
-      },
-      {
-        "username": "Zenferns55",
-        "uuid": "50fe23ac-fda1-4d9f-8e14-203083937664",
-        "rank": "recruit",
-        "joined": "2026-09-23T00:33:22.923000Z",
-        "online": true,
-        "server": "NA12",
-        "contributed": 12958895565,
-        "contributionRank": 119,
-        "guildRaidsTotal": 7
       },
       {
         "username": "Ficoo",
