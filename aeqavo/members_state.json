@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T06:15:32.056Z",
+  "updated": "2026-09-24T06:20:33.002Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -639,7 +639,7 @@
         "rank": "strategist",
         "joined": "2026-08-25T02:24:48.563000Z",
         "online": true,
-        "server": "AS1",
+        "server": "AS15",
         "contributed": 54427361373,
         "contributionRank": 104,
         "guildRaidsTotal": 3538
@@ -837,7 +837,7 @@
         "rank": "captain",
         "joined": "2026-08-06T02:16:59.575000Z",
         "online": true,
-        "server": "NA15",
+        "server": "NA2",
         "contributed": 834552889974,
         "contributionRank": 62,
         "guildRaidsTotal": 1967
@@ -1728,7 +1728,7 @@
         "server": "NA13",
         "contributed": 4770001919761,
         "contributionRank": 6,
-        "guildRaidsTotal": 3460
+        "guildRaidsTotal": 3461
       },
       {
         "username": "DarkofFire",
@@ -1768,11 +1768,11 @@
         "uuid": "24a616c5-6150-440c-8470-7dc2b89eece5",
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
-        "online": true,
-        "server": "NA13",
+        "online": false,
+        "server": null,
         "contributed": 3203526038421,
         "contributionRank": 14,
-        "guildRaidsTotal": 5916
+        "guildRaidsTotal": 5917
       },
       {
         "username": "Antragos",
@@ -2087,8 +2087,8 @@
         "uuid": "c21f60f0-965e-4af8-a8f1-595cf5a404b3",
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS19",
         "contributed": 3822874191675,
         "contributionRank": 12,
         "guildRaidsTotal": 3067
@@ -2146,7 +2146,7 @@
         "server": null,
         "contributed": 518176833721,
         "contributionRank": 46,
-        "guildRaidsTotal": 584
+        "guildRaidsTotal": 585
       },
       {
         "username": "MagecoreLP",
@@ -2586,7 +2586,7 @@
         "server": "NA13",
         "contributed": 173649937931,
         "contributionRank": 76,
-        "guildRaidsTotal": 958
+        "guildRaidsTotal": 959
       },
       {
         "username": "Zenorton",

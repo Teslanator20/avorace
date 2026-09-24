@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T06:15:31.415Z",
+  "updated": "2026-09-24T06:20:32.246Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
@@ -331,7 +331,7 @@
         "rank": "strategist",
         "joined": "2025-03-10T04:22:52.496000Z",
         "online": true,
-        "server": "NA32",
+        "server": "NA6",
         "contributed": 25977826061954,
         "contributionRank": 8,
         "guildRaidsTotal": 10915
@@ -694,7 +694,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T17:00:48.189000Z",
         "online": true,
-        "server": "NA13",
+        "server": "NA1",
         "contributed": 1801286483535,
         "contributionRank": 63,
         "guildRaidsTotal": 3564
@@ -904,7 +904,7 @@
         "joined": "2026-08-18T04:01:35.935000Z",
         "online": true,
         "server": "NA8",
-        "contributed": 3641489226844,
+        "contributed": 3641489236495,
         "contributionRank": 42,
         "guildRaidsTotal": 1936
       },
@@ -1244,7 +1244,7 @@
         "rank": "recruiter",
         "joined": "2026-09-11T18:23:54.504000Z",
         "online": true,
-        "server": "EU16",
+        "server": "NA16",
         "contributed": 1402152500133,
         "contributionRank": 73,
         "guildRaidsTotal": 1589
@@ -1728,7 +1728,7 @@
         "server": "NA13",
         "contributed": 4770001919761,
         "contributionRank": 6,
-        "guildRaidsTotal": 3460
+        "guildRaidsTotal": 3461
       },
       {
         "username": "DarkofFire",
@@ -1768,11 +1768,11 @@
         "uuid": "24a616c5-6150-440c-8470-7dc2b89eece5",
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
-        "online": true,
-        "server": "NA13",
+        "online": false,
+        "server": null,
         "contributed": 3203526038421,
         "contributionRank": 14,
-        "guildRaidsTotal": 5916
+        "guildRaidsTotal": 5917
       },
       {
         "username": "Antragos",
@@ -2087,8 +2087,8 @@
         "uuid": "c21f60f0-965e-4af8-a8f1-595cf5a404b3",
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS19",
         "contributed": 3822874191675,
         "contributionRank": 12,
         "guildRaidsTotal": 3067
@@ -2146,7 +2146,7 @@
         "server": null,
         "contributed": 518176833721,
         "contributionRank": 46,
-        "guildRaidsTotal": 584
+        "guildRaidsTotal": 585
       },
       {
         "username": "MagecoreLP",
@@ -2586,7 +2586,7 @@
         "server": "NA13",
         "contributed": 173649937931,
         "contributionRank": 76,
-        "guildRaidsTotal": 958
+        "guildRaidsTotal": 959
       },
       {
         "username": "Zenorton",
