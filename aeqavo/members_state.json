@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T07:30:41.503Z",
+  "updated": "2026-09-24T07:35:29.340Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -1714,7 +1714,7 @@
         "rank": "chief",
         "joined": "2024-08-17T16:01:40.405000Z",
         "online": true,
-        "server": "NA12",
+        "server": "NA11",
         "contributed": 5025631092931,
         "contributionRank": 4,
         "guildRaidsTotal": 2964
@@ -1725,7 +1725,7 @@
         "rank": "chief",
         "joined": "2024-08-25T18:20:54.118000Z",
         "online": true,
-        "server": "NA12",
+        "server": "NA11",
         "contributed": 4777777257100,
         "contributionRank": 5,
         "guildRaidsTotal": 3464
@@ -1769,7 +1769,7 @@
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
         "online": true,
-        "server": "NA12",
+        "server": "NA11",
         "contributed": 3208709596647,
         "contributionRank": 14,
         "guildRaidsTotal": 5918
@@ -2077,8 +2077,8 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS16",
-        "contributed": 3856567320144,
+        "server": "AS11",
+        "contributed": 3859159099257,
         "contributionRank": 11,
         "guildRaidsTotal": 3080
       },
@@ -2561,7 +2561,7 @@
         "rank": "captain",
         "joined": "2026-09-05T15:30:30.886000Z",
         "online": true,
-        "server": "NA12",
+        "server": "NA11",
         "contributed": 184017054383,
         "contributionRank": 74,
         "guildRaidsTotal": 962
