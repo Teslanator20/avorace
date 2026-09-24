@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T10:00:49.338Z",
+  "updated": "2026-09-24T10:05:24.823Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 6,
+    "online": 5,
     "total": 150,
     "members": [
       {
@@ -1179,7 +1179,7 @@
         "joined": "2026-09-11T20:22:42.142000Z",
         "online": true,
         "server": "AS10",
-        "contributed": 75216011702,
+        "contributed": 75220112250,
         "contributionRank": 97,
         "guildRaidsTotal": 516
       },
@@ -1265,8 +1265,8 @@
         "uuid": "571c24be-3a6b-47fa-8d85-86e3115a69e9",
         "rank": "recruit",
         "joined": "2026-09-05T02:24:02.789000Z",
-        "online": true,
-        "server": "AS14",
+        "online": false,
+        "server": null,
         "contributed": 72582434382,
         "contributionRank": 98,
         "guildRaidsTotal": 28
@@ -3178,7 +3178,7 @@
         "joined": "2026-09-22T16:05:38.223000Z",
         "online": true,
         "server": "AS20",
-        "contributed": 64797035105,
+        "contributed": 64797035161,
         "contributionRank": 95,
         "guildRaidsTotal": 484
       },
