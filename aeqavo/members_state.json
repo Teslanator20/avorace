@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T02:30:41.277Z",
+  "updated": "2026-09-24T02:35:25.829Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 8,
+    "online": 9,
     "total": 150,
     "members": [
       {
@@ -23,8 +23,8 @@
         "rank": "chief",
         "joined": "2025-12-17T20:44:46.934000Z",
         "online": true,
-        "server": "NA34",
-        "contributed": 30456391678335,
+        "server": "NA14",
+        "contributed": 30458983457448,
         "contributionRank": 1,
         "guildRaidsTotal": 12083
       },
@@ -485,7 +485,7 @@
         "rank": "strategist",
         "joined": "2026-07-21T07:22:25.465000Z",
         "online": true,
-        "server": "NA24",
+        "server": "NA34",
         "contributed": 2679899602842,
         "contributionRank": 35,
         "guildRaidsTotal": 1510
@@ -1122,8 +1122,8 @@
         "uuid": "c2fd40fc-a921-4224-9a3d-37b4aaabaae3",
         "rank": "recruiter",
         "joined": "2026-09-11T01:29:46.010000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA24",
         "contributed": 246238678268,
         "contributionRank": 83,
         "guildRaidsTotal": 1771
@@ -1681,8 +1681,8 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "NA34",
-        "contributed": 9206251657578,
+        "server": "NA14",
+        "contributed": 9208843436691,
         "contributionRank": 1,
         "guildRaidsTotal": 3870
       },
@@ -2836,7 +2836,7 @@
         "rank": "recruiter",
         "joined": "2026-07-25T15:15:51.740000Z",
         "online": true,
-        "server": "NA32",
+        "server": "NA29",
         "contributed": 77764492767,
         "contributionRank": 91,
         "guildRaidsTotal": 290
@@ -3078,7 +3078,7 @@
         "rank": "recruiter",
         "joined": "2026-09-15T01:39:00.344000Z",
         "online": true,
-        "server": "NA11",
+        "server": "NA34",
         "contributed": 12325438,
         "contributionRank": 130,
         "guildRaidsTotal": 0
