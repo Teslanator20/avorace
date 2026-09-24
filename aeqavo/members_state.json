@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T23:05:28.120Z",
+  "updated": "2026-09-24T23:10:33.434Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -1673,7 +1673,7 @@
         "server": null,
         "contributed": 3010756772757,
         "contributionRank": 15,
-        "guildRaidsTotal": 1508
+        "guildRaidsTotal": 1509
       },
       {
         "username": "sum00",
@@ -1717,7 +1717,7 @@
         "server": "EU1",
         "contributed": 5038589988496,
         "contributionRank": 4,
-        "guildRaidsTotal": 2969
+        "guildRaidsTotal": 2970
       },
       {
         "username": "CupBoi",
@@ -1868,7 +1868,7 @@
         "rank": "chief",
         "joined": "2026-08-14T22:22:45.029000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA20",
         "contributed": 940841265832,
         "contributionRank": 32,
         "guildRaidsTotal": 1412
@@ -2120,8 +2120,8 @@
         "uuid": "8813f4e0-65ce-45fa-a7ee-95445fd0701e",
         "rank": "strategist",
         "joined": "2026-03-05T22:41:53.353000Z",
-        "online": true,
-        "server": "NA27",
+        "online": false,
+        "server": null,
         "contributed": 2386511076682,
         "contributionRank": 19,
         "guildRaidsTotal": 989
@@ -2223,7 +2223,7 @@
         "server": "EU1",
         "contributed": 59611048901,
         "contributionRank": 98,
-        "guildRaidsTotal": 196
+        "guildRaidsTotal": 197
       },
       {
         "username": "orenGr",
@@ -2868,8 +2868,8 @@
         "uuid": "20c2c5af-9162-46f0-94fa-c27adc808642",
         "rank": "recruiter",
         "joined": "2026-08-27T13:13:01.208000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA6",
         "contributed": 70233826526,
         "contributionRank": 94,
         "guildRaidsTotal": 46
