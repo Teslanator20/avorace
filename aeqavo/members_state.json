@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T02:10:29.682Z",
+  "updated": "2026-09-24T02:15:31.656Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 10,
+    "online": 7,
     "total": 150,
     "members": [
       {
@@ -22,8 +22,8 @@
         "uuid": "268fb20f-9eb6-40f4-bf75-0c2da4d83947",
         "rank": "chief",
         "joined": "2025-12-17T20:44:46.934000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA30",
         "contributed": 30448616340996,
         "contributionRank": 1,
         "guildRaidsTotal": 12081
@@ -176,8 +176,8 @@
         "uuid": "4b1a7a38-6640-4924-985f-859668cf4d5f",
         "rank": "chief",
         "joined": "2026-07-21T04:34:03.034000Z",
-        "online": true,
-        "server": "NA9",
+        "online": false,
+        "server": null,
         "contributed": 4574490134445,
         "contributionRank": 18,
         "guildRaidsTotal": 5583
@@ -187,8 +187,8 @@
         "uuid": "90a208c3-fbb5-4a63-9242-498aa013a488",
         "rank": "chief",
         "joined": "2025-02-18T03:15:28.278000Z",
-        "online": true,
-        "server": "NA30",
+        "online": false,
+        "server": null,
         "contributed": 4532784210977,
         "contributionRank": 19,
         "guildRaidsTotal": 3091
@@ -473,8 +473,8 @@
         "uuid": "2716135a-c373-4a5f-8cdc-96af91f90828",
         "rank": "strategist",
         "joined": "2026-03-15T18:49:27.291000Z",
-        "online": true,
-        "server": "NA9",
+        "online": false,
+        "server": null,
         "contributed": 2724016949579,
         "contributionRank": 34,
         "guildRaidsTotal": 3193
@@ -517,8 +517,8 @@
         "uuid": "dbe3d27d-d06f-4ba5-b1bf-bf24c262ff1f",
         "rank": "strategist",
         "joined": "2026-06-09T20:09:44.275000Z",
-        "online": true,
-        "server": "NA32",
+        "online": false,
+        "server": null,
         "contributed": 1925738219638,
         "contributionRank": 42,
         "guildRaidsTotal": 744
@@ -1681,7 +1681,7 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "AS15",
+        "server": "NA11",
         "contributed": 9198476320239,
         "contributionRank": 1,
         "guildRaidsTotal": 3867
