@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T09:40:33.509Z",
+  "updated": "2026-09-24T09:45:30.479Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 8,
+    "online": 10,
     "total": 150,
     "members": [
       {
@@ -364,7 +364,7 @@
         "rank": "strategist",
         "joined": "2026-01-19T21:42:14.737000Z",
         "online": true,
-        "server": "NA6",
+        "server": "NA17",
         "contributed": 17445265209603,
         "contributionRank": 12,
         "guildRaidsTotal": 6777
@@ -904,7 +904,7 @@
         "joined": "2026-08-18T04:01:35.935000Z",
         "online": true,
         "server": "AS20",
-        "contributed": 3641489287455,
+        "contributed": 3641489292937,
         "contributionRank": 42,
         "guildRaidsTotal": 1936
       },
@@ -1166,8 +1166,8 @@
         "uuid": "21d5b676-5126-4f34-ae7c-77e320b3c14d",
         "rank": "captain",
         "joined": "2026-09-01T22:12:08.311000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA17",
         "contributed": 393950425176,
         "contributionRank": 102,
         "guildRaidsTotal": 313
@@ -1177,8 +1177,8 @@
         "uuid": "fc6f2468-8f31-4546-ab27-ce19939d974f",
         "rank": "captain",
         "joined": "2026-08-18T12:42:21.850000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS17",
         "contributed": 347298401142,
         "contributionRank": 105,
         "guildRaidsTotal": 174
@@ -1244,8 +1244,8 @@
         "rank": "recruiter",
         "joined": "2026-09-11T18:23:54.504000Z",
         "online": true,
-        "server": "NA17",
-        "contributed": 1441029186828,
+        "server": "NA19",
+        "contributed": 1443620965941,
         "contributionRank": 73,
         "guildRaidsTotal": 1604
       },
@@ -1800,7 +1800,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45.000000Z",
+        "joined": "2025-07-02T19:02:45Z",
         "online": false,
         "server": null,
         "contributed": 1713430239966,
@@ -1921,7 +1921,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22.000000Z",
+        "joined": "2024-04-16T02:21:22Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
@@ -3178,7 +3178,7 @@
         "joined": "2026-09-22T16:05:38.223000Z",
         "online": true,
         "server": "AS20",
-        "contributed": 64797035084,
+        "contributed": 64797035105,
         "contributionRank": 95,
         "guildRaidsTotal": 484
       },
