@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T07:50:31.045Z",
+  "updated": "2026-09-24T07:55:37.997Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 5,
+    "online": 6,
     "total": 150,
     "members": [
       {
@@ -352,8 +352,8 @@
         "uuid": "b01dee1e-052c-4969-956d-be0e4d1ada4d",
         "rank": "strategist",
         "joined": "2025-03-24T15:18:39.871000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA1",
         "contributed": 5055375424781,
         "contributionRank": 17,
         "guildRaidsTotal": 2421
@@ -474,8 +474,8 @@
         "rank": "strategist",
         "joined": "2026-03-15T18:49:27.291000Z",
         "online": true,
-        "server": "NA3",
-        "contributed": 2726608728692,
+        "server": "NA9",
+        "contributed": 2729200507805,
         "contributionRank": 34,
         "guildRaidsTotal": 3194
       },
@@ -1800,7 +1800,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45Z",
+        "joined": "2025-07-02T19:02:45.000000Z",
         "online": false,
         "server": null,
         "contributed": 1713430239966,
@@ -1921,7 +1921,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22Z",
+        "joined": "2024-04-16T02:21:22.000000Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
@@ -2078,7 +2078,7 @@
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
         "server": "AS17",
-        "contributed": 3866934436596,
+        "contributed": 3869526215709,
         "contributionRank": 11,
         "guildRaidsTotal": 3084
       },
