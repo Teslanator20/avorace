@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T23:45:33.157Z",
+  "updated": "2026-09-24T23:50:33.543Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -1673,7 +1673,7 @@
         "server": null,
         "contributed": 3018532110096,
         "contributionRank": 15,
-        "guildRaidsTotal": 1511
+        "guildRaidsTotal": 1512
       },
       {
         "username": "sum00",
@@ -1717,7 +1717,7 @@
         "server": "EU2",
         "contributed": 5046365325835,
         "contributionRank": 4,
-        "guildRaidsTotal": 2972
+        "guildRaidsTotal": 2973
       },
       {
         "username": "CupBoi",
@@ -1800,7 +1800,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45Z",
+        "joined": "2025-07-02T19:02:45.000000Z",
         "online": false,
         "server": null,
         "contributed": 1716022019079,
@@ -1921,7 +1921,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22Z",
+        "joined": "2024-04-16T02:21:22.000000Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
@@ -2223,7 +2223,7 @@
         "server": "NA27",
         "contributed": 67386386240,
         "contributionRank": 95,
-        "guildRaidsTotal": 199
+        "guildRaidsTotal": 200
       },
       {
         "username": "orenGr",
@@ -2451,7 +2451,7 @@
         "rank": "captain",
         "joined": "2026-09-05T15:22:52.083000Z",
         "online": true,
-        "server": "EU15",
+        "server": "NA8",
         "contributed": 386175113168,
         "contributionRank": 57,
         "guildRaidsTotal": 1289
