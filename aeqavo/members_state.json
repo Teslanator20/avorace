@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T08:15:28.993Z",
+  "updated": "2026-09-24T08:20:37.328Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 8,
+    "online": 7,
     "total": 150,
     "members": [
       {
@@ -35,7 +35,7 @@
         "joined": "2024-02-20T14:52:55.148000Z",
         "online": true,
         "server": "AS6",
-        "contributed": 22050470403010,
+        "contributed": 22053062182123,
         "contributionRank": 2,
         "guildRaidsTotal": 9601
       },
@@ -341,8 +341,8 @@
         "uuid": "8b87b0a4-b7d0-448b-8569-9dd4b36d9050",
         "rank": "strategist",
         "joined": "2026-06-24T22:40:23.293000Z",
-        "online": true,
-        "server": "NA5",
+        "online": false,
+        "server": null,
         "contributed": 7158702597434,
         "contributionRank": 12,
         "guildRaidsTotal": 4363
@@ -477,7 +477,7 @@
         "server": "NA9",
         "contributed": 2736975845144,
         "contributionRank": 33,
-        "guildRaidsTotal": 3197
+        "guildRaidsTotal": 3198
       },
       {
         "username": "MicrosRevenge",
@@ -1173,6 +1173,17 @@
         "guildRaidsTotal": 64
       },
       {
+        "username": "JohnnyPescado",
+        "uuid": "d1c4e5c5-3ed5-443f-a3ea-b80b224981bc",
+        "rank": "recruiter",
+        "joined": "2026-09-11T20:22:42.142000Z",
+        "online": true,
+        "server": "AS6",
+        "contributed": 64848894596,
+        "contributionRank": 100,
+        "guildRaidsTotal": 511
+      },
+      {
         "username": "EpicBoi9898",
         "uuid": "fc89a9df-2831-4322-96f0-61325759fbc3",
         "rank": "recruiter",
@@ -1180,19 +1191,8 @@
         "online": false,
         "server": null,
         "contributed": 64843158336,
-        "contributionRank": 100,
-        "guildRaidsTotal": 37
-      },
-      {
-        "username": "JohnnyPescado",
-        "uuid": "d1c4e5c5-3ed5-443f-a3ea-b80b224981bc",
-        "rank": "recruiter",
-        "joined": "2026-09-11T20:22:42.142000Z",
-        "online": true,
-        "server": "AS6",
-        "contributed": 62257115483,
         "contributionRank": 101,
-        "guildRaidsTotal": 511
+        "guildRaidsTotal": 37
       },
       {
         "username": "IceandFire789",
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 9,
+    "online": 10,
     "total": 148,
     "members": [
       {
@@ -1768,8 +1768,8 @@
         "uuid": "24a616c5-6150-440c-8470-7dc2b89eece5",
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS15",
         "contributed": 3216484933986,
         "contributionRank": 14,
         "guildRaidsTotal": 5922
@@ -2077,10 +2077,10 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS13",
-        "contributed": 3879893332161,
+        "server": "AS14",
+        "contributed": 3882485111274,
         "contributionRank": 11,
-        "guildRaidsTotal": 3087
+        "guildRaidsTotal": 3089
       },
       {
         "username": "ArcuCresyn",
@@ -3034,7 +3034,7 @@
         "rank": "recruiter",
         "joined": "2026-09-23T00:33:22.923000Z",
         "online": true,
-        "server": "NA1",
+        "server": "AS20",
         "contributed": 12958895565,
         "contributionRank": 120,
         "guildRaidsTotal": 7
