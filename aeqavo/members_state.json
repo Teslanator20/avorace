@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T21:50:30.976Z",
+  "updated": "2026-09-24T21:55:26.407Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 7,
+    "online": 8,
     "total": 150,
     "members": [
       {
@@ -341,8 +341,8 @@
         "uuid": "8b87b0a4-b7d0-448b-8569-9dd4b36d9050",
         "rank": "strategist",
         "joined": "2026-06-24T22:40:23.293000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA24",
         "contributed": 7171661492999,
         "contributionRank": 12,
         "guildRaidsTotal": 4368
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 8,
+    "online": 9,
     "total": 148,
     "members": [
       {
@@ -2120,8 +2120,8 @@
         "uuid": "8813f4e0-65ce-45fa-a7ee-95445fd0701e",
         "rank": "strategist",
         "joined": "2026-03-05T22:41:53.353000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA10",
         "contributed": 2386511076682,
         "contributionRank": 19,
         "guildRaidsTotal": 989
