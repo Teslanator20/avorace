@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T08:55:29.243Z",
+  "updated": "2026-09-24T09:00:53.312Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 4,
+    "online": 3,
     "total": 150,
     "members": [
       {
@@ -35,9 +35,9 @@
         "joined": "2024-02-20T14:52:55.148000Z",
         "online": true,
         "server": "AS15",
-        "contributed": 22058245740349,
+        "contributed": 22060837519462,
         "contributionRank": 2,
-        "guildRaidsTotal": 9603
+        "guildRaidsTotal": 9604
       },
       {
         "username": "LegitNube",
@@ -682,8 +682,8 @@
         "uuid": "02062894-d333-4d5d-a6c5-dbba42f9ca72",
         "rank": "strategist",
         "joined": "2026-09-10T16:51:43.817000Z",
-        "online": true,
-        "server": "NA5",
+        "online": false,
+        "server": null,
         "contributed": 1253708,
         "contributionRank": 137,
         "guildRaidsTotal": 513
@@ -993,7 +993,7 @@
         "online": false,
         "server": null,
         "contributed": 72569815164,
-        "contributionRank": 98,
+        "contributionRank": 99,
         "guildRaidsTotal": 28
       },
       {
@@ -1179,9 +1179,9 @@
         "joined": "2026-09-11T20:22:42.142000Z",
         "online": true,
         "server": "AS15",
-        "contributed": 70032452822,
-        "contributionRank": 99,
-        "guildRaidsTotal": 513
+        "contributed": 72624231935,
+        "contributionRank": 97,
+        "guildRaidsTotal": 514
       },
       {
         "username": "EpicBoi9898",
@@ -1268,7 +1268,7 @@
         "online": false,
         "server": null,
         "contributed": 72582434382,
-        "contributionRank": 97,
+        "contributionRank": 98,
         "guildRaidsTotal": 28
       },
       {
@@ -1769,7 +1769,7 @@
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
         "online": true,
-        "server": "AS20",
+        "server": "AS15",
         "contributed": 3216484933986,
         "contributionRank": 14,
         "guildRaidsTotal": 5922
@@ -2528,7 +2528,7 @@
         "rank": "captain",
         "joined": "2025-10-22T09:40:52.120000Z",
         "online": true,
-        "server": "NA9",
+        "server": "AS4",
         "contributed": 227074078043,
         "contributionRank": 69,
         "guildRaidsTotal": 199
