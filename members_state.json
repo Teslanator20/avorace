@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T19:15:36.932Z",
+  "updated": "2026-09-24T19:20:31.908Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 17,
+    "online": 16,
     "total": 148,
     "members": [
       {
@@ -331,7 +331,7 @@
         "rank": "strategist",
         "joined": "2025-03-10T04:22:52.496000Z",
         "online": true,
-        "server": "NA6",
+        "server": "NA20",
         "contributed": 25977826061954,
         "contributionRank": 8,
         "guildRaidsTotal": 10915
@@ -804,7 +804,7 @@
         "rank": "strategist",
         "joined": "2026-09-13T11:08:25.317000Z",
         "online": true,
-        "server": "NA5",
+        "server": "NA24",
         "contributed": 336931284690,
         "contributionRank": 105,
         "guildRaidsTotal": 200
@@ -969,8 +969,8 @@
         "rank": "captain",
         "joined": "2026-05-15T19:33:59.646000Z",
         "online": true,
-        "server": "EU34",
-        "contributed": 1726124889258,
+        "server": "EU3",
+        "contributed": 1728716668371,
         "contributionRank": 65,
         "guildRaidsTotal": 1021
       },
@@ -1233,8 +1233,8 @@
         "rank": "recruiter",
         "joined": "2026-09-11T18:23:54.504000Z",
         "online": true,
-        "server": "EU34",
-        "contributed": 1485089431749,
+        "server": "EU3",
+        "contributed": 1487681210862,
         "contributionRank": 73,
         "guildRaidsTotal": 1621
       },
@@ -1628,8 +1628,8 @@
         "uuid": "8cb6ccb8-28e1-4e7d-94e6-c109842f12df",
         "rank": "recruit",
         "joined": "2026-09-24T19:07:00.662000Z",
-        "online": true,
-        "server": "EU4",
+        "online": false,
+        "server": null,
         "contributed": 0,
         "contributionRank": 148,
         "guildRaidsTotal": 0
@@ -1639,7 +1639,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 11,
+    "online": 13,
     "total": 148,
     "members": [
       {
@@ -1728,7 +1728,7 @@
         "server": "EU9",
         "contributed": 4051345258154,
         "contributionRank": 9,
-        "guildRaidsTotal": 5093
+        "guildRaidsTotal": 5094
       },
       {
         "username": "noonicrib",
@@ -1849,7 +1849,7 @@
         "server": null,
         "contributed": 940841265832,
         "contributionRank": 32,
-        "guildRaidsTotal": 1411
+        "guildRaidsTotal": 1412
       },
       {
         "username": "vicdegamer",
@@ -1889,8 +1889,8 @@
         "uuid": "19e3b0c9-0bb6-42cf-9813-5215a426ab38",
         "rank": "chief",
         "joined": "2025-09-14T13:48:38.719000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU6",
         "contributed": 680718696213,
         "contributionRank": 42,
         "guildRaidsTotal": 476
@@ -2047,7 +2047,7 @@
         "server": "EU12",
         "contributed": 4041428554934,
         "contributionRank": 10,
-        "guildRaidsTotal": 1653
+        "guildRaidsTotal": 1654
       },
       {
         "username": "YzRyx",
@@ -2098,8 +2098,8 @@
         "uuid": "8813f4e0-65ce-45fa-a7ee-95445fd0701e",
         "rank": "strategist",
         "joined": "2026-03-05T22:41:53.353000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA12",
         "contributed": 2386511076682,
         "contributionRank": 19,
         "guildRaidsTotal": 989
@@ -2201,7 +2201,7 @@
         "server": "EU14",
         "contributed": 57019269599,
         "contributionRank": 98,
-        "guildRaidsTotal": 195
+        "guildRaidsTotal": 196
       },
       {
         "username": "orenGr",
@@ -3205,6 +3205,17 @@
         "guildRaidsTotal": 0
       },
       {
+        "username": "Erikpod",
+        "uuid": "1d9520a9-4be1-4265-b16d-5bbe21171706",
+        "rank": "recruit",
+        "joined": "2026-09-19T16:14:25.122000Z",
+        "online": true,
+        "server": "EU30",
+        "contributed": 2524863,
+        "contributionRank": 137,
+        "guildRaidsTotal": 0
+      },
+      {
         "username": "OnlyplayDK",
         "uuid": "2f13aeaf-c26a-4d8f-b08e-cdfdcc1ac387",
         "rank": "recruit",
@@ -3212,17 +3223,6 @@
         "online": false,
         "server": null,
         "contributed": 84254,
-        "contributionRank": 137,
-        "guildRaidsTotal": 0
-      },
-      {
-        "username": "Erikpod",
-        "uuid": "1d9520a9-4be1-4265-b16d-5bbe21171706",
-        "rank": "recruit",
-        "joined": "2026-09-19T16:14:25.122000Z",
-        "online": true,
-        "server": "EU30",
-        "contributed": 21787,
         "contributionRank": 138,
         "guildRaidsTotal": 0
       },
