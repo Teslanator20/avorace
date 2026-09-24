@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T04:05:26.237Z",
+  "updated": "2026-09-24T04:10:31.759Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -605,8 +605,8 @@
         "uuid": "2f6d8a4f-cb62-4e29-973a-3eb808d1cc9c",
         "rank": "strategist",
         "joined": "2026-08-22T18:13:06.635000Z",
-        "online": true,
-        "server": "NA8",
+        "online": false,
+        "server": null,
         "contributed": 178833932938,
         "contributionRank": 86,
         "guildRaidsTotal": 72
@@ -869,8 +869,8 @@
         "uuid": "a536ae46-f1f4-4c5e-8181-8f3a9c68ef31",
         "rank": "captain",
         "joined": "2026-07-28T09:52:26.650000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA1",
         "contributed": 590925677574,
         "contributionRank": 69,
         "guildRaidsTotal": 560
@@ -1089,8 +1089,8 @@
         "uuid": "3cc4b039-4ff6-44f3-b07a-42a65313a8a6",
         "rank": "recruiter",
         "joined": "2026-08-12T09:39:23.705000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS1",
         "contributed": 344731085705,
         "contributionRank": 77,
         "guildRaidsTotal": 143
@@ -1463,8 +1463,8 @@
         "uuid": "6aaa211c-6930-4c14-b331-9cd8d3007017",
         "rank": "recruit",
         "joined": "2026-09-11T07:10:18.561000Z",
-        "online": true,
-        "server": "EU6",
+        "online": false,
+        "server": null,
         "contributed": 7776208473,
         "contributionRank": 127,
         "guildRaidsTotal": 3
@@ -1681,10 +1681,10 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "NA1",
-        "contributed": 9258087239838,
+        "server": "NA4",
+        "contributed": 9260679018951,
         "contributionRank": 1,
-        "guildRaidsTotal": 3887
+        "guildRaidsTotal": 3889
       },
       {
         "username": "Monocerotis",
@@ -2091,7 +2091,7 @@
         "server": null,
         "contributed": 3822874191675,
         "contributionRank": 12,
-        "guildRaidsTotal": 3065
+        "guildRaidsTotal": 3067
       },
       {
         "username": "Mqria_",
@@ -2385,7 +2385,7 @@
         "rank": "captain",
         "joined": "2026-09-05T15:27:34.642000Z",
         "online": true,
-        "server": "AS2",
+        "server": "AS4",
         "contributed": 546865392843,
         "contributionRank": 45,
         "guildRaidsTotal": 782
@@ -2836,7 +2836,7 @@
         "rank": "recruiter",
         "joined": "2026-07-25T15:15:51.740000Z",
         "online": true,
-        "server": "NA13",
+        "server": "NA15",
         "contributed": 77764492767,
         "contributionRank": 91,
         "guildRaidsTotal": 290
