@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T11:25:28.702Z",
+  "updated": "2026-09-24T11:30:44.018Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 8,
+    "online": 9,
     "total": 148,
     "members": [
       {
@@ -2045,9 +2045,9 @@
         "joined": "2026-07-19T02:19:31.545000Z",
         "online": true,
         "server": "AS1",
-        "contributed": 4789607800824,
+        "contributed": 4792199579937,
         "contributionRank": 5,
-        "guildRaidsTotal": 3188
+        "guildRaidsTotal": 3189
       },
       {
         "username": "StayLocked",
@@ -2121,7 +2121,7 @@
         "rank": "strategist",
         "joined": "2026-07-15T12:03:40.096000Z",
         "online": true,
-        "server": "NA1",
+        "server": "NA16",
         "contributed": 2374096623691,
         "contributionRank": 19,
         "guildRaidsTotal": 954
@@ -2307,8 +2307,8 @@
         "uuid": "d4d3059b-3e53-4f65-859e-64699083f5a9",
         "rank": "captain",
         "joined": "2026-06-26T17:45:22.728000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU22",
         "contributed": 811268493007,
         "contributionRank": 35,
         "guildRaidsTotal": 313

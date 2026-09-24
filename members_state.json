@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T11:25:27.914Z",
+  "updated": "2026-09-24T11:30:43.696Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
@@ -331,7 +331,7 @@
         "rank": "strategist",
         "joined": "2025-03-10T04:22:52.496000Z",
         "online": true,
-        "server": "NA11",
+        "server": "NA17",
         "contributed": 25977826061954,
         "contributionRank": 8,
         "guildRaidsTotal": 10915
@@ -1079,7 +1079,7 @@
         "rank": "captain",
         "joined": "2026-07-16T20:50:58.223000Z",
         "online": true,
-        "server": "NA3",
+        "server": "NA19",
         "contributed": 718034187357,
         "contributionRank": 87,
         "guildRaidsTotal": 376
@@ -1167,7 +1167,7 @@
         "rank": "captain",
         "joined": "2026-09-01T22:12:08.311000Z",
         "online": true,
-        "server": "AS20",
+        "server": "NA5",
         "contributed": 393950425176,
         "contributionRank": 102,
         "guildRaidsTotal": 313
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 8,
+    "online": 9,
     "total": 148,
     "members": [
       {
@@ -2045,9 +2045,9 @@
         "joined": "2026-07-19T02:19:31.545000Z",
         "online": true,
         "server": "AS1",
-        "contributed": 4789607800824,
+        "contributed": 4792199579937,
         "contributionRank": 5,
-        "guildRaidsTotal": 3188
+        "guildRaidsTotal": 3189
       },
       {
         "username": "StayLocked",
@@ -2121,7 +2121,7 @@
         "rank": "strategist",
         "joined": "2026-07-15T12:03:40.096000Z",
         "online": true,
-        "server": "NA1",
+        "server": "NA16",
         "contributed": 2374096623691,
         "contributionRank": 19,
         "guildRaidsTotal": 954
@@ -2307,8 +2307,8 @@
         "uuid": "d4d3059b-3e53-4f65-859e-64699083f5a9",
         "rank": "captain",
         "joined": "2026-06-26T17:45:22.728000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU22",
         "contributed": 811268493007,
         "contributionRank": 35,
         "guildRaidsTotal": 313
