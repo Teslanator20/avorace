@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T05:10:33.204Z",
+  "updated": "2026-09-24T05:16:05.882Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -177,7 +177,7 @@
         "rank": "chief",
         "joined": "2026-07-21T04:34:03.034000Z",
         "online": true,
-        "server": "NA7",
+        "server": "NA13",
         "contributed": 4582265471784,
         "contributionRank": 18,
         "guildRaidsTotal": 5585
@@ -342,7 +342,7 @@
         "rank": "strategist",
         "joined": "2026-06-24T22:40:23.293000Z",
         "online": true,
-        "server": "NA7",
+        "server": "NA13",
         "contributed": 7156110818321,
         "contributionRank": 12,
         "guildRaidsTotal": 4361
@@ -1079,7 +1079,7 @@
         "rank": "recruiter",
         "joined": "2026-07-16T02:46:08.937000Z",
         "online": true,
-        "server": "NA7",
+        "server": "NA13",
         "contributed": 399236072667,
         "contributionRank": 76,
         "guildRaidsTotal": 168
@@ -1123,7 +1123,7 @@
         "rank": "recruiter",
         "joined": "2026-09-11T01:29:46.010000Z",
         "online": true,
-        "server": "NA7",
+        "server": "NA13",
         "contributed": 254014318072,
         "contributionRank": 83,
         "guildRaidsTotal": 1773
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 12,
+    "online": 11,
     "total": 148,
     "members": [
       {
@@ -1680,8 +1680,8 @@
         "uuid": "e0915cb6-cc8b-4c94-8894-0c48458e15a3",
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
-        "online": true,
-        "server": "NA18",
+        "online": false,
+        "server": null,
         "contributed": 9284005030968,
         "contributionRank": 1,
         "guildRaidsTotal": 3899
@@ -1726,7 +1726,7 @@
         "joined": "2024-08-25T18:20:54.118000Z",
         "online": true,
         "server": "NA18",
-        "contributed": 4754451245083,
+        "contributed": 4757043024196,
         "contributionRank": 6,
         "guildRaidsTotal": 3456
       },
@@ -2155,8 +2155,8 @@
         "joined": "2025-09-09T03:25:37.101000Z",
         "online": true,
         "server": "NA18",
-        "contributed": 502626159043,
-        "contributionRank": 49,
+        "contributed": 505217938156,
+        "contributionRank": 48,
         "guildRaidsTotal": 580
       },
       {
@@ -2409,7 +2409,7 @@
         "online": false,
         "server": null,
         "contributed": 505100289360,
-        "contributionRank": 48,
+        "contributionRank": 49,
         "guildRaidsTotal": 299
       },
       {
@@ -2606,7 +2606,7 @@
         "joined": "2026-09-05T15:30:30.886000Z",
         "online": true,
         "server": "NA18",
-        "contributed": 158099263253,
+        "contributed": 160691042366,
         "contributionRank": 79,
         "guildRaidsTotal": 954
       },
@@ -2750,7 +2750,7 @@
         "online": false,
         "server": null,
         "contributed": 17804395641,
-        "contributionRank": 116,
+        "contributionRank": 117,
         "guildRaidsTotal": 8
       },
       {
@@ -2761,7 +2761,7 @@
         "online": false,
         "server": null,
         "contributed": 15585509032,
-        "contributionRank": 118,
+        "contributionRank": 119,
         "guildRaidsTotal": 7
       },
       {
@@ -3007,6 +3007,17 @@
         "guildRaidsTotal": 8
       },
       {
+        "username": "NullifyC",
+        "uuid": "ceb34e86-eac5-4c46-a00b-56beafa15730",
+        "rank": "recruiter",
+        "joined": "2026-09-15T01:39:00.344000Z",
+        "online": true,
+        "server": "NA18",
+        "contributed": 18154779229,
+        "contributionRank": 116,
+        "guildRaidsTotal": 6
+      },
+      {
         "username": "bbisim",
         "uuid": "0f892847-5baf-46cf-812e-ad16ba183416",
         "rank": "recruiter",
@@ -3014,18 +3025,7 @@
         "online": false,
         "server": null,
         "contributed": 15769423876,
-        "contributionRank": 117,
-        "guildRaidsTotal": 6
-      },
-      {
-        "username": "NullifyC",
-        "uuid": "ceb34e86-eac5-4c46-a00b-56beafa15730",
-        "rank": "recruiter",
-        "joined": "2026-09-15T01:39:00.344000Z",
-        "online": true,
-        "server": "NA18",
-        "contributed": 15563000116,
-        "contributionRank": 119,
+        "contributionRank": 118,
         "guildRaidsTotal": 6
       },
       {
