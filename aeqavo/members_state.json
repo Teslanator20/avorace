@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T05:05:24.614Z",
+  "updated": "2026-09-24T05:10:33.204Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 10,
+    "online": 9,
     "total": 150,
     "members": [
       {
@@ -178,7 +178,7 @@
         "joined": "2026-07-21T04:34:03.034000Z",
         "online": true,
         "server": "NA7",
-        "contributed": 4579673692671,
+        "contributed": 4582265471784,
         "contributionRank": 18,
         "guildRaidsTotal": 5585
       },
@@ -343,7 +343,7 @@
         "joined": "2026-06-24T22:40:23.293000Z",
         "online": true,
         "server": "NA7",
-        "contributed": 7153519039208,
+        "contributed": 7156110818321,
         "contributionRank": 12,
         "guildRaidsTotal": 4361
       },
@@ -572,8 +572,8 @@
         "uuid": "6d0b388e-9265-45f9-8ceb-1cae9d26fc69",
         "rank": "strategist",
         "joined": "2025-01-08T22:42:31.339000Z",
-        "online": true,
-        "server": "NA5",
+        "online": false,
+        "server": null,
         "contributed": 1114672345783,
         "contributionRank": 57,
         "guildRaidsTotal": 1827
@@ -1080,7 +1080,7 @@
         "joined": "2026-07-16T02:46:08.937000Z",
         "online": true,
         "server": "NA7",
-        "contributed": 396644293554,
+        "contributed": 399236072667,
         "contributionRank": 76,
         "guildRaidsTotal": 168
       },
@@ -1124,7 +1124,7 @@
         "joined": "2026-09-11T01:29:46.010000Z",
         "online": true,
         "server": "NA7",
-        "contributed": 251422538959,
+        "contributed": 254014318072,
         "contributionRank": 83,
         "guildRaidsTotal": 1773
       },
@@ -1563,7 +1563,7 @@
         "rank": "recruit",
         "joined": "2026-09-21T13:28:10.611000Z",
         "online": true,
-        "server": "NA4",
+        "server": "AS10",
         "contributed": 339,
         "contributionRank": 139,
         "guildRaidsTotal": 1023
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 11,
+    "online": 12,
     "total": 148,
     "members": [
       {
@@ -1728,7 +1728,7 @@
         "server": "NA18",
         "contributed": 4754451245083,
         "contributionRank": 6,
-        "guildRaidsTotal": 3455
+        "guildRaidsTotal": 3456
       },
       {
         "username": "DarkofFire",
@@ -1800,7 +1800,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45.000000Z",
+        "joined": "2025-07-02T19:02:45Z",
         "online": false,
         "server": null,
         "contributed": 1713430239966,
@@ -1921,7 +1921,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22.000000Z",
+        "joined": "2024-04-16T02:21:22Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
@@ -2157,7 +2157,7 @@
         "server": "NA18",
         "contributed": 502626159043,
         "contributionRank": 49,
-        "guildRaidsTotal": 579
+        "guildRaidsTotal": 580
       },
       {
         "username": "Poplots",
@@ -2571,8 +2571,8 @@
         "uuid": "14e19bfe-ddfc-47f7-b16a-610b69f31d10",
         "rank": "captain",
         "joined": "2022-08-06T03:02:58.205000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS18",
         "contributed": 174334425228,
         "contributionRank": 75,
         "guildRaidsTotal": 104
@@ -2608,7 +2608,7 @@
         "server": "NA18",
         "contributed": 158099263253,
         "contributionRank": 79,
-        "guildRaidsTotal": 953
+        "guildRaidsTotal": 954
       },
       {
         "username": "SupportsWRLD",
@@ -3026,7 +3026,7 @@
         "server": "NA18",
         "contributed": 15563000116,
         "contributionRank": 119,
-        "guildRaidsTotal": 5
+        "guildRaidsTotal": 6
       },
       {
         "username": "Zenferns55",
