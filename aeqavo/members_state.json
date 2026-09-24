@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T04:15:32.308Z",
+  "updated": "2026-09-24T04:20:33.639Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -265,7 +265,7 @@
         "rank": "chief",
         "joined": "2026-08-03T01:32:01.618000Z",
         "online": true,
-        "server": "NA8",
+        "server": "NA5",
         "contributed": 1044486982539,
         "contributionRank": 60,
         "guildRaidsTotal": 3294
@@ -342,7 +342,7 @@
         "rank": "strategist",
         "joined": "2026-06-24T22:40:23.293000Z",
         "online": true,
-        "server": "NA24",
+        "server": "NA13",
         "contributed": 7148335480982,
         "contributionRank": 12,
         "guildRaidsTotal": 4359
@@ -572,8 +572,8 @@
         "uuid": "6d0b388e-9265-45f9-8ceb-1cae9d26fc69",
         "rank": "strategist",
         "joined": "2025-01-08T22:42:31.339000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA5",
         "contributed": 1114672345783,
         "contributionRank": 57,
         "guildRaidsTotal": 1827
@@ -837,7 +837,7 @@
         "rank": "captain",
         "joined": "2026-08-06T02:16:59.575000Z",
         "online": true,
-        "server": "NA1",
+        "server": "NA7",
         "contributed": 834552889974,
         "contributionRank": 62,
         "guildRaidsTotal": 1967
@@ -1079,8 +1079,8 @@
         "rank": "recruiter",
         "joined": "2026-07-16T02:46:08.937000Z",
         "online": true,
-        "server": "NA17",
-        "contributed": 391460735327,
+        "server": "NA13",
+        "contributed": 391460735328,
         "contributionRank": 76,
         "guildRaidsTotal": 166
       },
@@ -1089,8 +1089,8 @@
         "uuid": "3cc4b039-4ff6-44f3-b07a-42a65313a8a6",
         "rank": "recruiter",
         "joined": "2026-08-12T09:39:23.705000Z",
-        "online": true,
-        "server": "AS1",
+        "online": false,
+        "server": null,
         "contributed": 344731085705,
         "contributionRank": 77,
         "guildRaidsTotal": 143
@@ -1124,7 +1124,7 @@
         "joined": "2026-09-11T01:29:46.010000Z",
         "online": true,
         "server": "NA13",
-        "contributed": 246238979555,
+        "contributed": 246238980070,
         "contributionRank": 83,
         "guildRaidsTotal": 1771
       },
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 13,
+    "online": 14,
     "total": 148,
     "members": [
       {
@@ -1681,10 +1681,10 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "NA22",
-        "contributed": 9263270798064,
+        "server": "NA16",
+        "contributed": 9265862577177,
         "contributionRank": 1,
-        "guildRaidsTotal": 3889
+        "guildRaidsTotal": 3892
       },
       {
         "username": "Monocerotis",
@@ -1772,7 +1772,7 @@
         "server": "AS19",
         "contributed": 3190567142856,
         "contributionRank": 14,
-        "guildRaidsTotal": 5912
+        "guildRaidsTotal": 5913
       },
       {
         "username": "Antragos",
@@ -2344,7 +2344,7 @@
         "server": "AS19",
         "contributed": 725698151640,
         "contributionRank": 39,
-        "guildRaidsTotal": 5956
+        "guildRaidsTotal": 5957
       },
       {
         "username": "Samiqt",
@@ -2583,7 +2583,7 @@
         "rank": "captain",
         "joined": "2026-08-23T16:21:10.372000Z",
         "online": true,
-        "server": "AS3",
+        "server": "AS8",
         "contributed": 165873863232,
         "contributionRank": 77,
         "guildRaidsTotal": 82
@@ -2597,7 +2597,7 @@
         "server": "AS19",
         "contributed": 160690832617,
         "contributionRank": 78,
-        "guildRaidsTotal": 60
+        "guildRaidsTotal": 61
       },
       {
         "username": "Yolur",
@@ -3048,7 +3048,7 @@
         "server": "AS19",
         "contributed": 5195883664,
         "contributionRank": 122,
-        "guildRaidsTotal": 1
+        "guildRaidsTotal": 2
       },
       {
         "username": "Greyborne",
@@ -3177,7 +3177,7 @@
         "rank": "recruit",
         "joined": "2026-09-22T16:05:38.223000Z",
         "online": true,
-        "server": "AS2",
+        "server": "NA8",
         "contributed": 64797033396,
         "contributionRank": 95,
         "guildRaidsTotal": 484
@@ -3187,8 +3187,8 @@
         "uuid": "d9a18995-281a-4118-a16b-fbeacbdf5227",
         "rank": "recruit",
         "joined": "2026-09-21T12:04:43.295000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS19",
         "contributed": 7780096396,
         "contributionRank": 121,
         "guildRaidsTotal": 3
