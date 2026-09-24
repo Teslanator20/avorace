@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T21:30:44.945Z",
+  "updated": "2026-09-24T21:35:24.315Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 22,
+    "online": 20,
     "total": 150,
     "members": [
       {
@@ -110,8 +110,8 @@
         "uuid": "f508152f-6d1b-4dd0-b418-e03a6f2b7a7d",
         "rank": "chief",
         "joined": "2025-06-27T19:13:15.828000Z",
-        "online": true,
-        "server": "EU12",
+        "online": false,
+        "server": null,
         "contributed": 11515274599059,
         "contributionRank": 17,
         "guildRaidsTotal": 4496
@@ -396,8 +396,8 @@
         "uuid": "a217e80c-944a-4231-9056-617f6f2f1ac9",
         "rank": "strategist",
         "joined": "2026-07-14T19:53:28.121000Z",
-        "online": true,
-        "server": "EU5",
+        "online": false,
+        "server": null,
         "contributed": 10737740865159,
         "contributionRank": 19,
         "guildRaidsTotal": 8247
@@ -1156,7 +1156,7 @@
         "rank": "captain",
         "joined": "2026-09-05T12:50:42.078000Z",
         "online": true,
-        "server": "NA5",
+        "server": "EU1",
         "contributed": 443194228323,
         "contributionRank": 99,
         "guildRaidsTotal": 267
@@ -1736,7 +1736,7 @@
         "rank": "chief",
         "joined": "2025-03-16T22:12:13.579000Z",
         "online": true,
-        "server": "EU34",
+        "server": "EU8",
         "contributed": 4312146999223,
         "contributionRank": 8,
         "guildRaidsTotal": 2544
@@ -2066,7 +2066,7 @@
         "rank": "strategist",
         "joined": "2026-03-18T12:34:42.380000Z",
         "online": true,
-        "server": "EU33",
+        "server": "EU6",
         "contributed": 4041428554934,
         "contributionRank": 10,
         "guildRaidsTotal": 1654
@@ -3210,7 +3210,7 @@
         "rank": "recruit",
         "joined": "2026-09-23T18:51:32.810000Z",
         "online": true,
-        "server": "EU34",
+        "server": "EU8",
         "contributed": 42355411,
         "contributionRank": 131,
         "guildRaidsTotal": 0
