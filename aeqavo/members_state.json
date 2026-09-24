@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T08:45:31.517Z",
+  "updated": "2026-09-24T08:50:32.581Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -35,7 +35,7 @@
         "joined": "2024-02-20T14:52:55.148000Z",
         "online": true,
         "server": "AS15",
-        "contributed": 22055653961236,
+        "contributed": 22058245740349,
         "contributionRank": 2,
         "guildRaidsTotal": 9603
       },
@@ -1004,7 +1004,7 @@
         "online": false,
         "server": null,
         "contributed": 69978036051,
-        "contributionRank": 99,
+        "contributionRank": 100,
         "guildRaidsTotal": 27
       },
       {
@@ -1179,8 +1179,8 @@
         "joined": "2026-09-11T20:22:42.142000Z",
         "online": true,
         "server": "AS15",
-        "contributed": 67440673709,
-        "contributionRank": 100,
+        "contributed": 70032452822,
+        "contributionRank": 99,
         "guildRaidsTotal": 513
       },
       {
@@ -1212,7 +1212,7 @@
         "joined": "2026-09-11T06:25:37.201000Z",
         "online": true,
         "server": "EU17",
-        "contributed": 20754436126,
+        "contributed": 20754436688,
         "contributionRank": 113,
         "guildRaidsTotal": 9
       },
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 8,
+    "online": 7,
     "total": 148,
     "members": [
       {
@@ -1769,7 +1769,7 @@
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
         "online": true,
-        "server": "AS15",
+        "server": "AS20",
         "contributed": 3216484933986,
         "contributionRank": 14,
         "guildRaidsTotal": 5922
@@ -2032,8 +2032,8 @@
         "uuid": "751811c6-b814-42ca-9c3a-246df6dd323f",
         "rank": "chief",
         "joined": "2026-09-22T10:01:00.459000Z",
-        "online": true,
-        "server": "EU10",
+        "online": false,
+        "server": null,
         "contributed": 0,
         "contributionRank": 148,
         "guildRaidsTotal": 394
@@ -2080,7 +2080,7 @@
         "server": null,
         "contributed": 3895444006839,
         "contributionRank": 11,
-        "guildRaidsTotal": 3093
+        "guildRaidsTotal": 3095
       },
       {
         "username": "ArcuCresyn",
