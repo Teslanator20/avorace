@@ -311,7 +311,25 @@
       "type": "demoted",
       "from": "recruiter",
       "to": "recruit"
+    },
+    {
+      "ts": "2026-09-24T18:35:25.329Z",
+      "guild": "Sequoia",
+      "uuid": "cfb1d14e-94dd-4bee-af08-178d5c0e6860",
+      "username": "MrHemar",
+      "type": "joined",
+      "rank": "strategist",
+      "joinedAt": "2026-09-24T18:33:38.079000Z",
+      "raidsTotal": 0
+    },
+    {
+      "ts": "2026-09-24T18:35:25.329Z",
+      "guild": "Sequoia",
+      "uuid": "3fc03598-d089-45e0-88df-3ac7da04645e",
+      "username": "MrHomar",
+      "type": "left",
+      "from": "strategist"
     }
   ],
-  "updated": "2026-09-24T18:30:43.448Z"
+  "updated": "2026-09-24T18:35:25.329Z"
 }

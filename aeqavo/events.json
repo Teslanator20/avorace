@@ -63,7 +63,16 @@
       "type": "demoted",
       "from": "recruiter",
       "to": "recruit"
+    },
+    {
+      "ts": "2026-09-24T18:35:25.682Z",
+      "guild": "Aequitas",
+      "uuid": "860feac2-6899-403a-a525-6596a9e0ba17",
+      "username": "FrostyTHCv2",
+      "type": "promoted",
+      "from": "recruiter",
+      "to": "captain"
     }
   ],
-  "updated": "2026-09-24T18:30:43.967Z"
+  "updated": "2026-09-24T18:35:25.682Z"
 }
