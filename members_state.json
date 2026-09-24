@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T15:35:28.004Z",
+  "updated": "2026-09-24T15:40:36.493Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 18,
+    "online": 17,
     "total": 150,
     "members": [
       {
@@ -363,8 +363,8 @@
         "uuid": "22a60d48-c7eb-48f7-866c-dd97785bb167",
         "rank": "strategist",
         "joined": "2026-01-19T21:42:14.737000Z",
-        "online": true,
-        "server": "EU1",
+        "online": false,
+        "server": null,
         "contributed": 17445265209603,
         "contributionRank": 12,
         "guildRaidsTotal": 6777
@@ -616,8 +616,8 @@
         "uuid": "9890472e-e8cf-4195-b52c-953f8019d4c5",
         "rank": "strategist",
         "joined": "2026-06-20T00:29:34.849000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU26",
         "contributed": 3167154076086,
         "contributionRank": 48,
         "guildRaidsTotal": 1621
@@ -804,7 +804,7 @@
         "rank": "strategist",
         "joined": "2026-09-13T11:08:25.317000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA5",
         "contributed": 336931284690,
         "contributionRank": 106,
         "guildRaidsTotal": 200
@@ -848,10 +848,10 @@
         "rank": "strategist",
         "joined": "2026-09-23T06:02:54.548000Z",
         "online": true,
-        "server": "AS2",
-        "contributed": 176240979684,
+        "server": "AS20",
+        "contributed": 178832758797,
         "contributionRank": 117,
-        "guildRaidsTotal": 6442
+        "guildRaidsTotal": 6444
       },
       {
         "username": "FerroSporco",
@@ -925,7 +925,7 @@
         "rank": "captain",
         "joined": "2026-02-09T20:37:33.600000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA5",
         "contributed": 2493325410487,
         "contributionRank": 56,
         "guildRaidsTotal": 1050
@@ -1034,8 +1034,8 @@
         "uuid": "20ee8ca6-0044-4fbd-938b-873aa7e1f90a",
         "rank": "captain",
         "joined": "2026-06-10T23:39:49.473000Z",
-        "online": true,
-        "server": "NA2",
+        "online": false,
+        "server": null,
         "contributed": 1041895203426,
         "contributionRank": 79,
         "guildRaidsTotal": 501
@@ -1266,10 +1266,10 @@
         "rank": "recruiter",
         "joined": "2026-09-10T08:43:30.731000Z",
         "online": true,
-        "server": "AS13",
-        "contributed": 725698151640,
+        "server": "AS2",
+        "contributed": 728289930753,
         "contributionRank": 87,
-        "guildRaidsTotal": 1717
+        "guildRaidsTotal": 1719
       },
       {
         "username": "puppygjrl",
@@ -1455,7 +1455,7 @@
         "online": false,
         "server": null,
         "contributed": 18193363064,
-        "contributionRank": 138,
+        "contributionRank": 139,
         "guildRaidsTotal": 0
       },
       {
@@ -1569,6 +1569,17 @@
         "guildRaidsTotal": 136
       },
       {
+        "username": "dwybss",
+        "uuid": "638d2c68-f59c-417c-b81a-083209f3aa70",
+        "rank": "recruit",
+        "joined": "2026-09-08T20:42:38.038000Z",
+        "online": true,
+        "server": "NA22",
+        "contributed": 20741261062,
+        "contributionRank": 137,
+        "guildRaidsTotal": 7
+      },
+      {
         "username": "blazyboo",
         "uuid": "89c2888b-33bf-4d31-a45d-21aad2e06684",
         "rank": "recruit",
@@ -1576,19 +1587,8 @@
         "online": false,
         "server": null,
         "contributed": 20734232904,
-        "contributionRank": 137,
+        "contributionRank": 138,
         "guildRaidsTotal": 275
-      },
-      {
-        "username": "dwybss",
-        "uuid": "638d2c68-f59c-417c-b81a-083209f3aa70",
-        "rank": "recruit",
-        "joined": "2026-09-08T20:42:38.038000Z",
-        "online": true,
-        "server": "NA22",
-        "contributed": 18149481949,
-        "contributionRank": 139,
-        "guildRaidsTotal": 7
       },
       {
         "username": "cobbler_john",
@@ -2047,7 +2047,7 @@
         "server": "AS3",
         "contributed": 4831076266632,
         "contributionRank": 5,
-        "guildRaidsTotal": 3204
+        "guildRaidsTotal": 3205
       },
       {
         "username": "StayLocked",
@@ -2077,10 +2077,10 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS2",
-        "contributed": 3923953577082,
+        "server": "AS20",
+        "contributed": 3926545356195,
         "contributionRank": 11,
-        "guildRaidsTotal": 3104
+        "guildRaidsTotal": 3106
       },
       {
         "username": "ArcuCresyn",
@@ -2091,7 +2091,7 @@
         "server": null,
         "contributed": 3882587681098,
         "contributionRank": 12,
-        "guildRaidsTotal": 3985
+        "guildRaidsTotal": 3986
       },
       {
         "username": "Mqria_",
@@ -2113,7 +2113,7 @@
         "server": "AS3",
         "contributed": 2405197973047,
         "contributionRank": 17,
-        "guildRaidsTotal": 965
+        "guildRaidsTotal": 966
       },
       {
         "username": "_DoomDragon_",
@@ -2132,10 +2132,10 @@
         "rank": "strategist",
         "joined": "2026-07-19T02:38:35.193000Z",
         "online": true,
-        "server": "AS13",
-        "contributed": 1964568567654,
+        "server": "AS2",
+        "contributed": 1967160346767,
         "contributionRank": 20,
-        "guildRaidsTotal": 4328
+        "guildRaidsTotal": 4330
       },
       {
         "username": "danieltlq",
@@ -2355,7 +2355,7 @@
         "server": null,
         "contributed": 707898724827,
         "contributionRank": 40,
-        "guildRaidsTotal": 277
+        "guildRaidsTotal": 278
       },
       {
         "username": "Liss1404",
