@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T16:15:33.083Z",
+  "updated": "2026-09-24T16:20:35.037Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -199,7 +199,7 @@
         "rank": "chief",
         "joined": "2026-08-11T20:39:59.283000Z",
         "online": true,
-        "server": "NA21",
+        "server": "NA5",
         "contributed": 4141663022574,
         "contributionRank": 24,
         "guildRaidsTotal": 9508
@@ -331,7 +331,7 @@
         "rank": "strategist",
         "joined": "2025-08-13T10:23:37.796000Z",
         "online": true,
-        "server": "NA22",
+        "server": "AS9",
         "contributed": 7223835684525,
         "contributionRank": 11,
         "guildRaidsTotal": 3607
@@ -1013,7 +1013,7 @@
         "rank": "captain",
         "joined": "2026-09-15T17:21:38.410000Z",
         "online": true,
-        "server": "NA21",
+        "server": "EU29",
         "contributed": 15553876392,
         "contributionRank": 120,
         "guildRaidsTotal": 10
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 14,
+    "online": 13,
     "total": 148,
     "members": [
       {
@@ -1800,7 +1800,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45.000000Z",
+        "joined": "2025-07-02T19:02:45Z",
         "online": false,
         "server": null,
         "contributed": 1713430239966,
@@ -1868,10 +1868,10 @@
         "rank": "chief",
         "joined": "2026-08-14T22:22:45.029000Z",
         "online": true,
-        "server": "AS6",
-        "contributed": 927882370267,
+        "server": "AS20",
+        "contributed": 930474149380,
         "contributionRank": 32,
-        "guildRaidsTotal": 1407
+        "guildRaidsTotal": 1408
       },
       {
         "username": "vicdegamer",
@@ -1921,7 +1921,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22.000000Z",
+        "joined": "2024-04-16T02:21:22Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
@@ -2077,10 +2077,10 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS6",
-        "contributed": 3931728914421,
+        "server": "AS20",
+        "contributed": 3934320693534,
         "contributionRank": 11,
-        "guildRaidsTotal": 3110
+        "guildRaidsTotal": 3111
       },
       {
         "username": "ArcuCresyn",
@@ -2110,10 +2110,10 @@
         "rank": "strategist",
         "joined": "2026-07-15T12:03:40.096000Z",
         "online": true,
-        "server": "AS6",
-        "contributed": 2405197973047,
+        "server": "AS20",
+        "contributed": 2407789752160,
         "contributionRank": 17,
-        "guildRaidsTotal": 966
+        "guildRaidsTotal": 967
       },
       {
         "username": "_DoomDragon_",
@@ -2133,9 +2133,9 @@
         "joined": "2026-07-19T02:38:35.193000Z",
         "online": true,
         "server": "AS13",
-        "contributed": 1974935684106,
+        "contributed": 1977527463219,
         "contributionRank": 20,
-        "guildRaidsTotal": 4332
+        "guildRaidsTotal": 4333
       },
       {
         "username": "danieltlq",
@@ -2307,8 +2307,8 @@
         "uuid": "d4d3059b-3e53-4f65-859e-64699083f5a9",
         "rank": "captain",
         "joined": "2026-06-26T17:45:22.728000Z",
-        "online": true,
-        "server": "EU2",
+        "online": false,
+        "server": null,
         "contributed": 811268493007,
         "contributionRank": 35,
         "guildRaidsTotal": 313
@@ -2605,10 +2605,10 @@
         "rank": "captain",
         "joined": "2026-08-23T16:21:10.372000Z",
         "online": true,
-        "server": "AS6",
-        "contributed": 165873863232,
+        "server": "AS20",
+        "contributed": 168465642345,
         "contributionRank": 79,
-        "guildRaidsTotal": 82
+        "guildRaidsTotal": 83
       },
       {
         "username": "SupportsWRLD",
