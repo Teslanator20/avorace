@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T19:00:54.267Z",
+  "updated": "2026-09-24T19:05:26.478Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 11,
+    "online": 10,
     "total": 150,
     "members": [
       {
@@ -1014,7 +1014,7 @@
         "joined": "2026-09-11T06:25:37.201000Z",
         "online": true,
         "server": "NA6",
-        "contributed": 20754864843,
+        "contributed": 20754868843,
         "contributionRank": 114,
         "guildRaidsTotal": 9
       },
@@ -1265,8 +1265,8 @@
         "uuid": "571c24be-3a6b-47fa-8d85-86e3115a69e9",
         "rank": "recruit",
         "joined": "2026-09-05T02:24:02.789000Z",
-        "online": true,
-        "server": "AS6",
+        "online": false,
+        "server": null,
         "contributed": 93318943639,
         "contributionRank": 96,
         "guildRaidsTotal": 36
@@ -1465,7 +1465,7 @@
         "joined": "2026-09-11T07:10:18.561000Z",
         "online": true,
         "server": "EU7",
-        "contributed": 7776223631,
+        "contributed": 7776227800,
         "contributionRank": 127,
         "guildRaidsTotal": 3
       },
@@ -1573,8 +1573,8 @@
         "uuid": "48cf9c44-3cb5-437b-89c8-48faf4ac26a6",
         "rank": "recruit",
         "joined": "2026-09-07T03:36:01.165000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA18",
         "contributed": 0,
         "contributionRank": 142,
         "guildRaidsTotal": 0
@@ -1650,8 +1650,8 @@
         "uuid": "cb49be28-c501-4eb0-9b9d-a1704397a9e6",
         "rank": "recruit",
         "joined": "2026-09-23T07:14:55.529000Z",
-        "online": true,
-        "server": "NA15",
+        "online": false,
+        "server": null,
         "contributed": 0,
         "contributionRank": 150,
         "guildRaidsTotal": 0
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 15,
+    "online": 14,
     "total": 148,
     "members": [
       {
@@ -1748,7 +1748,7 @@
         "joined": "2026-02-12T01:31:35.069000Z",
         "online": true,
         "server": "EU12",
-        "contributed": 4048753479041,
+        "contributed": 4051345258154,
         "contributionRank": 9,
         "guildRaidsTotal": 5093
       },
@@ -1867,9 +1867,9 @@
         "uuid": "bf0c927d-ed10-43e8-badd-523e1007ddae",
         "rank": "chief",
         "joined": "2026-08-14T22:22:45.029000Z",
-        "online": true,
-        "server": "EU12",
-        "contributed": 938249486719,
+        "online": false,
+        "server": null,
+        "contributed": 940841265832,
         "contributionRank": 32,
         "guildRaidsTotal": 1411
       },
@@ -2067,7 +2067,7 @@
         "joined": "2026-03-18T12:34:42.380000Z",
         "online": true,
         "server": "EU12",
-        "contributed": 4038836775821,
+        "contributed": 4041428554934,
         "contributionRank": 10,
         "guildRaidsTotal": 1653
       },
@@ -2220,8 +2220,8 @@
         "rank": "strategist",
         "joined": "2026-09-18T23:21:06.839000Z",
         "online": true,
-        "server": "EU12",
-        "contributed": 54427490486,
+        "server": "EU14",
+        "contributed": 57019269599,
         "contributionRank": 98,
         "guildRaidsTotal": 195
       },
@@ -2562,7 +2562,7 @@
         "joined": "2026-09-05T15:30:30.886000Z",
         "online": true,
         "server": "EU14",
-        "contributed": 191792411301,
+        "contributed": 191792412572,
         "contributionRank": 74,
         "guildRaidsTotal": 966
       },
@@ -3177,7 +3177,7 @@
         "rank": "recruit",
         "joined": "2026-09-23T00:33:22.923000Z",
         "online": true,
-        "server": "NA19",
+        "server": "EU12",
         "contributed": 12958895565,
         "contributionRank": 120,
         "guildRaidsTotal": 7
@@ -3244,7 +3244,7 @@
         "joined": "2026-09-19T16:14:25.122000Z",
         "online": true,
         "server": "EU30",
-        "contributed": 21561,
+        "contributed": 21787,
         "contributionRank": 138,
         "guildRaidsTotal": 0
       },
