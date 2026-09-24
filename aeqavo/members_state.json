@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T06:50:31.064Z",
+  "updated": "2026-09-24T06:55:25.164Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 5,
+    "online": 4,
     "total": 150,
     "members": [
       {
@@ -474,7 +474,7 @@
         "rank": "strategist",
         "joined": "2026-03-15T18:49:27.291000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA12",
         "contributed": 2724016949579,
         "contributionRank": 34,
         "guildRaidsTotal": 3193
@@ -1188,11 +1188,11 @@
         "uuid": "d1c4e5c5-3ed5-443f-a3ea-b80b224981bc",
         "rank": "recruiter",
         "joined": "2026-09-11T20:22:42.142000Z",
-        "online": true,
-        "server": "AS15",
-        "contributed": 62251343454,
+        "online": false,
+        "server": null,
+        "contributed": 62255430099,
         "contributionRank": 101,
-        "guildRaidsTotal": 511
+        "guildRaidsTotal": 0
       },
       {
         "username": "IceandFire789",
@@ -2087,9 +2087,9 @@
         "uuid": "c21f60f0-965e-4af8-a8f1-595cf5a404b3",
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
-        "online": true,
-        "server": "AS13",
-        "contributed": 3835833087240,
+        "online": false,
+        "server": null,
+        "contributed": 3841016645466,
         "contributionRank": 12,
         "guildRaidsTotal": 3072
       },
@@ -2967,8 +2967,8 @@
         "uuid": "f3c32d1c-1c0c-437a-9957-f005dcf92e1b",
         "rank": "recruiter",
         "joined": "2026-08-27T16:46:13.046000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU4",
         "contributed": 25917791130,
         "contributionRank": 110,
         "guildRaidsTotal": 10
