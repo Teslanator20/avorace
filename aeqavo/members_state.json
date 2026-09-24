@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T11:05:27.166Z",
+  "updated": "2026-09-24T11:10:34.331Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 3,
+    "online": 1,
     "total": 150,
     "members": [
       {
@@ -550,8 +550,8 @@
         "uuid": "26c4a541-d892-453b-8684-01e76be804d3",
         "rank": "strategist",
         "joined": "2026-07-24T10:24:33.080000Z",
-        "online": true,
-        "server": "AS20",
+        "online": false,
+        "server": null,
         "contributed": 1404744279246,
         "contributionRank": 48,
         "guildRaidsTotal": 595
@@ -1179,7 +1179,7 @@
         "joined": "2026-09-11T20:22:42.142000Z",
         "online": false,
         "server": null,
-        "contributed": 75221920169,
+        "contributed": 75223975215,
         "contributionRank": 97,
         "guildRaidsTotal": 0
       },
@@ -1267,7 +1267,7 @@
         "joined": "2026-09-05T02:24:02.789000Z",
         "online": true,
         "server": "AS21",
-        "contributed": 72584700279,
+        "contributed": 72584702796,
         "contributionRank": 98,
         "guildRaidsTotal": 28
       },
@@ -1430,8 +1430,8 @@
         "uuid": "8dbc997c-e488-439c-92e5-a0b42bb73e7f",
         "rank": "recruit",
         "joined": "2026-09-11T21:19:55.644000Z",
-        "online": true,
-        "server": "EU13",
+        "online": false,
+        "server": null,
         "contributed": 10373522067,
         "contributionRank": 124,
         "guildRaidsTotal": 4
@@ -2044,10 +2044,10 @@
         "rank": "strategist",
         "joined": "2026-07-19T02:19:31.545000Z",
         "online": true,
-        "server": "AS23",
-        "contributed": 4781832463485,
+        "server": "AS2",
+        "contributed": 4784424242598,
         "contributionRank": 6,
-        "guildRaidsTotal": 3186
+        "guildRaidsTotal": 3187
       },
       {
         "username": "StayLocked",
@@ -2296,8 +2296,8 @@
         "uuid": "10c7070f-e193-4bbf-9cc7-f95022b6b1b8",
         "rank": "captain",
         "joined": "2026-07-16T22:42:15.602000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS22",
         "contributed": 821679509229,
         "contributionRank": 34,
         "guildRaidsTotal": 498
@@ -2450,8 +2450,8 @@
         "uuid": "1dd59da5-d546-4dad-a7ee-e4e919f6592e",
         "rank": "captain",
         "joined": "2026-09-05T15:22:52.083000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU18",
         "contributed": 386175113168,
         "contributionRank": 57,
         "guildRaidsTotal": 1289
@@ -2890,8 +2890,8 @@
         "uuid": "7ca9372c-c609-47da-8d74-921f26f10ec4",
         "rank": "recruiter",
         "joined": "2026-08-08T02:02:40.408000Z",
-        "online": true,
-        "server": "NA7",
+        "online": false,
+        "server": null,
         "contributed": 49586384162,
         "contributionRank": 98,
         "guildRaidsTotal": 19
@@ -3121,8 +3121,8 @@
         "uuid": "ec000193-b621-4bcd-ad04-34cb64aa1bae",
         "rank": "recruiter",
         "joined": "2026-08-13T09:21:57.103000Z",
-        "online": true,
-        "server": "AS17",
+        "online": false,
+        "server": null,
         "contributed": 3543242,
         "contributionRank": 135,
         "guildRaidsTotal": 0
