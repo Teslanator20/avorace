@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T12:20:34.142Z",
+  "updated": "2026-09-24T12:25:28.037Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -1179,7 +1179,7 @@
         "joined": "2026-09-11T20:22:42.142000Z",
         "online": true,
         "server": "AS1",
-        "contributed": 75231494831,
+        "contributed": 75231498651,
         "contributionRank": 97,
         "guildRaidsTotal": 516
       },
@@ -2297,7 +2297,7 @@
         "rank": "captain",
         "joined": "2026-07-16T22:42:15.602000Z",
         "online": true,
-        "server": "AS23",
+        "server": "NA4",
         "contributed": 821679509229,
         "contributionRank": 34,
         "guildRaidsTotal": 498
@@ -2528,7 +2528,7 @@
         "rank": "captain",
         "joined": "2025-10-22T09:40:52.120000Z",
         "online": true,
-        "server": "NA12",
+        "server": "NA4",
         "contributed": 227074078043,
         "contributionRank": 69,
         "guildRaidsTotal": 199
@@ -3121,8 +3121,8 @@
         "uuid": "ec000193-b621-4bcd-ad04-34cb64aa1bae",
         "rank": "recruiter",
         "joined": "2026-08-13T09:21:57.103000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS4",
         "contributed": 3543242,
         "contributionRank": 135,
         "guildRaidsTotal": 0
@@ -3176,8 +3176,8 @@
         "uuid": "933d2bba-3125-4040-adee-acee43510810",
         "rank": "recruit",
         "joined": "2026-09-22T16:05:38.223000Z",
-        "online": true,
-        "server": "AS3",
+        "online": false,
+        "server": null,
         "contributed": 64797037620,
         "contributionRank": 95,
         "guildRaidsTotal": 484
