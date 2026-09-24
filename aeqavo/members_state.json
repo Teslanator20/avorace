@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T02:45:35.540Z",
+  "updated": "2026-09-24T02:50:28.599Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 11,
+    "online": 12,
     "total": 150,
     "members": [
       {
@@ -24,9 +24,9 @@
         "joined": "2025-12-17T20:44:46.934000Z",
         "online": true,
         "server": "NA20",
-        "contributed": 30466758794787,
+        "contributed": 30469350573900,
         "contributionRank": 1,
-        "guildRaidsTotal": 12086
+        "guildRaidsTotal": 12088
       },
       {
         "username": "NekoShabeta",
@@ -341,8 +341,8 @@
         "uuid": "8b87b0a4-b7d0-448b-8569-9dd4b36d9050",
         "rank": "strategist",
         "joined": "2026-06-24T22:40:23.293000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA17",
         "contributed": 7148335480982,
         "contributionRank": 12,
         "guildRaidsTotal": 4359
@@ -1124,7 +1124,7 @@
         "joined": "2026-09-11T01:29:46.010000Z",
         "online": true,
         "server": "NA24",
-        "contributed": 246238678268,
+        "contributed": 246238686082,
         "contributionRank": 83,
         "guildRaidsTotal": 1771
       },
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 13,
+    "online": 12,
     "total": 148,
     "members": [
       {
@@ -1684,7 +1684,7 @@
         "server": "NA20",
         "contributed": 9216618774030,
         "contributionRank": 1,
-        "guildRaidsTotal": 3873
+        "guildRaidsTotal": 3875
       },
       {
         "username": "Monocerotis",
@@ -1769,10 +1769,10 @@
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
         "online": true,
-        "server": "NA9",
-        "contributed": 3172424689065,
+        "server": "NA22",
+        "contributed": 3175016468178,
         "contributionRank": 14,
-        "guildRaidsTotal": 5906
+        "guildRaidsTotal": 5907
       },
       {
         "username": "Antragos",
@@ -1903,7 +1903,7 @@
         "online": false,
         "server": null,
         "contributed": 705546946488,
-        "contributionRank": 39,
+        "contributionRank": 40,
         "guildRaidsTotal": 547
       },
       {
@@ -2231,7 +2231,7 @@
         "rank": "strategist",
         "joined": "2026-09-18T23:21:06.839000Z",
         "online": true,
-        "server": "NA10",
+        "server": "NA22",
         "contributed": 25917920243,
         "contributionRank": 108,
         "guildRaidsTotal": 185
@@ -2341,10 +2341,10 @@
         "rank": "captain",
         "joined": "2026-09-10T13:02:52.277000Z",
         "online": true,
-        "server": "NA9",
-        "contributed": 704963918736,
-        "contributionRank": 40,
-        "guildRaidsTotal": 5949
+        "server": "NA22",
+        "contributed": 707555697849,
+        "contributionRank": 39,
+        "guildRaidsTotal": 5950
       },
       {
         "username": "Samiqt",
@@ -2353,9 +2353,9 @@
         "joined": "2026-08-29T18:38:14.057000Z",
         "online": true,
         "server": "NA9",
-        "contributed": 674205596358,
+        "contributed": 676797375471,
         "contributionRank": 42,
-        "guildRaidsTotal": 264
+        "guildRaidsTotal": 265
       },
       {
         "username": "Liss1404",
@@ -2616,10 +2616,10 @@
         "rank": "captain",
         "joined": "2026-09-05T15:30:30.886000Z",
         "online": true,
-        "server": "NA9",
-        "contributed": 139956809462,
+        "server": "NA22",
+        "contributed": 142548588575,
         "contributionRank": 80,
-        "guildRaidsTotal": 947
+        "guildRaidsTotal": 948
       },
       {
         "username": "Xinsoup",
@@ -3022,8 +3022,8 @@
         "uuid": "50fe23ac-fda1-4d9f-8e14-203083937664",
         "rank": "recruiter",
         "joined": "2026-09-23T00:33:22.923000Z",
-        "online": true,
-        "server": "NA34",
+        "online": false,
+        "server": null,
         "contributed": 12958895565,
         "contributionRank": 119,
         "guildRaidsTotal": 7
