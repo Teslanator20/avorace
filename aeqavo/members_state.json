@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-24T11:20:33.160Z",
+  "updated": "2026-09-24T11:25:28.702Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 2,
+    "online": 3,
     "total": 150,
     "members": [
       {
@@ -1177,11 +1177,11 @@
         "uuid": "d1c4e5c5-3ed5-443f-a3ea-b80b224981bc",
         "rank": "recruiter",
         "joined": "2026-09-11T20:22:42.142000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS1",
         "contributed": 75223976769,
         "contributionRank": 97,
-        "guildRaidsTotal": 0
+        "guildRaidsTotal": 516
       },
       {
         "username": "EpicBoi9898",
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 9,
+    "online": 8,
     "total": 148,
     "members": [
       {
@@ -2045,7 +2045,7 @@
         "joined": "2026-07-19T02:19:31.545000Z",
         "online": true,
         "server": "AS1",
-        "contributed": 4787016021711,
+        "contributed": 4789607800824,
         "contributionRank": 5,
         "guildRaidsTotal": 3188
       },
@@ -2121,7 +2121,7 @@
         "rank": "strategist",
         "joined": "2026-07-15T12:03:40.096000Z",
         "online": true,
-        "server": "AS12",
+        "server": "NA1",
         "contributed": 2374096623691,
         "contributionRank": 19,
         "guildRaidsTotal": 954
@@ -3220,8 +3220,8 @@
         "uuid": "4d5c51b2-f06b-489f-91b6-9180419b4e48",
         "rank": "recruit",
         "joined": "2026-09-23T18:51:32.810000Z",
-        "online": true,
-        "server": "EU20",
+        "online": false,
+        "server": null,
         "contributed": 1999833,
         "contributionRank": 136,
         "guildRaidsTotal": 0
