@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T07:15:32.604Z",
+  "updated": "2026-09-24T07:20:32.137Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -1714,8 +1714,8 @@
         "rank": "chief",
         "joined": "2024-08-17T16:01:40.405000Z",
         "online": true,
-        "server": "NA13",
-        "contributed": 5020447534705,
+        "server": "NA12",
+        "contributed": 5023039313818,
         "contributionRank": 4,
         "guildRaidsTotal": 2963
       },
@@ -1725,8 +1725,8 @@
         "rank": "chief",
         "joined": "2024-08-25T18:20:54.118000Z",
         "online": true,
-        "server": "NA13",
-        "contributed": 4772593698874,
+        "server": "NA12",
+        "contributed": 4775185477987,
         "contributionRank": 6,
         "guildRaidsTotal": 3463
       },
@@ -1769,8 +1769,8 @@
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
         "online": true,
-        "server": "NA13",
-        "contributed": 3203526038421,
+        "server": "NA12",
+        "contributed": 3206117817534,
         "contributionRank": 14,
         "guildRaidsTotal": 5917
       },
@@ -2089,9 +2089,9 @@
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
         "server": "AS14",
-        "contributed": 3848791982805,
+        "contributed": 3851383761918,
         "contributionRank": 12,
-        "guildRaidsTotal": 3076
+        "guildRaidsTotal": 3078
       },
       {
         "username": "Mqria_",
@@ -2572,8 +2572,8 @@
         "rank": "captain",
         "joined": "2026-09-05T15:30:30.886000Z",
         "online": true,
-        "server": "NA13",
-        "contributed": 178833496157,
+        "server": "NA12",
+        "contributed": 181425275270,
         "contributionRank": 75,
         "guildRaidsTotal": 961
       },
