@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T02:25:24.651Z",
+  "updated": "2026-09-25T02:30:40.802Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -23,10 +23,10 @@
         "rank": "chief",
         "joined": "2025-12-17T20:44:46.934000Z",
         "online": true,
-        "server": "NA7",
-        "contributed": 30518594377047,
+        "server": "NA3",
+        "contributed": 30521186156160,
         "contributionRank": 1,
-        "guildRaidsTotal": 12104
+        "guildRaidsTotal": 12106
       },
       {
         "username": "NekoShabeta",
@@ -122,10 +122,10 @@
         "rank": "chief",
         "joined": "2025-11-13T02:20:43.503000Z",
         "online": true,
-        "server": "AS19",
-        "contributed": 8708377819680,
+        "server": "AS16",
+        "contributed": 8710969598793,
         "contributionRank": 10,
-        "guildRaidsTotal": 5242
+        "guildRaidsTotal": 5243
       },
       {
         "username": "CarrieLam",
@@ -342,10 +342,10 @@
         "rank": "strategist",
         "joined": "2026-06-24T22:40:23.293000Z",
         "online": true,
-        "server": "NA7",
-        "contributed": 7205354621468,
+        "server": "NA3",
+        "contributed": 7207946400581,
         "contributionRank": 12,
-        "guildRaidsTotal": 4379
+        "guildRaidsTotal": 4381
       },
       {
         "username": "Dern_",
@@ -606,7 +606,7 @@
         "rank": "strategist",
         "joined": "2026-08-22T18:13:06.635000Z",
         "online": true,
-        "server": "NA13",
+        "server": "NA32",
         "contributed": 178833933031,
         "contributionRank": 86,
         "guildRaidsTotal": 72
@@ -1681,10 +1681,10 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "AS18",
-        "contributed": 9286596810081,
+        "server": "AS16",
+        "contributed": 9289188589194,
         "contributionRank": 1,
-        "guildRaidsTotal": 3899
+        "guildRaidsTotal": 3900
       },
       {
         "username": "Monocerotis",
@@ -1835,7 +1835,7 @@
         "rank": "chief",
         "joined": "2026-07-07T03:53:09.619000Z",
         "online": true,
-        "server": "NA9",
+        "server": "NA2",
         "contributed": 1142978768572,
         "contributionRank": 29,
         "guildRaidsTotal": 1009
@@ -2220,7 +2220,7 @@
         "rank": "strategist",
         "joined": "2026-09-18T23:21:06.839000Z",
         "online": true,
-        "server": "NA5",
+        "server": "NA9",
         "contributed": 67386386315,
         "contributionRank": 95,
         "guildRaidsTotal": 200
@@ -3244,7 +3244,7 @@
         "joined": "2026-09-20T04:24:17.800000Z",
         "online": true,
         "server": "AS6",
-        "contributed": 96178,
+        "contributed": 96283,
         "contributionRank": 138,
         "guildRaidsTotal": 0
       },
