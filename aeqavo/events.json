@@ -99,7 +99,16 @@
       "type": "promoted",
       "from": "recruit",
       "to": "recruiter"
+    },
+    {
+      "ts": "2026-09-25T11:20:29.946Z",
+      "guild": "Avicia",
+      "uuid": "933d2bba-3125-4040-adee-acee43510810",
+      "username": "Melu_ko",
+      "type": "demoted",
+      "from": "recruiter",
+      "to": "recruit"
     }
   ],
-  "updated": "2026-09-25T11:15:29.269Z"
+  "updated": "2026-09-25T11:20:29.946Z"
 }
