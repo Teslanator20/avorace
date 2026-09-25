@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T10:15:31.456Z",
+  "updated": "2026-09-25T10:20:32.332Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 9,
+    "online": 8,
     "total": 149,
     "members": [
       {
@@ -507,7 +507,7 @@
         "rank": "strategist",
         "joined": "2025-11-26T11:29:39.325000Z",
         "online": true,
-        "server": "NA12",
+        "server": "NA15",
         "contributed": 4890687186836,
         "contributionRank": 36,
         "guildRaidsTotal": 2058
@@ -1243,8 +1243,8 @@
         "uuid": "c4e253bf-282a-4c42-b312-1541fd2a911f",
         "rank": "recruiter",
         "joined": "2026-09-11T18:23:54.504000Z",
-        "online": true,
-        "server": "AS14",
+        "online": false,
+        "server": null,
         "contributed": 1492864769088,
         "contributionRank": 73,
         "guildRaidsTotal": 1624
@@ -1671,9 +1671,9 @@
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
         "server": "AS9",
-        "contributed": 9377309079036,
+        "contributed": 9379900858149,
         "contributionRank": 1,
-        "guildRaidsTotal": 3932
+        "guildRaidsTotal": 3934
       },
       {
         "username": "Monocerotis",
@@ -2067,9 +2067,9 @@
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
         "server": "AS9",
-        "contributed": 3970605601116,
+        "contributed": 3973197380229,
         "contributionRank": 11,
-        "guildRaidsTotal": 3123
+        "guildRaidsTotal": 3125
       },
       {
         "username": "ArcuCresyn",
@@ -2957,7 +2957,7 @@
         "rank": "recruiter",
         "joined": "2026-08-27T16:46:13.046000Z",
         "online": true,
-        "server": "EU3",
+        "server": "EU9",
         "contributed": 25917791130,
         "contributionRank": 110,
         "guildRaidsTotal": 10

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T10:15:32.096Z",
+  "updated": "2026-09-25T10:20:33.093Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -1012,8 +1012,8 @@
         "uuid": "860feac2-6899-403a-a525-6596a9e0ba17",
         "rank": "captain",
         "joined": "2026-09-11T06:25:37.201000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU4",
         "contributed": 20754886276,
         "contributionRank": 113,
         "guildRaidsTotal": 9
@@ -1410,7 +1410,7 @@
         "joined": "2026-09-20T20:41:42.376000Z",
         "online": true,
         "server": "EU2",
-        "contributed": 12959600307,
+        "contributed": 12959600309,
         "contributionRank": 122,
         "guildRaidsTotal": 5
       },
@@ -1562,8 +1562,8 @@
         "uuid": "b14bf3ba-592b-4fa6-9d99-a76ee433f652",
         "rank": "recruit",
         "joined": "2026-09-21T13:28:10.611000Z",
-        "online": true,
-        "server": "NA14",
+        "online": false,
+        "server": null,
         "contributed": 682,
         "contributionRank": 139,
         "guildRaidsTotal": 1023
@@ -1682,9 +1682,9 @@
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
         "server": "AS9",
-        "contributed": 9377309079036,
+        "contributed": 9379900858149,
         "contributionRank": 1,
-        "guildRaidsTotal": 3932
+        "guildRaidsTotal": 3934
       },
       {
         "username": "Monocerotis",
@@ -2078,9 +2078,9 @@
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
         "server": "AS9",
-        "contributed": 3970605601116,
+        "contributed": 3973197380229,
         "contributionRank": 11,
-        "guildRaidsTotal": 3123
+        "guildRaidsTotal": 3125
       },
       {
         "username": "ArcuCresyn",
@@ -2968,7 +2968,7 @@
         "rank": "recruiter",
         "joined": "2026-08-27T16:46:13.046000Z",
         "online": true,
-        "server": "EU3",
+        "server": "EU9",
         "contributed": 25917791130,
         "contributionRank": 110,
         "guildRaidsTotal": 10
