@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T05:45:32.708Z",
+  "updated": "2026-09-25T05:50:29.779Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -22,11 +22,11 @@
         "uuid": "268fb20f-9eb6-40f4-bf75-0c2da4d83947",
         "rank": "chief",
         "joined": "2025-12-17T20:44:46.934000Z",
-        "online": true,
-        "server": "NA1",
-        "contributed": 30617081983341,
+        "online": false,
+        "server": null,
+        "contributed": 30619673762454,
         "contributionRank": 1,
-        "guildRaidsTotal": 12141
+        "guildRaidsTotal": 12143
       },
       {
         "username": "NekoShabeta",
@@ -158,7 +158,7 @@
         "server": "NA22",
         "contributed": 5831503004250,
         "contributionRank": 15,
-        "guildRaidsTotal": 9408
+        "guildRaidsTotal": 9409
       },
       {
         "username": "Icebuurger",
@@ -180,7 +180,7 @@
         "server": "NA22",
         "contributed": 4592632588236,
         "contributionRank": 18,
-        "guildRaidsTotal": 5589
+        "guildRaidsTotal": 5590
       },
       {
         "username": "Cybersoap62",
@@ -332,9 +332,9 @@
         "joined": "2026-06-24T22:40:23.293000Z",
         "online": true,
         "server": "NA1",
-        "contributed": 7303842227762,
+        "contributed": 7306434006875,
         "contributionRank": 11,
-        "guildRaidsTotal": 4416
+        "guildRaidsTotal": 4418
       },
       {
         "username": "MutedOwO",
@@ -474,7 +474,7 @@
         "rank": "strategist",
         "joined": "2026-03-15T18:49:27.291000Z",
         "online": true,
-        "server": "NA12",
+        "server": "NA22",
         "contributed": 2747342961596,
         "contributionRank": 33,
         "guildRaidsTotal": 3202
@@ -638,8 +638,8 @@
         "uuid": "983436ff-635a-49cc-9405-af1126ac89ac",
         "rank": "strategist",
         "joined": "2026-08-25T02:24:48.563000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS14",
         "contributed": 54427361373,
         "contributionRank": 103,
         "guildRaidsTotal": 3538
@@ -1113,9 +1113,9 @@
         "joined": "2026-09-11T01:29:46.010000Z",
         "online": true,
         "server": "NA1",
-        "contributed": 329175912652,
+        "contributed": 331767691765,
         "contributionRank": 79,
-        "guildRaidsTotal": 1800
+        "guildRaidsTotal": 1802
       },
       {
         "username": "sondershohm",
@@ -1542,7 +1542,7 @@
         "joined": "2026-09-25T03:50:27.732000Z",
         "online": true,
         "server": "NA14",
-        "contributed": 378808,
+        "contributed": 399679,
         "contributionRank": 137,
         "guildRaidsTotal": 0
       },
@@ -1800,7 +1800,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45.000000Z",
+        "joined": "2025-07-02T19:02:45Z",
         "online": false,
         "server": null,
         "contributed": 1716022019079,
@@ -1921,7 +1921,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22.000000Z",
+        "joined": "2024-04-16T02:21:22Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
