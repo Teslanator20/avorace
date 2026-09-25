@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T10:05:27.793Z",
+  "updated": "2026-09-25T10:10:52.306Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -33,8 +33,8 @@
         "uuid": "f05d3fa5-1c2c-4acf-8925-af1d4894d3d7",
         "rank": "chief",
         "joined": "2024-02-20T14:52:55.148000Z",
-        "online": true,
-        "server": "AS3",
+        "online": false,
+        "server": null,
         "contributed": 22063429298575,
         "contributionRank": 2,
         "guildRaidsTotal": 9606
@@ -980,7 +980,7 @@
         "rank": "captain",
         "joined": "2026-09-09T14:11:19.116000Z",
         "online": true,
-        "server": "EU1",
+        "server": "AS14",
         "contributed": 90712268955,
         "contributionRank": 96,
         "guildRaidsTotal": 34
@@ -1410,7 +1410,7 @@
         "joined": "2026-09-20T20:41:42.376000Z",
         "online": true,
         "server": "EU2",
-        "contributed": 12959600046,
+        "contributed": 12959600047,
         "contributionRank": 122,
         "guildRaidsTotal": 5
       },
@@ -1562,9 +1562,9 @@
         "uuid": "b14bf3ba-592b-4fa6-9d99-a76ee433f652",
         "rank": "recruit",
         "joined": "2026-09-21T13:28:10.611000Z",
-        "online": false,
-        "server": null,
-        "contributed": 339,
+        "online": true,
+        "server": "NA12",
+        "contributed": 682,
         "contributionRank": 139,
         "guildRaidsTotal": 1023
       },
@@ -1682,9 +1682,9 @@
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
         "server": "AS16",
-        "contributed": 9372125520810,
+        "contributed": 9374717299923,
         "contributionRank": 1,
-        "guildRaidsTotal": 3930
+        "guildRaidsTotal": 3932
       },
       {
         "username": "Monocerotis",
@@ -1769,7 +1769,7 @@
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
         "online": true,
-        "server": "AS17",
+        "server": "AS16",
         "contributed": 3229443829551,
         "contributionRank": 14,
         "guildRaidsTotal": 5927
@@ -2066,7 +2066,7 @@
         "rank": "strategist",
         "joined": "2026-03-18T12:34:42.380000Z",
         "online": true,
-        "server": "AS17",
+        "server": "AS16",
         "contributed": 4041428554934,
         "contributionRank": 10,
         "guildRaidsTotal": 1654
@@ -2078,9 +2078,9 @@
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
         "server": "AS16",
-        "contributed": 3965422042890,
+        "contributed": 3968013822003,
         "contributionRank": 11,
-        "guildRaidsTotal": 3121
+        "guildRaidsTotal": 3123
       },
       {
         "username": "ArcuCresyn",
@@ -2352,7 +2352,7 @@
         "rank": "captain",
         "joined": "2026-08-29T18:38:14.057000Z",
         "online": true,
-        "server": "AS17",
+        "server": "AS16",
         "contributed": 720857620392,
         "contributionRank": 40,
         "guildRaidsTotal": 283
@@ -2385,7 +2385,7 @@
         "rank": "captain",
         "joined": "2026-09-05T15:27:34.642000Z",
         "online": true,
-        "server": "AS17",
+        "server": "AS16",
         "contributed": 575374963086,
         "contributionRank": 45,
         "guildRaidsTotal": 793
@@ -2967,8 +2967,8 @@
         "uuid": "f3c32d1c-1c0c-437a-9957-f005dcf92e1b",
         "rank": "recruiter",
         "joined": "2026-08-27T16:46:13.046000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU3",
         "contributed": 25917791130,
         "contributionRank": 110,
         "guildRaidsTotal": 10
@@ -3165,8 +3165,8 @@
         "uuid": "933d2bba-3125-4040-adee-acee43510810",
         "rank": "recruit",
         "joined": "2026-09-22T16:05:38.223000Z",
-        "online": true,
-        "server": "AS15",
+        "online": false,
+        "server": null,
         "contributed": 64797242349,
         "contributionRank": 96,
         "guildRaidsTotal": 484
