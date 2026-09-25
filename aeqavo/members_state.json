@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T08:40:29.779Z",
+  "updated": "2026-09-25T08:45:34.081Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -122,8 +122,8 @@
         "rank": "chief",
         "joined": "2025-11-13T02:20:43.503000Z",
         "online": true,
-        "server": "AS8",
-        "contributed": 8780947634844,
+        "server": "AS4",
+        "contributed": 8783539413957,
         "contributionRank": 10,
         "guildRaidsTotal": 5270
       },
@@ -639,7 +639,7 @@
         "rank": "strategist",
         "joined": "2026-08-25T02:24:48.563000Z",
         "online": true,
-        "server": "NA11",
+        "server": "AS21",
         "contributed": 54427361373,
         "contributionRank": 103,
         "guildRaidsTotal": 3538
@@ -683,7 +683,7 @@
         "rank": "strategist",
         "joined": "2026-09-10T16:51:43.817000Z",
         "online": true,
-        "server": "EU2",
+        "server": "EU8",
         "contributed": 1253708,
         "contributionRank": 136,
         "guildRaidsTotal": 513
@@ -991,9 +991,9 @@
         "rank": "captain",
         "joined": "2026-09-09T14:11:19.116000Z",
         "online": true,
-        "server": "AS8",
-        "contributed": 75161594277,
-        "contributionRank": 98,
+        "server": "AS4",
+        "contributed": 77753373390,
+        "contributionRank": 97,
         "guildRaidsTotal": 29
       },
       {
@@ -1180,7 +1180,7 @@
         "online": false,
         "server": null,
         "contributed": 75235865340,
-        "contributionRank": 97,
+        "contributionRank": 98,
         "guildRaidsTotal": 516
       },
       {
@@ -1188,8 +1188,8 @@
         "uuid": "fc89a9df-2831-4322-96f0-61325759fbc3",
         "rank": "recruiter",
         "joined": "2026-08-30T03:01:12.206000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS3",
         "contributed": 64843158336,
         "contributionRank": 100,
         "guildRaidsTotal": 37
@@ -1474,8 +1474,8 @@
         "uuid": "d30ebd96-8744-4848-a6c4-b66247ff18dc",
         "rank": "recruit",
         "joined": "2026-09-11T01:59:00.341000Z",
-        "online": true,
-        "server": "NA4",
+        "online": false,
+        "server": null,
         "contributed": 58753396,
         "contributionRank": 129,
         "guildRaidsTotal": 0
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 8,
+    "online": 6,
     "total": 148,
     "members": [
       {
@@ -2351,8 +2351,8 @@
         "uuid": "8894caa0-4575-489c-93b9-c617664dc427",
         "rank": "captain",
         "joined": "2026-08-29T18:38:14.057000Z",
-        "online": true,
-        "server": "NA9",
+        "online": false,
+        "server": null,
         "contributed": 720857620392,
         "contributionRank": 40,
         "guildRaidsTotal": 283
@@ -3187,8 +3187,8 @@
         "uuid": "50fe23ac-fda1-4d9f-8e14-203083937664",
         "rank": "recruit",
         "joined": "2026-09-23T00:33:22.923000Z",
-        "online": true,
-        "server": "NA6",
+        "online": false,
+        "server": null,
         "contributed": 20734232904,
         "contributionRank": 118,
         "guildRaidsTotal": 10
