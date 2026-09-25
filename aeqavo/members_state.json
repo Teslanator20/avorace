@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T10:00:53.136Z",
+  "updated": "2026-09-25T10:05:27.793Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -1681,8 +1681,8 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "AS17",
-        "contributed": 9369533741697,
+        "server": "AS16",
+        "contributed": 9372125520810,
         "contributionRank": 1,
         "guildRaidsTotal": 3930
       },
@@ -1769,7 +1769,7 @@
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
         "online": true,
-        "server": "NA10",
+        "server": "AS17",
         "contributed": 3229443829551,
         "contributionRank": 14,
         "guildRaidsTotal": 5927
@@ -2066,7 +2066,7 @@
         "rank": "strategist",
         "joined": "2026-03-18T12:34:42.380000Z",
         "online": true,
-        "server": "AS10",
+        "server": "AS17",
         "contributed": 4041428554934,
         "contributionRank": 10,
         "guildRaidsTotal": 1654
@@ -2077,8 +2077,8 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS17",
-        "contributed": 3962830263777,
+        "server": "AS16",
+        "contributed": 3965422042890,
         "contributionRank": 11,
         "guildRaidsTotal": 3121
       },
@@ -2352,7 +2352,7 @@
         "rank": "captain",
         "joined": "2026-08-29T18:38:14.057000Z",
         "online": true,
-        "server": "NA10",
+        "server": "AS17",
         "contributed": 720857620392,
         "contributionRank": 40,
         "guildRaidsTotal": 283
@@ -2385,7 +2385,7 @@
         "rank": "captain",
         "joined": "2026-09-05T15:27:34.642000Z",
         "online": true,
-        "server": "NA10",
+        "server": "AS17",
         "contributed": 575374963086,
         "contributionRank": 45,
         "guildRaidsTotal": 793
@@ -3166,7 +3166,7 @@
         "rank": "recruit",
         "joined": "2026-09-22T16:05:38.223000Z",
         "online": true,
-        "server": "AS10",
+        "server": "AS15",
         "contributed": 64797242349,
         "contributionRank": 96,
         "guildRaidsTotal": 484
