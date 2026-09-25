@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T09:25:26.355Z",
+  "updated": "2026-09-25T09:30:44.708Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
@@ -694,7 +694,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T17:00:48.189000Z",
         "online": true,
-        "server": "NA15",
+        "server": "NA14",
         "contributed": 1801286483535,
         "contributionRank": 63,
         "guildRaidsTotal": 3564
@@ -925,7 +925,7 @@
         "rank": "captain",
         "joined": "2026-02-09T20:37:33.600000Z",
         "online": true,
-        "server": "NA12",
+        "server": "EU2",
         "contributed": 2493325410487,
         "contributionRank": 56,
         "guildRaidsTotal": 1050
@@ -1244,7 +1244,7 @@
         "rank": "recruiter",
         "joined": "2026-09-11T18:23:54.504000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA3",
         "contributed": 1492864769088,
         "contributionRank": 73,
         "guildRaidsTotal": 1624
@@ -1670,7 +1670,7 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "AS21",
+        "server": "AS15",
         "contributed": 9356574846132,
         "contributionRank": 1,
         "guildRaidsTotal": 3926
@@ -2066,7 +2066,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS21",
+        "server": "AS15",
         "contributed": 3949871368212,
         "contributionRank": 11,
         "guildRaidsTotal": 3117

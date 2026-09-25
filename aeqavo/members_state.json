@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T09:25:26.725Z",
+  "updated": "2026-09-25T09:30:45.444Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -264,8 +264,8 @@
         "uuid": "f9f2afb9-d4c2-4b5a-b220-d44e6b67c656",
         "rank": "chief",
         "joined": "2026-08-03T01:32:01.618000Z",
-        "online": true,
-        "server": "NA7",
+        "online": false,
+        "server": null,
         "contributed": 1044486982539,
         "contributionRank": 60,
         "guildRaidsTotal": 3294
@@ -352,8 +352,8 @@
         "uuid": "b01dee1e-052c-4969-956d-be0e4d1ada4d",
         "rank": "strategist",
         "joined": "2025-03-24T15:18:39.871000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU2",
         "contributed": 5063150762120,
         "contributionRank": 17,
         "guildRaidsTotal": 2424
@@ -979,8 +979,8 @@
         "uuid": "3121508c-128c-4c24-a348-322ec87fa2fb",
         "rank": "captain",
         "joined": "2026-09-09T14:11:19.116000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS10",
         "contributed": 90712268955,
         "contributionRank": 96,
         "guildRaidsTotal": 34
@@ -1012,8 +1012,8 @@
         "uuid": "860feac2-6899-403a-a525-6596a9e0ba17",
         "rank": "captain",
         "joined": "2026-09-11T06:25:37.201000Z",
-        "online": true,
-        "server": "EU7",
+        "online": false,
+        "server": null,
         "contributed": 20754886276,
         "contributionRank": 113,
         "guildRaidsTotal": 9
@@ -1681,7 +1681,7 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "AS21",
+        "server": "AS15",
         "contributed": 9356574846132,
         "contributionRank": 1,
         "guildRaidsTotal": 3926
@@ -2077,7 +2077,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS21",
+        "server": "AS15",
         "contributed": 3949871368212,
         "contributionRank": 11,
         "guildRaidsTotal": 3117
