@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T05:20:30.307Z",
+  "updated": "2026-09-25T05:25:26.692Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 16,
+    "online": 15,
     "total": 149,
     "members": [
       {
@@ -330,8 +330,8 @@
         "uuid": "6d2d85be-d639-45f6-8f76-4f492cb95ace",
         "rank": "strategist",
         "joined": "2025-03-10T04:22:52.496000Z",
-        "online": true,
-        "server": "NA11",
+        "online": false,
+        "server": null,
         "contributed": 25998560294858,
         "contributionRank": 8,
         "guildRaidsTotal": 10922
@@ -551,8 +551,8 @@
         "rank": "strategist",
         "joined": "2026-09-06T02:19:08.081000Z",
         "online": true,
-        "server": "NA2",
-        "contributed": 3799572827210,
+        "server": "NA16",
+        "contributed": 3802164606323,
         "contributionRank": 40,
         "guildRaidsTotal": 9321
       },
@@ -915,7 +915,7 @@
         "joined": "2026-08-18T04:01:35.935000Z",
         "online": true,
         "server": "AS7",
-        "contributed": 3649264753622,
+        "contributed": 3649264753690,
         "contributionRank": 42,
         "guildRaidsTotal": 1939
       },
@@ -1354,7 +1354,7 @@
         "rank": "recruiter",
         "joined": "2026-08-26T23:36:05.197000Z",
         "online": true,
-        "server": "NA11",
+        "server": "EU2",
         "contributed": 295462818882,
         "contributionRank": 109,
         "guildRaidsTotal": 171
@@ -1650,7 +1650,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 7,
+    "online": 9,
     "total": 148,
     "members": [
       {
@@ -1789,7 +1789,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45.000000Z",
+        "joined": "2025-07-02T19:02:45Z",
         "online": false,
         "server": null,
         "contributed": 1716022019079,
@@ -1910,7 +1910,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22.000000Z",
+        "joined": "2024-04-16T02:21:22Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
@@ -2758,11 +2758,11 @@
         "uuid": "5138360d-a627-4ccf-9d4d-980331d0acfb",
         "rank": "captain",
         "joined": "2026-08-18T02:52:10.674000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS2",
         "contributed": 5183558226,
         "contributionRank": 124,
-        "guildRaidsTotal": 0
+        "guildRaidsTotal": 134
       },
       {
         "username": "TaintedLion",
@@ -3176,8 +3176,8 @@
         "uuid": "50fe23ac-fda1-4d9f-8e14-203083937664",
         "rank": "recruit",
         "joined": "2026-09-23T00:33:22.923000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA34",
         "contributed": 12958895565,
         "contributionRank": 121,
         "guildRaidsTotal": 7
