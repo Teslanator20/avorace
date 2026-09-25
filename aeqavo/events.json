@@ -189,7 +189,17 @@
       "type": "promoted",
       "from": "recruit",
       "to": "captain"
+    },
+    {
+      "ts": "2026-09-25T23:20:34.201Z",
+      "guild": "Avicia",
+      "uuid": "6930660f-2668-436a-b3a0-6324bdf011da",
+      "username": "SiegelDesTerrors",
+      "type": "joined",
+      "rank": "recruit",
+      "joinedAt": "2026-09-25T23:20:23.237000Z",
+      "raidsTotal": 0
     }
   ],
-  "updated": "2026-09-25T23:15:30.399Z"
+  "updated": "2026-09-25T23:20:34.201Z"
 }
