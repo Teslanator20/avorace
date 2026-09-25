@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T00:10:29.077Z",
+  "updated": "2026-09-25T00:15:29.308Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 11,
+    "online": 10,
     "total": 149,
     "members": [
       {
@@ -121,8 +121,8 @@
         "uuid": "e5b6b4e8-13fb-404d-bf63-a61cbc300247",
         "rank": "chief",
         "joined": "2024-09-06T14:03:48.112000Z",
-        "online": true,
-        "server": "NA11",
+        "online": false,
+        "server": null,
         "contributed": 11247759399510,
         "contributionRank": 18,
         "guildRaidsTotal": 6775
@@ -177,7 +177,7 @@
         "rank": "chief",
         "joined": "2025-03-05T04:13:16.333000Z",
         "online": true,
-        "server": "NA32",
+        "server": "NA8",
         "contributed": 5939979805014,
         "contributionRank": 32,
         "guildRaidsTotal": 3142
@@ -947,7 +947,7 @@
         "rank": "captain",
         "joined": "2026-06-30T03:07:39.617000Z",
         "online": true,
-        "server": "NA7",
+        "server": "NA11",
         "contributed": 1824612495552,
         "contributionRank": 59,
         "guildRaidsTotal": 908
@@ -969,7 +969,7 @@
         "rank": "captain",
         "joined": "2026-06-21T14:52:13.476000Z",
         "online": true,
-        "server": "NA1",
+        "server": "NA11",
         "contributed": 1780552250631,
         "contributionRank": 64,
         "guildRaidsTotal": 729
@@ -1167,7 +1167,7 @@
         "rank": "captain",
         "joined": "2026-09-01T22:12:08.311000Z",
         "online": true,
-        "server": "NA15",
+        "server": "NA20",
         "contributed": 443194228323,
         "contributionRank": 100,
         "guildRaidsTotal": 332
@@ -1618,7 +1618,7 @@
         "rank": "recruit",
         "joined": "2026-09-20T19:07:50.981000Z",
         "online": true,
-        "server": "NA30",
+        "server": "NA27",
         "contributed": 0,
         "contributionRank": 145,
         "guildRaidsTotal": 0
@@ -3056,7 +3056,7 @@
         "rank": "recruiter",
         "joined": "2021-11-04T21:34:52.007000Z",
         "online": true,
-        "server": "NA21",
+        "server": "NA10",
         "contributed": 221242886,
         "contributionRank": 130,
         "guildRaidsTotal": 0
