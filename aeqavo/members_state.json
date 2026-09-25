@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T09:15:29.670Z",
+  "updated": "2026-09-25T09:20:31.945Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 8,
+    "online": 6,
     "total": 150,
     "members": [
       {
@@ -121,11 +121,11 @@
         "uuid": "c4a6940d-5c50-4a06-97a5-0d705abe826b",
         "rank": "chief",
         "joined": "2025-11-13T02:20:43.503000Z",
-        "online": true,
-        "server": "AS16",
-        "contributed": 8793906530409,
+        "online": false,
+        "server": null,
+        "contributed": 8796498309522,
         "contributionRank": 10,
-        "guildRaidsTotal": 5273
+        "guildRaidsTotal": 5275
       },
       {
         "username": "CarrieLam",
@@ -979,11 +979,11 @@
         "uuid": "3121508c-128c-4c24-a348-322ec87fa2fb",
         "rank": "captain",
         "joined": "2026-09-09T14:11:19.116000Z",
-        "online": true,
-        "server": "AS16",
-        "contributed": 88120489842,
+        "online": false,
+        "server": null,
+        "contributed": 90712268955,
         "contributionRank": 96,
-        "guildRaidsTotal": 32
+        "guildRaidsTotal": 34
       },
       {
         "username": "Fawle",
@@ -1769,7 +1769,7 @@
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
         "online": true,
-        "server": "AS1",
+        "server": "NA14",
         "contributed": 3229443829551,
         "contributionRank": 14,
         "guildRaidsTotal": 5927
