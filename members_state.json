@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T02:35:23.811Z",
+  "updated": "2026-09-25T02:40:31.949Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 16,
+    "online": 14,
     "total": 149,
     "members": [
       {
@@ -99,8 +99,8 @@
         "uuid": "070af99c-cd21-4923-92e4-8809b3d99f0d",
         "rank": "chief",
         "joined": "2025-08-08T22:29:03.502000Z",
-        "online": true,
-        "server": "NA6",
+        "online": false,
+        "server": null,
         "contributed": 11590904411206,
         "contributionRank": 16,
         "guildRaidsTotal": 7367
@@ -330,8 +330,8 @@
         "uuid": "6d2d85be-d639-45f6-8f76-4f492cb95ace",
         "rank": "strategist",
         "joined": "2025-03-10T04:22:52.496000Z",
-        "online": true,
-        "server": "NA32",
+        "online": false,
+        "server": null,
         "contributed": 25977826061954,
         "contributionRank": 8,
         "guildRaidsTotal": 10915
@@ -486,7 +486,7 @@
         "joined": "2026-08-24T20:47:46.514000Z",
         "online": false,
         "server": null,
-        "contributed": 6204719196522,
+        "contributed": 6207310975635,
         "contributionRank": 31,
         "guildRaidsTotal": 0
       },
@@ -543,7 +543,7 @@
         "server": "EU3",
         "contributed": 4001707724780,
         "contributionRank": 39,
-        "guildRaidsTotal": 2373
+        "guildRaidsTotal": 2374
       },
       {
         "username": "xEnrikayx",
@@ -551,10 +551,10 @@
         "rank": "strategist",
         "joined": "2026-09-06T02:19:08.081000Z",
         "online": true,
-        "server": "NA14",
-        "contributed": 3716635895594,
+        "server": "NA31",
+        "contributed": 3719227674707,
         "contributionRank": 40,
-        "guildRaidsTotal": 9290
+        "guildRaidsTotal": 9292
       },
       {
         "username": "YouAreRexist",
@@ -848,10 +848,10 @@
         "rank": "strategist",
         "joined": "2026-09-23T06:02:54.548000Z",
         "online": true,
-        "server": "AS19",
-        "contributed": 191791654362,
-        "contributionRank": 116,
-        "guildRaidsTotal": 6449
+        "server": "AS12",
+        "contributed": 194383433475,
+        "contributionRank": 115,
+        "guildRaidsTotal": 6451
       },
       {
         "username": "Kra_X",
@@ -950,7 +950,7 @@
         "server": "EU3",
         "contributed": 1845346728456,
         "contributionRank": 59,
-        "guildRaidsTotal": 915
+        "guildRaidsTotal": 916
       },
       {
         "username": "Mr_Pickles",
@@ -1255,7 +1255,7 @@
         "rank": "recruiter",
         "joined": "2026-09-10T08:43:30.731000Z",
         "online": true,
-        "server": "AS16",
+        "server": "AS6",
         "contributed": 749024163657,
         "contributionRank": 85,
         "guildRaidsTotal": 1727
@@ -1367,7 +1367,7 @@
         "online": false,
         "server": null,
         "contributed": 191791654362,
-        "contributionRank": 115,
+        "contributionRank": 116,
         "guildRaidsTotal": 75
       },
       {
@@ -1377,7 +1377,7 @@
         "joined": "2026-08-30T00:21:39.058000Z",
         "online": true,
         "server": "AS19",
-        "contributed": 168535917084,
+        "contributed": 168535930375,
         "contributionRank": 117,
         "guildRaidsTotal": 65
       },
@@ -1670,10 +1670,10 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "AS19",
-        "contributed": 9291780368307,
+        "server": "AS12",
+        "contributed": 9294372147420,
         "contributionRank": 1,
-        "guildRaidsTotal": 3900
+        "guildRaidsTotal": 3902
       },
       {
         "username": "Monocerotis",
@@ -1824,7 +1824,7 @@
         "rank": "chief",
         "joined": "2026-07-07T03:53:09.619000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA6",
         "contributed": 1142978768572,
         "contributionRank": 29,
         "guildRaidsTotal": 1009
@@ -1893,7 +1893,7 @@
         "server": "AS6",
         "contributed": 710730504714,
         "contributionRank": 40,
-        "guildRaidsTotal": 548
+        "guildRaidsTotal": 549
       },
       {
         "username": "Darkii_x",
@@ -2113,7 +2113,7 @@
         "server": "NA29",
         "contributed": 2407245309586,
         "contributionRank": 18,
-        "guildRaidsTotal": 996
+        "guildRaidsTotal": 997
       },
       {
         "username": "skywwn",
@@ -2209,7 +2209,7 @@
         "rank": "strategist",
         "joined": "2026-09-18T23:21:06.839000Z",
         "online": true,
-        "server": "NA9",
+        "server": "NA6",
         "contributed": 67386386315,
         "contributionRank": 95,
         "guildRaidsTotal": 200
@@ -3233,7 +3233,7 @@
         "joined": "2026-09-20T04:24:17.800000Z",
         "online": true,
         "server": "AS6",
-        "contributed": 96293,
+        "contributed": 96310,
         "contributionRank": 138,
         "guildRaidsTotal": 0
       },
