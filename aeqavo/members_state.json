@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T12:50:34.468Z",
+  "updated": "2026-09-25T12:55:23.890Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -385,11 +385,11 @@
         "uuid": "9f249a6c-3b31-4ce3-abe5-f969ed27d273",
         "rank": "strategist",
         "joined": "2026-03-26T23:20:35.977000Z",
-        "online": true,
-        "server": "EU25",
+        "online": false,
+        "server": null,
         "contributed": 4235124934556,
         "contributionRank": 22,
-        "guildRaidsTotal": 1835
+        "guildRaidsTotal": 0
       },
       {
         "username": "NerdyGamer2012",
@@ -1419,11 +1419,11 @@
         "uuid": "8dbc997c-e488-439c-92e5-a0b42bb73e7f",
         "rank": "recruit",
         "joined": "2026-09-11T21:19:55.644000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU34",
         "contributed": 10373522068,
         "contributionRank": 123,
-        "guildRaidsTotal": 0
+        "guildRaidsTotal": 4
       },
       {
         "username": "RocoKuki",
@@ -1551,8 +1551,8 @@
         "uuid": "b14bf3ba-592b-4fa6-9d99-a76ee433f652",
         "rank": "recruit",
         "joined": "2026-09-21T13:28:10.611000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS14",
         "contributed": 682,
         "contributionRank": 138,
         "guildRaidsTotal": 1023
@@ -1595,11 +1595,11 @@
         "uuid": "57ddfdfa-def5-438f-8c47-b61933ad58c2",
         "rank": "recruit",
         "joined": "2026-09-13T04:27:01.181000Z",
-        "online": true,
-        "server": "AS15",
+        "online": false,
+        "server": null,
         "contributed": 0,
         "contributionRank": 145,
-        "guildRaidsTotal": 36
+        "guildRaidsTotal": 0
       },
       {
         "username": "_Joshman_",
@@ -1650,7 +1650,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 35,
+    "online": 37,
     "total": 149,
     "members": [
       {
@@ -1746,8 +1746,8 @@
         "uuid": "b71f6857-9e06-473b-be58-3e50289db447",
         "rank": "chief",
         "joined": "2025-06-17T07:11:31.184000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU7",
         "contributed": 3463492800390,
         "contributionRank": 13,
         "guildRaidsTotal": 1606
@@ -1838,7 +1838,7 @@
         "server": null,
         "contributed": 1015049948857,
         "contributionRank": 30,
-        "guildRaidsTotal": 395
+        "guildRaidsTotal": 0
       },
       {
         "username": "tyrayor",
@@ -2109,8 +2109,8 @@
         "uuid": "8813f4e0-65ce-45fa-a7ee-95445fd0701e",
         "rank": "strategist",
         "joined": "2026-03-05T22:41:53.353000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA10",
         "contributed": 2407245309586,
         "contributionRank": 18,
         "guildRaidsTotal": 997
@@ -3200,7 +3200,7 @@
         "joined": "2026-09-17T21:01:19.446000Z",
         "online": true,
         "server": "EU13",
-        "contributed": 2610935535,
+        "contributed": 2610935592,
         "contributionRank": 128,
         "guildRaidsTotal": 1
       },
