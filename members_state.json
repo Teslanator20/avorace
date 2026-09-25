@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T14:05:25.542Z",
+  "updated": "2026-09-25T14:10:31.305Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 16,
+    "online": 15,
     "total": 149,
     "members": [
       {
@@ -815,10 +815,10 @@
         "rank": "strategist",
         "joined": "2026-09-23T06:02:54.548000Z",
         "online": true,
-        "server": "AS22",
+        "server": "AS11",
         "contributed": 264361469526,
         "contributionRank": 111,
-        "guildRaidsTotal": 6477
+        "guildRaidsTotal": 6478
       },
       {
         "username": "Meekio",
@@ -915,7 +915,7 @@
         "joined": "2026-08-18T04:01:35.935000Z",
         "online": true,
         "server": "AS3",
-        "contributed": 3664846244276,
+        "contributed": 3664848895002,
         "contributionRank": 41,
         "guildRaidsTotal": 1945
       },
@@ -1617,8 +1617,8 @@
         "uuid": "ac841301-30da-4246-9c1e-47ae12d69cef",
         "rank": "recruit",
         "joined": "2026-09-20T19:07:50.981000Z",
-        "online": true,
-        "server": "NA23",
+        "online": false,
+        "server": null,
         "contributed": 0,
         "contributionRank": 145,
         "guildRaidsTotal": 0
@@ -1650,7 +1650,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 21,
+    "online": 22,
     "total": 149,
     "members": [
       {
@@ -1761,7 +1761,7 @@
         "server": "AS18",
         "contributed": 3247586298342,
         "contributionRank": 14,
-        "guildRaidsTotal": 5933
+        "guildRaidsTotal": 5934
       },
       {
         "username": "Antragos",
@@ -1789,7 +1789,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45.000000Z",
+        "joined": "2025-07-02T19:02:45Z",
         "online": false,
         "server": null,
         "contributed": 1716022019079,
@@ -1910,7 +1910,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22.000000Z",
+        "joined": "2024-04-16T02:21:22Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
@@ -2036,7 +2036,7 @@
         "server": "AS18",
         "contributed": 4846626941310,
         "contributionRank": 5,
-        "guildRaidsTotal": 3210
+        "guildRaidsTotal": 3211
       },
       {
         "username": "StayLocked",
@@ -2066,10 +2066,10 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS22",
+        "server": "AS11",
         "contributed": 3996523392246,
         "contributionRank": 11,
-        "guildRaidsTotal": 3134
+        "guildRaidsTotal": 3135
       },
       {
         "username": "ArcuCresyn",
@@ -2080,7 +2080,7 @@
         "server": null,
         "contributed": 3905913708369,
         "contributionRank": 12,
-        "guildRaidsTotal": 3994
+        "guildRaidsTotal": 3995
       },
       {
         "username": "Mqria_",
@@ -2124,7 +2124,7 @@
         "server": "AS18",
         "contributed": 2013812370801,
         "contributionRank": 20,
-        "guildRaidsTotal": 4347
+        "guildRaidsTotal": 4348
       },
       {
         "username": "danieltlq",
@@ -2274,8 +2274,8 @@
         "uuid": "c3421e3b-d633-4ad5-a5ee-6b3c8ec84589",
         "rank": "captain",
         "joined": "2026-08-05T02:15:20.499000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA25",
         "contributed": 1163774003710,
         "contributionRank": 28,
         "guildRaidsTotal": 714
@@ -2286,7 +2286,7 @@
         "rank": "captain",
         "joined": "2026-07-16T22:42:15.602000Z",
         "online": true,
-        "server": "AS9",
+        "server": "AS11",
         "contributed": 821679509229,
         "contributionRank": 34,
         "guildRaidsTotal": 498
@@ -3254,10 +3254,10 @@
         "rank": "recruit",
         "joined": "2026-09-25T11:47:29.611000Z",
         "online": true,
-        "server": "AS22",
+        "server": "AS11",
         "contributed": 7775337339,
         "contributionRank": 124,
-        "guildRaidsTotal": 3616
+        "guildRaidsTotal": 3617
       },
       {
         "username": "Erikpod",
