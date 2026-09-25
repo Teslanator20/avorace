@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T00:20:30.171Z",
+  "updated": "2026-09-25T00:25:23.460Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 10,
+    "online": 9,
     "total": 149,
     "members": [
       {
@@ -176,8 +176,8 @@
         "uuid": "b3f02007-7bf9-4454-8925-5e8327d90021",
         "rank": "chief",
         "joined": "2025-03-05T04:13:16.333000Z",
-        "online": true,
-        "server": "NA2",
+        "online": false,
+        "server": null,
         "contributed": 5939979805014,
         "contributionRank": 32,
         "guildRaidsTotal": 3142
@@ -1618,7 +1618,7 @@
         "rank": "recruit",
         "joined": "2026-09-20T19:07:50.981000Z",
         "online": true,
-        "server": "NA1",
+        "server": "NA29",
         "contributed": 0,
         "contributionRank": 145,
         "guildRaidsTotal": 0

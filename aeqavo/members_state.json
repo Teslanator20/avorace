@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T00:20:30.534Z",
+  "updated": "2026-09-25T00:25:23.952Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 9,
+    "online": 8,
     "total": 150,
     "members": [
       {
@@ -836,8 +836,8 @@
         "uuid": "abe5d4e2-96b1-40f3-9714-c67ff1023708",
         "rank": "captain",
         "joined": "2026-08-06T02:16:59.575000Z",
-        "online": true,
-        "server": "NA13",
+        "online": false,
+        "server": null,
         "contributed": 837144669087,
         "contributionRank": 62,
         "guildRaidsTotal": 1968
