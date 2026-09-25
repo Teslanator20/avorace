@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T01:35:25.434Z",
+  "updated": "2026-09-25T01:40:30.907Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -345,15 +345,15 @@
         "server": "NA7",
         "contributed": 7189803946790,
         "contributionRank": 12,
-        "guildRaidsTotal": 4374
+        "guildRaidsTotal": 4375
       },
       {
         "username": "Dern_",
         "uuid": "b01dee1e-052c-4969-956d-be0e4d1ada4d",
         "rank": "strategist",
         "joined": "2025-03-24T15:18:39.871000Z",
-        "online": true,
-        "server": "AS17",
+        "online": false,
+        "server": null,
         "contributed": 5055375424781,
         "contributionRank": 17,
         "guildRaidsTotal": 2421
@@ -485,7 +485,7 @@
         "rank": "strategist",
         "joined": "2026-07-21T07:22:25.465000Z",
         "online": true,
-        "server": "NA27",
+        "server": "NA2",
         "contributed": 2692858498407,
         "contributionRank": 35,
         "guildRaidsTotal": 1515
@@ -517,8 +517,8 @@
         "uuid": "dbe3d27d-d06f-4ba5-b1bf-bf24c262ff1f",
         "rank": "strategist",
         "joined": "2026-06-09T20:09:44.275000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA27",
         "contributed": 1936105336090,
         "contributionRank": 42,
         "guildRaidsTotal": 748
@@ -606,7 +606,7 @@
         "rank": "strategist",
         "joined": "2026-08-22T18:13:06.635000Z",
         "online": true,
-        "server": "NA27",
+        "server": "NA10",
         "contributed": 178833933031,
         "contributionRank": 86,
         "guildRaidsTotal": 72
@@ -1800,7 +1800,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45.000000Z",
+        "joined": "2025-07-02T19:02:45Z",
         "online": true,
         "server": "NA7",
         "contributed": 1716022019079,
@@ -1921,7 +1921,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22.000000Z",
+        "joined": "2024-04-16T02:21:22Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
@@ -2121,10 +2121,10 @@
         "rank": "strategist",
         "joined": "2026-03-05T22:41:53.353000Z",
         "online": true,
-        "server": "NA17",
-        "contributed": 2391694634908,
+        "server": "NA5",
+        "contributed": 2394286414021,
         "contributionRank": 19,
-        "guildRaidsTotal": 990
+        "guildRaidsTotal": 991
       },
       {
         "username": "skywwn",
