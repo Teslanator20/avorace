@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T10:35:25.819Z",
+  "updated": "2026-09-25T10:40:29.634Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 7,
+    "online": 8,
     "total": 149,
     "members": [
       {
@@ -694,7 +694,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T17:00:48.189000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA3",
         "contributed": 1801286483535,
         "contributionRank": 63,
         "guildRaidsTotal": 3564
@@ -883,7 +883,7 @@
         "online": false,
         "server": null,
         "contributed": 203,
-        "contributionRank": 141,
+        "contributionRank": 142,
         "guildRaidsTotal": 0
       },
       {
@@ -1606,10 +1606,10 @@
         "uuid": "6639c3e2-f771-45b1-bbe2-e163d4bb1b25",
         "rank": "recruit",
         "joined": "2026-09-24T18:58:15.771000Z",
-        "online": false,
-        "server": null,
-        "contributed": 7,
-        "contributionRank": 142,
+        "online": true,
+        "server": "EU10",
+        "contributed": 2722,
+        "contributionRank": 141,
         "guildRaidsTotal": 0
       },
       {
@@ -1670,7 +1670,7 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "AS8",
+        "server": "AS12",
         "contributed": 9379900858149,
         "contributionRank": 1,
         "guildRaidsTotal": 3935
@@ -1761,7 +1761,7 @@
         "server": null,
         "contributed": 3234627387777,
         "contributionRank": 14,
-        "guildRaidsTotal": 5928
+        "guildRaidsTotal": 5929
       },
       {
         "username": "Antragos",
@@ -2033,7 +2033,7 @@
         "rank": "strategist",
         "joined": "2026-07-19T02:19:31.545000Z",
         "online": true,
-        "server": "NA13",
+        "server": "AS1",
         "contributed": 4831076266632,
         "contributionRank": 5,
         "guildRaidsTotal": 3205
@@ -2055,10 +2055,10 @@
         "rank": "strategist",
         "joined": "2026-03-18T12:34:42.380000Z",
         "online": true,
-        "server": "AS12",
+        "server": "EU10",
         "contributed": 4046612113160,
         "contributionRank": 10,
-        "guildRaidsTotal": 1655
+        "guildRaidsTotal": 1656
       },
       {
         "username": "YzRyx",
@@ -2066,7 +2066,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS8",
+        "server": "AS12",
         "contributed": 3973197380229,
         "contributionRank": 11,
         "guildRaidsTotal": 3126
@@ -2077,7 +2077,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:51:53.962000Z",
         "online": true,
-        "server": "AS12",
+        "server": "AS9",
         "contributed": 3882587681098,
         "contributionRank": 12,
         "guildRaidsTotal": 3986
@@ -2344,7 +2344,7 @@
         "server": "AS12",
         "contributed": 726041178618,
         "contributionRank": 40,
-        "guildRaidsTotal": 284
+        "guildRaidsTotal": 285
       },
       {
         "username": "Liss1404",
@@ -2374,10 +2374,10 @@
         "rank": "captain",
         "joined": "2026-09-05T15:27:34.642000Z",
         "online": true,
-        "server": "AS12",
+        "server": "NA12",
         "contributed": 580558521312,
         "contributionRank": 45,
-        "guildRaidsTotal": 794
+        "guildRaidsTotal": 795
       },
       {
         "username": "WynncraftReject",
