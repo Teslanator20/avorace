@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T05:55:26.568Z",
+  "updated": "2026-09-25T06:00:53.275Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 15,
+    "online": 13,
     "total": 149,
     "members": [
       {
@@ -341,8 +341,8 @@
         "uuid": "9e764181-d72a-4054-b499-f429b64d82c2",
         "rank": "strategist",
         "joined": "2026-01-28T21:41:11.187000Z",
-        "online": true,
-        "server": "NA2",
+        "online": false,
+        "server": null,
         "contributed": 23491998234199,
         "contributionRank": 10,
         "guildRaidsTotal": 9125
@@ -551,7 +551,7 @@
         "rank": "strategist",
         "joined": "2026-09-06T02:19:08.081000Z",
         "online": true,
-        "server": "NA22",
+        "server": "NA5",
         "contributed": 3812531722775,
         "contributionRank": 40,
         "guildRaidsTotal": 9327
@@ -694,7 +694,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T17:00:48.189000Z",
         "online": true,
-        "server": "NA1",
+        "server": "NA22",
         "contributed": 1801286483535,
         "contributionRank": 63,
         "guildRaidsTotal": 3564
@@ -914,10 +914,10 @@
         "rank": "captain",
         "joined": "2026-08-18T04:01:35.935000Z",
         "online": true,
-        "server": "AS6",
-        "contributed": 3654448312862,
+        "server": "AS21",
+        "contributed": 3657040091975,
         "contributionRank": 42,
-        "guildRaidsTotal": 1940
+        "guildRaidsTotal": 1941
       },
       {
         "username": "space527",
@@ -946,8 +946,8 @@
         "uuid": "46e4937b-05b9-409d-9665-21a7070d97f7",
         "rank": "captain",
         "joined": "2026-06-30T03:07:39.617000Z",
-        "online": true,
-        "server": "NA24",
+        "online": false,
+        "server": null,
         "contributed": 1845346728456,
         "contributionRank": 59,
         "guildRaidsTotal": 916
@@ -1178,10 +1178,10 @@
         "rank": "captain",
         "joined": "2026-08-18T12:42:21.850000Z",
         "online": true,
-        "server": "AS6",
-        "contributed": 355073738481,
+        "server": "AS21",
+        "contributed": 357665517594,
         "contributionRank": 104,
-        "guildRaidsTotal": 176
+        "guildRaidsTotal": 177
       },
       {
         "username": "ZealousAvatar",
@@ -1255,10 +1255,10 @@
         "rank": "recruiter",
         "joined": "2026-09-10T08:43:30.731000Z",
         "online": true,
-        "server": "AS6",
-        "contributed": 754207721883,
+        "server": "AS21",
+        "contributed": 756799500996,
         "contributionRank": 85,
-        "guildRaidsTotal": 1728
+        "guildRaidsTotal": 1729
       },
       {
         "username": "puppygjrl",
@@ -1692,8 +1692,8 @@
         "rank": "chief",
         "joined": "2025-12-01T04:05:52.777000Z",
         "online": true,
-        "server": "AS2",
-        "contributed": 5383188932790,
+        "server": "AS3",
+        "contributed": 5385780711903,
         "contributionRank": 3,
         "guildRaidsTotal": 2461
       },
