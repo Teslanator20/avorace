@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T09:30:44.708Z",
+  "updated": "2026-09-25T09:35:24.594Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
@@ -694,7 +694,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T17:00:48.189000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA4",
         "contributed": 1801286483535,
         "contributionRank": 63,
         "guildRaidsTotal": 3564
@@ -925,7 +925,7 @@
         "rank": "captain",
         "joined": "2026-02-09T20:37:33.600000Z",
         "online": true,
-        "server": "EU2",
+        "server": "NA14",
         "contributed": 2493325410487,
         "contributionRank": 56,
         "guildRaidsTotal": 1050
@@ -1650,7 +1650,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 7,
+    "online": 8,
     "total": 148,
     "members": [
       {
@@ -1670,8 +1670,8 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "AS15",
-        "contributed": 9356574846132,
+        "server": "AS12",
+        "contributed": 9359166625245,
         "contributionRank": 1,
         "guildRaidsTotal": 3926
       },
@@ -2066,8 +2066,8 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS15",
-        "contributed": 3949871368212,
+        "server": "AS12",
+        "contributed": 3952463147325,
         "contributionRank": 11,
         "guildRaidsTotal": 3117
       },
@@ -2341,7 +2341,7 @@
         "rank": "captain",
         "joined": "2026-08-29T18:38:14.057000Z",
         "online": true,
-        "server": "AS10",
+        "server": "NA14",
         "contributed": 720857620392,
         "contributionRank": 40,
         "guildRaidsTotal": 283
@@ -2758,8 +2758,8 @@
         "uuid": "5138360d-a627-4ccf-9d4d-980331d0acfb",
         "rank": "captain",
         "joined": "2026-08-18T02:52:10.674000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS12",
         "contributed": 5183558226,
         "contributionRank": 124,
         "guildRaidsTotal": 134

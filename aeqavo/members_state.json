@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T09:30:45.444Z",
+  "updated": "2026-09-25T09:35:25.018Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 6,
+    "online": 7,
     "total": 150,
     "members": [
       {
@@ -1254,8 +1254,8 @@
         "uuid": "571c24be-3a6b-47fa-8d85-86e3115a69e9",
         "rank": "recruit",
         "joined": "2026-09-05T02:24:02.789000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS8",
         "contributed": 93318943639,
         "contributionRank": 95,
         "guildRaidsTotal": 36
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 7,
+    "online": 8,
     "total": 148,
     "members": [
       {
@@ -1681,8 +1681,8 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "AS15",
-        "contributed": 9356574846132,
+        "server": "AS12",
+        "contributed": 9359166625245,
         "contributionRank": 1,
         "guildRaidsTotal": 3926
       },
@@ -2077,8 +2077,8 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS15",
-        "contributed": 3949871368212,
+        "server": "AS12",
+        "contributed": 3952463147325,
         "contributionRank": 11,
         "guildRaidsTotal": 3117
       },
@@ -2352,7 +2352,7 @@
         "rank": "captain",
         "joined": "2026-08-29T18:38:14.057000Z",
         "online": true,
-        "server": "AS10",
+        "server": "NA14",
         "contributed": 720857620392,
         "contributionRank": 40,
         "guildRaidsTotal": 283
@@ -2769,8 +2769,8 @@
         "uuid": "5138360d-a627-4ccf-9d4d-980331d0acfb",
         "rank": "captain",
         "joined": "2026-08-18T02:52:10.674000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS12",
         "contributed": 5183558226,
         "contributionRank": 124,
         "guildRaidsTotal": 134
