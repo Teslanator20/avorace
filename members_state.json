@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T05:05:24.146Z",
+  "updated": "2026-09-25T05:10:29.642Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
@@ -551,10 +551,10 @@
         "rank": "strategist",
         "joined": "2026-09-06T02:19:08.081000Z",
         "online": true,
-        "server": "NA16",
-        "contributed": 3791797489871,
+        "server": "NA14",
+        "contributed": 3794389268984,
         "contributionRank": 40,
-        "guildRaidsTotal": 9317
+        "guildRaidsTotal": 9319
       },
       {
         "username": "YouAreRexist",
@@ -694,7 +694,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T17:00:48.189000Z",
         "online": true,
-        "server": "NA3",
+        "server": "NA14",
         "contributed": 1801286483535,
         "contributionRank": 63,
         "guildRaidsTotal": 3564
@@ -915,7 +915,7 @@
         "joined": "2026-08-18T04:01:35.935000Z",
         "online": true,
         "server": "AS7",
-        "contributed": 3649264750413,
+        "contributed": 3649264753622,
         "contributionRank": 42,
         "guildRaidsTotal": 1939
       },
@@ -1692,7 +1692,7 @@
         "rank": "chief",
         "joined": "2025-12-01T04:05:52.777000Z",
         "online": true,
-        "server": "NA7",
+        "server": "NA8",
         "contributed": 5383188932790,
         "contributionRank": 3,
         "guildRaidsTotal": 2461
@@ -1714,10 +1714,10 @@
         "rank": "chief",
         "joined": "2024-08-25T18:20:54.118000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA2",
         "contributed": 4801103269117,
         "contributionRank": 6,
-        "guildRaidsTotal": 3472
+        "guildRaidsTotal": 3474
       },
       {
         "username": "DarkofFire",
@@ -2319,10 +2319,10 @@
         "rank": "captain",
         "joined": "2026-09-10T13:02:52.277000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA2",
         "contributed": 746432384544,
         "contributionRank": 37,
-        "guildRaidsTotal": 5963
+        "guildRaidsTotal": 5965
       },
       {
         "username": "Caxcax2000",
@@ -2374,10 +2374,10 @@
         "rank": "captain",
         "joined": "2026-09-05T15:27:34.642000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA2",
         "contributed": 562416067521,
         "contributionRank": 45,
-        "guildRaidsTotal": 786
+        "guildRaidsTotal": 788
       },
       {
         "username": "WynncraftReject",
@@ -2539,10 +2539,10 @@
         "rank": "captain",
         "joined": "2026-09-05T15:30:30.886000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA2",
         "contributed": 207343093709,
         "contributionRank": 72,
-        "guildRaidsTotal": 970
+        "guildRaidsTotal": 972
       },
       {
         "username": "pigybog",
