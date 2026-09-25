@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T06:35:25.867Z",
+  "updated": "2026-09-25T06:40:32.590Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 8,
+    "online": 6,
     "total": 150,
     "members": [
       {
@@ -154,11 +154,11 @@
         "uuid": "2f3a3d99-94d2-4f3f-9d8b-ea7e7998669b",
         "rank": "chief",
         "joined": "2026-05-18T21:28:21.778000Z",
-        "online": true,
-        "server": "NA12",
-        "contributed": 5841870120702,
+        "online": false,
+        "server": null,
+        "contributed": 5844461899815,
         "contributionRank": 15,
-        "guildRaidsTotal": 9413
+        "guildRaidsTotal": 9414
       },
       {
         "username": "Icebuurger",
@@ -176,11 +176,11 @@
         "uuid": "4b1a7a38-6640-4924-985f-859668cf4d5f",
         "rank": "chief",
         "joined": "2026-07-21T04:34:03.034000Z",
-        "online": true,
-        "server": "NA12",
-        "contributed": 4602999704688,
+        "online": false,
+        "server": null,
+        "contributed": 4605591483801,
         "contributionRank": 18,
-        "guildRaidsTotal": 5594
+        "guildRaidsTotal": 5595
       },
       {
         "username": "Cybersoap62",
@@ -265,7 +265,7 @@
         "rank": "chief",
         "joined": "2026-08-03T01:32:01.618000Z",
         "online": true,
-        "server": "NA9",
+        "server": "NA14",
         "contributed": 1044486982539,
         "contributionRank": 60,
         "guildRaidsTotal": 3294
@@ -342,7 +342,7 @@
         "rank": "strategist",
         "joined": "2025-08-13T10:23:37.796000Z",
         "online": true,
-        "server": "NA23",
+        "server": "NA12",
         "contributed": 7226427463638,
         "contributionRank": 12,
         "guildRaidsTotal": 3608
@@ -1661,7 +1661,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 11,
+    "online": 10,
     "total": 148,
     "members": [
       {
@@ -1681,7 +1681,7 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "NA23",
+        "server": "EU15",
         "contributed": 9356574846132,
         "contributionRank": 1,
         "guildRaidsTotal": 3926
@@ -1704,9 +1704,9 @@
         "joined": "2025-12-01T04:05:52.777000Z",
         "online": true,
         "server": "AS21",
-        "contributed": 5393556049242,
+        "contributed": 5396147828355,
         "contributionRank": 3,
-        "guildRaidsTotal": 2464
+        "guildRaidsTotal": 2466
       },
       {
         "username": "ScomoBrothl",
@@ -1714,10 +1714,10 @@
         "rank": "chief",
         "joined": "2024-08-17T16:01:40.405000Z",
         "online": true,
-        "server": "AS4",
+        "server": "AS13",
         "contributed": 5054140663174,
         "contributionRank": 4,
-        "guildRaidsTotal": 2975
+        "guildRaidsTotal": 2976
       },
       {
         "username": "CupBoi",
@@ -2076,11 +2076,11 @@
         "uuid": "c21f60f0-965e-4af8-a8f1-595cf5a404b3",
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
-        "online": true,
-        "server": "AS4",
+        "online": false,
+        "server": null,
         "contributed": 3949871368212,
         "contributionRank": 11,
-        "guildRaidsTotal": 3116
+        "guildRaidsTotal": 3117
       },
       {
         "username": "ArcuCresyn",
@@ -2385,10 +2385,10 @@
         "rank": "captain",
         "joined": "2026-09-05T15:27:34.642000Z",
         "online": true,
-        "server": "AS4",
+        "server": "AS13",
         "contributed": 575374963086,
         "contributionRank": 45,
-        "guildRaidsTotal": 792
+        "guildRaidsTotal": 793
       },
       {
         "username": "WynncraftReject",
@@ -3188,10 +3188,10 @@
         "rank": "recruit",
         "joined": "2026-09-23T00:33:22.923000Z",
         "online": true,
-        "server": "AS4",
+        "server": "AS13",
         "contributed": 20734232904,
         "contributionRank": 118,
-        "guildRaidsTotal": 9
+        "guildRaidsTotal": 10
       },
       {
         "username": "Ficoo",
