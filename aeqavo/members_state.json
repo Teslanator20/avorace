@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T19:45:29.287Z",
+  "updated": "2026-09-25T19:50:32.136Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 17,
+    "online": 16,
     "total": 149,
     "members": [
       {
@@ -26,7 +26,7 @@
         "server": "NA9",
         "contributed": 30642999774471,
         "contributionRank": 1,
-        "guildRaidsTotal": 12150
+        "guildRaidsTotal": 12152
       },
       {
         "username": "NekoShabeta",
@@ -202,7 +202,7 @@
         "server": "EU4",
         "contributed": 4216824616851,
         "contributionRank": 23,
-        "guildRaidsTotal": 9536
+        "guildRaidsTotal": 9537
       },
       {
         "username": "Gin_Tonic123",
@@ -422,7 +422,7 @@
         "server": "NA9",
         "contributed": 3659592107556,
         "contributionRank": 26,
-        "guildRaidsTotal": 1479
+        "guildRaidsTotal": 1481
       },
       {
         "username": "Monke749Ms",
@@ -521,7 +521,7 @@
         "server": null,
         "contributed": 1925691880959,
         "contributionRank": 42,
-        "guildRaidsTotal": 821
+        "guildRaidsTotal": 823
       },
       {
         "username": "GooseCore",
@@ -705,7 +705,7 @@
         "rank": "captain",
         "joined": "2025-09-30T05:55:24.186000Z",
         "online": true,
-        "server": "NA28",
+        "server": "NA9",
         "contributed": 2283555662231,
         "contributionRank": 38,
         "guildRaidsTotal": 1237
@@ -1331,8 +1331,8 @@
         "uuid": "8a0b895f-a8d0-4734-b2b8-3e6c11eb3f74",
         "rank": "recruit",
         "joined": "2026-09-14T19:50:17.067000Z",
-        "online": true,
-        "server": "NA11",
+        "online": false,
+        "server": null,
         "contributed": 23326012017,
         "contributionRank": 111,
         "guildRaidsTotal": 57
@@ -1650,7 +1650,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 13,
+    "online": 11,
     "total": 149,
     "members": [
       {
@@ -1728,7 +1728,7 @@
         "server": "EU4",
         "contributed": 4351023685918,
         "contributionRank": 8,
-        "guildRaidsTotal": 2558
+        "guildRaidsTotal": 2559
       },
       {
         "username": "The_PixelChicken",
@@ -2209,7 +2209,7 @@
         "rank": "strategist",
         "joined": "2026-09-18T23:21:06.839000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA28",
         "contributed": 67386386315,
         "contributionRank": 95,
         "guildRaidsTotal": 200
@@ -3099,8 +3099,8 @@
         "uuid": "764076b4-7325-4a23-ac38-abd6590890d1",
         "rank": "recruiter",
         "joined": "2026-09-17T20:31:00.919000Z",
-        "online": true,
-        "server": "EU22",
+        "online": false,
+        "server": null,
         "contributed": 8280460,
         "contributionRank": 136,
         "guildRaidsTotal": 0
@@ -3275,8 +3275,8 @@
         "uuid": "2f13aeaf-c26a-4d8f-b08e-cdfdcc1ac387",
         "rank": "recruit",
         "joined": "2026-09-20T04:24:17.800000Z",
-        "online": true,
-        "server": "NA28",
+        "online": false,
+        "server": null,
         "contributed": 253017,
         "contributionRank": 139,
         "guildRaidsTotal": 0
