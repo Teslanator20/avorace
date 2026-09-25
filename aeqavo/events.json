@@ -90,7 +90,16 @@
       "rank": "recruit",
       "joinedAt": "2026-09-25T03:50:27.732000Z",
       "raidsTotal": 0
+    },
+    {
+      "ts": "2026-09-25T11:15:29.269Z",
+      "guild": "Avicia",
+      "uuid": "933d2bba-3125-4040-adee-acee43510810",
+      "username": "Melu_ko",
+      "type": "promoted",
+      "from": "recruit",
+      "to": "recruiter"
     }
   ],
-  "updated": "2026-09-25T11:10:30.812Z"
+  "updated": "2026-09-25T11:15:29.269Z"
 }

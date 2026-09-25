@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T11:10:30.226Z",
+  "updated": "2026-09-25T11:15:28.929Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
@@ -34,7 +34,7 @@
         "rank": "chief",
         "joined": "2024-10-28T19:08:55.996000Z",
         "online": true,
-        "server": "NA4",
+        "server": "NA2",
         "contributed": 41547554622271,
         "contributionRank": 2,
         "guildRaidsTotal": 20412
@@ -694,7 +694,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T17:00:48.189000Z",
         "online": true,
-        "server": "NA4",
+        "server": "NA8",
         "contributed": 1801286483535,
         "contributionRank": 63,
         "guildRaidsTotal": 3564
@@ -915,7 +915,7 @@
         "joined": "2026-08-18T04:01:35.935000Z",
         "online": true,
         "server": "AS14",
-        "contributed": 3664815429314,
+        "contributed": 3664815430228,
         "contributionRank": 41,
         "guildRaidsTotal": 1945
       },
@@ -969,7 +969,7 @@
         "rank": "captain",
         "joined": "2026-06-21T14:52:13.476000Z",
         "online": true,
-        "server": "EU17",
+        "server": "AS14",
         "contributed": 1780552250631,
         "contributionRank": 64,
         "guildRaidsTotal": 729
@@ -2077,7 +2077,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:51:53.962000Z",
         "online": true,
-        "server": "AS2",
+        "server": "AS12",
         "contributed": 3885179460211,
         "contributionRank": 12,
         "guildRaidsTotal": 3986
@@ -2374,7 +2374,7 @@
         "rank": "captain",
         "joined": "2026-09-05T15:27:34.642000Z",
         "online": true,
-        "server": "NA10",
+        "server": "EU24",
         "contributed": 580558521312,
         "contributionRank": 45,
         "guildRaidsTotal": 795
@@ -2864,6 +2864,17 @@
         "guildRaidsTotal": 46
       },
       {
+        "username": "Melu_ko",
+        "uuid": "933d2bba-3125-4040-adee-acee43510810",
+        "rank": "recruiter",
+        "joined": "2026-09-22T16:05:38.223000Z",
+        "online": true,
+        "server": "AS14",
+        "contributed": 64797243092,
+        "contributionRank": 96,
+        "guildRaidsTotal": 484
+      },
+      {
         "username": "Konradensator",
         "uuid": "2f8ccb2f-a5d6-46a0-9239-984956e161ce",
         "rank": "recruiter",
@@ -2881,7 +2892,7 @@
         "joined": "2026-08-08T02:02:40.408000Z",
         "online": true,
         "server": "NA10",
-        "contributed": 49586384162,
+        "contributed": 49586384170,
         "contributionRank": 99,
         "guildRaidsTotal": 19
       },
@@ -3148,17 +3159,6 @@
         "contributed": 0,
         "contributionRank": 144,
         "guildRaidsTotal": 182
-      },
-      {
-        "username": "Melu_ko",
-        "uuid": "933d2bba-3125-4040-adee-acee43510810",
-        "rank": "recruit",
-        "joined": "2026-09-22T16:05:38.223000Z",
-        "online": true,
-        "server": "AS14",
-        "contributed": 64797243092,
-        "contributionRank": 96,
-        "guildRaidsTotal": 484
       },
       {
         "username": "Elldar",
