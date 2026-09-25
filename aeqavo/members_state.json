@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T11:00:50.905Z",
+  "updated": "2026-09-25T11:05:27.273Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 6,
+    "online": 5,
     "total": 150,
     "members": [
       {
@@ -34,7 +34,7 @@
         "rank": "chief",
         "joined": "2024-02-20T14:52:55.148000Z",
         "online": true,
-        "server": "EU17",
+        "server": "AS14",
         "contributed": 22063429298575,
         "contributionRank": 2,
         "guildRaidsTotal": 9606
@@ -342,8 +342,8 @@
         "rank": "strategist",
         "joined": "2025-08-13T10:23:37.796000Z",
         "online": true,
-        "server": "AS12",
-        "contributed": 7226427463638,
+        "server": "AS8",
+        "contributed": 7229019242751,
         "contributionRank": 12,
         "guildRaidsTotal": 3608
       },
@@ -979,8 +979,8 @@
         "uuid": "3121508c-128c-4c24-a348-322ec87fa2fb",
         "rank": "captain",
         "joined": "2026-09-09T14:11:19.116000Z",
-        "online": true,
-        "server": "AS14",
+        "online": false,
+        "server": null,
         "contributed": 90712268955,
         "contributionRank": 96,
         "guildRaidsTotal": 34
@@ -1410,7 +1410,7 @@
         "joined": "2026-09-20T20:41:42.376000Z",
         "online": true,
         "server": "EU2",
-        "contributed": 12959601821,
+        "contributed": 12959601822,
         "contributionRank": 122,
         "guildRaidsTotal": 5
       },
@@ -1681,8 +1681,8 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "AS12",
-        "contributed": 9379900858149,
+        "server": "AS8",
+        "contributed": 9382492637262,
         "contributionRank": 1,
         "guildRaidsTotal": 3935
       },
@@ -2066,8 +2066,8 @@
         "rank": "strategist",
         "joined": "2026-03-18T12:34:42.380000Z",
         "online": true,
-        "server": "AS12",
-        "contributed": 4046612113160,
+        "server": "AS8",
+        "contributed": 4049203892273,
         "contributionRank": 10,
         "guildRaidsTotal": 1656
       },
@@ -2077,8 +2077,8 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS12",
-        "contributed": 3973197380229,
+        "server": "AS8",
+        "contributed": 3975789159342,
         "contributionRank": 11,
         "guildRaidsTotal": 3126
       },
