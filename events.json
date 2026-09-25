@@ -555,7 +555,16 @@
       "rank": "recruit",
       "joinedAt": "2026-09-25T23:20:23.237000Z",
       "raidsTotal": 0
+    },
+    {
+      "ts": "2026-09-25T23:25:24.533Z",
+      "guild": "Avicia",
+      "uuid": "6930660f-2668-436a-b3a0-6324bdf011da",
+      "username": "SiegelDesTerrors",
+      "type": "promoted",
+      "from": "recruit",
+      "to": "strategist"
     }
   ],
-  "updated": "2026-09-25T23:20:33.499Z"
+  "updated": "2026-09-25T23:25:24.533Z"
 }
