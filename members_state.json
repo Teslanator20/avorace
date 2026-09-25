@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T09:55:26.171Z",
+  "updated": "2026-09-25T10:00:52.766Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
@@ -551,7 +551,7 @@
         "rank": "strategist",
         "joined": "2026-09-06T02:19:08.081000Z",
         "online": true,
-        "server": "EU4",
+        "server": "EU21",
         "contributed": 3812531722775,
         "contributionRank": 40,
         "guildRaidsTotal": 9327
@@ -684,7 +684,7 @@
         "joined": "2026-07-19T12:50:30.818000Z",
         "online": true,
         "server": "EU1",
-        "contributed": 1819771285261,
+        "contributed": 1819771599511,
         "contributionRank": 60,
         "guildRaidsTotal": 726
       },
@@ -694,7 +694,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T17:00:48.189000Z",
         "online": true,
-        "server": "NA8",
+        "server": "NA10",
         "contributed": 1801286483535,
         "contributionRank": 63,
         "guildRaidsTotal": 3564
@@ -1650,7 +1650,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 7,
+    "online": 9,
     "total": 148,
     "members": [
       {
@@ -1671,9 +1671,9 @@
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
         "server": "AS17",
-        "contributed": 9366941962584,
+        "contributed": 9369533741697,
         "contributionRank": 1,
-        "guildRaidsTotal": 3929
+        "guildRaidsTotal": 3930
       },
       {
         "username": "Monocerotis",
@@ -1977,8 +1977,8 @@
         "uuid": "e091c840-f3c4-4a29-b9fc-2388412f64d6",
         "rank": "chief",
         "joined": "2021-07-03T01:31:25.035000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU21",
         "contributed": 200112227355,
         "contributionRank": 73,
         "guildRaidsTotal": 130
@@ -2054,8 +2054,8 @@
         "uuid": "ff8d51e9-826c-420d-a88d-10dfdc64551d",
         "rank": "strategist",
         "joined": "2026-03-18T12:34:42.380000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS10",
         "contributed": 4041428554934,
         "contributionRank": 10,
         "guildRaidsTotal": 1654
@@ -2067,9 +2067,9 @@
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
         "server": "AS17",
-        "contributed": 3960238484664,
+        "contributed": 3962830263777,
         "contributionRank": 11,
-        "guildRaidsTotal": 3120
+        "guildRaidsTotal": 3121
       },
       {
         "username": "ArcuCresyn",
