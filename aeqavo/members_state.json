@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T08:45:34.081Z",
+  "updated": "2026-09-25T08:50:30.127Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 10,
+    "online": 11,
     "total": 150,
     "members": [
       {
@@ -123,9 +123,9 @@
         "joined": "2025-11-13T02:20:43.503000Z",
         "online": true,
         "server": "AS4",
-        "contributed": 8783539413957,
+        "contributed": 8786131193070,
         "contributionRank": 10,
-        "guildRaidsTotal": 5270
+        "guildRaidsTotal": 5271
       },
       {
         "username": "CarrieLam",
@@ -353,7 +353,7 @@
         "rank": "strategist",
         "joined": "2025-03-24T15:18:39.871000Z",
         "online": true,
-        "server": "AS1",
+        "server": "NA4",
         "contributed": 5063150762120,
         "contributionRank": 17,
         "guildRaidsTotal": 2424
@@ -639,7 +639,7 @@
         "rank": "strategist",
         "joined": "2026-08-25T02:24:48.563000Z",
         "online": true,
-        "server": "AS21",
+        "server": "NA13",
         "contributed": 54427361373,
         "contributionRank": 103,
         "guildRaidsTotal": 3538
@@ -683,7 +683,7 @@
         "rank": "strategist",
         "joined": "2026-09-10T16:51:43.817000Z",
         "online": true,
-        "server": "EU8",
+        "server": "EU7",
         "contributed": 1253708,
         "contributionRank": 136,
         "guildRaidsTotal": 513
@@ -935,8 +935,8 @@
         "uuid": "5f5404f0-d315-4185-81a5-2ce16e16b9f0",
         "rank": "captain",
         "joined": "2026-08-10T19:18:12.142000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU19",
         "contributed": 321481544417,
         "contributionRank": 80,
         "guildRaidsTotal": 126
@@ -992,9 +992,9 @@
         "joined": "2026-09-09T14:11:19.116000Z",
         "online": true,
         "server": "AS4",
-        "contributed": 77753373390,
+        "contributed": 80345152503,
         "contributionRank": 97,
-        "guildRaidsTotal": 29
+        "guildRaidsTotal": 30
       },
       {
         "username": "MwMiaow_233",
@@ -1769,7 +1769,7 @@
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
         "online": true,
-        "server": "NA9",
+        "server": "NA3",
         "contributed": 3229443829551,
         "contributionRank": 14,
         "guildRaidsTotal": 5927
@@ -1800,7 +1800,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45Z",
+        "joined": "2025-07-02T19:02:45.000000Z",
         "online": false,
         "server": null,
         "contributed": 1716022019079,
@@ -1921,7 +1921,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22Z",
+        "joined": "2024-04-16T02:21:22.000000Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
