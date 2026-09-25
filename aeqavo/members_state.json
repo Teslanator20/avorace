@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T07:55:24.000Z",
+  "updated": "2026-09-25T08:00:49.368Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -265,7 +265,7 @@
         "rank": "chief",
         "joined": "2026-08-03T01:32:01.618000Z",
         "online": true,
-        "server": "NA16",
+        "server": "NA12",
         "contributed": 1044486982539,
         "contributionRank": 60,
         "guildRaidsTotal": 3294
@@ -639,7 +639,7 @@
         "rank": "strategist",
         "joined": "2026-08-25T02:24:48.563000Z",
         "online": true,
-        "server": "NA24",
+        "server": "NA12",
         "contributed": 54427361373,
         "contributionRank": 103,
         "guildRaidsTotal": 3538
@@ -683,7 +683,7 @@
         "rank": "strategist",
         "joined": "2026-09-10T16:51:43.817000Z",
         "online": true,
-        "server": "EU18",
+        "server": "NA12",
         "contributed": 1253708,
         "contributionRank": 136,
         "guildRaidsTotal": 513
@@ -1703,7 +1703,7 @@
         "rank": "chief",
         "joined": "2025-12-01T04:05:52.777000Z",
         "online": true,
-        "server": "AS21",
+        "server": "AS10",
         "contributed": 5396147828355,
         "contributionRank": 3,
         "guildRaidsTotal": 2466
@@ -1717,7 +1717,7 @@
         "server": "NA3",
         "contributed": 5064507779626,
         "contributionRank": 4,
-        "guildRaidsTotal": 2979
+        "guildRaidsTotal": 2980
       },
       {
         "username": "CupBoi",
@@ -1772,7 +1772,7 @@
         "server": "NA3",
         "contributed": 3226852050438,
         "contributionRank": 14,
-        "guildRaidsTotal": 5925
+        "guildRaidsTotal": 5926
       },
       {
         "username": "Antragos",
@@ -2355,7 +2355,7 @@
         "server": "NA3",
         "contributed": 718265841279,
         "contributionRank": 40,
-        "guildRaidsTotal": 281
+        "guildRaidsTotal": 282
       },
       {
         "username": "Liss1404",
@@ -2542,7 +2542,7 @@
         "server": "NA3",
         "contributed": 222893768387,
         "contributionRank": 70,
-        "guildRaidsTotal": 977
+        "guildRaidsTotal": 978
       },
       {
         "username": "ftoob",
