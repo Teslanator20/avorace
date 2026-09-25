@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T11:35:25.103Z",
+  "updated": "2026-09-25T11:40:33.839Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 6,
+    "online": 5,
     "total": 150,
     "members": [
       {
@@ -343,9 +343,9 @@
         "joined": "2025-08-13T10:23:37.796000Z",
         "online": true,
         "server": "AS8",
-        "contributed": 7239386359203,
+        "contributed": 7241978138316,
         "contributionRank": 12,
-        "guildRaidsTotal": 3611
+        "guildRaidsTotal": 3613
       },
       {
         "username": "Dern_",
@@ -363,8 +363,8 @@
         "uuid": "24940ead-b811-4a58-afe1-0ee9889781ba",
         "rank": "strategist",
         "joined": "2025-11-02T19:28:39.273000Z",
-        "online": true,
-        "server": "AS14",
+        "online": false,
+        "server": null,
         "contributed": 4447646287050,
         "contributionRank": 20,
         "guildRaidsTotal": 1720
@@ -1680,11 +1680,11 @@
         "uuid": "e0915cb6-cc8b-4c94-8894-0c48458e15a3",
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
-        "online": true,
-        "server": "AS8",
-        "contributed": 9392859753714,
+        "online": false,
+        "server": null,
+        "contributed": 9395451532827,
         "contributionRank": 1,
-        "guildRaidsTotal": 3938
+        "guildRaidsTotal": 3940
       },
       {
         "username": "Monocerotis",
@@ -1834,8 +1834,8 @@
         "uuid": "67bc8c7d-a9ad-48a5-9462-49b6bdcf4c7f",
         "rank": "chief",
         "joined": "2026-07-07T03:53:09.619000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA11",
         "contributed": 1142978768572,
         "contributionRank": 29,
         "guildRaidsTotal": 1009
@@ -2067,9 +2067,9 @@
         "joined": "2026-03-18T12:34:42.380000Z",
         "online": true,
         "server": "AS8",
-        "contributed": 4059571008725,
+        "contributed": 4062162787838,
         "contributionRank": 9,
-        "guildRaidsTotal": 1659
+        "guildRaidsTotal": 1661
       },
       {
         "username": "YzRyx",
@@ -2078,9 +2078,9 @@
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
         "server": "AS8",
-        "contributed": 3986156275794,
+        "contributed": 3988748054907,
         "contributionRank": 11,
-        "guildRaidsTotal": 3129
+        "guildRaidsTotal": 3131
       },
       {
         "username": "ArcuCresyn",
@@ -2091,7 +2091,7 @@
         "server": "AS17",
         "contributed": 3887771239578,
         "contributionRank": 12,
-        "guildRaidsTotal": 3987
+        "guildRaidsTotal": 3988
       },
       {
         "username": "Mqria_",
@@ -2308,7 +2308,7 @@
         "rank": "captain",
         "joined": "2026-06-26T17:45:22.728000Z",
         "online": true,
-        "server": "AS14",
+        "server": "EU13",
         "contributed": 811268493007,
         "contributionRank": 35,
         "guildRaidsTotal": 313
@@ -2385,7 +2385,7 @@
         "rank": "captain",
         "joined": "2026-09-05T15:27:34.642000Z",
         "online": true,
-        "server": "EU24",
+        "server": "EU25",
         "contributed": 580558521312,
         "contributionRank": 45,
         "guildRaidsTotal": 795
@@ -3210,8 +3210,8 @@
         "rank": "recruit",
         "joined": "2026-09-17T21:01:19.446000Z",
         "online": true,
-        "server": "AS10",
-        "contributed": 2609481203,
+        "server": "EU13",
+        "contributed": 2609485339,
         "contributionRank": 128,
         "guildRaidsTotal": 1
       },
