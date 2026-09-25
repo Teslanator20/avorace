@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T18:15:31.790Z",
+  "updated": "2026-09-25T18:20:34.783Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 10,
+    "online": 12,
     "total": 149,
     "members": [
       {
@@ -121,8 +121,8 @@
         "uuid": "c4a6940d-5c50-4a06-97a5-0d705abe826b",
         "rank": "chief",
         "joined": "2025-11-13T02:20:43.503000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS7",
         "contributed": 8858701008234,
         "contributionRank": 10,
         "guildRaidsTotal": 5299
@@ -198,8 +198,8 @@
         "uuid": "4d5c22e4-d5c9-4383-887c-273d0661a02c",
         "rank": "chief",
         "joined": "2026-08-11T20:39:59.283000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU17",
         "contributed": 4196090383947,
         "contributionRank": 23,
         "guildRaidsTotal": 9529
@@ -419,7 +419,7 @@
         "rank": "strategist",
         "joined": "2026-06-07T09:58:36.943000Z",
         "online": true,
-        "server": "EU28",
+        "server": "EU8",
         "contributed": 3628490758200,
         "contributionRank": 26,
         "guildRaidsTotal": 1469
@@ -475,9 +475,9 @@
         "joined": "2026-07-21T07:22:25.465000Z",
         "online": true,
         "server": "EU25",
-        "contributed": 2692858498407,
+        "contributed": 2695450277520,
         "contributionRank": 34,
-        "guildRaidsTotal": 1515
+        "guildRaidsTotal": 1516
       },
       {
         "username": "Broodjeboter",
@@ -595,7 +595,7 @@
         "rank": "strategist",
         "joined": "2026-08-22T18:13:06.635000Z",
         "online": true,
-        "server": "EU28",
+        "server": "EU8",
         "contributed": 181425712154,
         "contributionRank": 85,
         "guildRaidsTotal": 73
@@ -1001,8 +1001,8 @@
         "uuid": "860feac2-6899-403a-a525-6596a9e0ba17",
         "rank": "captain",
         "joined": "2026-09-11T06:25:37.201000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU25",
         "contributed": 20754886276,
         "contributionRank": 112,
         "guildRaidsTotal": 9
@@ -1045,8 +1045,8 @@
         "uuid": "b058162c-4a9d-43e6-902b-16df4ce10da5",
         "rank": "recruiter",
         "joined": "2026-03-01T18:49:55.639000Z",
-        "online": true,
-        "server": "EU5",
+        "online": false,
+        "server": null,
         "contributed": 1360900197902,
         "contributionRank": 49,
         "guildRaidsTotal": 759
@@ -1650,7 +1650,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 14,
+    "online": 13,
     "total": 149,
     "members": [
       {
@@ -1790,8 +1790,8 @@
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
         "joined": "2025-07-02T19:02:45Z",
-        "online": true,
-        "server": "NA7",
+        "online": false,
+        "server": null,
         "contributed": 1716022019079,
         "contributionRank": 22,
         "guildRaidsTotal": 950
@@ -1868,7 +1868,7 @@
         "rank": "chief",
         "joined": "2025-02-08T16:17:14.308000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA10",
         "contributed": 936108247724,
         "contributionRank": 33,
         "guildRaidsTotal": 574
@@ -2099,7 +2099,7 @@
         "rank": "strategist",
         "joined": "2026-07-15T12:03:40.096000Z",
         "online": true,
-        "server": "AS12",
+        "server": "NA10",
         "contributed": 2451850012081,
         "contributionRank": 17,
         "guildRaidsTotal": 985
@@ -3101,7 +3101,7 @@
         "joined": "2026-09-17T20:31:00.919000Z",
         "online": true,
         "server": "EU30",
-        "contributed": 7554799,
+        "contributed": 7676148,
         "contributionRank": 136,
         "guildRaidsTotal": 0
       },
@@ -3222,7 +3222,7 @@
         "joined": "2026-09-23T18:51:32.810000Z",
         "online": true,
         "server": "NA2",
-        "contributed": 20776606105,
+        "contributed": 20776606600,
         "contributionRank": 114,
         "guildRaidsTotal": 8
       },
