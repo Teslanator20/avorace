@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-25T18:50:32.308Z",
+  "updated": "2026-09-25T18:55:25.952Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 20,
+    "online": 21,
     "total": 149,
     "members": [
       {
@@ -111,7 +111,7 @@
         "rank": "chief",
         "joined": "2025-06-27T19:13:15.828000Z",
         "online": true,
-        "server": "EU1",
+        "server": "NA13",
         "contributed": 11515274599059,
         "contributionRank": 17,
         "guildRaidsTotal": 4496
@@ -374,8 +374,8 @@
         "uuid": "f6b90627-b369-4e37-a0e0-555ba9ce762f",
         "rank": "strategist",
         "joined": "2026-01-09T15:18:59.697000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU1",
         "contributed": 14768076275990,
         "contributionRank": 13,
         "guildRaidsTotal": 7075
@@ -738,7 +738,7 @@
         "rank": "strategist",
         "joined": "2026-08-29T13:00:30.440000Z",
         "online": true,
-        "server": "NA3",
+        "server": "NA13",
         "contributed": 1257012869805,
         "contributionRank": 74,
         "guildRaidsTotal": 923
@@ -815,7 +815,7 @@
         "rank": "strategist",
         "joined": "2026-09-13T11:08:25.317000Z",
         "online": true,
-        "server": "NA6",
+        "server": "NA13",
         "contributed": 344706622029,
         "contributionRank": 105,
         "guildRaidsTotal": 203
@@ -1013,7 +1013,7 @@
         "rank": "captain",
         "joined": "2026-07-25T14:29:21.373000Z",
         "online": true,
-        "server": "NA21",
+        "server": "NA19",
         "contributed": 1661367690866,
         "contributionRank": 70,
         "guildRaidsTotal": 1002
@@ -1155,8 +1155,8 @@
         "uuid": "4738c07b-bc4f-4b5e-8a36-f3bb321f17b8",
         "rank": "captain",
         "joined": "2026-09-05T12:50:42.078000Z",
-        "online": true,
-        "server": "EU8",
+        "online": false,
+        "server": null,
         "contributed": 450969565662,
         "contributionRank": 99,
         "guildRaidsTotal": 270
@@ -1244,7 +1244,7 @@
         "rank": "recruiter",
         "joined": "2026-09-11T18:23:54.504000Z",
         "online": true,
-        "server": "EU3",
+        "server": "EU2",
         "contributed": 1492864769088,
         "contributionRank": 73,
         "guildRaidsTotal": 1624
@@ -1597,7 +1597,7 @@
         "joined": "2026-09-22T20:07:34.628000Z",
         "online": true,
         "server": "NA25",
-        "contributed": 192474,
+        "contributed": 201246,
         "contributionRank": 140,
         "guildRaidsTotal": 98
       },
@@ -1606,8 +1606,8 @@
         "uuid": "6639c3e2-f771-45b1-bbe2-e163d4bb1b25",
         "rank": "recruit",
         "joined": "2026-09-24T18:58:15.771000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "EU3",
         "contributed": 13516,
         "contributionRank": 141,
         "guildRaidsTotal": 0
@@ -1650,7 +1650,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 12,
+    "online": 11,
     "total": 149,
     "members": [
       {
@@ -2055,7 +2055,7 @@
         "rank": "strategist",
         "joined": "2026-03-18T12:34:42.380000Z",
         "online": true,
-        "server": "EU10",
+        "server": "EU9",
         "contributed": 4062162787838,
         "contributionRank": 9,
         "guildRaidsTotal": 1662
@@ -2263,8 +2263,8 @@
         "uuid": "2ce88889-4cfe-44e4-8233-fe29f64bbd6e",
         "rank": "captain",
         "joined": "2026-07-17T06:00:35.567000Z",
-        "online": true,
-        "server": "EU32",
+        "online": false,
+        "server": null,
         "contributed": 1353046533823,
         "contributionRank": 27,
         "guildRaidsTotal": 647
@@ -3023,7 +3023,7 @@
         "rank": "recruiter",
         "joined": "2026-09-17T21:01:19.446000Z",
         "online": true,
-        "server": "EU2",
+        "server": "NA8",
         "contributed": 12978052044,
         "contributionRank": 123,
         "guildRaidsTotal": 5
