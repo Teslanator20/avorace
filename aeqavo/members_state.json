@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T09:45:33.417Z",
+  "updated": "2026-09-25T09:50:31.740Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -980,7 +980,7 @@
         "rank": "captain",
         "joined": "2026-09-09T14:11:19.116000Z",
         "online": true,
-        "server": "AS10",
+        "server": "NA6",
         "contributed": 90712268955,
         "contributionRank": 96,
         "guildRaidsTotal": 34
@@ -1254,8 +1254,8 @@
         "uuid": "571c24be-3a6b-47fa-8d85-86e3115a69e9",
         "rank": "recruit",
         "joined": "2026-09-05T02:24:02.789000Z",
-        "online": true,
-        "server": "AS8",
+        "online": false,
+        "server": null,
         "contributed": 93318943653,
         "contributionRank": 95,
         "guildRaidsTotal": 36
@@ -1408,9 +1408,9 @@
         "uuid": "77de4e9b-73d0-4cda-99a5-bac14e52c0b2",
         "rank": "recruit",
         "joined": "2026-09-20T20:41:42.376000Z",
-        "online": false,
-        "server": null,
-        "contributed": 12959599904,
+        "online": true,
+        "server": "EU2",
+        "contributed": 12959599913,
         "contributionRank": 122,
         "guildRaidsTotal": 5
       },
@@ -1681,10 +1681,10 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "AS17",
+        "server": "AS8",
         "contributed": 9364350183471,
         "contributionRank": 1,
-        "guildRaidsTotal": 3927
+        "guildRaidsTotal": 3929
       },
       {
         "username": "Monocerotis",
@@ -1769,7 +1769,7 @@
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA10",
         "contributed": 3229443829551,
         "contributionRank": 14,
         "guildRaidsTotal": 5927
@@ -2077,10 +2077,10 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS17",
+        "server": "AS8",
         "contributed": 3957646705551,
         "contributionRank": 11,
-        "guildRaidsTotal": 3118
+        "guildRaidsTotal": 3120
       },
       {
         "username": "ArcuCresyn",
@@ -2352,7 +2352,7 @@
         "rank": "captain",
         "joined": "2026-08-29T18:38:14.057000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA10",
         "contributed": 720857620392,
         "contributionRank": 40,
         "guildRaidsTotal": 283
@@ -2385,7 +2385,7 @@
         "rank": "captain",
         "joined": "2026-09-05T15:27:34.642000Z",
         "online": true,
-        "server": "NA15",
+        "server": "NA10",
         "contributed": 575374963086,
         "contributionRank": 45,
         "guildRaidsTotal": 793
