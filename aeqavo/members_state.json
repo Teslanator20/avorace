@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T08:35:29.259Z",
+  "updated": "2026-09-25T08:40:29.779Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
@@ -125,7 +125,7 @@
         "server": "AS8",
         "contributed": 8780947634844,
         "contributionRank": 10,
-        "guildRaidsTotal": 5269
+        "guildRaidsTotal": 5270
       },
       {
         "username": "CarrieLam",
@@ -639,7 +639,7 @@
         "rank": "strategist",
         "joined": "2026-08-25T02:24:48.563000Z",
         "online": true,
-        "server": "AS21",
+        "server": "NA11",
         "contributed": 54427361373,
         "contributionRank": 103,
         "guildRaidsTotal": 3538
@@ -683,7 +683,7 @@
         "rank": "strategist",
         "joined": "2026-09-10T16:51:43.817000Z",
         "online": true,
-        "server": "EU7",
+        "server": "EU2",
         "contributed": 1253708,
         "contributionRank": 136,
         "guildRaidsTotal": 513
@@ -994,7 +994,7 @@
         "server": "AS8",
         "contributed": 75161594277,
         "contributionRank": 98,
-        "guildRaidsTotal": 28
+        "guildRaidsTotal": 29
       },
       {
         "username": "MwMiaow_233",
@@ -1769,7 +1769,7 @@
         "rank": "chief",
         "joined": "2026-07-01T14:53:03.097000Z",
         "online": true,
-        "server": "AS9",
+        "server": "NA9",
         "contributed": 3229443829551,
         "contributionRank": 14,
         "guildRaidsTotal": 5927
@@ -2077,7 +2077,7 @@
         "rank": "strategist",
         "joined": "2026-07-16T12:34:19.621000Z",
         "online": true,
-        "server": "AS9",
+        "server": "AS21",
         "contributed": 3949871368212,
         "contributionRank": 11,
         "guildRaidsTotal": 3117
@@ -2352,7 +2352,7 @@
         "rank": "captain",
         "joined": "2026-08-29T18:38:14.057000Z",
         "online": true,
-        "server": "AS9",
+        "server": "NA9",
         "contributed": 720857620392,
         "contributionRank": 40,
         "guildRaidsTotal": 283
