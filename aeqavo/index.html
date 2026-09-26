@@ -1196,7 +1196,26 @@ function renderHero(cur, snaps) {
   const window7 = snapshotsBefore(snaps, 7*86400_000);
   const past = window7 || past24;
   const usingDays = window7 ? 7 : 1;
-  if (past) {
+  // Scalar-aware: same model as the Season finish card, so the tie only counts before the close.
+  const rl = finRate(snaps, "left", usingDays * 24), rr = finRate(snaps, "right", usingDays * 24);
+  if (rl && rr && Date.now() < SEASON_END) {
+    const cross = finCrossing(rl, rr);
+    const endGap = finPredict(rl, SEASON_END) - finPredict(rr, SEASON_END);
+    const closer = gap > 0 ? cur.right.name : cur.left.name;
+    const ahead = gap > 0 ? cur.left.name : cur.right.name;
+    const tag = `${usingDays}d trend, 10× final 24 h`;
+    if (cross) {
+      const days = Math.max(cross - Date.now(), 0) / 86400_000;
+      etaNum.textContent = days < 1 ? `~ ${(days*24).toFixed(1)} h` : `~ ${days.toFixed(1)} d`;
+      etaSub.textContent = `${closer} closing the gap (${tag})`;
+    } else if (Math.abs(endGap) < Math.abs(gap)) {
+      etaNum.textContent = "not before close";
+      etaSub.textContent = `${closer} closing, ${fmt(Math.round(Math.abs(endGap)))} short at the close (${tag})`;
+    } else {
+      etaNum.textContent = "—";
+      etaSub.textContent = `${ahead} pulling away (${tag})`;
+    }
+  } else if (past) {
     const gapPast = past.left.seasonSr - past.right.seasonSr;
     const dt = (new Date(snaps[snaps.length-1].ts) - new Date(past.ts)) / 86400_000;
     const ratePerDay = dt > 0 ? (gap - gapPast) / dt : 0; // change in signed gap per day
