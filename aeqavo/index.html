@@ -533,6 +533,17 @@
 
   .spot-chart { height: 220px; position: relative; }
 
+  /* ── season finish ─────────────────────────── */
+  .fin-head { flex-wrap: wrap; }
+  .fin-head .range-bar { margin-left: auto; }
+  .fin-verdict { font: 500 22px/1.25 'Fraunces', serif; margin-bottom: 8px; }
+  .fin-verdict .left, .fin-note .left, .spot-table td.num.left   { color: var(--left); }
+  .fin-verdict .right, .fin-note .right, .spot-table td.num.right { color: var(--right); }
+  .fin-note { color: var(--ink-soft); font-size: 13.5px; line-height: 1.55; margin-bottom: 18px; }
+  .fin-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+  .spot-table tr.now td { background: var(--paper-shade); }
+  @media (max-width: 800px) { .fin-tables { grid-template-columns: 1fr; } }
+
   .spot-bottom {
     margin-top: 18px; padding-top: 18px;
     border-top: 1px solid var(--rule);
@@ -639,6 +650,7 @@
   <!-- SPOTLIGHT -->
   <h2>Race Spotlight</h2>
   <section class="spotlights">
+    <div class="spot" id="spot-finish"><div class="skeleton">loading…</div></div>
     <div class="spot" id="spot-sr"><div class="skeleton">loading…</div></div>
     <div class="spot" id="spot-tna"><div class="skeleton">loading…</div></div>
   </section>
@@ -1996,6 +2008,166 @@ function renderSrSpotlight(cur, snaps, allSnaps = snaps) {
   });
 }
 
+// ─── Season finish (scalar-aware projection, same model as /record) ─────────
+// Scalar is 5.0 and doubles for the final 24 h. That lifts holding and capture rating but not
+// guild raid rating, so a guild living off raids gains much less from the bump than one holding
+// territory.
+const SEASON_END   = Date.parse("2026-09-27T04:00:00Z");   // 06:00 Europe/Berlin
+const BOOST_HOURS  = 24;
+const BOOST_START  = SEASON_END - BOOST_HOURS * 3600_000;
+const BOOST_FACTOR = 10.0 / 5.0;
+const RAID_SR      = 240;   // measured average per guild raid (see /record)
+const FIN_WINDOWS  = [6, 12, 24, 48, 72, 168];
+let finWindowH = Number(localStorage.getItem("raceWindowH")) || 48;
+let lastFinSnaps = null;
+
+const finWindowLabel = h => h < 24 ? h + " h" : (h / 24) + " d";
+
+// Base (unboosted) SR/day over one window. Any part of the window that already sits inside the
+// boost is deflated back, so a boosted reading is not doubled a second time.
+function finRate(snaps, side, hours) {
+  const b = snaps[snaps.length - 1];
+  const tb = new Date(b.ts).getTime();
+  const a = snaps.find(s => new Date(s.ts).getTime() >= tb - hours * 3600_000);
+  if (!a || a === b) return null;
+  const ta = new Date(a.ts).getTime();
+  const days = (tb - ta) / 86400_000;
+  if (days < hours / 24 / 8) return null;
+  const dSr = b[side].seasonSr - a[side].seasonSr;
+  const raidSr = Math.max(((b[side].raids ?? 0) - (a[side].raids ?? 0)) / days, 0) * RAID_SR;
+  const dBoost = Math.max(tb - Math.max(ta, BOOST_START), 0) / 86400_000;
+  const dBase = days - dBoost;
+  const base = (dSr + raidSr * dBoost * (BOOST_FACTOR - 1)) / (dBase + BOOST_FACTOR * dBoost);
+  const raidPart = Math.min(raidSr, Math.max(base, 0));
+  return { hours, base, raidPart, boosted: (base - raidPart) * BOOST_FACTOR + raidPart,
+           t0: tb, sr0: b[side].seasonSr };
+}
+
+function finPredict(r, t) {
+  const baseD  = Math.max(Math.min(t, BOOST_START) - r.t0, 0) / 86400_000;
+  const boostD = Math.max(t - Math.max(BOOST_START, r.t0), 0) / 86400_000;
+  return r.sr0 + r.base * baseD + r.boosted * boostD;
+}
+
+// First time the projected gap changes sign before the close, or null.
+function finCrossing(rl, rr) {
+  const gap = t => finPredict(rl, t) - finPredict(rr, t);
+  const pts = [rl.t0];
+  if (BOOST_START > rl.t0) pts.push(BOOST_START);
+  pts.push(SEASON_END);
+  for (let i = 0; i < pts.length - 1; i++) {
+    const g0 = gap(pts[i]), g1 = gap(pts[i + 1]);
+    if (g0 === 0 || Math.sign(g0) === Math.sign(g1)) continue;
+    return pts[i] + (pts[i + 1] - pts[i]) * (g0 / (g0 - g1));
+  }
+  return null;
+}
+
+function finCountdown() {
+  const el = document.getElementById("fin-cd");
+  if (!el) return;
+  const ms = SEASON_END - Date.now();
+  if (ms <= 0) { el.textContent = "season closed"; return; }
+  const pad = n => String(n).padStart(2, "0");
+  el.textContent = Math.floor(ms / 86400_000) + "d " + pad(Math.floor(ms / 3600_000) % 24) + "h "
+    + pad(Math.floor(ms / 60_000) % 60) + "m " + pad(Math.floor(ms / 1000) % 60) + "s";
+}
+setInterval(finCountdown, 1000);
+
+function renderFinish(snaps) {
+  lastFinSnaps = snaps;
+  const el = document.getElementById("spot-finish");
+  if (!snaps || snaps.length < 2) { el.innerHTML = `<div class="skeleton">not enough data yet</div>`; return; }
+  const cur = snaps[snaps.length - 1];
+  const L = cur.left.name, R = cur.right.name;
+  const cls = g => g >= 0 ? "left" : "right";
+  const signed = g => (g >= 0 ? "+" : "−") + fmt(Math.round(Math.abs(g)));
+  const buttons = FIN_WINDOWS.map(h =>
+    `<button data-h="${h}" class="${h === finWindowH ? "active" : ""}">${finWindowLabel(h)}</button>`).join("");
+  const head = `
+    <div class="spot-head fin-head">
+      <span class="spot-title">Season finish</span>
+      <span class="spot-sub">closes in <b id="fin-cd"></b> · scalar 5.0 → 10.0 for the final 24 h</span>
+      <div class="range-bar" id="fin-window">${buttons}</div>
+    </div>`;
+
+  // Fall back to wider windows when the chosen one holds too few points.
+  let rl = null, rr = null;
+  for (const h of [finWindowH, 24, 48, 168]) {
+    rl = finRate(snaps, "left", h); rr = finRate(snaps, "right", h);
+    if (rl && rr) break;
+  }
+
+  if (Date.now() >= SEASON_END || !rl || !rr) {
+    const g = cur.left.seasonSr - cur.right.seasonSr;
+    el.innerHTML = head + `<div class="fin-verdict">${Date.now() >= SEASON_END
+      ? `Season closed — <span class="${cls(g)}">${g >= 0 ? L : R}</span> by ${fmt(Math.abs(g))}`
+      : "Not enough data to project yet"}</div>`;
+  } else {
+    const endL = finPredict(rl, SEASON_END), endR = finPredict(rr, SEASON_END);
+    const endGap = endL - endR, nowGap = cur.left.seasonSr - cur.right.seasonSr;
+    const cross = finCrossing(rl, rr);
+    const winner = endGap >= 0 ? L : R;
+    const verdict = cross
+      ? `<span class="${cls(endGap)}">${winner}</span> overtakes around <b>${timeLabel(new Date(cross).toISOString())}</b> and wins by ${fmt(Math.round(Math.abs(endGap)))}`
+      : `<span class="${cls(endGap)}">${winner}</span> holds on — by ${fmt(Math.round(Math.abs(endGap)))} at the close`;
+    const lift = r => r.base > 0 ? ((r.boosted / r.base - 1) * 100).toFixed(0) + "%" : "—";
+    const raidShare = r => r.base > 0 ? Math.round(r.raidPart / r.base * 100) : 0;
+    const wl = finWindowLabel(rl.hours);
+    const guildRow = (side, name, r, end) => `
+      <tr>
+        <td class="${side}">${name}</td>
+        <td class="num">${fmt(Math.round(r.base))}</td>
+        <td class="num">${fmt(Math.round(r.boosted))}</td>
+        <td class="num">+${lift(r)}</td>
+        <td class="num">${fmt(Math.round(end))}</td>
+      </tr>`;
+    const scenRows = FIN_WINDOWS.map(h => {
+      const a = finRate(snaps, "left", h), b = finRate(snaps, "right", h);
+      if (!a || !b) return "";
+      // Skip windows longer than the history actually tracked; they would repeat the row above.
+      const span = (a.t0 - new Date(snaps[0].ts).getTime()) / 3600_000;
+      if (h !== rl.hours && span < h * 0.8) return "";
+      const eL = finPredict(a, SEASON_END), eR = finPredict(b, SEASON_END);
+      return `<tr class="${h === rl.hours ? "now" : ""}">
+        <td>Last ${finWindowLabel(h)}</td>
+        <td class="num">${fmt(Math.round(eL))}</td>
+        <td class="num">${fmt(Math.round(eR))}</td>
+        <td class="num ${cls(eL - eR)}">${signed(eL - eR)}</td>
+      </tr>`;
+    }).join("");
+    el.innerHTML = head + `
+      <div class="fin-verdict">${verdict}</div>
+      <div class="fin-note">
+        Rates measured over the last <b>${wl}</b>. In the closing 24 h the scalar doubles
+        <b>holding and captures</b> — guild raid rating stays flat. About <b>${raidShare(rl)}%</b> of
+        ${L}'s rate comes from raids, so it climbs <b>${lift(rl)}</b>; ${R} is at
+        <b>${raidShare(rr)}%</b> raids and climbs <b>${lift(rr)}</b>. Gap now
+        <b class="${cls(nowGap)}">${signed(nowGap)}</b>, projected at the close
+        <b class="${cls(endGap)}">${signed(endGap)}</b>.
+      </div>
+      <div class="fin-tables">
+        <table class="spot-table">
+          <thead><tr><th>SR / day</th><th class="num">Now</th><th class="num">Final 24 h</th>
+            <th class="num">Lift</th><th class="num">Projected</th></tr></thead>
+          <tbody>${guildRow("left", L, rl, endL)}${guildRow("right", R, rr, endR)}</tbody>
+        </table>
+        <table class="spot-table">
+          <thead><tr><th>Pace window</th><th class="num">${L}</th><th class="num">${R}</th>
+            <th class="num">Final gap</th></tr></thead>
+          <tbody>${scenRows}</tbody>
+        </table>
+      </div>`;
+  }
+
+  finCountdown();
+  el.querySelectorAll("#fin-window button").forEach(b => b.addEventListener("click", () => {
+    finWindowH = Number(b.dataset.h);
+    localStorage.setItem("raceWindowH", finWindowH);
+    renderFinish(lastFinSnaps);
+  }));
+}
+
 function renderTnaSpotlight(cur, snaps) {
   const lTna = cur.left.perRaid?.nameless;
   const rTna = cur.right.perRaid?.nameless;
@@ -2262,6 +2434,7 @@ function render(data) {
   const srSnapsList = srSnaps(snaps); // Season SR resets at season boundary; everything else continues
 
   renderHero(cur, srSnapsList);
+  renderFinish(srSnapsList);
   renderSrSpotlight(cur, srSnapsList, snaps);
   renderTnaSpotlight(cur, snaps); // per-raid SR is all-time — no season reset
   renderGuildCard("card-left",  "left",  cur, snaps, srSnapsList);
