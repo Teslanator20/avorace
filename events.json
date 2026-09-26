@@ -616,7 +616,16 @@
       "username": "pigybog",
       "type": "left",
       "from": "captain"
+    },
+    {
+      "ts": "2026-09-26T17:20:29.781Z",
+      "guild": "Avicia",
+      "uuid": "1d9520a9-4be1-4265-b16d-5bbe21171706",
+      "username": "Erikpod",
+      "type": "promoted",
+      "from": "recruit",
+      "to": "recruiter"
     }
   ],
-  "updated": "2026-09-26T17:15:28.193Z"
+  "updated": "2026-09-26T17:20:29.781Z"
 }
