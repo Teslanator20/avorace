@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-26T02:45:26.819Z",
+  "updated": "2026-09-26T02:50:32.743Z",
   "left": {
     "name": "Aequitas",
     "prefix": "Aeq",
-    "online": 12,
+    "online": 13,
     "total": 149,
     "members": [
       {
@@ -23,10 +23,10 @@
         "rank": "chief",
         "joined": "2025-12-17T20:44:46.934000Z",
         "online": true,
-        "server": "NA34",
-        "contributed": 30710386031409,
+        "server": "NA14",
+        "contributed": 30712977810522,
         "contributionRank": 1,
-        "guildRaidsTotal": 12176
+        "guildRaidsTotal": 12178
       },
       {
         "username": "NekoShabeta",
@@ -187,8 +187,8 @@
         "uuid": "90a208c3-fbb5-4a63-9242-498aa013a488",
         "rank": "chief",
         "joined": "2025-02-18T03:15:28.278000Z",
-        "online": true,
-        "server": "NA19",
+        "online": false,
+        "server": null,
         "contributed": 4532784210977,
         "contributionRank": 18,
         "guildRaidsTotal": 3091
@@ -202,7 +202,7 @@
         "server": "EU2",
         "contributed": 4372331363631,
         "contributionRank": 21,
-        "guildRaidsTotal": 9596
+        "guildRaidsTotal": 9597
       },
       {
         "username": "Gin_Tonic123",
@@ -264,8 +264,8 @@
         "uuid": "f9f2afb9-d4c2-4b5a-b220-d44e6b67c656",
         "rank": "chief",
         "joined": "2026-08-03T01:32:01.618000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA5",
         "contributed": 1044486982539,
         "contributionRank": 59,
         "guildRaidsTotal": 3294
@@ -332,7 +332,7 @@
         "joined": "2026-06-24T22:40:23.293000Z",
         "online": true,
         "server": "NA36",
-        "contributed": 7337535356231,
+        "contributed": 7340127135344,
         "contributionRank": 11,
         "guildRaidsTotal": 4430
       },
@@ -466,7 +466,7 @@
         "server": "EU2",
         "contributed": 2788811427404,
         "contributionRank": 32,
-        "guildRaidsTotal": 3217
+        "guildRaidsTotal": 3218
       },
       {
         "username": "MicrosRevenge",
@@ -519,7 +519,7 @@
         "joined": "2026-06-09T20:09:44.275000Z",
         "online": true,
         "server": "NA36",
-        "contributed": 1951656010768,
+        "contributed": 1954247789881,
         "contributionRank": 42,
         "guildRaidsTotal": 754
       },
@@ -530,7 +530,7 @@
         "joined": "2026-07-24T10:24:33.080000Z",
         "online": true,
         "server": "NA36",
-        "contributed": 1430662070376,
+        "contributed": 1433253849489,
         "contributionRank": 46,
         "guildRaidsTotal": 605
       },
@@ -628,7 +628,7 @@
         "rank": "strategist",
         "joined": "2026-08-25T02:24:48.563000Z",
         "online": true,
-        "server": "NA25",
+        "server": "NA36",
         "contributed": 54427361373,
         "contributionRank": 102,
         "guildRaidsTotal": 3538
@@ -816,7 +816,7 @@
         "joined": "2026-07-07T23:08:51.612000Z",
         "online": false,
         "server": null,
-        "contributed": 1104114725158,
+        "contributed": 1106706504271,
         "contributionRank": 57,
         "guildRaidsTotal": 425
       },
@@ -1060,7 +1060,7 @@
         "server": "EU2",
         "contributed": 767170150438,
         "contributionRank": 63,
-        "guildRaidsTotal": 2268
+        "guildRaidsTotal": 2269
       },
       {
         "username": "CatgirlMikuTGM",
@@ -1518,8 +1518,8 @@
         "uuid": "0cb2a6ed-af9e-40ce-a94b-f4a766d2c1c5",
         "rank": "recruit",
         "joined": "2026-09-25T03:50:27.732000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA19",
         "contributed": 3078537,
         "contributionRank": 134,
         "guildRaidsTotal": 0
@@ -1650,7 +1650,7 @@
   "right": {
     "name": "Avicia",
     "prefix": "AVO",
-    "online": 14,
+    "online": 17,
     "total": 150,
     "members": [
       {
@@ -1670,10 +1670,10 @@
         "rank": "chief",
         "joined": "2026-02-15T03:29:11.742000Z",
         "online": true,
-        "server": "NA34",
-        "contributed": 9426552882183,
+        "server": "NA14",
+        "contributed": 9429144661296,
         "contributionRank": 1,
-        "guildRaidsTotal": 3951
+        "guildRaidsTotal": 3953
       },
       {
         "username": "Monocerotis",
@@ -1691,8 +1691,8 @@
         "uuid": "901d9649-6215-4ec8-b499-f649bbc819b4",
         "rank": "chief",
         "joined": "2025-12-01T04:05:52.777000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA7",
         "contributed": 5396147828355,
         "contributionRank": 3,
         "guildRaidsTotal": 2466
@@ -1714,7 +1714,7 @@
         "rank": "chief",
         "joined": "2024-08-25T18:20:54.118000Z",
         "online": true,
-        "server": "NA36",
+        "server": "NA3",
         "contributed": 4806286827343,
         "contributionRank": 6,
         "guildRaidsTotal": 3476
@@ -1736,7 +1736,7 @@
         "rank": "chief",
         "joined": "2026-02-12T01:31:35.069000Z",
         "online": true,
-        "server": "NA2",
+        "server": "NA24",
         "contributed": 4051345258154,
         "contributionRank": 10,
         "guildRaidsTotal": 5094
@@ -1824,8 +1824,8 @@
         "rank": "chief",
         "joined": "2026-07-07T03:53:09.619000Z",
         "online": true,
-        "server": "NA2",
-        "contributed": 1142979118572,
+        "server": "NA3",
+        "contributed": 1142979124763,
         "contributionRank": 29,
         "guildRaidsTotal": 1009
       },
@@ -1835,7 +1835,7 @@
         "rank": "chief",
         "joined": "2026-06-13T01:12:44.616000Z",
         "online": true,
-        "server": "NA36",
+        "server": "NA14",
         "contributed": 1015049948857,
         "contributionRank": 30,
         "guildRaidsTotal": 395
@@ -1856,9 +1856,9 @@
         "uuid": "bf0c927d-ed10-43e8-badd-523e1007ddae",
         "rank": "chief",
         "joined": "2026-08-14T22:22:45.029000Z",
-        "online": false,
-        "server": null,
-        "contributed": 940841420634,
+        "online": true,
+        "server": "NA2",
+        "contributed": 940841420897,
         "contributionRank": 32,
         "guildRaidsTotal": 1412
       },
@@ -1889,8 +1889,8 @@
         "uuid": "27b94327-b4c6-47ec-933a-93150f973ff6",
         "rank": "chief",
         "joined": "2026-04-29T19:23:23.738000Z",
-        "online": true,
-        "server": "AS16",
+        "online": false,
+        "server": null,
         "contributed": 710730504714,
         "contributionRank": 41,
         "guildRaidsTotal": 549
@@ -2076,8 +2076,8 @@
         "uuid": "9465a632-040b-479e-8458-e21191ed3fcc",
         "rank": "strategist",
         "joined": "2026-07-16T12:51:53.962000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "AS18",
         "contributed": 3926650531446,
         "contributionRank": 12,
         "guildRaidsTotal": 4003
@@ -2110,7 +2110,7 @@
         "rank": "strategist",
         "joined": "2026-03-05T22:41:53.353000Z",
         "online": true,
-        "server": "NA36",
+        "server": "NA7",
         "contributed": 2417612426038,
         "contributionRank": 18,
         "guildRaidsTotal": 1001
@@ -2331,17 +2331,17 @@
         "joined": "2026-09-10T13:02:52.277000Z",
         "online": true,
         "server": "NA33",
-        "contributed": 780125513013,
+        "contributed": 782717292126,
         "contributionRank": 37,
-        "guildRaidsTotal": 5977
+        "guildRaidsTotal": 5978
       },
       {
         "username": "Samiqt",
         "uuid": "8894caa0-4575-489c-93b9-c617664dc427",
         "rank": "captain",
         "joined": "2026-08-29T18:38:14.057000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA19",
         "contributed": 736408296570,
         "contributionRank": 39,
         "guildRaidsTotal": 289
@@ -2539,7 +2539,7 @@
         "rank": "captain",
         "joined": "2026-09-05T15:30:30.886000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA16",
         "contributed": 225485547500,
         "contributionRank": 70,
         "guildRaidsTotal": 979
