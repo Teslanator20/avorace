@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-26T11:05:25.493Z",
+  "updated": "2026-09-26T11:10:31.215Z",
   "left": {
     "name": "Sequoia",
     "prefix": "SEQ",
-    "online": 8,
+    "online": 10,
     "total": 148,
     "members": [
       {
@@ -37,7 +37,7 @@
         "server": "EU6",
         "contributed": 41555329959610,
         "contributionRank": 2,
-        "guildRaidsTotal": 20413
+        "guildRaidsTotal": 20415
       },
       {
         "username": "Eironn",
@@ -386,7 +386,7 @@
         "rank": "strategist",
         "joined": "2025-09-04T09:57:46.258000Z",
         "online": true,
-        "server": "NA23",
+        "server": "EU31",
         "contributed": 11606876954539,
         "contributionRank": 15,
         "guildRaidsTotal": 4739
@@ -539,8 +539,8 @@
         "uuid": "4098c227-dd30-4421-b95a-50d210531aff",
         "rank": "strategist",
         "joined": "2026-07-15T21:51:02.320000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA10",
         "contributed": 4053543307040,
         "contributionRank": 39,
         "guildRaidsTotal": 2394
@@ -1166,8 +1166,8 @@
         "uuid": "21d5b676-5126-4f34-ae7c-77e320b3c14d",
         "rank": "captain",
         "joined": "2026-09-01T22:12:08.311000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA13",
         "contributed": 443194228323,
         "contributionRank": 99,
         "guildRaidsTotal": 332
@@ -1247,7 +1247,7 @@
         "server": "EU6",
         "contributed": 1599127712721,
         "contributionRank": 71,
-        "guildRaidsTotal": 1663
+        "guildRaidsTotal": 1665
       },
       {
         "username": "puppygjrl",
@@ -1681,7 +1681,7 @@
         "rank": "chief",
         "joined": "2025-12-01T04:05:52.777000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA7",
         "contributed": 5396147828355,
         "contributionRank": 3,
         "guildRaidsTotal": 2466
@@ -1703,7 +1703,7 @@
         "rank": "chief",
         "joined": "2024-08-25T18:20:54.118000Z",
         "online": true,
-        "server": "NA3",
+        "server": "NA20",
         "contributed": 4806286827343,
         "contributionRank": 6,
         "guildRaidsTotal": 3476
@@ -1778,7 +1778,7 @@
         "username": "plooooooooooooot",
         "uuid": "c94564fb-9946-418d-a22c-50c145e66f18",
         "rank": "chief",
-        "joined": "2025-07-02T19:02:45.000000Z",
+        "joined": "2025-07-02T19:02:45Z",
         "online": false,
         "server": null,
         "contributed": 1716022019079,
@@ -1857,7 +1857,7 @@
         "rank": "chief",
         "joined": "2025-02-08T16:17:14.308000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA20",
         "contributed": 936108247724,
         "contributionRank": 32,
         "guildRaidsTotal": 574
@@ -1899,7 +1899,7 @@
         "username": "Pokefanatic",
         "uuid": "7c589a35-0c9f-487b-9d65-8fdfb998df81",
         "rank": "chief",
-        "joined": "2024-04-16T02:21:22.000000Z",
+        "joined": "2024-04-16T02:21:22Z",
         "online": false,
         "server": null,
         "contributed": 495194967902,
@@ -2021,11 +2021,11 @@
         "uuid": "02115748-53c2-4a43-afd7-5412d8e01f8a",
         "rank": "strategist",
         "joined": "2026-07-19T02:19:31.545000Z",
-        "online": true,
-        "server": "AS2",
-        "contributed": 4914013198248,
+        "online": false,
+        "server": null,
+        "contributed": 4916604977361,
         "contributionRank": 5,
-        "guildRaidsTotal": 3236
+        "guildRaidsTotal": 3237
       },
       {
         "username": "StayLocked",
@@ -2067,9 +2067,9 @@
         "joined": "2026-07-16T12:51:53.962000Z",
         "online": true,
         "server": "AS2",
-        "contributed": 3975894352813,
+        "contributed": 3978486131926,
         "contributionRank": 12,
-        "guildRaidsTotal": 4021
+        "guildRaidsTotal": 4022
       },
       {
         "username": "Mqria_",
@@ -2077,7 +2077,7 @@
         "rank": "strategist",
         "joined": "2025-02-14T12:05:24.203000Z",
         "online": true,
-        "server": "NA14",
+        "server": "NA20",
         "contributed": 2528330135452,
         "contributionRank": 16,
         "guildRaidsTotal": 1259
@@ -2353,9 +2353,9 @@
         "joined": "2026-09-05T15:27:34.642000Z",
         "online": true,
         "server": "AS2",
-        "contributed": 624618766233,
+        "contributed": 627210545346,
         "contributionRank": 43,
-        "guildRaidsTotal": 811
+        "guildRaidsTotal": 812
       },
       {
         "username": "kimiru",
@@ -2505,8 +2505,8 @@
         "uuid": "212d23f0-d708-4ee3-9aa3-4dd259fa531d",
         "rank": "captain",
         "joined": "2025-10-22T09:40:52.120000Z",
-        "online": false,
-        "server": null,
+        "online": true,
+        "server": "NA12",
         "contributed": 227074078043,
         "contributionRank": 68,
         "guildRaidsTotal": 199
@@ -2583,7 +2583,7 @@
         "rank": "captain",
         "joined": "2026-09-10T03:33:31.040000Z",
         "online": true,
-        "server": "AS4",
+        "server": "AS1",
         "contributed": 168466169956,
         "contributionRank": 78,
         "guildRaidsTotal": 64
@@ -2616,7 +2616,7 @@
         "rank": "captain",
         "joined": "2026-08-07T22:51:02.447000Z",
         "online": true,
-        "server": "NA10",
+        "server": "NA20",
         "contributed": 121813618311,
         "contributionRank": 82,
         "guildRaidsTotal": 140
@@ -3112,7 +3112,7 @@
         "joined": "2026-09-17T20:31:00.919000Z",
         "online": true,
         "server": "AS10",
-        "contributed": 10238533,
+        "contributed": 10290772,
         "contributionRank": 136,
         "guildRaidsTotal": 0
       },
@@ -3233,7 +3233,7 @@
         "joined": "2026-09-23T18:51:32.810000Z",
         "online": true,
         "server": "EU7",
-        "contributed": 20791853634,
+        "contributed": 20792018634,
         "contributionRank": 115,
         "guildRaidsTotal": 8
       },
