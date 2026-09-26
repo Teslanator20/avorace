@@ -590,7 +590,15 @@
       "username": "BoomerSoft",
       "type": "left",
       "from": "recruiter"
+    },
+    {
+      "ts": "2026-09-26T09:25:24.973Z",
+      "guild": "Avicia",
+      "uuid": "2883da01-7b20-4347-9d00-65220fabfed0",
+      "username": "io15",
+      "type": "left",
+      "from": "captain"
     }
   ],
-  "updated": "2026-09-26T09:20:27.667Z"
+  "updated": "2026-09-26T09:25:24.973Z"
 }
